@@ -45,11 +45,11 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         and text-neutral-dark (pure black) for maximum contrast.
       */}
       <body className="bg-surface-canvas text-neutral-dark min-h-screen flex flex-col">
-        <PostHogProvider apiKey={POSTHOG_KEY} apiHost={POSTHOG_HOST}>
+        <PostHogProvider apiKey={POSTHOG_KEY} host={POSTHOG_HOST}>
           <SpeedInsights />
         <MainHeader />
   
-        <main className="flex-grow">
+        <main className="grow">
         
           {children}
           

@@ -26,8 +26,8 @@ export function PostHogProvider({
   const pathname = usePathname();
 
   useEffect(() => {
-    const key = apiKey ?? process.env.NEXT_PUBLIC_POSTHOG_KEY;
-    const host = apiHost ?? process.env.NEXT_PUBLIC_POSTHOG_HOST;
+    const key = apiKey ?? process.env.NEXT_PUBLIC_POSTHOG_KEY  ?? process.env.POSTHOG_KEY;
+    const host = apiHost ?? process.env.NEXT_PUBLIC_POSTHOG_HOST ?? process.env.POSTHOG_HOST;
 
     if (!key || !host) return;
 
