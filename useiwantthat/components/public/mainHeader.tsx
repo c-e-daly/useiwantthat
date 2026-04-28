@@ -36,12 +36,6 @@ export function MainHeader() {
         {/* Navigation - SHOPPERS | SELLERS */}
         <nav className="hidden md:flex space-x-8 text-sm font-medium">
           <Link 
-            href="/consumers" 
-            className="text-gray-900 hover:text-indigo-600 transition duration-150"
-          >
-            SHOPPERS
-          </Link>
-          <Link 
             href="/sellers"
             className="text-gray-900 hover:text-indigo-600 transition duration-150"
           >

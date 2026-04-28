@@ -7,7 +7,7 @@ import { Inter, Kaushan_Script } from "next/font/google";
 import Script from "next/script";
 import { MainHeader } from "@/components/public/mainHeader";
 import { Footer } from "@/components/public/footer";
-import { Toaster } from 'react-hot-toast';
+import { Toaster } from "react-hot-toast";
 import { PostHogProvider } from "@/src/providers/providers";
 
 export const metadata: Metadata = {
