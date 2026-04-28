@@ -1,0 +1,107 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ========== 1. PUBLIC BASE THEME ========== */
+/* This layer remains untouched to protect your public landing pages */
+@layer base {
+  body {
+    @apply bg-white text-black font-sans antialiased;
+  }
+  h1, h2, h3, h4 {
+    @apply font-sans text-black font-bold tracking-tight;
+  }
+}
+
+/* ========== 2. PROTECTED (ASK RAMI) SEMANTIC LAYER ========== */
+@layer components {
+
+  /* ---- AUTH LOGIN FORM --- */
+  .field-label {
+    @apply block text-sm font-medium text-black;
+  }
+
+  /* Use your semantic colors that DO exist */
+  .field-input {
+    @apply mt-1 block w-full rounded-lg bg-white px-3 py-2;
+    @apply border border-surface-border;
+    @apply text-slate-500 placeholder:text-slate-400;
+    @apply focus:outline-none focus:ring-2 focus:ring-slate-200;
+  }
+
+
+  /* --- PANEL ARCHITECTURE --- */
+  /* These define the layout for Carts, Offers, and Products */
+  .rami-list-panel {
+    @apply w-[340px] bg-slate-50 border-r border-slate-200 overflow-y-auto shrink-0;
+  }
+
+  .rami-detail-canvas {
+    @apply flex-1 bg-white overflow-y-auto p-10;
+  }
+
+  /* --- COMPONENT STANDARDS (Weights <= 500) --- */
+  
+  /* Single Column Card */
+  .rami-offer-card {
+    @apply rounded-xl bg-white border border-slate-200 p-5 transition-all shadow-portal-soft;
+    @apply flex flex-col gap-3; 
+  }
+
+  /* Selected State: 2px Grey Border & Light Tint */
+  .rami-offer-card-selected {
+    @apply border-[#bfbfbf] border-2 bg-[#f6fae8]/50 shadow-none;
+  }
+
+  /* --- TYPOGRAPHY SYSTEM --- */
+  /* Enforcing the font-weight 500 cap across the portal */
+  .rami-text-title {
+    @apply text-sm font-medium text-slate-900 tracking-tight leading-tight;
+  }
+  
+  .rami-text-caption {
+    @apply text-[10px] font-medium text-slate-400 uppercase tracking-widest;
+  }
+
+  .rami-price-settle {
+    @apply text-sm font-medium text-slate-900;
+  }
+
+  .rami-price-saved {
+    @apply text-sm font-medium text-emerald-600;
+  }
+
+  /* --- STATUS INDICATORS (Quiet Dot System) --- */
+  .rami-status-dot {
+    @apply size-2.5 rounded-full shrink-0;
+  }
+  .rami-status-dot-accepted { @apply bg-emerald-500; }
+  .rami-status-dot-review { @apply bg-amber-500; }
+  .rami-status-dot-declined { @apply bg-rose-500; }
+
+  /* --- VICTORY BOXES (Financial Grid) --- */
+  .rami-win-box {
+    @apply p-4 rounded-xl border border-slate-100 bg-white shadow-portal-soft flex-1 min-w-[180px];
+  }
+  .rami-win-box-blue { @apply border-brand/10 bg-brand/5 text-brand; }
+  .rami-win-box-emerald { @apply border-emerald-100 bg-emerald-50 text-emerald-700; }
+
+  /* --- TABLE CONTROLS (Weights <= 500) --- */
+  .rami-item-title {
+    @apply text-sm font-medium text-slate-800 leading-tight;
+  }
+  
+  .rami-item-variant {
+    @apply text-[10px] font-medium text-slate-400 uppercase tracking-tight;
+  }
+
+  /* --- UTILITIES --- */
+  .shadow-portal-soft {
+    box-shadow: 4px 4px 12px 0px rgba(0, 0, 0, 0.04);
+  }
+
+  :root {
+    --font-body: var(--font-inter);
+    --font-logo: var(--font-kaushan);
+  }
+}
