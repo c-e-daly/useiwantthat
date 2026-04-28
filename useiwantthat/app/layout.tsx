@@ -8,7 +8,7 @@ import Script from "next/script";
 import { MainHeader } from "@/components/public/mainHeader";
 import { Footer } from "@/components/public/footer";
 import { Toaster } from 'react-hot-toast';
-import { PostHogProvider } from "posthog-js/react";
+import { PostHogProvider } from "@/src/providers/providers";
 
 export const metadata: Metadata = {
   title: "I Want That! | Interactive Product Tour",
@@ -45,7 +45,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         and text-neutral-dark (pure black) for maximum contrast.
       */}
       <body className="bg-surface-canvas text-neutral-dark min-h-screen flex flex-col">
-        <PostHogProvider apiKey={POSTHOG_KEY} host={POSTHOG_HOST}>
+        <PostHogProvider apiKey={POSTHOG_KEY} apiHost={POSTHOG_HOST}>
           <SpeedInsights />
         <MainHeader />
   
