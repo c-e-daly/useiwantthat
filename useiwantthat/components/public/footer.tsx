@@ -1,4 +1,4 @@
-// /workspaces/iwantthat-consumer/components/Footer.tsx
+// /workspaces/useiwantthat/components/footer.tsx
 
 import Link from 'next/link';
 

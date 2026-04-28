@@ -26,7 +26,7 @@ export async function LegalDocumentPage({ slug }: LegalDocumentPageProps) {
 
       <section className="py-12 md:py-16">
         <div className="container mx-auto grid gap-10 px-4 lg:grid-cols-[minmax(0,1fr)_280px]">
-          <article className="min-w-0 rounded-[24px] border border-surface-border bg-white p-6 shadow-sm md:p-10">
+          <article className="min-w-0 rounded-3xl border border-surface-border bg-white p-6 shadow-sm md:p-10">
             <div
               className={[
                 "max-w-none text-slate-700",
@@ -51,7 +51,7 @@ export async function LegalDocumentPage({ slug }: LegalDocumentPageProps) {
             />
           </article>
 
-          <aside className="h-fit rounded-[24px] border border-surface-border bg-surface-subtle p-6">
+          <aside className="h-fit rounded-3xl border border-surface-border bg-surface-subtle p-6">
             <p className="text-xs font-bold uppercase tracking-widest text-brand">
               Legal Center
             </p>
