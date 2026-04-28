@@ -2,12 +2,15 @@ import { cache } from "react";
 import { notFound } from "next/navigation";
 import { markdownToHtml } from "@/lib/blog/markdown";
 import { createBlogSupabaseAdminClient } from "@/lib/blog/supabaseAdmin";
+import { getBlogStorageConfig } from "@/lib/blog/storageConfig";
 import type { BlogPostDetail, BlogPostRecord, BlogPostSummary } from "@/lib/blog/types";
 import type { Json } from "@/src/types/database.types";
 
-const BLOG_BUCKET = process.env.SUPABASE_BLOG_BUCKET ?? "blog-posts";
-const BLOG_MARKDOWN_PREFIX = process.env.SUPABASE_BLOG_MARKDOWN_PREFIX ?? "blog/markdown";
-const BLOG_SEO_PREFIX = process.env.SUPABASE_BLOG_SEO_PREFIX ?? "blog/seo";
+const {
+  bucket: BLOG_BUCKET,
+  markdownPrefix: BLOG_MARKDOWN_PREFIX,
+  seoPrefix: BLOG_SEO_PREFIX,
+} = getBlogStorageConfig();
 
 type SeoSidecar = {
   seo_title?: string;

@@ -1,4 +1,5 @@
 import { createClient } from "@supabase/supabase-js";
+import { getBlogStorageConfig } from "@/lib/blog/storageConfig";
 
 const readFirst = (...values: Array<string | undefined>) =>
   values.find((value) => typeof value === "string" && value.length > 0);
@@ -24,10 +25,7 @@ function requireEnv(value: string | undefined, name: string) {
   return value;
 }
 
-export const blogStorageBucket =
-  process.env.SUPABASE_BLOG_BUCKET ??
-  process.env.SUPABASE_BLOG_STORAGE_BUCKET ??
-  "blog-posts";
+export const blogStorageBucket = getBlogStorageConfig().bucket;
 
 export function createSupabaseClient() {
   return createClient(
