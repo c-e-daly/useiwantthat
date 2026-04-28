@@ -1,19 +1,19 @@
-// /workspaces/iwantthat-consumer/components/MainHeader.tsx
 'use client'; 
 
 import Image from 'next/image';
 import Link from 'next/link';
-import { useEffect, useState } from 'react';
+import { useSyncExternalStore } from 'react';
+
+const subscribe = () => () => {};
+const getServerSnapshot = () => false;
+const getHostnameSnapshot = () => window.location.hostname.startsWith('app.');
 
 export function MainHeader() {
-  const [isAppHost, setIsAppHost] = useState(false);
-
-  useEffect(() => {
-    // Check if the current hostname starts with 'app.'
-    if (typeof window !== 'undefined') {
-      setIsAppHost(window.location.hostname.startsWith('app.'));
-    }
-  }, []);
+  const isAppHost = useSyncExternalStore(
+    subscribe,
+    getHostnameSnapshot,
+    getServerSnapshot
+  );
 
   // If we are on the app subdomain, collapse (don't render) this header
   if (isAppHost) return null;
