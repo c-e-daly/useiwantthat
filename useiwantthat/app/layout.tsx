@@ -7,9 +7,8 @@ import { Inter, Kaushan_Script } from "next/font/google";
 import Script from "next/script";
 import { MainHeader } from "@/components/public/mainHeader";
 import { Footer } from "@/components/public/footer";
-import { AuthProvider } from "@/src/contexts/AuthContext";
 import { Toaster } from 'react-hot-toast';
-import { PostHogProvider } from '@/src/providers/providers'
+import { PostHogProvider } from "posthog-js/react";
 
 export const metadata: Metadata = {
   title: "I Want That! | Interactive Product Tour",
@@ -20,7 +19,7 @@ const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
 const POSTHOG_KEY =
   process.env.NEXT_PUBLIC_POSTHOG_KEY ?? process.env.POSTHOG_KEY;
 const POSTHOG_HOST =
-  process.env.NEXT_PUBLIC_POSTHOG_HOST ?? process.env.PHC_HOST;
+  process.env.NEXT_PUBLIC_POSTHOG_HOST ?? process.env.POSTHOG_HOST;
 
 const kaushan = Kaushan_Script({ 
   weight: "400",
@@ -49,7 +48,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <PostHogProvider apiKey={POSTHOG_KEY} apiHost={POSTHOG_HOST}>
           <SpeedInsights />
         <MainHeader />
-        <AuthProvider>
+  
         <main className="flex-grow">
         
           {children}
@@ -66,7 +65,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           }} 
         />
         </main>
-        </AuthProvider>
+
         <Footer />
         </PostHogProvider>
 
