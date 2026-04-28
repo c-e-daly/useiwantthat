@@ -1,10 +1,14 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+@config "../../tailwind.config.ts";
 
 /* ========== 1. PUBLIC BASE THEME ========== */
 /* This layer remains untouched to protect your public landing pages */
 @layer base {
+  :root {
+    --font-body: var(--font-inter);
+    --font-logo: var(--font-kaushan);
+  }
+
   body {
     @apply bg-white text-black font-sans antialiased;
   }
@@ -95,13 +99,4 @@
     @apply text-[10px] font-medium text-slate-400 uppercase tracking-tight;
   }
 
-  /* --- UTILITIES --- */
-  .shadow-portal-soft {
-    box-shadow: 4px 4px 12px 0px rgba(0, 0, 0, 0.04);
-  }
-
-  :root {
-    --font-body: var(--font-inter);
-    --font-logo: var(--font-kaushan);
-  }
 }
