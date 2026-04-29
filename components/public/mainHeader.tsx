@@ -2,7 +2,7 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
-import { useSyncExternalStore } from 'react';
+import { useRef, useState, useSyncExternalStore } from 'react';
 import { ChevronDown } from 'lucide-react';
 
 const subscribe = () => () => {};
@@ -17,13 +17,16 @@ const toolsNavItems = [
     description: 'Model ad tax and organic revenue recovery.',
   },
   {
-    href: '/sellers#price-builder',
+    href: '/tools/price-builder',
     label: 'Price Builder',
     description: 'Test price elasticity and margin guardrails.',
   },
 ];
 
 export function MainHeader() {
+  const [isToolsOpen, setIsToolsOpen] = useState(false);
+  const toolsCloseTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const toolsMenuRef = useRef<HTMLDivElement>(null);
   const isAppHost = useSyncExternalStore(
     subscribe,
     getHostnameSnapshot,
@@ -32,6 +35,22 @@ export function MainHeader() {
 
   // If we are on the app subdomain, collapse (don't render) this header
   if (isAppHost) return null;
+
+  function openToolsMenu() {
+    if (toolsCloseTimer.current) {
+      clearTimeout(toolsCloseTimer.current);
+    }
+    setIsToolsOpen(true);
+  }
+
+  function closeToolsMenuWithDelay() {
+    if (toolsCloseTimer.current) {
+      clearTimeout(toolsCloseTimer.current);
+    }
+    toolsCloseTimer.current = setTimeout(() => {
+      setIsToolsOpen(false);
+    }, 1500);
+  }
 
   return (
     <header className="sticky top-0 z-50 bg-white border-b border-gray-100 shadow-sm">
@@ -56,16 +75,38 @@ export function MainHeader() {
           >
             SELLERS
           </Link>
-          <div className="group relative">
+          <div
+            ref={toolsMenuRef}
+            className="relative"
+            onMouseEnter={openToolsMenu}
+            onMouseLeave={closeToolsMenuWithDelay}
+            onFocus={openToolsMenu}
+            onBlur={(event) => {
+              if (!toolsMenuRef.current?.contains(event.relatedTarget)) {
+                closeToolsMenuWithDelay();
+              }
+            }}
+          >
             <button
               type="button"
               className="flex items-center gap-1 text-gray-900 transition duration-150 hover:text-indigo-600 focus:outline-none focus-visible:text-indigo-600"
               aria-haspopup="true"
+              aria-expanded={isToolsOpen}
             >
               TOOLS
-              <ChevronDown className="h-4 w-4 transition group-hover:rotate-180 group-focus-within:rotate-180" />
+              <ChevronDown
+                className={`h-4 w-4 transition ${
+                  isToolsOpen ? "rotate-180" : ""
+                }`}
+              />
             </button>
-            <div className="invisible absolute left-1/2 top-full z-50 mt-3 w-72 -translate-x-1/2 rounded-askrami border border-surface-border bg-white p-2 opacity-0 shadow-xl transition duration-150 group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100">
+            <div
+              className={`absolute left-1/2 top-full z-50 mt-3 w-72 -translate-x-1/2 rounded-askrami border border-surface-border bg-white p-2 shadow-xl transition duration-150 ${
+                isToolsOpen
+                  ? "visible opacity-100"
+                  : "invisible pointer-events-none opacity-0"
+              }`}
+            >
               {toolsNavItems.map((item) => (
                 <Link
                   key={item.href}
