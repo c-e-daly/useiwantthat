@@ -22,11 +22,11 @@ type Scenario = {
 };
 
 const initialState: PriceBuilderState = {
-  cogs: 32,
-  profitMarkup: 70,
+  cogs: 45,
+  profitMarkup: 55,
   shrinkAllowance: 2,
-  financingAllowance: 3,
-  shippingAllowance: 7,
+  financingAllowance: 3.25,
+  shippingAllowance: 8,
   discountAllowance: 10,
   marketAdjustAllowance: 4,
 };
@@ -52,28 +52,22 @@ function clampFinite(value: number, fallback: number) {
 function calculateScenarioProfit({
   sellingPrice,
   values,
-  discountPct = 0,
-  freeShipping = false,
+  discountAllowance = 0,
+  shippingAllowance = 0,
 }: {
   sellingPrice: number;
   values: PriceBuilderState;
-  discountPct?: number;
-  freeShipping?: boolean;
+  discountAllowance?: number;
+  shippingAllowance?: number;
 }) {
-  const financingCost = sellingPrice * (values.financingAllowance / 100);
-  const shrinkCost = sellingPrice * (values.shrinkAllowance / 100);
-  const marketAdjustCost = sellingPrice * (values.marketAdjustAllowance / 100);
-  const discountCost = sellingPrice * (discountPct / 100);
-  const shippingCost = freeShipping ? values.shippingAllowance : 0;
-
   return (
     sellingPrice -
     values.cogs -
-    financingCost -
-    shrinkCost -
-    marketAdjustCost -
-    discountCost -
-    shippingCost
+    values.financingAllowance -
+    values.shrinkAllowance -
+    values.marketAdjustAllowance -
+    discountAllowance -
+    shippingAllowance
   );
 }
 
@@ -97,69 +91,67 @@ export function PriceBuilderClient() {
       ),
     };
 
-    const targetProfit = safeValues.cogs * (safeValues.profitMarkup / 100);
+    const targetProfit = safeValues.profitMarkup;
     const shopifyPrice = safeValues.cogs + targetProfit;
-    const percentageAllowances =
+    const totalAllowanceDollars =
       safeValues.shrinkAllowance +
       safeValues.financingAllowance +
+      safeValues.shippingAllowance +
       safeValues.discountAllowance +
       safeValues.marketAdjustAllowance;
-    const allowanceRate = Math.min(percentageAllowances / 100, 0.85);
-    const protectedPrice =
-      (safeValues.cogs + targetProfit + safeValues.shippingAllowance) /
-      (1 - allowanceRate);
-    const totalAllowanceDollars =
-      protectedPrice * allowanceRate + safeValues.shippingAllowance;
+    const protectedPrice = shopifyPrice + totalAllowanceDollars;
     const protectedGrossProfit =
       protectedPrice - safeValues.cogs - totalAllowanceDollars;
     const shopifyGrossProfit = shopifyPrice - safeValues.cogs;
-    const opportunityCost = protectedPrice - shopifyPrice;
+    const opportunityCost = totalAllowanceDollars;
+    const tenPercentDiscount = shopifyPrice * 0.1;
+    const twentyPercentDiscount = shopifyPrice * 0.2;
 
     const scenarios: Scenario[] = [
       {
         label: "10% discount",
-        description: "A modest offer or promo code.",
+        description: `${formatCurrency(tenPercentDiscount)} discount on a ${formatCurrency(shopifyPrice)} item.`,
         currentGrossProfit: calculateScenarioProfit({
           sellingPrice: shopifyPrice,
           values: safeValues,
-          discountPct: 10,
+          discountAllowance: tenPercentDiscount,
         }),
         protectedGrossProfit: calculateScenarioProfit({
           sellingPrice: protectedPrice,
           values: safeValues,
-          discountPct: 10,
+          discountAllowance: tenPercentDiscount,
         }),
         currentMargin: 0,
         protectedMargin: 0,
       },
       {
         label: "20% discount",
-        description: "A deeper clearance or retention offer.",
+        description: `${formatCurrency(twentyPercentDiscount)} discount on a ${formatCurrency(shopifyPrice)} item.`,
         currentGrossProfit: calculateScenarioProfit({
           sellingPrice: shopifyPrice,
           values: safeValues,
-          discountPct: 20,
+          discountAllowance: twentyPercentDiscount,
         }),
         protectedGrossProfit: calculateScenarioProfit({
           sellingPrice: protectedPrice,
           values: safeValues,
-          discountPct: 20,
+          discountAllowance: twentyPercentDiscount,
         }),
         currentMargin: 0,
         protectedMargin: 0,
       },
       {
         label: "Free shipping",
-        description: "Shipping absorbed as a unit-level cost.",
+        description: `${formatCurrency(safeValues.shippingAllowance)} absorbed as a unit-level cost.`,
         currentGrossProfit: calculateScenarioProfit({
           sellingPrice: shopifyPrice,
           values: safeValues,
-          freeShipping: true,
+          shippingAllowance: safeValues.shippingAllowance,
         }),
         protectedGrossProfit: calculateScenarioProfit({
           sellingPrice: protectedPrice,
           values: safeValues,
-          freeShipping: true,
+          shippingAllowance: safeValues.shippingAllowance,
         }),
         currentMargin: 0,
         protectedMargin: 0,
@@ -183,7 +175,6 @@ export function PriceBuilderClient() {
       shopifyGrossProfit,
       protectedGrossProfit,
       targetProfit,
-      percentageAllowances,
       totalAllowanceDollars,
       opportunityCost,
       scenarios,
@@ -216,7 +207,7 @@ export function PriceBuilderClient() {
         />
         <NumberField
           label="Profit markup"
-          suffix="%"
+          prefix="$"
           min={0}
           step={1}
           value={values.profitMarkup}
@@ -231,17 +222,17 @@ export function PriceBuilderClient() {
         <div className="mt-4 grid gap-3 sm:grid-cols-2">
           <NumberField
             label="Shrink"
-            suffix="%"
+            prefix="$"
             min={0}
-            step={0.5}
+            step={0.25}
             value={values.shrinkAllowance}
             onChange={(value) => updateValue("shrinkAllowance", value)}
           />
           <NumberField
             label="Financing"
-            suffix="%"
+            prefix="$"
             min={0}
-            step={0.5}
+            step={0.25}
             value={values.financingAllowance}
             onChange={(value) => updateValue("financingAllowance", value)}
           />
@@ -255,17 +246,17 @@ export function PriceBuilderClient() {
           />
           <NumberField
             label="Discounts"
-            suffix="%"
+            prefix="$"
             min={0}
-            step={0.5}
+            step={0.25}
             value={values.discountAllowance}
             onChange={(value) => updateValue("discountAllowance", value)}
           />
           <NumberField
             label="Market adjust"
-            suffix="%"
+            prefix="$"
             min={0}
-            step={0.5}
+            step={0.25}
             value={values.marketAdjustAllowance}
             onChange={(value) => updateValue("marketAdjustAllowance", value)}
           />

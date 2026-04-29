@@ -9,11 +9,26 @@ const DEMO_URL = "https://meetings.hubspot.com/chris-e-daly/customer-demo";
 export const metadata: Metadata = {
   title: "Price Builder | Protect SKU Profitability",
   description:
-    "Model COGS, markup, and unit-level allowances so Shopify merchants can unlock price elasticity while protecting gross profit.",
+    "Model COGS, profit markup, and dollar-based unit allowances so Shopify merchants can unlock price elasticity while protecting gross profit.",
+  openGraph: {
+    title: "Price Builder — Unlock Price Elasticity Without Sacrificing Profit",
+    description:
+      "Profitability starts at the SKU. Price Builder helps Shopify merchants account for shipping, financing, discounts, shrink, and market adjustments before pricing offers go live.",
+    images: ["https://useiwantthat.com/og-price-builder.png"],
+    url: "https://useiwantthat.com/tools/price-builder",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Price Builder — Protect Profit at the SKU Level",
+    description:
+      "Model COGS, markup, and unit-level opportunity costs so discounts, free shipping, and financing do not quietly erase gross profit.",
+    images: ["https://useiwantthat.com/og-price-builder.png"],
+  },
 };
 
 const ctaPoints = [
-  "Start with COGS and markup, just like a Shopify selling price.",
+  "Start with COGS and dollar profit markup, just like a Shopify selling price.",
   "Add the real unit-level cost of shipping, discounts, financing, shrink, and market adjustments.",
   "See how 10% discounts, 20% discounts, and free shipping change gross profit.",
 ];
@@ -32,8 +47,8 @@ export default function PriceBuilderPage() {
             </h1>
             <p className="mt-5 max-w-xl text-lg leading-relaxed text-neutral-muted">
               Price Builder unlocks price elasticity while protecting your
-              profits. Model the opportunity costs that basic COGS plus markup
-              pricing leaves out.
+              profits. Model the dollar opportunity costs that basic COGS plus
+              markup pricing leaves out.
             </p>
 
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
