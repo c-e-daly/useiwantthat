@@ -1,12 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
-
-declare global {
-  interface Window {
-    dataLayer?: unknown[];
-  }
-}
+import { trackProphetCalculatorSubmit } from "@/lib/analytics/prophetCalculator";
 
 type CalculatorState = {
   adSpend: number;
@@ -151,22 +146,15 @@ export function CacCalculatorClient() {
   function handleCalculate() {
     setSubmittedResults(results);
 
-    if (typeof window === "undefined") return;
-
     const adTaxRatio = values.aov > 0 ? results.cac / values.aov : 0;
     const segmentation = {
       revenue_band: "50k_150k_annual",
-      ad_tax_ratio: Number(adTaxRatio.toFixed(2)),
       high_cac_flag: adTaxRatio >= 2,
       cac_severity: getCacSeverity(adTaxRatio),
       offer_opportunity_score: getOfferOpportunityScore(results),
     };
 
-    window.dataLayer = window.dataLayer ?? [];
-    window.dataLayer.push({
-      event: "prophet_calculator_submit",
-      calculator_version: "1.0",
-      timestamp: new Date().toISOString(),
+    trackProphetCalculatorSubmit({
       icp_persona: "fashion_apparel",
       inputs: {
         monthly_ad_spend: values.adSpend,
@@ -174,19 +162,14 @@ export function CacCalculatorClient() {
         average_order_value: values.aov,
         gross_margin_pct: values.margin,
         paid_cvr_pct: values.paidCvr,
-        organic_cvr_pct: values.orgCvr,
-        prophet_lift_pct: values.prophetLift,
         organic_visitors: values.orgVisitors,
       },
       outputs: {
         cac: Math.round(results.cac),
-        orders_to_breakeven: results.ordersBreakEven,
-        gross_profit_per_order: Math.round(results.grossProfitPerOrder),
-        paid_revenue_monthly: Math.round(results.paidRevenue),
-        organic_lift_revenue_monthly: Math.round(results.additionalRevenue),
         annual_revenue_unlocked: Math.round(results.annualUnlocked),
-        annual_ad_spend: Math.round(results.annualAdSpend),
+        organic_lift_revenue_monthly: Math.round(results.additionalRevenue),
         prophet_roi_vs_ad_spend_pct: results.prophetRoiVsAdSpendPct,
+        orders_to_breakeven: results.ordersBreakEven,
       },
       segmentation,
     });

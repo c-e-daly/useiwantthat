@@ -1,6 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import { trackProphetCalculatorSubmit } from "@/lib/analytics/prophetCalculator";
 
 type CalculatorState = {
   adSpend: number;
@@ -45,6 +46,40 @@ export function CacCalculatorSection() {
       ...current,
       [field]: Number(rawValue),
     }));
+  }
+
+  function handleCalculate() {
+    const paidCvrPct =
+      values.visitors > 0 ? (values.custAcq / values.visitors) * 100 : 0;
+    const annualUnlocked = results.savings * 12;
+    const annualAdSpend = values.adSpend * 12;
+    const roiPct =
+      annualAdSpend > 0 ? Math.round((annualUnlocked / annualAdSpend) * 100) : 0;
+
+    trackProphetCalculatorSubmit({
+      icp_persona: "fashion_apparel",
+      inputs: {
+        monthly_ad_spend: values.adSpend,
+        cost_per_click: 0,
+        average_order_value: values.aov,
+        gross_margin_pct: 0,
+        paid_cvr_pct: Number(paidCvrPct.toFixed(2)),
+        organic_visitors: values.visitors,
+      },
+      outputs: {
+        cac: Math.round(results.cac),
+        annual_revenue_unlocked: annualUnlocked,
+        organic_lift_revenue_monthly: results.savings,
+        prophet_roi_vs_ad_spend_pct: roiPct,
+        orders_to_breakeven: 0,
+      },
+      segmentation: {
+        revenue_band: "50k_150k_annual",
+        cac_severity: results.cac >= values.aov * 2 ? "high" : "moderate",
+        high_cac_flag: results.cac >= values.aov * 2,
+        offer_opportunity_score: Math.round(results.savings / 24),
+      },
+    });
   }
 
   return (
@@ -168,6 +203,14 @@ export function CacCalculatorSection() {
             exiting traffic at a flat operational cost versus your current paid
             CAC. Conservative estimate uses a 63% CAC reduction.
           </div>
+
+          <button
+            type="button"
+            onClick={handleCalculate}
+            className="mt-6 w-full rounded-askrami bg-brand px-6 py-4 text-base font-bold text-white shadow-lg transition hover:bg-brand-deep focus:outline-none focus:ring-4 focus:ring-brand/20 sm:w-auto"
+          >
+            Send my CAC estimate
+          </button>
 
           <p className="mt-5 text-sm font-medium text-black">
             Ready to see your real numbers?{" "}
