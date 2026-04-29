@@ -8,7 +8,7 @@ import {
   Target,
   TrendingUp,
 } from "lucide-react";
-import { CacCalculatorSection } from "./ab-test-home/CacCalculatorSection";
+import { CacCalculatorSection } from "@/components/marketing/CacCalculatorSection";
 
 export const metadata: Metadata = {
   title: "I Want That! | useiwantthat.com",
