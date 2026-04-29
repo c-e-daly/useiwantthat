@@ -15,13 +15,17 @@ export const metadata: Metadata = {
   description: "Experience the consumer webapp in real-time.",
 };
 
-const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
 const DEFAULT_GTM_ID = "GTM-N6FH92M";
 const rawGtmId = process.env.NEXT_PUBLIC_GTM_ID;
+const rawGoogleTagId = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
 const GTM_ID =
   rawGtmId && /^GTM-[A-Z0-9]+$/i.test(rawGtmId)
     ? rawGtmId
     : DEFAULT_GTM_ID;
+const GOOGLE_TAG_ID =
+  rawGoogleTagId && /^(G|GT|AW|DC)-[A-Z0-9]+$/i.test(rawGoogleTagId)
+    ? rawGoogleTagId
+    : undefined;
 const POSTHOG_KEY =
   process.env.NEXT_PUBLIC_POSTHOG_KEY ?? process.env.POSTHOG_KEY;
 const POSTHOG_HOST =
@@ -97,10 +101,10 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         </PostHogProvider>
 
         {/* Analytics Scripts */}
-        {GA_MEASUREMENT_ID && (
+        {GOOGLE_TAG_ID && (
           <>
             <Script
-              src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
+              src={`https://www.googletagmanager.com/gtag/js?id=${GOOGLE_TAG_ID}`}
               strategy="afterInteractive"
             />
             <Script id="ga-init" strategy="afterInteractive">
@@ -108,7 +112,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
                 window.dataLayer = window.dataLayer || [];
                 function gtag(){dataLayer.push(arguments);}
                 gtag('js', new Date());
-                gtag('config', '${GA_MEASUREMENT_ID}', { page_path: window.location.pathname });
+                gtag('config', '${GOOGLE_TAG_ID}', { page_path: window.location.pathname });
               `}
             </Script>
           </>
