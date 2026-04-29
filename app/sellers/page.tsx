@@ -57,7 +57,7 @@ export default function SellersPage() {
 
       <section className="mx-auto max-w-6xl px-6 py-14">
         <div className="grid gap-5 md:grid-cols-3">
-          <article className="rounded-xl border border-slate-200 p-6">
+          <article id="price-builder" className="scroll-mt-24 rounded-xl border border-slate-200 p-6">
             <BarChart3 className="h-5 w-5 text-orange-600" />
             <h2 className="mt-3 text-xl font-semibold text-slate-900">Price Builder</h2>
             <p className="mt-2 text-sm text-slate-600">

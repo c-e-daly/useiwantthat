@@ -7,9 +7,25 @@ const SHOPIFY_APP_URL = "https://apps.shopify.com/iwtapp-shop";
 const DEMO_URL = "https://meetings.hubspot.com/chris-e-daly/customer-demo";
 
 export const metadata: Metadata = {
-  title: "CAC Calculator | I Want That!",
+  title:
+    "Prophet — Stop Paying the Ad Tax. Convert the Traffic You Already Have.",
   description:
-    "Calculate the real cost of paid acquisition and model organic revenue recovery with Prophet.",
+    "Prophet lets Shopify merchants accept customer-generated offers, counter automatically, and convert 3–5× more of their existing traffic — without spending another dollar on ads.",
+  openGraph: {
+    title: "Prophet — Convert Your Traffic. Not Someone Else's.",
+    description:
+      "Your store already has what it needs to grow. Prophet unlocks the revenue that's already in your traffic — with intelligent offers, automated counters, and exit intent that captures orders, not emails.",
+    images: ["https://useiwantthat.com/og-prophet.png"],
+    url: "https://useiwantthat.com",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Prophet — Convert Your Traffic. Not Someone Else's.",
+    description:
+      "Stop paying $5–$15 per click for visitors who leave. Prophet converts the traffic you already have with intelligent customer offers and automated decisions.",
+    images: ["https://useiwantthat.com/og-prophet.png"],
+  },
 };
 
 const ctaPoints = [
@@ -63,7 +79,8 @@ export default function CacCalculatorPage() {
                 </div>
                 <div>
                   <p className="text-sm font-bold text-black">
-                    Traffic you already paid for should convert before you buy it again.
+                    Traffic you already paid for should convert before you buy
+                    it again.
                   </p>
                   <p className="mt-1 text-sm text-neutral-muted">
                     Prophet focuses on the organic and direct sessions with no
@@ -74,7 +91,10 @@ export default function CacCalculatorPage() {
 
               <ul className="mt-5 space-y-3">
                 {ctaPoints.map((point) => (
-                  <li key={point} className="flex gap-3 text-sm text-neutral-muted">
+                  <li
+                    key={point}
+                    className="flex gap-3 text-sm text-neutral-muted"
+                  >
                     <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-brand" />
                     <span>{point}</span>
                   </li>

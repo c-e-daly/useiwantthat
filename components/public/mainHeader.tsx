@@ -3,10 +3,25 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { useSyncExternalStore } from 'react';
+import { ChevronDown } from 'lucide-react';
 
 const subscribe = () => () => {};
 const getServerSnapshot = () => false;
 const getHostnameSnapshot = () => window.location.hostname.startsWith('app.');
+const SHOPIFY_APP_URL = 'https://apps.shopify.com/iwtapp-shop';
+
+const toolsNavItems = [
+  {
+    href: '/tools/cac-calculator',
+    label: 'CAC Calculator',
+    description: 'Model ad tax and organic revenue recovery.',
+  },
+  {
+    href: '/sellers#price-builder',
+    label: 'Price Builder',
+    description: 'Test price elasticity and margin guardrails.',
+  },
+];
 
 export function MainHeader() {
   const isAppHost = useSyncExternalStore(
@@ -33,20 +48,48 @@ export function MainHeader() {
           />
         </Link>
 
-        {/* Navigation - SHOPPERS | SELLERS */}
-        <nav className="hidden md:flex space-x-8 text-sm font-medium">
+        {/* Navigation */}
+        <nav className="hidden items-center space-x-8 text-sm font-medium md:flex">
           <Link 
             href="/sellers"
             className="text-gray-900 hover:text-indigo-600 transition duration-150"
           >
             SELLERS
           </Link>
+          <div className="group relative">
+            <button
+              type="button"
+              className="flex items-center gap-1 text-gray-900 transition duration-150 hover:text-indigo-600 focus:outline-none focus-visible:text-indigo-600"
+              aria-haspopup="true"
+            >
+              TOOLS
+              <ChevronDown className="h-4 w-4 transition group-hover:rotate-180 group-focus-within:rotate-180" />
+            </button>
+            <div className="invisible absolute left-1/2 top-full z-50 mt-3 w-72 -translate-x-1/2 rounded-askrami border border-surface-border bg-white p-2 opacity-0 shadow-xl transition duration-150 group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100">
+              {toolsNavItems.map((item) => (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className="block rounded-askrami px-4 py-3 transition hover:bg-surface-subtle focus:bg-surface-subtle focus:outline-none"
+                >
+                  <span className="block text-sm font-semibold text-black">
+                    {item.label}
+                  </span>
+                  <span className="mt-1 block text-xs leading-relaxed text-neutral-muted">
+                    {item.description}
+                  </span>
+                </Link>
+              ))}
+            </div>
+          </div>
         </nav>
 
         {/* Far Right - CTA Button */}
         <div className="flex items-center space-x-4">
           <Link 
-            href="#" 
+            href={SHOPIFY_APP_URL}
+            target="_blank"
+            rel="noopener noreferrer"
             className="rounded-full bg-indigo-600 px-4 py-2 text-sm font-semibold text-white shadow-md hover:bg-indigo-700 transition duration-150"
           >
             Start on Shopify
