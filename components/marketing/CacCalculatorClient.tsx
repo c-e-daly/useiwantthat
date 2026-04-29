@@ -2,6 +2,12 @@
 
 import { useMemo, useState } from "react";
 
+declare global {
+  interface Window {
+    dataLayer?: unknown[];
+  }
+}
+
 type CalculatorState = {
   adSpend: number;
   cpc: number;
@@ -11,6 +17,28 @@ type CalculatorState = {
   orgCvr: number;
   prophetLift: number;
   orgVisitors: number;
+};
+
+type CalculatorResults = {
+  paidClicks: number;
+  paidConversions: number;
+  paidRevenue: number;
+  grossProfitPerOrder: number;
+  cac: number;
+  ordersBreakEven: number;
+  orgConvCurrent: number;
+  orgConvProphet: number;
+  additionalOrders: number;
+  additionalRevenue: number;
+  additionalGrossProfit: number;
+  annualUnlocked: number;
+  annualAdSpend: number;
+  annualAdRevenue: number;
+  orgRevenueCurrent: number;
+  prophetRoiVsAdSpendPct: number;
+  paidBar: number;
+  orgBar: number;
+  liftBar: number;
 };
 
 const initialState: CalculatorState = {
@@ -40,10 +68,25 @@ function clampFinite(value: number, fallback: number) {
   return Number.isFinite(value) ? value : fallback;
 }
 
+function getCacSeverity(adTaxRatio: number) {
+  if (adTaxRatio >= 3) return "critical";
+  if (adTaxRatio >= 2) return "high";
+  if (adTaxRatio >= 1) return "moderate";
+  return "healthy";
+}
+
+function getOfferOpportunityScore(
+  results: CalculatorResults
+) {
+  return Math.round(results.additionalRevenue / 24);
+}
+
 export function CacCalculatorClient() {
   const [values, setValues] = useState<CalculatorState>(initialState);
+  const [submittedResults, setSubmittedResults] =
+    useState<CalculatorResults | null>(null);
 
-  const results = useMemo(() => {
+  const results = useMemo<CalculatorResults>(() => {
     const adSpend = clampFinite(values.adSpend, 0);
     const cpc = clampFinite(values.cpc, 1) || 1;
     const aov = clampFinite(values.aov, 1);
@@ -71,6 +114,8 @@ export function CacCalculatorClient() {
     const annualAdRevenue = paidRevenue * 12;
     const orgRevenueCurrent = orgConvCurrent * aov;
     const maxBar = Math.max(paidRevenue, orgRevenueCurrent, additionalRevenue, 1);
+    const prophetRoiVsAdSpendPct =
+      annualAdSpend > 0 ? Math.round((annualUnlocked / annualAdSpend) * 100) : 0;
 
     return {
       paidClicks,
@@ -88,6 +133,7 @@ export function CacCalculatorClient() {
       annualAdSpend,
       annualAdRevenue,
       orgRevenueCurrent,
+      prophetRoiVsAdSpendPct,
       paidBar: Math.round((paidRevenue / maxBar) * 100),
       orgBar: Math.round((orgRevenueCurrent / maxBar) * 100),
       liftBar: Math.round((additionalRevenue / maxBar) * 100),
@@ -95,10 +141,55 @@ export function CacCalculatorClient() {
   }, [values]);
 
   function updateValue(field: keyof CalculatorState, rawValue: string) {
+    setSubmittedResults(null);
     setValues((current) => ({
       ...current,
       [field]: Number(rawValue),
     }));
+  }
+
+  function handleCalculate() {
+    setSubmittedResults(results);
+
+    if (typeof window === "undefined") return;
+
+    const adTaxRatio = values.aov > 0 ? results.cac / values.aov : 0;
+    const segmentation = {
+      revenue_band: "50k_150k_annual",
+      ad_tax_ratio: Number(adTaxRatio.toFixed(2)),
+      high_cac_flag: adTaxRatio >= 2,
+      cac_severity: getCacSeverity(adTaxRatio),
+      offer_opportunity_score: getOfferOpportunityScore(results),
+    };
+
+    window.dataLayer = window.dataLayer ?? [];
+    window.dataLayer.push({
+      event: "prophet_calculator_submit",
+      calculator_version: "1.0",
+      timestamp: new Date().toISOString(),
+      icp_persona: "fashion_apparel",
+      inputs: {
+        monthly_ad_spend: values.adSpend,
+        cost_per_click: values.cpc,
+        average_order_value: values.aov,
+        gross_margin_pct: values.margin,
+        paid_cvr_pct: values.paidCvr,
+        organic_cvr_pct: values.orgCvr,
+        prophet_lift_pct: values.prophetLift,
+        organic_visitors: values.orgVisitors,
+      },
+      outputs: {
+        cac: Math.round(results.cac),
+        orders_to_breakeven: results.ordersBreakEven,
+        gross_profit_per_order: Math.round(results.grossProfitPerOrder),
+        paid_revenue_monthly: Math.round(results.paidRevenue),
+        organic_lift_revenue_monthly: Math.round(results.additionalRevenue),
+        annual_revenue_unlocked: Math.round(results.annualUnlocked),
+        annual_ad_spend: Math.round(results.annualAdSpend),
+        prophet_roi_vs_ad_spend_pct: results.prophetRoiVsAdSpendPct,
+      },
+      segmentation,
+    });
   }
 
   return (
@@ -186,6 +277,34 @@ export function CacCalculatorClient() {
         />
       </div>
 
+      <button
+        type="button"
+        onClick={handleCalculate}
+        className="mt-6 w-full rounded-askrami bg-brand px-6 py-4 text-base font-bold text-white shadow-lg transition hover:bg-brand-deep focus:outline-none focus:ring-4 focus:ring-brand/20"
+      >
+        Calculate my savings
+      </button>
+
+      {!submittedResults ? (
+        <div className="mt-6 rounded-askrami border border-surface-border bg-surface-subtle p-5 text-center">
+          <p className="text-sm font-semibold text-black">
+            Your savings report will appear here.
+          </p>
+          <p className="mt-1 text-sm text-neutral-muted">
+            Choose your inputs, then calculate to reveal the CAC and organic
+            lift breakdown.
+          </p>
+        </div>
+      ) : (
+        <CalculatorResultsPanel results={submittedResults} />
+      )}
+    </div>
+  );
+}
+
+function CalculatorResultsPanel({ results }: { results: CalculatorResults }) {
+  return (
+    <>
       <div className="my-6 h-px bg-surface-border" />
 
       <p className="text-xs font-bold uppercase tracking-widest text-brand">
@@ -289,7 +408,7 @@ export function CacCalculatorClient() {
         against gross profit. Prophet&apos;s organic lift adds revenue at $0 CAC,
         so every dollar goes straight to margin contribution.
       </p>
-    </div>
+    </>
   );
 }
 
