@@ -10,7 +10,7 @@ export function Footer() {
           
           {/* Copyright */}
           <p className="text-sm text-gray-500 order-2 md:order-1 mt-4 md:mt-0">
-            &copy; {currentYear} iWantThat. All rights reserved.
+            &copy; {currentYear} I Want That! All rights reserved.
           </p>
 
           {/* Legal Links */}

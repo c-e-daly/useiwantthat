@@ -59,7 +59,7 @@ export async function LegalDocumentPage({ slug }: LegalDocumentPageProps) {
               {LEGAL_DOCUMENTS.map((item) => (
                 <Link
                   key={item.slug}
-                  href={`/${item.slug}`}
+                  href={item.path}
                   className={`block rounded-askrami border px-4 py-3 text-sm transition ${
                     item.slug === slug
                       ? "border-brand/20 bg-brand/5 font-semibold text-black"

@@ -32,7 +32,7 @@ export default function LegalHubPage() {
             {LEGAL_DOCUMENTS.map((document) => (
               <Link
                 key={document.slug}
-                href={`/${document.slug}`}
+                href={document.path}
                 className="rounded-[24px] border border-surface-border bg-white p-6 shadow-sm transition hover:border-brand/20 hover:shadow-md"
               >
                 <p className="text-xs font-bold uppercase tracking-widest text-brand">

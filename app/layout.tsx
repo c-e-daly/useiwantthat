@@ -16,7 +16,12 @@ export const metadata: Metadata = {
 };
 
 const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
-const GTM_ID = process.env.NEXT_PUBLIC_GTM_ID ?? "GTM-N6FH92M";
+const DEFAULT_GTM_ID = "GTM-N6FH92M";
+const rawGtmId = process.env.NEXT_PUBLIC_GTM_ID;
+const GTM_ID =
+  rawGtmId && /^GTM-[A-Z0-9]+$/i.test(rawGtmId)
+    ? rawGtmId
+    : DEFAULT_GTM_ID;
 const POSTHOG_KEY =
   process.env.NEXT_PUBLIC_POSTHOG_KEY ?? process.env.POSTHOG_KEY;
 const POSTHOG_HOST =

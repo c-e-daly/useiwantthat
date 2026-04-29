@@ -16,6 +16,7 @@ export type LegalDocumentMeta = {
   title: string;
   description: string;
   fileName: string;
+  path: string;
   legacyPath: string;
 };
 
@@ -26,6 +27,7 @@ export const LEGAL_DOCUMENTS: LegalDocumentMeta[] = [
     description:
       "Terms governing access to and use of I Want That! services and software.",
     fileName: "terms-of-service.md",
+    path: "/terms-of-service",
     legacyPath: "/terms-of-service-2/",
   },
   {
@@ -34,6 +36,7 @@ export const LEGAL_DOCUMENTS: LegalDocumentMeta[] = [
     description:
       "List of subprocessors that may process data on behalf of I Want That!.",
     fileName: "subprocessors.md",
+    path: "/subprocessors",
     legacyPath: "/subprocesors/",
   },
   {
@@ -42,6 +45,7 @@ export const LEGAL_DOCUMENTS: LegalDocumentMeta[] = [
     description:
       "How I Want That! collects, uses, shares, and protects personal information.",
     fileName: "privacy-policy.md",
+    path: "/privacy-policy",
     legacyPath: "/privacy-policy/",
   },
   {
@@ -50,6 +54,7 @@ export const LEGAL_DOCUMENTS: LegalDocumentMeta[] = [
     description:
       "How I Want That! uses cookies and related technologies across its services.",
     fileName: "cookie-policy.md",
+    path: "/cookie-policy",
     legacyPath: "/cookie-policy/",
   },
   {
@@ -58,6 +63,7 @@ export const LEGAL_DOCUMENTS: LegalDocumentMeta[] = [
     description:
       "Operational policy for customer account data access, retention, export, and deletion.",
     fileName: "customer-account-data-management.md",
+    path: "/customer-account-data-management",
     legacyPath: "/customer-account-data-management/",
   },
   {
@@ -66,6 +72,7 @@ export const LEGAL_DOCUMENTS: LegalDocumentMeta[] = [
     description:
       "Rules governing acceptable use, user conduct, and content standards.",
     fileName: "user-conduct-and-content-policy.md",
+    path: "/user-conduct-and-content-policy",
     legacyPath: "/user-conduct-and-content-policy/",
   },
   {
@@ -74,6 +81,7 @@ export const LEGAL_DOCUMENTS: LegalDocumentMeta[] = [
     description:
       "Guidelines for law enforcement, government, and regulatory data requests.",
     fileName: "law-enforcement-data-requests.md",
+    path: "/law-enforcement-data-requests",
     legacyPath: "/law-enforcement-data-requests/",
   },
 ];
