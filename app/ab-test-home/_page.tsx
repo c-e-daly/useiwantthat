@@ -55,7 +55,7 @@ export default function MarketingHomePage() {
           <div className="mt-20 max-w-5xl mx-auto">
             <div className="relative rounded-askrami border border-black/10 shadow-2xl bg-white p-2">
               {/* Browser Chrome Header */}
-              <div className="flex items-center gap-1.5 px-4 py-3 border-b border-surface-border bg-surface-subtle/50 rounded-t-[4px]">
+              <div className="flex items-center gap-1.5 px-4 py-3 border-b border-surface-border bg-surface-subtle/50 rounded-t-sm">
                 <div className="w-2.5 h-2.5 rounded-full bg-[#FF5F56]" />
                 <div className="w-2.5 h-2.5 rounded-full bg-[#FFBD2E]" />
                 <div className="w-2.5 h-2.5 rounded-full bg-[#27C93F]" />
@@ -65,7 +65,7 @@ export default function MarketingHomePage() {
               </div>
               
               {/* This is where your mobile-app-image goes */}
-              <div className="aspect-[16/9] bg-surface-subtle flex items-center justify-center overflow-hidden">
+              <div className="aspect-video bg-surface-subtle flex items-center justify-center overflow-hidden">
                  {/* Replace this div with your <Image /> component of the webapp */}
                  <div className="text-neutral-400 font-medium flex flex-col items-center">
                     <p>[ Your Mobile App Image Placeholder ]</p>
@@ -74,7 +74,7 @@ export default function MarketingHomePage() {
               </div>
 
               {/*  Floating Tooltip Demo */}
-              <div className="absolute -bottom-6 -right-6 md:right-10 md:bottom-20 max-w-[240px] bg-black text-white p-4 rounded-lg shadow-xl animate-bounce-subtle">
+              <div className="absolute -bottom-6 -right-6 md:right-10 md:bottom-20 max-w-60 bg-black text-white p-4 rounded-lg shadow-xl animate-bounce-subtle">
                 <p className="text-sm font-semibold">Step 1: Create an Offer</p>
                 <p className="text-[12px] opacity-80 mt-1">Users slide to set their own price instantly.</p>
                 <div className="mt-3 flex justify-between items-center">
