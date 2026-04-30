@@ -16,6 +16,7 @@
 - Bucket name: `blog-posts` (override with `SUPABASE_BLOG_BUCKET`).
 - Incoming post bundles are uploaded under `blog/incoming/YYYY/MM/[slug]/`.
 - The transfer agent uploads `_ready.json` last. The Supabase listener should only process incoming paths ending in `/_ready.json`.
+- Each incoming folder must include `post.md` and `manifest.json`.
 - Markdown prefix: `blog/markdown` (override with `SUPABASE_BLOG_MARKDOWN_PREFIX`).
 - SEO prefix: `blog/seo` (override with `SUPABASE_BLOG_SEO_PREFIX`).
 - Image prefix: `blog/images`.
@@ -75,6 +76,14 @@
 - `/blog/[pillar]` renders the pillar landing page from published posts in that pillar.
 - `lib/blog/links.ts` exposes `validateExternalLinks(markdown)` for the Google Drive/Supabase agent step. Keep this out of request-time rendering so slow third-party sites do not block page loads.
 - `lib/blog/frontmatter.ts` parses the generated YAML subset and strips frontmatter before rendering markdown body HTML.
+
+## Incoming bundle contract
+
+`post.md` contains the complete Prophet YAML frontmatter block followed by the Google Doc markdown body.
+
+`manifest.json` identifies the source doc/folder, author metadata, markdown filename, and asset filenames. Asset filenames should match the files uploaded into the same incoming folder.
+
+`_ready.json` is the final upload and processing trigger. It can repeat the slug, source doc URL, upload timestamp, and list of expected files.
 
 ## Revalidate payload examples
 

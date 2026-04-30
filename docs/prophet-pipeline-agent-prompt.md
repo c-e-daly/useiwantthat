@@ -66,6 +66,47 @@ Example `_ready.json`:
 }
 ```
 
+`post.md` structure:
+
+```md
+---
+[complete Prophet YAML frontmatter]
+---
+
+# Article H1
+
+Article body exported from Google Docs as markdown.
+```
+
+`manifest.json` structure:
+
+```json
+{
+  "slug": "bfcm-discounts-destroy-shopify-margins",
+  "source": "google-drive",
+  "sourceDocUrl": "https://docs.google.com/...",
+  "sourceFolderUrl": "https://drive.google.com/...",
+  "authorName": "Author Name",
+  "authorRole": "Author role",
+  "exportedAt": "2026-05-01T14:29:00.000Z",
+  "markdownFile": "post.md",
+  "assets": [
+    {
+      "filename": "hero.png",
+      "role": "hero",
+      "contentType": "image/png"
+    },
+    {
+      "filename": "og.png",
+      "role": "og",
+      "contentType": "image/png"
+    }
+  ]
+}
+```
+
+The transfer agent should keep asset filenames stable between `manifest.json`, markdown image references, and the uploaded objects in the incoming folder.
+
 ---
 
 ## Step-by-step instructions
