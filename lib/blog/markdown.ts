@@ -16,7 +16,11 @@ function renderInlineMarkdown(line: string): string {
   html = html.replace(/`([^`]+)`/g, "<code>$1</code>");
   html = html.replace(/\*\*([^*]+)\*\*/g, "<strong>$1</strong>");
   html = html.replace(/\*([^*]+)\*/g, "<em>$1</em>");
-  html = html.replace(/\[([^\]]+)\]\((https?:\/\/[^\s)]+)\)/g, '<a href="$2" target="_blank" rel="noopener noreferrer">$1</a>');
+  html = html.replace(/\[([^\]]+)\]\(([^)\s]+)\)/g, (_match, text: string, href: string) => {
+    const safeHref = escapeHtml(href);
+    const target = /^https?:\/\//i.test(href) ? ' target="_blank" rel="noopener noreferrer"' : "";
+    return `<a href="${safeHref}"${target}>${text}</a>`;
+  });
 
   return html;
 }

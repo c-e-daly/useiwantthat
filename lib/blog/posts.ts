@@ -1,9 +1,12 @@
 import { cache } from "react";
 import { notFound } from "next/navigation";
+import { parseMarkdownWithFrontmatter } from "@/lib/blog/frontmatter";
 import { markdownToHtml } from "@/lib/blog/markdown";
+import { BLOG_PILLARS, getPostPath } from "@/lib/blog/pillars";
 import { createBlogSupabaseAdminClient } from "@/lib/blog/supabaseAdmin";
 import { getBlogStorageConfig } from "@/lib/blog/storageConfig";
 import type { BlogPostDetail, BlogPostRecord, BlogPostSummary } from "@/lib/blog/types";
+import type { ContentPillar, PostFrontmatter } from "@/lib/blog/prophet-frontmatter.types";
 import type { Json } from "@/src/types/database.types";
 
 const {
@@ -19,15 +22,63 @@ type SeoSidecar = {
   gtm_layer?: Json;
 };
 
-function mapSummary(row: BlogPostRecord): BlogPostSummary {
+const SITE_URL = (process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.useiwantthat.com").replace(/\/+$/, "");
+
+function isContentPillar(value: unknown): value is ContentPillar {
+  return typeof value === "string" && value in BLOG_PILLARS;
+}
+
+function resolveAbsoluteUrl(value: string | null | undefined): string | null {
+  if (!value) {
+    return null;
+  }
+
+  if (/^https?:\/\//i.test(value)) {
+    return value;
+  }
+
+  return `${SITE_URL}/${value.replace(/^\/+/, "")}`;
+}
+
+function resolveOgImageUrl(frontmatter: Partial<PostFrontmatter> | null, row: BlogPostRecord) {
+  return resolveAbsoluteUrl(frontmatter?.og?.image) ?? row.cover_image_url;
+}
+
+function readFirstNonEmpty(...values: Array<string | null | undefined>) {
+  return values.find((value) => typeof value === "string" && value.trim().length > 0);
+}
+
+function buildCanonicalUrl(slug: string, pillar: ContentPillar | null) {
+  return `${SITE_URL}${getPostPath(slug, pillar)}`;
+}
+
+function getSummaryTitle(row: BlogPostRecord, frontmatter?: Partial<PostFrontmatter> | null) {
+  return frontmatter?.og?.title || frontmatter?.seo?.metaTitle || row.title;
+}
+
+function getSummaryExcerpt(row: BlogPostRecord, frontmatter?: Partial<PostFrontmatter> | null) {
+  return frontmatter?.aeo?.tldr ?? row.excerpt ?? frontmatter?.seo?.metaDescription ?? "";
+}
+
+function mapSummary(row: BlogPostRecord, frontmatter: Partial<PostFrontmatter> | null = null): BlogPostSummary {
+  const pillar = isContentPillar(frontmatter?.pillar) ? frontmatter.pillar : null;
+
   return {
     slug: row.slug,
-    title: row.title,
-    excerpt: row.excerpt ?? "",
+    title: getSummaryTitle(row, frontmatter),
+    excerpt: getSummaryExcerpt(row, frontmatter),
     persona: row.persona,
-    tags: row.tags ?? [],
-    publishedAt: row.published_at ?? row.created_at,
-    coverImageUrl: row.cover_image_url,
+    tags: frontmatter?.tags?.length ? frontmatter.tags : row.tags ?? [],
+    publishedAt: frontmatter?.publishedAt || row.published_at || row.created_at,
+    updatedAt: frontmatter?.updatedAt || row.updated_at,
+    coverImageUrl: resolveOgImageUrl(frontmatter, row),
+    path: getPostPath(row.slug, pillar),
+    pillar,
+    pillarTitle: pillar ? BLOG_PILLARS[pillar].title : null,
+    template: frontmatter?.template ?? null,
+    readingTimeMinutes: frontmatter?.readingTimeMinutes ?? null,
+    featured: frontmatter?.featured ?? false,
+    aeoTldr: frontmatter?.aeo?.tldr ?? null,
   };
 }
 
@@ -48,7 +99,19 @@ export const getPublishedPostSummaries = cache(async (limit = 1000): Promise<Blo
     throw new Error(`Failed to fetch published blog posts: ${error.message}`);
   }
 
-  return (data as BlogPostRecord[]).map(mapSummary);
+  const rows = data as BlogPostRecord[];
+
+  return Promise.all(
+    rows.map(async (row) => {
+      try {
+        const markdown = await getMarkdownFromStorage(row.markdown_path);
+        const { frontmatter } = parseMarkdownWithFrontmatter(markdown);
+        return mapSummary(row, frontmatter);
+      } catch {
+        return mapSummary(row);
+      }
+    })
+  );
 });
 
 async function getPostRecordBySlug(slug: string): Promise<BlogPostRecord | null> {
@@ -139,17 +202,39 @@ export const getPostDetailBySlug = cache(async (slug: string): Promise<BlogPostD
     notFound();
   }
 
-  const markdown = await getMarkdownFromStorage(row.markdown_path);
+  const rawMarkdown = await getMarkdownFromStorage(row.markdown_path);
+  const { frontmatter, content: markdown } = parseMarkdownWithFrontmatter(rawMarkdown);
   const seoSidecar = await getSeoSidecarFromStorage(row);
   const html = markdownToHtml(markdown);
+  const pillar = isContentPillar(frontmatter?.pillar) ? frontmatter.pillar : null;
+  const summary = mapSummary(row, frontmatter);
 
   return {
-    ...mapSummary(row),
-    seoTitle: row.seo_title ?? seoSidecar?.seo_title ?? row.title,
-    seoDescription: row.seo_description ?? seoSidecar?.seo_description ?? row.excerpt ?? "",
-    canonicalUrl: row.canonical_url ?? seoSidecar?.canonical_url ?? null,
+    ...summary,
+    seoTitle: readFirstNonEmpty(row.seo_title, seoSidecar?.seo_title, frontmatter?.seo?.metaTitle, row.title) ?? row.title,
+    seoDescription:
+      readFirstNonEmpty(row.seo_description, seoSidecar?.seo_description, frontmatter?.seo?.metaDescription, row.excerpt) ?? "",
+    canonicalUrl:
+      readFirstNonEmpty(row.canonical_url, seoSidecar?.canonical_url, frontmatter?.canonical) ?? buildCanonicalUrl(row.slug, pillar),
     markdownPath: row.markdown_path,
+    markdown,
     html,
     gtmLayer: row.gtm_layer ?? seoSidecar?.gtm_layer ?? null,
+    frontmatter,
+    useCases: frontmatter?.useCases ?? [],
+    funnelStage: frontmatter?.funnelStage ?? null,
+    wordCount: frontmatter?.wordCount ?? null,
+    authorName: frontmatter?.author?.name ?? null,
+    authorRole: frontmatter?.author?.role ?? null,
+    og: frontmatter?.og ?? null,
+    twitter: frontmatter?.twitter ?? null,
+    aeo: frontmatter?.aeo ?? null,
+    schema: frontmatter?.schema ?? null,
+    internalLinks: frontmatter?.internalLinks ?? null,
   };
+});
+
+export const getPublishedPostsForPillar = cache(async (pillar: ContentPillar): Promise<BlogPostSummary[]> => {
+  const posts = await getPublishedPostSummaries();
+  return posts.filter((post) => post.pillar === pillar);
 });

@@ -14,8 +14,13 @@
 
 - Storage is expected to be private (non-public bucket).
 - Bucket name: `blog-posts` (override with `SUPABASE_BLOG_BUCKET`).
+- Incoming post bundles are uploaded under `blog/incoming/YYYY/MM/[slug]/`.
+- The transfer agent uploads `_ready.json` last. The Supabase listener should only process incoming paths ending in `/_ready.json`.
 - Markdown prefix: `blog/markdown` (override with `SUPABASE_BLOG_MARKDOWN_PREFIX`).
 - SEO prefix: `blog/seo` (override with `SUPABASE_BLOG_SEO_PREFIX`).
+- Image prefix: `blog/images`.
+- Processed marker prefix: `blog/processed`.
+- Review prefix: `blog/review`.
 - Period-based folders are supported, for example:
   - `blog/markdown/2026/04/price-elasticity-for-shopify.md`
   - `blog/seo/2026/04/price-elasticity-for-shopify.json`
@@ -39,19 +44,37 @@
 ## Agent publish sequence
 
 1. Export Google Doc to markdown.
-2. Generate SEO JSON payload (persona/CRM targets, canonical, GTM layer).
-3. Upload markdown and SEO JSON to private Supabase Storage.
-4. Upsert row in `public.blog_posts` with:
+2. Generate Prophet YAML frontmatter at the top of the markdown using `docs/prophet-frontmatter-schema.md`.
+3. Run frontmatter validation before publish. If `pipeline.validationPassed=false`, keep the file in review and do not mark the row published.
+4. Upload the complete bundle to `blog/incoming/YYYY/MM/[slug]/`, including markdown, manifest, and images.
+5. Upload `_ready.json` last to trigger the listener.
+6. Listener validates the folder and promotes files to `blog/markdown`, `blog/images`, `blog/seo`, or `blog/review`.
+7. Upsert row in `public.blog_posts` with:
    - `slug`, `title`, `excerpt`, `persona`, `tags`
    - `markdown_path`
    - optional `seo_path`
    - optional direct DB fields: `seo_title`, `seo_description`, `canonical_url`, `gtm_layer`
    - `status='published'`
    - `published_at`
-5. Call revalidate endpoint:
+8. Call revalidate endpoint:
    - `POST /api/revalidate`
    - Header: `x-revalidate-token: <REVALIDATE_TOKEN>`
    - Body: `{ "slug": "your-slug" }`
+
+## Resolved app contract
+
+- The markdown file is the source of truth for Prophet frontmatter fields: pillar, template, SEO, AEO, schema flags, internal links, author, reading time, and CTA metadata.
+- The `blog_posts` row remains the publish index and storage pointer. It controls status, scheduled publish filtering, and backwards-compatible card fields.
+- Canonical article URLs use the Prophet pillar route when a pillar is present:
+  - `/blog/conversion/[slug]`
+  - `/blog/acquisition/[slug]`
+  - `/blog/pricing/[slug]`
+  - `/blog/inventory/[slug]`
+  - `/blog/agentic/[slug]`
+- Legacy `/blog/[slug]` still renders posts, so existing links and revalidation payloads keep working.
+- `/blog/[pillar]` renders the pillar landing page from published posts in that pillar.
+- `lib/blog/links.ts` exposes `validateExternalLinks(markdown)` for the Google Drive/Supabase agent step. Keep this out of request-time rendering so slow third-party sites do not block page loads.
+- `lib/blog/frontmatter.ts` parses the generated YAML subset and strips frontmatter before rendering markdown body HTML.
 
 ## Revalidate payload examples
 
