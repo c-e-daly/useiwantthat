@@ -8,11 +8,14 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
+    "blog:ingest:drive": "node --import tsx scripts/blog-ingest-google-drive.ts",
+    "blog:ingest:drive:upload": "node --import tsx scripts/blog-ingest-google-drive.ts --upload",
     "supabase:types": "node scripts/sync-supabase-types.mjs"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.105.1",
     "@vercel/speed-insights": "^2.0.0",
+    "googleapis": "^171.4.0",
     "lucide-react": "^1.12.0",
     "next": "16.2.4",
     "posthog-js": "^1.372.3",
@@ -29,6 +32,7 @@
     "eslint-config-next": "16.2.4",
     "supabase": "^2.95.5",
     "tailwindcss": "^4",
+    "tsx": "^4.21.0",
     "typescript": "^5"
   }
 }
