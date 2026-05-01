@@ -270,6 +270,13 @@ tags:
 # Featured article — surfaces in homepage or pillar page hero slots.
 featured: false
 
+# Pillar cluster role.
+# Pillar posts are canonical authority pages for a topic cluster.
+# Branch posts support one pillar post and should link back to pillarPostSlug.
+pillarPost: false
+pillarBranch: false
+pillarPostSlug: ""  # required when pillarBranch: true; empty on the pillar post itself
+
 # Holiday content flag — included in holiday content cluster.
 holiday: false
 
@@ -346,17 +353,28 @@ reason to `pipeline.blockReasons`. Non-blocking rules log a warning but do not b
 
 ---
 
-## Pillar → URL mapping
+## Pillar → Cluster Mapping
 
-| Pillar field value | URL path prefix |
-|-------------------|-----------------|
-| conversion-rate-optimisation | /blog/conversion |
-| customer-acquisition-cost | /blog/acquisition |
-| pricing-strategy | /blog/pricing |
-| inventory-management | /blog/inventory |
-| agentic-commerce | /blog/agentic |
+The canonical URL for every post is `/blog/[slug]`.
 
-Final URL: `https://iwantthat.io/[pillar-prefix]/[slug]`
+Use `pillar`, `pillarPost`, `pillarBranch`, `pillarPostSlug`, and internal links
+to establish pillar/branch relationships. A pillar post uses:
+
+```yaml
+pillarPost: true
+pillarBranch: false
+pillarPostSlug: ""
+```
+
+A branch post uses:
+
+```yaml
+pillarPost: false
+pillarBranch: true
+pillarPostSlug: "conversion-marketing-tactics-for-shopify-stores"
+```
+
+Final URL: `https://iwantthat.io/blog/[slug]`
 
 ---
 
@@ -369,7 +387,7 @@ Final URL: `https://iwantthat.io/[pillar-prefix]/[slug]`
    drop articles where this is `false` into a `pending_review` bucket instead of
    the `published` bucket.
 4. `canonical` field should be populated by NextJS at build time from
-   `process.env.NEXT_PUBLIC_SITE_URL + pillar-prefix + slug` — not hardcoded
+   `process.env.NEXT_PUBLIC_SITE_URL + "/blog/" + slug` — not hardcoded
    by the agent, so staging and production environments resolve correctly.
 5. The `og.image` path is relative to Supabase storage. NextJS should prepend
    the Supabase storage base URL at render time.

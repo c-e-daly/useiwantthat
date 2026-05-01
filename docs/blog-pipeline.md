@@ -62,17 +62,39 @@
    - Header: `x-revalidate-token: <REVALIDATE_TOKEN>`
    - Body: `{ "slug": "your-slug" }`
 
+## Private preview sequence
+
+To stage a post for approval without making it public:
+
+```bash
+npm run blog:preview:incoming -- --slug=your-slug
+```
+
+This promotes the incoming bundle into the app markdown path and upserts
+`public.blog_posts.status='draft'` with `published_at=null`. Draft rows are not
+returned by the public blog index, sitemap, or `/blog/[slug]` route.
+
+Preview the draft at:
+
+```txt
+/blog/preview/[slug]?token=$BLOG_PREVIEW_TOKEN
+```
+
+The preview route is request-time rendered, requires `BLOG_PREVIEW_TOKEN`, and
+sets `noindex,nofollow`. To approve the post, rerun the publisher without
+`--draft`:
+
+```bash
+npm run blog:publish:incoming -- --slug=your-slug
+```
+
 ## Resolved app contract
 
 - The markdown file is the source of truth for Prophet frontmatter fields: pillar, template, SEO, AEO, schema flags, internal links, author, reading time, and CTA metadata.
 - The `blog_posts` row remains the publish index and storage pointer. It controls status, scheduled publish filtering, and backwards-compatible card fields.
-- Canonical article URLs use the Prophet pillar route when a pillar is present:
-  - `/blog/conversion/[slug]`
-  - `/blog/acquisition/[slug]`
-  - `/blog/pricing/[slug]`
-  - `/blog/inventory/[slug]`
-  - `/blog/agentic/[slug]`
-- Legacy `/blog/[slug]` still renders posts, so existing links and revalidation payloads keep working.
+- Canonical article URLs use the short post route: `/blog/[slug]`.
+- Pillar/branch relationships are expressed in frontmatter with `pillarPost`,
+  `pillarBranch`, and `pillarPostSlug`, plus reciprocal internal links.
 - `/blog/[pillar]` renders the pillar landing page from published posts in that pillar.
 - `lib/blog/links.ts` exposes `validateExternalLinks(markdown)` for the Google Drive/Supabase agent step. Keep this out of request-time rendering so slow third-party sites do not block page loads.
 - `lib/blog/frontmatter.ts` parses the generated YAML subset and strips frontmatter before rendering markdown body HTML.

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import BlogPostPage, { generateMetadata as generateLegacyMetadata } from "@/app/blog/[slug]/page";
-import { getPillarBySegment } from "@/lib/blog/pillars";
+import { BLOG_PILLARS, getPillarBySegment } from "@/lib/blog/pillars";
 import { getPostDetailBySlug, getPublishedPostSummaries } from "@/lib/blog/posts";
 
 type PillarPostPageProps = {
@@ -16,7 +16,7 @@ export async function generateStaticParams() {
   return posts
     .filter((post) => post.pillar)
     .map((post) => ({
-      slug: post.path.split("/")[2],
+      slug: post.pillar ? BLOG_PILLARS[post.pillar].segment : "",
       postSlug: post.slug,
     }));
 }

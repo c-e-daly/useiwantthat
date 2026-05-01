@@ -211,15 +211,7 @@ The transfer agent should keep asset filenames stable between `manifest.json`, m
 
 ### Step 8 — Generate internal linking fields
 
-- internalLinks.pillarPage: look up the pillar URL prefix from the mapping below and construct the pillar page reference. Title is the pillar cornerstone article title (use the pillar name as a proxy if you don't know the exact title).  
-    
-  Pillar URL prefix mapping:  
-    
-  - conversion-rate-optimisation → /blog/conversion  
-  - customer-acquisition-cost → /blog/acquisition  
-  - pricing-strategy → /blog/pricing  
-  - inventory-management → /blog/inventory  
-  - agentic-commerce → /blog/agentic
+- internalLinks.pillarPage: point to the pillar post for this topic cluster when known. Use `/blog/[pillar-post-slug]`, not `/blog/[pillar]/[slug]`. If no pillar post is known yet, use the best planned pillar slug and mark it for human review.
 
 
 - internalLinks.relatedArticles: suggest 2–4 articles based on pillar and useCases. You will not know the exact slugs — use descriptive placeholder slugs in the format \[topic\]-\[qualifier\]. The human reviewer will confirm or replace these before publish. Mark with a comment \# REVIEW in the YAML.  
@@ -249,6 +241,10 @@ The transfer agent should keep asset filenames stable between `manifest.json`, m
 - author: copy from hint.  
 - tags: 3–6 specific tags. Derive from pillar \+ useCases \+ primaryKeyword. Avoid generic tags like "shopify" or "ecommerce" — use specific ones like "clearance-strategy" or "bfcm-conversion".  
 - featured: false by default. Human sets to true for cornerstone articles.  
+- Set pillarPost and pillarBranch:
+  - Pillar authority article: `pillarPost: true`, `pillarBranch: false`, `pillarPostSlug: ""`.
+  - Supporting branch article: `pillarPost: false`, `pillarBranch: true`, `pillarPostSlug: "[pillar-post-slug]"`.
+  - If unknown, default to `pillarPost: false`, `pillarBranch: false`, `pillarPostSlug: ""` and let a human assign the cluster.
 - holiday: true if body is substantively about BFCM, holiday selling, or seasonal campaigns. Set holidayEvents accordingly.  
 - sourceDocUrl: copy from hint.
 

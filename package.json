@@ -10,6 +10,8 @@
     "lint": "eslint",
     "blog:ingest:drive": "node --import tsx scripts/blog-ingest-google-drive.ts",
     "blog:ingest:drive:upload": "node --import tsx scripts/blog-ingest-google-drive.ts --upload",
+    "blog:publish:incoming": "node --import tsx scripts/blog-publish-incoming.ts",
+    "blog:preview:incoming": "node --import tsx scripts/blog-publish-incoming.ts --draft",
     "supabase:types": "node scripts/sync-supabase-types.mjs"
   },
   "dependencies": {

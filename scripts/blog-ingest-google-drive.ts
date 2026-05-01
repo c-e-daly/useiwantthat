@@ -20,6 +20,7 @@ type IngestState = Record<
     slug: string;
     ingestedAt: string;
     storagePrefix: string;
+    assetsSignature?: string;
   }
 >;
 
@@ -73,22 +74,43 @@ function formatMonthPath(date = new Date()) {
   return `${year}/${month}`;
 }
 
-function stripFrontmatter(markdown: string) {
-  const normalized = markdown.replace(/\r\n/g, "\n");
+function previewText(value: string, length = 500) {
+  return value
+    .slice(0, length)
+    .replace(/\r/g, "\\r")
+    .replace(/\n/g, "\\n\n");
+}
 
-  if (!normalized.startsWith("---\n")) {
+function isFrontmatterDelimiter(line: string) {
+  return /^\\?---\s*$/.test(line.trim());
+}
+
+function normalizeFrontmatterLine(line: string) {
+  return line
+    .replace(/[ \t]+$/g, "")
+    .replace(/^([ \t]*)\\(?=---\s*$)/, "$1")
+    .replace(/^([ \t]*)\\(?=-\s+)/, "$1");
+}
+
+function stripFrontmatter(markdown: string) {
+  const normalized = markdown
+    .replace(/\r\n/g, "\n")
+    .replace(/^\uFEFF/, "")
+    .replace(/^(?:[ \t]*\n)+/, "");
+  const lines = normalized.split("\n");
+
+  if (!isFrontmatterDelimiter(lines[0] ?? "")) {
     return { frontmatter: null as string | null, body: normalized };
   }
 
-  const closingIndex = normalized.indexOf("\n---", 4);
+  const closingIndex = lines.findIndex((line, index) => index > 0 && isFrontmatterDelimiter(line));
   if (closingIndex < 0) {
     return { frontmatter: null as string | null, body: normalized };
   }
 
-  const bodyStart = normalized.indexOf("\n", closingIndex + 4);
   return {
-    frontmatter: normalized.slice(0, closingIndex + 4),
-    body: bodyStart >= 0 ? normalized.slice(bodyStart + 1) : "",
+    frontmatter: lines.slice(0, closingIndex + 1).map(normalizeFrontmatterLine).join("\n"),
+    body: lines.slice(closingIndex + 1).join("\n").replace(/^\n/, ""),
   };
 }
 
@@ -124,16 +146,79 @@ function extractFrontmatterSlug(frontmatter: string | null) {
   return frontmatter.match(/\nslug:\s*["']?([a-z0-9-]+)["']?\s*(?:\n|$)/)?.[1];
 }
 
-function ensurePostMarkdown(markdown: string) {
+function yamlString(value: string) {
+  return `"${value.replace(/\\/g, "\\\\").replace(/"/g, '\\"')}"`;
+}
+
+function upsertTopLevelFrontmatterString(frontmatter: string, key: string, value: string | undefined) {
+  if (!value) {
+    return frontmatter;
+  }
+
+  const normalized = frontmatter.replace(/\r\n/g, "\n");
+  const line = `${key}: ${yamlString(value)}`;
+
+  if (new RegExp(`^${key}:`, "m").test(normalized)) {
+    return normalized.replace(new RegExp(`^${key}:.*$`, "m"), line);
+  }
+
+  return normalized.replace(/\n---\s*$/, `\n${line}\n---`);
+}
+
+function replaceNestedFrontmatterString(frontmatter: string, section: string, key: string, value: string) {
+  const normalized = frontmatter.replace(/\r\n/g, "\n");
+  const sectionPattern = new RegExp(`(^${section}:\\n)([\\s\\S]*?)(?=^[A-Za-z][A-Za-z0-9]*:|^---\\s*$)`, "m");
+  const match = normalized.match(sectionPattern);
+
+  if (!match) {
+    return normalized;
+  }
+
+  const sectionBody = match[2];
+  const linePattern = new RegExp(`^(\\s{2}${key}:\\s*).*$`, "m");
+  const nextSectionBody = linePattern.test(sectionBody)
+    ? sectionBody.replace(linePattern, `$1${yamlString(value)}`)
+    : `${sectionBody.replace(/\n?$/, "\n")}  ${key}: ${yamlString(value)}\n`;
+
+  return normalized.replace(sectionPattern, `${match[1]}${nextSectionBody}`);
+}
+
+function replaceArticleSchemaImage(frontmatter: string, value: string) {
+  const normalized = frontmatter.replace(/\r\n/g, "\n");
+  return normalized.replace(/^(\s{4}image:\s*).*$/m, `$1${yamlString(value)}`);
+}
+
+function updateFrontmatterImages(postMarkdown: string, imageUrl: string | undefined) {
+  if (!imageUrl) {
+    return postMarkdown;
+  }
+
+  const parsed = stripFrontmatter(postMarkdown);
+
+  if (!parsed.frontmatter) {
+    return postMarkdown;
+  }
+
+  let frontmatter = replaceNestedFrontmatterString(parsed.frontmatter, "og", "image", imageUrl);
+  frontmatter = replaceNestedFrontmatterString(frontmatter, "twitter", "image", imageUrl);
+  frontmatter = replaceArticleSchemaImage(frontmatter, imageUrl);
+
+  return `${frontmatter}\n${parsed.body}`;
+}
+
+function ensurePostMarkdown(markdown: string, sourceDocUrl?: string) {
   const parsed = stripFrontmatter(markdown);
   const title = firstHeading(parsed.body) ?? "untitled-post";
   const slug = extractFrontmatterSlug(parsed.frontmatter) ?? slugify(title);
+  const frontmatter = parsed.frontmatter
+    ? upsertTopLevelFrontmatterString(parsed.frontmatter, "sourceDocUrl", sourceDocUrl)
+    : null;
 
   return {
     slug,
-    hasFrontmatter: Boolean(parsed.frontmatter),
+    hasFrontmatter: Boolean(frontmatter),
     body: parsed.body,
-    postMarkdown: parsed.frontmatter ? markdown.replace(/\r\n/g, "\n") : parsed.body,
+    postMarkdown: frontmatter ? `${frontmatter}\n${parsed.body}` : parsed.body,
   };
 }
 
@@ -172,6 +257,36 @@ function buildReady(input: {
   };
 }
 
+function assetSignature(assets: ManifestAsset[]) {
+  return assets
+    .map((asset) => `${asset.filename}:${asset.contentType}:${asset.role}`)
+    .sort()
+    .join("|");
+}
+
+function selectPrimaryImageAsset(assets: ManifestAsset[]) {
+  return (
+    assets.find((asset) => asset.role === "og") ??
+    assets.find((asset) => asset.role === "hero") ??
+    assets[0]
+  );
+}
+
+function buildStoragePublicUrl(bucket: string, path: string) {
+  const explicitStorageUrl = readEnv("SUPABASE_STORAGE_PUBLIC_URL");
+  const url = readEnv("SUPABASE_URL") ?? readEnv("NEXT_PUBLIC_SUPABASE_URL");
+
+  if (explicitStorageUrl) {
+    return `${explicitStorageUrl.replace(/\/+$/, "")}/${path.replace(/^\/+/, "")}`;
+  }
+
+  if (url) {
+    return `${url.replace(/\/+$/, "")}/storage/v1/object/public/${bucket}/${path.replace(/^\/+/, "")}`;
+  }
+
+  return path;
+}
+
 function safeFilename(value: string) {
   return basenameFromPath(value)
     .toLowerCase()
@@ -198,23 +313,53 @@ function assetRole(filename: string) {
   return "article";
 }
 
-async function listImageAssets(drive: ReturnType<typeof google.drive>, sourceFolderId: string, docName: string, slug: string) {
-  const folderResponse = await drive.files.list({
-    q: `'${sourceFolderId}' in parents and mimeType='${GOOGLE_FOLDER_MIME_TYPE}' and trashed=false`,
+function assetMatchesPost(filename: string, docName: string, slug: string) {
+  const normalized = safeFilename(filename);
+  const safeDocName = safeFilename(docName);
+  const prefixes = [slug, safeDocName].filter(Boolean);
+
+  return prefixes.some((prefix) => normalized.startsWith(`${prefix}-`) || normalized.startsWith(`${prefix}_`));
+}
+
+async function listChildFolders(drive: ReturnType<typeof google.drive>, parentId: string) {
+  const response = await drive.files.list({
+    q: `'${parentId}' in parents and mimeType='${GOOGLE_FOLDER_MIME_TYPE}' and trashed=false`,
     fields: "files(id, name)",
     pageSize: 100,
     supportsAllDrives: true,
     includeItemsFromAllDrives: true,
   });
-  const candidateNames = new Set([docName, `${docName} assets`, slug, `${slug} assets`].map((value) => value.toLowerCase()));
-  const assetFolder = folderResponse.data.files?.find((file) => file.id && file.name && candidateNames.has(file.name.toLowerCase()));
 
-  if (!assetFolder?.id) {
-    return [];
+  return response.data.files ?? [];
+}
+
+async function findAssetFolder(drive: ReturnType<typeof google.drive>, sourceFolderId: string, docName: string, slug: string) {
+  const candidateNames = new Set([docName, `${docName} assets`, slug, `${slug} assets`].map((value) => value.toLowerCase()));
+  const containerNames = new Set(["images", "image", "assets", "blog images"]);
+  const sourceFolders = await listChildFolders(drive, sourceFolderId);
+  const directAssetFolder = sourceFolders.find((file) => file.id && file.name && candidateNames.has(file.name.toLowerCase()));
+
+  if (directAssetFolder?.id) {
+    return directAssetFolder;
   }
 
+  const assetContainers = sourceFolders.filter((file) => file.id && file.name && containerNames.has(file.name.toLowerCase()));
+
+  for (const container of assetContainers) {
+    const nestedFolders = await listChildFolders(drive, container.id as string);
+    const nestedAssetFolder = nestedFolders.find((file) => file.id && file.name && candidateNames.has(file.name.toLowerCase()));
+
+    if (nestedAssetFolder?.id) {
+      return nestedAssetFolder;
+    }
+  }
+
+  return null;
+}
+
+async function listImagesInFolder(drive: ReturnType<typeof google.drive>, folderId: string) {
   const imageResponse = await drive.files.list({
-    q: `'${assetFolder.id}' in parents and mimeType contains 'image/' and trashed=false`,
+    q: `'${folderId}' in parents and mimeType contains 'image/' and trashed=false`,
     fields: "files(id, name, mimeType)",
     pageSize: 100,
     supportsAllDrives: true,
@@ -228,6 +373,36 @@ async function listImageAssets(drive: ReturnType<typeof google.drive>, sourceFol
       filename: safeFilename(file.name as string),
       contentType: file.mimeType as string,
     }));
+}
+
+async function listImageAssets(drive: ReturnType<typeof google.drive>, sourceFolderId: string, docName: string, slug: string) {
+  const assetFolder = await findAssetFolder(drive, sourceFolderId, docName, slug);
+
+  if (assetFolder?.id) {
+    return listImagesInFolder(drive, assetFolder.id);
+  }
+
+  const rootImages = await listImagesInFolder(drive, sourceFolderId);
+  const matchingRootImages = rootImages.filter((image) => assetMatchesPost(image.filename, docName, slug));
+
+  if (matchingRootImages.length > 0) {
+    return matchingRootImages;
+  }
+
+  const containerNames = new Set(["images", "image", "assets", "blog images"]);
+  const sourceFolders = await listChildFolders(drive, sourceFolderId);
+  const assetContainers = sourceFolders.filter((file) => file.id && file.name && containerNames.has(file.name.toLowerCase()));
+
+  for (const container of assetContainers) {
+    const images = await listImagesInFolder(drive, container.id as string);
+    const matchingImages = images.filter((image) => assetMatchesPost(image.filename, docName, slug));
+
+    if (matchingImages.length > 0) {
+      return matchingImages;
+    }
+  }
+
+  return [];
 }
 
 async function downloadBinary(drive: ReturnType<typeof google.drive>, fileId: string) {
@@ -403,6 +578,7 @@ async function main() {
   const authorName = readEnv("BLOG_INGEST_AUTHOR_NAME");
   const authorRole = readEnv("BLOG_INGEST_AUTHOR_ROLE");
   const allowBodyOnly = hasFlag("--allow-body-only");
+  const debugFrontmatter = hasFlag("--debug-frontmatter");
 
   if (!folderId) {
     throw new Error("Missing source folder. Set GOOGLE_DRIVE_SOURCE_FOLDER_ID or pass --folder=<id>.");
@@ -421,16 +597,16 @@ async function main() {
       continue;
     }
 
-    if (!dryRun && state[file.id]?.modifiedTime === file.modifiedTime) {
-      console.log(`Skip unchanged: ${file.name}`);
-      continue;
-    }
-
     const markdown = await exportMarkdown(drive, file.id);
-    const { slug, postMarkdown, hasFrontmatter } = ensurePostMarkdown(markdown);
+    const { slug, hasFrontmatter, postMarkdown: exportedPostMarkdown } = ensurePostMarkdown(markdown, file.webViewLink);
+    let postMarkdown = exportedPostMarkdown;
 
     if (!hasFrontmatter && !allowBodyOnly) {
       console.log(`Skip body-only markdown without frontmatter: ${file.name}. Pass --allow-body-only to stage it anyway.`);
+      if (debugFrontmatter) {
+        console.log(`Export preview for ${file.name}:`);
+        console.log(previewText(markdown));
+      }
       continue;
     }
 
@@ -441,6 +617,21 @@ async function main() {
       role: assetRole(asset.filename),
       contentType: asset.contentType,
     }));
+    const nextAssetsSignature = assetSignature(manifestAssets);
+
+    const previousAssetsSignature = state[file.id]?.assetsSignature ?? "";
+
+    if (!dryRun && state[file.id]?.modifiedTime === file.modifiedTime && previousAssetsSignature === nextAssetsSignature) {
+      console.log(`Skip unchanged: ${file.name}`);
+      continue;
+    }
+
+    const primaryImageAsset = selectPrimaryImageAsset(manifestAssets);
+    const primaryImageUrl = primaryImageAsset
+      ? buildStoragePublicUrl(bucket, joinPath(storagePrefix, primaryImageAsset.filename))
+      : undefined;
+    postMarkdown = updateFrontmatterImages(postMarkdown, primaryImageUrl);
+
     const manifest = buildManifest({
       slug,
       sourceDocUrl: file.webViewLink,
@@ -476,6 +667,7 @@ async function main() {
         slug,
         ingestedAt: new Date().toISOString(),
         storagePrefix,
+        assetsSignature: nextAssetsSignature,
       };
     }
   }

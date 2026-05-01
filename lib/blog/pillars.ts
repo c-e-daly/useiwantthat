@@ -58,6 +58,6 @@ export function getPillarPath(pillar: ContentPillar | null | undefined) {
   return pillar ? `/blog/${BLOG_PILLARS[pillar].segment}` : "/blog";
 }
 
-export function getPostPath(slug: string, pillar?: ContentPillar | null) {
-  return pillar ? `${getPillarPath(pillar)}/${slug}` : `/blog/${slug}`;
+export function getPostPath(slug: string) {
+  return `/blog/${slug}`;
 }

@@ -48,8 +48,8 @@ function readFirstNonEmpty(...values: Array<string | null | undefined>) {
   return values.find((value) => typeof value === "string" && value.trim().length > 0);
 }
 
-function buildCanonicalUrl(slug: string, pillar: ContentPillar | null) {
-  return `${SITE_URL}${getPostPath(slug, pillar)}`;
+function buildCanonicalUrl(slug: string) {
+  return `${SITE_URL}${getPostPath(slug)}`;
 }
 
 function getSummaryTitle(row: BlogPostRecord, frontmatter?: Partial<PostFrontmatter> | null) {
@@ -72,12 +72,15 @@ function mapSummary(row: BlogPostRecord, frontmatter: Partial<PostFrontmatter> |
     publishedAt: frontmatter?.publishedAt || row.published_at || row.created_at,
     updatedAt: frontmatter?.updatedAt || row.updated_at,
     coverImageUrl: resolveOgImageUrl(frontmatter, row),
-    path: getPostPath(row.slug, pillar),
+    path: getPostPath(row.slug),
     pillar,
     pillarTitle: pillar ? BLOG_PILLARS[pillar].title : null,
     template: frontmatter?.template ?? null,
     readingTimeMinutes: frontmatter?.readingTimeMinutes ?? null,
     featured: frontmatter?.featured ?? false,
+    pillarPost: frontmatter?.pillarPost ?? false,
+    pillarBranch: frontmatter?.pillarBranch ?? false,
+    pillarPostSlug: frontmatter?.pillarPostSlug ?? null,
     aeoTldr: frontmatter?.aeo?.tldr ?? null,
   };
 }
@@ -114,18 +117,22 @@ export const getPublishedPostSummaries = cache(async (limit = 1000): Promise<Blo
   );
 });
 
-async function getPostRecordBySlug(slug: string): Promise<BlogPostRecord | null> {
+async function getPostRecordBySlug(slug: string, statuses: BlogPostStatus[] = ["published"]): Promise<BlogPostRecord | null> {
   const supabase = createBlogSupabaseAdminClient();
 
-  const { data, error } = await supabase
+  let query = supabase
     .from("blog_posts")
     .select(
       "id, slug, title, excerpt, persona, tags, cover_image_url, canonical_url, seo_title, seo_description, gtm_layer, markdown_path, seo_path, published_at, status, created_at, updated_at"
     )
     .eq("slug", slug)
-    .eq("status", "published")
-    .lte("published_at", new Date().toISOString())
-    .maybeSingle();
+    .in("status", statuses);
+
+  if (statuses.length === 1 && statuses[0] === "published") {
+    query = query.lte("published_at", new Date().toISOString());
+  }
+
+  const { data, error } = await query.maybeSingle();
 
   if (error) {
     throw new Error(`Failed to fetch blog post '${slug}': ${error.message}`);
@@ -195,18 +202,11 @@ async function getSeoSidecarFromStorage(row: BlogPostRecord): Promise<SeoSidecar
   }
 }
 
-export const getPostDetailBySlug = cache(async (slug: string): Promise<BlogPostDetail> => {
-  const row = await getPostRecordBySlug(slug);
-
-  if (!row) {
-    notFound();
-  }
-
+async function buildPostDetail(row: BlogPostRecord): Promise<BlogPostDetail> {
   const rawMarkdown = await getMarkdownFromStorage(row.markdown_path);
   const { frontmatter, content: markdown } = parseMarkdownWithFrontmatter(rawMarkdown);
   const seoSidecar = await getSeoSidecarFromStorage(row);
   const html = markdownToHtml(markdown);
-  const pillar = isContentPillar(frontmatter?.pillar) ? frontmatter.pillar : null;
   const summary = mapSummary(row, frontmatter);
 
   return {
@@ -215,7 +215,7 @@ export const getPostDetailBySlug = cache(async (slug: string): Promise<BlogPostD
     seoDescription:
       readFirstNonEmpty(row.seo_description, seoSidecar?.seo_description, frontmatter?.seo?.metaDescription, row.excerpt) ?? "",
     canonicalUrl:
-      readFirstNonEmpty(row.canonical_url, seoSidecar?.canonical_url, frontmatter?.canonical) ?? buildCanonicalUrl(row.slug, pillar),
+      readFirstNonEmpty(row.canonical_url, seoSidecar?.canonical_url, frontmatter?.canonical) ?? buildCanonicalUrl(row.slug),
     markdownPath: row.markdown_path,
     markdown,
     html,
@@ -232,7 +232,22 @@ export const getPostDetailBySlug = cache(async (slug: string): Promise<BlogPostD
     schema: frontmatter?.schema ?? null,
     internalLinks: frontmatter?.internalLinks ?? null,
   };
+}
+
+export const getPostDetailBySlug = cache(async (slug: string): Promise<BlogPostDetail> => {
+  const row = await getPostRecordBySlug(slug);
+
+  if (!row) {
+    notFound();
+  }
+
+  return buildPostDetail(row);
 });
+
+export async function getPreviewPostDetailBySlug(slug: string): Promise<BlogPostDetail | null> {
+  const row = await getPostRecordBySlug(slug, ["draft", "scheduled", "published"]);
+  return row ? buildPostDetail(row) : null;
+}
 
 export const getPublishedPostsForPillar = cache(async (pillar: ContentPillar): Promise<BlogPostSummary[]> => {
   const posts = await getPublishedPostSummaries();

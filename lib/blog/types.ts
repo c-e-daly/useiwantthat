@@ -36,6 +36,9 @@ export type BlogPostSummary = {
   template: PostTemplate | null;
   readingTimeMinutes: number | null;
   featured: boolean;
+  pillarPost: boolean;
+  pillarBranch: boolean;
+  pillarPostSlug: string | null;
   aeoTldr: string | null;
 };
 

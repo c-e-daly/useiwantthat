@@ -258,6 +258,9 @@ export interface PostFrontmatter {
   author: Author
   tags: string[]
   featured: boolean
+  pillarPost: boolean
+  pillarBranch: boolean
+  pillarPostSlug?: string
   holiday: boolean
   holidayEvents?: HolidayEvent[]
   sourceDocUrl?: string
@@ -296,6 +299,9 @@ export type PostMeta = Pick<
   | 'author'
   | 'tags'
   | 'featured'
+  | 'pillarPost'
+  | 'pillarBranch'
+  | 'pillarPostSlug'
   | 'holiday'
   | 'holidayEvents'
 >
@@ -335,8 +341,8 @@ export const PILLAR_URL_PREFIX: Record<ContentPillar, string> = {
  * Build the full canonical path for a post.
  * Pass to NextJS generateStaticParams or use in <link rel="canonical">.
  */
-export function buildPostPath(pillar: ContentPillar, slug: string): string {
-  return `${PILLAR_URL_PREFIX[pillar]}/${slug}`
+export function buildPostPath(slug: string): string {
+  return `/blog/${slug}`
 }
 
 // ─────────────────────────────────────────────

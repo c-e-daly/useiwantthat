@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { getPillarBySegment, getPostPath, USE_CASE_PATHS } from "@/lib/blog/pillars";
+import { BLOG_PILLARS, getPillarBySegment, getPillarPath, USE_CASE_PATHS } from "@/lib/blog/pillars";
 import { getPostDetailBySlug, getPublishedPostsForPillar, getPublishedPostSummaries } from "@/lib/blog/posts";
 import type { BlogPostDetail } from "@/lib/blog/types";
 
@@ -13,7 +13,7 @@ export const revalidate = 300;
 
 export async function generateStaticParams() {
   const posts = await getPublishedPostSummaries(100);
-  const pillarSegments = Array.from(new Set(posts.map((post) => post.path.split("/")[2]).filter(Boolean)));
+  const pillarSegments = Object.values(BLOG_PILLARS).map((pillar) => pillar.segment);
   return [...posts.map((post) => ({ slug: post.slug })), ...pillarSegments.map((slug) => ({ slug }))];
 }
 
@@ -96,7 +96,7 @@ function buildJsonLd(post: BlogPostDetail) {
       itemListElement: [
         { "@type": "ListItem", position: 1, name: "Blog", item: "/blog" },
         post.pillarTitle && post.pillar
-          ? { "@type": "ListItem", position: 2, name: post.pillarTitle, item: getPostPath("", post.pillar).replace(/\/$/, "") }
+          ? { "@type": "ListItem", position: 2, name: post.pillarTitle, item: getPillarPath(post.pillar) }
           : null,
         { "@type": "ListItem", position: post.pillar ? 3 : 2, name: post.title, item: post.canonicalUrl ?? post.path },
       ].filter(Boolean),
