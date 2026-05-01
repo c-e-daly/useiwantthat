@@ -5,7 +5,7 @@ import { markdownToHtml } from "@/lib/blog/markdown";
 import { BLOG_PILLARS, getPostPath } from "@/lib/blog/pillars";
 import { createBlogSupabaseAdminClient } from "@/lib/blog/supabaseAdmin";
 import { getBlogStorageConfig } from "@/lib/blog/storageConfig";
-import type { BlogPostDetail, BlogPostRecord, BlogPostSummary } from "@/lib/blog/types";
+import type { BlogPostDetail, BlogPostRecord, BlogPostStatus, BlogPostSummary } from "@/lib/blog/types";
 import type { ContentPillar, PostFrontmatter } from "@/lib/blog/prophet-frontmatter.types";
 import type { Json } from "@/src/types/database.types";
 
