@@ -261,6 +261,7 @@ export function CacCalculatorClient() {
       </div>
 
       <button
+        id="prophet_calculator_submit"
         type="button"
         onClick={handleCalculate}
         className="mt-6 w-full rounded-askrami bg-brand px-6 py-4 text-base font-bold text-white shadow-lg transition hover:bg-brand-deep focus:outline-none focus:ring-4 focus:ring-brand/20"
