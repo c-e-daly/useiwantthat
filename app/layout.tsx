@@ -15,13 +15,7 @@ export const metadata: Metadata = {
   description: "Experience the consumer webapp in real-time.",
 };
 
-const DEFAULT_GTM_ID = "GTM-N6FH92M";
-const rawGtmId = process.env.NEXT_PUBLIC_GTM_ID;
 const rawGoogleTagId = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
-const GTM_ID =
-  rawGtmId && /^GTM-[A-Z0-9]+$/i.test(rawGtmId)
-    ? rawGtmId
-    : DEFAULT_GTM_ID;
 const GOOGLE_TAG_ID =
   rawGoogleTagId && /^(G|GT|AW|DC)-[A-Z0-9]+$/i.test(rawGoogleTagId)
     ? rawGoogleTagId
@@ -49,33 +43,12 @@ export default function RootLayout({ children }: { children: ReactNode }) {
     <html lang="en" className={`${inter.variable} ${kaushan.variable} font-sans antialiased selection:bg-brand/20`}>
       <head>
         <link rel="icon" href="/favicon.ico" sizes="any" />
-        {GTM_ID && (
-          <Script id="google-tag-manager" strategy="afterInteractive">
-            {`
-              (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-              new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-              j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-              'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-              })(window,document,'script','dataLayer','${GTM_ID}');
-            `}
-          </Script>
-        )}
       </head>
 
       {/* Use bg-surface-canvas (pure white) 
         and text-neutral-dark (pure black) for maximum contrast.
       */}
       <body className="bg-surface-canvas text-neutral-dark min-h-screen flex flex-col">
-        {GTM_ID && (
-          <noscript>
-            <iframe
-              src={`https://www.googletagmanager.com/ns.html?id=${GTM_ID}`}
-              height="0"
-              width="0"
-              style={{ display: "none", visibility: "hidden" }}
-            />
-          </noscript>
-        )}
         <PostHogProvider apiKey={POSTHOG_KEY} apiHost={POSTHOG_HOST}>
           <SpeedInsights />
         <MainHeader />
@@ -120,6 +93,11 @@ export default function RootLayout({ children }: { children: ReactNode }) {
 
         <Script
           src="https://app.lemlist.com/api/visitors/tracking?k=yZAROQpoYbl1TRmzTgUTGs8M0J6hLODH5eTGHNLFTFs%3D&t=tea_TLDpdzKt83BzC3Bqo"
+          strategy="afterInteractive"
+        />
+        <Script
+          id="hs-script-loader"
+          src="https://js.hs-scripts.com/22554407.js"
           strategy="afterInteractive"
         />
       </body>
