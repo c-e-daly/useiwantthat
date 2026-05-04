@@ -152,6 +152,16 @@ function getCanonicalUrl(slug: string) {
   return `${siteUrl.replace(/\/+$/, "")}/blog/${slug}`;
 }
 
+function getGeneratedOgImageUrl(slug: string) {
+  const siteUrl = readEnv("NEXT_PUBLIC_SITE_URL") ?? "https://www.useiwantthat.com";
+  return `${siteUrl.replace(/\/+$/, "")}/og/${slug}.png`;
+}
+
+function getAppServedAssetUrl(path: string) {
+  const siteUrl = readEnv("NEXT_PUBLIC_SITE_URL") ?? "https://www.useiwantthat.com";
+  return `${siteUrl.replace(/\/+$/, "")}/blog-assets/${path.replace(/^\/+/, "")}`;
+}
+
 function yamlString(value: string) {
   return `"${value.replace(/\\/g, "\\\\").replace(/"/g, '\\"')}"`;
 }
@@ -201,13 +211,8 @@ function updateFrontmatterImages(postMarkdown: string, imageUrl: string | null) 
   return `${nextFrontmatter}\n${content}`;
 }
 
-function selectPrimaryAsset(manifest: ManifestFile) {
-  const assets = manifest.assets ?? [];
-  return (
-    assets.find((asset) => asset.role === "og") ??
-    assets.find((asset) => asset.role === "hero") ??
-    assets[0]
-  );
+function selectAsset(manifest: ManifestFile, role: string) {
+  return manifest.assets?.find((asset) => asset.role === role);
 }
 
 async function downloadText(bucket: string, path: string) {
@@ -362,9 +367,11 @@ async function main() {
   const manifest = JSON.parse(await downloadText(bucket, joinPath(incomingFolder, "manifest.json"))) as ManifestFile;
   const incomingMarkdownPath = joinPath(incomingFolder, manifest.markdownFile ?? "post.md");
   const incomingPostMarkdown = await downloadText(bucket, incomingMarkdownPath);
-  const primaryAsset = selectPrimaryAsset(manifest);
-  const primaryAssetUrl = primaryAsset ? getPublicStorageUrl(bucket, joinPath(incomingFolder, primaryAsset.filename)) : null;
-  const postMarkdown = updateFrontmatterImages(incomingPostMarkdown, primaryAssetUrl);
+  const heroAsset = selectAsset(manifest, "hero");
+  const ogAsset = selectAsset(manifest, "og");
+  const heroImageUrl = heroAsset ? getAppServedAssetUrl(joinPath(incomingFolder, heroAsset.filename)) : null;
+  const ogImageUrl = ogAsset ? getAppServedAssetUrl(joinPath(incomingFolder, ogAsset.filename)) : getGeneratedOgImageUrl(slug);
+  const postMarkdown = updateFrontmatterImages(incomingPostMarkdown, ogImageUrl);
   const { frontmatter, content } = parseMarkdownWithFrontmatter(postMarkdown);
 
   if (!frontmatter) {
@@ -382,7 +389,7 @@ async function main() {
   const { status, publishedAt } = getPostStatus(frontmatter, force);
   const title = readFirstNonEmpty(frontmatter.og?.title, frontmatter.seo?.metaTitle, getFirstHeading(content), slug) as string;
   const excerpt = readFirstNonEmpty(frontmatter.aeo?.tldr, frontmatter.seo?.metaDescription);
-  const coverImageUrl = readFirstNonEmpty(primaryAssetUrl, frontmatter.og?.image, manifest.assets?.find((asset) => asset.role === "hero")?.filename);
+  const coverImageUrl = readFirstNonEmpty(heroImageUrl, ogImageUrl, frontmatter.og?.image);
   const row = {
     slug,
     title,
