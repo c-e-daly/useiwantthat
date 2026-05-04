@@ -4,6 +4,25 @@ The blog source of truth is Markdown body content plus Prophet YAML frontmatter.
 Use normal Markdown for core article elements, and use strict `:::` directive
 blocks for reusable article modules.
 
+This document is the authoring contract for Google Docs exports, hand-authored
+Markdown, and any agent-generated body content. The implementation lives in
+`lib/blog/markdown.ts`, with visual styling in `app/styles/globals.css`.
+
+## Rendering model
+
+The renderer converts body Markdown into HTML and returns a generated table of
+contents. The shared article component renders that HTML in the public and
+preview routes.
+
+The renderer intentionally supports a small, deterministic Markdown subset
+instead of arbitrary HTML:
+
+- HTML embedded directly in Markdown is escaped.
+- Directive URLs must be safe: `https://`, `/`, `#`, or `mailto:`.
+- External Markdown links open in a new tab with `rel="noopener noreferrer"`.
+- Video embeds are allowlisted to YouTube, Vimeo, and Loom embed URLs.
+- Unknown `:::` directives render as generic callout blocks.
+
 ## Native Markdown
 
 Use these wherever possible:
@@ -33,6 +52,42 @@ Rules:
 - Avoid linked Google Sheets tables and merged-cell spreadsheet tables.
 - Prefer real Markdown tables with one header row and no merged cells.
 - Use frontmatter for hero image, author, SEO, schema, and related-link metadata.
+- Do not use tables for visual layout. Use `:::split` or `:::cards`.
+
+## Headings and generated TOC
+
+The renderer reads H2 and H3 headings for the table of contents.
+
+```md
+## Discounts are financial levers {#discounts-are-financial-levers}
+```
+
+Explicit anchors like `{#discounts-are-financial-levers}` are optional. If
+present, they are used for the heading ID and removed from visible text.
+
+If a Google Doc export includes a manual section named `## Table of Contents`,
+the renderer skips that section.
+
+## Tables
+
+Preferred shape:
+
+```md
+| Metric | Scenario A | Scenario B |
+|---|---:|---:|
+| Discount | $30.00 | $15.00 |
+| CAC | $30.00 | $68.00 |
+```
+
+The renderer:
+
+- wraps tables for mobile horizontal scrolling
+- respects `---:`, `:---:`, and `---` alignment markers
+- drops fully empty exported columns
+- promotes the first meaningful row if the exported header row is blank
+
+Those cleanup steps are defensive. The best output still comes from simple
+Markdown tables with one semantic header row.
 
 ## Summary or callout
 
@@ -123,6 +178,12 @@ Use Customer Generated Offers to capture price intent and reduce wasted paid tra
 :::
 ```
 
+Supported item fields:
+
+- `title`
+- `body`, `text`, or `description`
+- `href`
+
 ## FAQ accordion
 
 Prefer frontmatter `aeo.faq` for schema-backed FAQ. Use this block only when
@@ -137,6 +198,11 @@ the FAQ needs to appear inline inside the article body.
 :::
 ```
 
+Supported item fields:
+
+- `question` or `title`
+- `answer` or `body`
+
 ## Steps
 
 Use this for explicit process blocks. Playbook articles still map to HowTo schema
@@ -150,6 +216,11 @@ from frontmatter and numbered content.
   body: Compare CAC against the discount allowance already priced into margin.
 :::
 ```
+
+Supported item fields:
+
+- `title` or `step`
+- `body` or `text`
 
 ## Video
 
@@ -192,6 +263,12 @@ Use sparingly. Each item needs `src` or `image`, plus meaningful alt text.
   caption: Price allowance scenario.
 :::
 ```
+
+Supported item fields:
+
+- `src` or `image`
+- `alt`
+- `caption`
 
 Aliases:
 

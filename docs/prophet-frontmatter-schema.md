@@ -380,14 +380,17 @@ Final URL: `https://iwantthat.io/blog/[slug]`
 
 ## NextJS usage notes
 
-1. Parse frontmatter with `gray-matter` before rendering body.
+1. Parse frontmatter with `lib/blog/frontmatter.ts` before rendering body. The
+   current app uses a local YAML subset parser instead of `gray-matter`.
 2. Generate JSON-LD blocks at render time from `schema.*` fields — do not store
    pre-rendered JSON-LD in the frontmatter (it goes stale on domain changes).
-3. Use `pipeline.validationPassed` as a publish gate in your Supabase listener —
-   drop articles where this is `false` into a `pending_review` bucket instead of
-   the `published` bucket.
-4. `canonical` field should be populated by NextJS at build time from
+3. Render body Markdown with `lib/blog/markdown.ts`. Supported body components
+   are documented in `docs/blog-markdown-components.md`.
+4. Use `pipeline.validationPassed` as a publish gate in your Supabase listener or
+   publisher. Drop articles where this is `false` into review instead of
+   publishing them.
+5. `canonical` field should be populated by NextJS at render time from
    `process.env.NEXT_PUBLIC_SITE_URL + "/blog/" + slug` — not hardcoded
    by the agent, so staging and production environments resolve correctly.
-5. The `og.image` path is relative to Supabase storage. NextJS should prepend
-   the Supabase storage base URL at render time.
+6. The `og.image` path can be relative to Supabase storage or resolved by the
+   incoming publisher. NextJS should render absolute Open Graph image URLs.

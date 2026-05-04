@@ -13,7 +13,7 @@ JSON
 
 # \[Strategy A\] vs \[Strategy B\]: which converts better for Shopify stores?
 
-:::Summary Box
+:::summary
 
 * **Insight 1:** \[Actionable takeaway\]  
 * **Insight 2:** \[Data point or proof\]  

@@ -2,6 +2,9 @@
 
 This worker exports Google Docs from a Drive folder as Markdown and stages them in Supabase Storage.
 
+For the full blog architecture, see `docs/blog-pipeline.md`. For supported
+Markdown body components, see `docs/blog-markdown-components.md`.
+
 ## Google setup
 
 1. Create or reuse a Google Cloud project.
@@ -100,6 +103,26 @@ blog/incoming/YYYY/MM/[slug]/_ready.json
 ```
 
 `_ready.json` is uploaded last. The worker stores processed Google file IDs and modified timestamps at `blog/ingest-state/google-drive.json` so unchanged docs are skipped on later upload runs.
+
+## Google Doc authoring rules
+
+The export target is Markdown, not HTML. Author docs so the exported Markdown is
+semantically clean:
+
+- Use heading styles for `#`, `##`, and `###`.
+- Do not include a manual table of contents. The app generates a table of
+  contents from H2/H3 headings.
+- Use plain Markdown tables when possible. If using a Google Docs table, use one
+  header row and avoid merged cells.
+- Avoid linked Google Sheets tables. Also avoid pasted spreadsheet tables with
+  spacer columns, merged cells, or visual-only layout. They may look fine in
+  Google Docs but export as empty `th`/`td` columns.
+- Use `:::split` or `:::cards` from `docs/blog-markdown-components.md` for
+  layout and comparison modules. Do not use tables for layout.
+- Use stable image filenames in the source asset folder. Markdown image
+  references, `manifest.json`, and uploaded object names should match.
+- Keep hero/OG image intent in frontmatter and assets. Body images are article
+  content images.
 
 ## Image assets
 

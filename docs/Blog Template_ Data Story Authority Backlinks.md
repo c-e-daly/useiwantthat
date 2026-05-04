@@ -11,7 +11,7 @@ JSON
   `"scheduledFor": "..."    // optional — ISO 8601 if scheduled`  
 `}`
 
-:::Summary Box
+:::summary
 
 * **Insight 1:** \[Actionable takeaway\]  
 * **Insight 2:** \[Data point or proof\]  

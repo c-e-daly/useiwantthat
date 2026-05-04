@@ -25,7 +25,7 @@ Intro: who this is for and what they'll walk away knowing — 2 sentencesItem 1:
 
 ## H2: FAQ — 3–4 questions, short answers optimised for featured snippets
 
-:::Summary Box
+:::summary
 
 * **Insight 1:** \[Actionable takeaway\]  
 * **Insight 2:** \[Data point or proof\]  

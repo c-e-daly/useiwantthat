@@ -27,7 +27,7 @@ Intro paragraph: name the pain, quantify it, hint at the solution — 3 sentence
 
 CTA: one clear next action, no optionality
 
-:::Summary Box
+:::summary
 
 * **Insight 1:** \[Actionable takeaway\]  
 * **Insight 2:** \[Data point or proof\]  

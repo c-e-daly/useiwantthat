@@ -14,7 +14,7 @@ JSON
 
 # H1: How to \[achieve specific outcome\] on Shopify: a step-by-step guide
 
-:::Summary Box
+:::summary
 
 * **Insight 1:** \[Actionable takeaway\]  
 * **Insight 2:** \[Data point or proof\]  
