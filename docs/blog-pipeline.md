@@ -27,8 +27,8 @@ and optional revalidation.
 - Blog component styling: `app/styles/globals.css`
 - Dynamic sitemap: `app/sitemap.ts`
 - Optional revalidation integration:
-  - `scripts/blog-publish-incoming.ts --revalidate` expects `POST /api/revalidate`
-  - This checkout does not currently include `app/api/revalidate/route.ts`
+  - `scripts/blog-publish-incoming.ts --revalidate` calls `POST /api/revalidate`
+  - The handler lives at `app/api/revalidate/route.ts`
 
 ## Storage convention
 
@@ -65,7 +65,7 @@ and optional revalidation.
 - Optional: `SUPABASE_BLOG_SEO_PREFIX`
 - Optional: `SUPABASE_BLOG_INCOMING_PREFIX`
 - Optional: `SUPABASE_BLOG_INGEST_STATE_PATH`
-- Optional: `REVALIDATE_TOKEN`, only used with `blog:publish:incoming -- --revalidate`
+- `REVALIDATE_TOKEN`, required in production when using `blog:publish:incoming -- --revalidate`
 
 Google Drive ingest also requires Google credentials and `GOOGLE_DRIVE_SOURCE_FOLDER_ID`.
 See `docs/google-drive-blog-ingest.md`.
@@ -261,8 +261,7 @@ Markdown image references, and uploaded objects in the incoming folder.
 
 ## Optional revalidate payload examples
 
-These examples require an app route at `app/api/revalidate/route.ts`. This route
-is not currently present in this checkout.
+These examples use the app route at `app/api/revalidate/route.ts`.
 
 ```bash
 curl -X POST https://www.useiwantthat.com/api/revalidate \
