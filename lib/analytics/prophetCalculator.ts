@@ -28,6 +28,11 @@ export type ProphetCalculatorEvent = {
 declare global {
   interface Window {
     dataLayer?: unknown[];
+    gtag?: (
+      command: "event",
+      eventName: string,
+      eventParameters?: Record<string, unknown>
+    ) => void;
   }
 }
 
@@ -62,4 +67,5 @@ export function trackProphetCalculatorSubmit(event: ProphetCalculatorEvent) {
   });
 
   posthog.capture("prophet calculator submitted", payload);
+  window.gtag?.("event", "prophet_calculator_submit", payload);
 }
