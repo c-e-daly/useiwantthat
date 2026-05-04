@@ -103,6 +103,11 @@ npm run blog:publish:incoming -- --slug=your-slug
 
 `post.md` contains the complete Prophet YAML frontmatter block followed by the Google Doc markdown body.
 
+The Markdown body may use the supported blog component directives documented in
+`docs/blog-markdown-components.md`. The renderer supports native Markdown tables,
+images, headings, lists, blockquotes, and strict `:::` blocks for summary, stat,
+split columns, buttons, CTAs, cards, inline FAQ, steps, video, and carousel modules.
+
 `manifest.json` identifies the source doc/folder, author metadata, markdown filename, and asset filenames. Asset filenames should match the files uploaded into the same incoming folder.
 
 `_ready.json` is the final upload and processing trigger. It can repeat the slug, source doc URL, upload timestamp, and list of expected files.

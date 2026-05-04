@@ -43,6 +43,7 @@ export type RenderedMarkdown = {
 };
 
 type HeadingIdCounts = Map<string, number>;
+type DirectiveItem = Record<string, string>;
 
 function stripInlineMarkdown(value: string) {
   return value
@@ -169,6 +170,251 @@ function renderTable(lines: string[]) {
   ].join("\n");
 }
 
+function parseKeyValueLine(line: string) {
+  const match = line.match(/^([A-Za-z][A-Za-z0-9_-]*):\s*(.*)$/);
+
+  if (!match) {
+    return null;
+  }
+
+  return {
+    key: match[1],
+    value: match[2].trim(),
+  };
+}
+
+function parseDirectiveFields(content: string[]) {
+  const fields: Record<string, string> = {};
+  const body: string[] = [];
+
+  for (const line of content) {
+    const parsed = parseKeyValueLine(line.trim());
+
+    if (parsed) {
+      fields[parsed.key] = parsed.value.replace(/^["']|["']$/g, "");
+      continue;
+    }
+
+    body.push(line);
+  }
+
+  return { fields, body };
+}
+
+function parseDirectiveItems(content: string[]) {
+  const items: DirectiveItem[] = [];
+  let current: DirectiveItem | null = null;
+  let currentBodyKey: string | null = null;
+
+  for (const rawLine of content) {
+    const line = rawLine.trim();
+
+    if (!line) {
+      currentBodyKey = null;
+      continue;
+    }
+
+    const itemStart = line.match(/^-\s+([A-Za-z][A-Za-z0-9_-]*):\s*(.*)$/);
+
+    if (itemStart) {
+      current = { [itemStart[1]]: itemStart[2].trim().replace(/^["']|["']$/g, "") };
+      items.push(current);
+      currentBodyKey = itemStart[1];
+      continue;
+    }
+
+    const keyValue = parseKeyValueLine(line);
+
+    if (keyValue && current) {
+      current[keyValue.key] = keyValue.value.replace(/^["']|["']$/g, "");
+      currentBodyKey = keyValue.key;
+      continue;
+    }
+
+    if (current && currentBodyKey) {
+      current[currentBodyKey] = `${current[currentBodyKey] ?? ""}\n${rawLine.trimEnd()}`.trim();
+    }
+  }
+
+  return items;
+}
+
+function safeUrl(value: string | undefined) {
+  const url = value?.trim();
+
+  if (!url) {
+    return "";
+  }
+
+  if (/^(https?:\/\/|\/|#|mailto:)/i.test(url)) {
+    return escapeHtml(url);
+  }
+
+  return "";
+}
+
+function renderButton(content: string[]) {
+  const { fields } = parseDirectiveFields(content);
+  const href = safeUrl(fields.href);
+  const label = fields.label || fields.text || "Learn more";
+  const variant = fields.variant === "secondary" ? "secondary" : "primary";
+
+  if (!href) {
+    return "";
+  }
+
+  return `<p class="prophet-button-wrap"><a class="prophet-button prophet-button-${variant}" href="${href}">${renderInlineMarkdown(label)}</a></p>`;
+}
+
+function renderCta(content: string[], counts: HeadingIdCounts) {
+  const { fields, body } = parseDirectiveFields(content);
+  const href = safeUrl(fields.href);
+  const title = fields.title || fields.heading || "";
+  const label = fields.label || fields.button || "";
+
+  return [
+    `<aside class="prophet-cta">`,
+    title ? `<h3>${renderInlineMarkdown(title)}</h3>` : "",
+    body.length ? `<div>${renderMarkdown(body.join("\n"), counts).html}</div>` : "",
+    href && label ? `<a class="prophet-button prophet-button-primary" href="${href}">${renderInlineMarkdown(label)}</a>` : "",
+    "</aside>",
+  ]
+    .filter(Boolean)
+    .join("\n");
+}
+
+function renderCards(content: string[], counts: HeadingIdCounts) {
+  const items = parseDirectiveItems(content);
+
+  if (!items.length) {
+    return "";
+  }
+
+  return `<div class="prophet-card-grid">${items
+    .map((item) => {
+      const href = safeUrl(item.href);
+      const body = item.body || item.text || item.description || "";
+
+      return [
+        href ? `<a class="prophet-card" href="${href}">` : `<article class="prophet-card">`,
+        item.title ? `<h3>${renderInlineMarkdown(item.title)}</h3>` : "",
+        body ? `<div>${renderMarkdown(body, counts).html}</div>` : "",
+        href ? "</a>" : "</article>",
+      ].join("\n");
+    })
+    .join("\n")}</div>`;
+}
+
+function renderFaq(content: string[], counts: HeadingIdCounts) {
+  const items = parseDirectiveItems(content);
+
+  if (!items.length) {
+    return "";
+  }
+
+  return `<div class="prophet-faq">${items
+    .map((item) => {
+      const question = item.question || item.title || "";
+      const answer = item.answer || item.body || "";
+
+      return [
+        `<details>`,
+        `<summary>${renderInlineMarkdown(question)}</summary>`,
+        answer ? `<div>${renderMarkdown(answer, counts).html}</div>` : "",
+        "</details>",
+      ].join("\n");
+    })
+    .join("\n")}</div>`;
+}
+
+function renderSteps(content: string[], counts: HeadingIdCounts) {
+  const items = parseDirectiveItems(content);
+
+  if (!items.length) {
+    return "";
+  }
+
+  return `<ol class="prophet-steps">${items
+    .map((item, index) => {
+      const title = item.title || item.step || `Step ${index + 1}`;
+      const body = item.body || item.text || "";
+
+      return [
+        `<li>`,
+        `<span>${index + 1}</span>`,
+        `<div>`,
+        `<h3>${renderInlineMarkdown(title)}</h3>`,
+        body ? renderMarkdown(body, counts).html : "",
+        "</div>",
+        "</li>",
+      ].join("\n");
+    })
+    .join("\n")}</ol>`;
+}
+
+function getVideoEmbedUrl(fields: Record<string, string>) {
+  const provider = fields.provider?.toLowerCase();
+  const id = fields.id;
+  const url = fields.url;
+
+  if (provider === "youtube" && id) {
+    return `https://www.youtube.com/embed/${encodeURIComponent(id)}`;
+  }
+
+  if (provider === "vimeo" && id) {
+    return `https://player.vimeo.com/video/${encodeURIComponent(id)}`;
+  }
+
+  if (url && /^https:\/\/(www\.)?(youtube\.com\/embed\/|player\.vimeo\.com\/video\/|www\.loom\.com\/embed\/)/i.test(url)) {
+    return url;
+  }
+
+  return "";
+}
+
+function renderVideo(content: string[]) {
+  const { fields } = parseDirectiveFields(content);
+  const src = safeUrl(getVideoEmbedUrl(fields));
+  const title = fields.title || "Embedded video";
+
+  if (!src) {
+    return "";
+  }
+
+  return [
+    `<figure class="prophet-video">`,
+    `<iframe src="${src}" title="${escapeHtml(title)}" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`,
+    fields.caption ? `<figcaption>${renderInlineMarkdown(fields.caption)}</figcaption>` : "",
+    "</figure>",
+  ]
+    .filter(Boolean)
+    .join("\n");
+}
+
+function renderCarousel(content: string[]) {
+  const items = parseDirectiveItems(content).filter((item) => safeUrl(item.src || item.image));
+
+  if (!items.length) {
+    return "";
+  }
+
+  return `<div class="prophet-carousel" aria-label="Media carousel">${items
+    .map((item) => {
+      const src = safeUrl(item.src || item.image);
+      const alt = escapeHtml(item.alt || item.title || "");
+
+      return [
+        `<figure>`,
+        `<img src="${src}" alt="${alt}" loading="lazy" decoding="async" />`,
+        item.caption ? `<figcaption>${renderInlineMarkdown(item.caption)}</figcaption>` : "",
+        "</figure>",
+      ]
+        .filter(Boolean)
+        .join("\n");
+    })
+    .join("\n")}</div>`;
+}
+
 function normalizeDirectiveName(value: string) {
   return value.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "");
 }
@@ -250,6 +496,34 @@ function renderDirective(name: string, content: string[], counts: HeadingIdCount
     ]
       .filter(Boolean)
       .join("\n");
+  }
+
+  if (normalized === "button") {
+    return renderButton(content);
+  }
+
+  if (normalized === "cta") {
+    return renderCta(content, counts);
+  }
+
+  if (normalized === "cards" || normalized === "card-grid") {
+    return renderCards(content, counts);
+  }
+
+  if (normalized === "faq" || normalized === "accordion") {
+    return renderFaq(content, counts);
+  }
+
+  if (normalized === "steps" || normalized === "step-list") {
+    return renderSteps(content, counts);
+  }
+
+  if (normalized === "video") {
+    return renderVideo(content);
+  }
+
+  if (normalized === "carousel" || normalized === "gallery") {
+    return renderCarousel(content);
   }
 
   const blockClass = normalized === "summary-box" ? "summary" : normalized;
