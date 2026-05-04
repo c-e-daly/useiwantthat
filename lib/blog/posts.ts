@@ -1,7 +1,7 @@
 import { cache } from "react";
 import { notFound } from "next/navigation";
 import { parseMarkdownWithFrontmatter } from "@/lib/blog/frontmatter";
-import { markdownToHtml } from "@/lib/blog/markdown";
+import { renderMarkdown } from "@/lib/blog/markdown";
 import { BLOG_PILLARS, getPostPath } from "@/lib/blog/pillars";
 import { createBlogSupabaseAdminClient } from "@/lib/blog/supabaseAdmin";
 import { getBlogStorageConfig } from "@/lib/blog/storageConfig";
@@ -206,7 +206,7 @@ async function buildPostDetail(row: BlogPostRecord): Promise<BlogPostDetail> {
   const rawMarkdown = await getMarkdownFromStorage(row.markdown_path);
   const { frontmatter, content: markdown } = parseMarkdownWithFrontmatter(rawMarkdown);
   const seoSidecar = await getSeoSidecarFromStorage(row);
-  const html = markdownToHtml(markdown);
+  const renderedMarkdown = renderMarkdown(markdown);
   const summary = mapSummary(row, frontmatter);
 
   return {
@@ -218,7 +218,8 @@ async function buildPostDetail(row: BlogPostRecord): Promise<BlogPostDetail> {
       readFirstNonEmpty(row.canonical_url, seoSidecar?.canonical_url, frontmatter?.canonical) ?? buildCanonicalUrl(row.slug),
     markdownPath: row.markdown_path,
     markdown,
-    html,
+    html: renderedMarkdown.html,
+    tableOfContents: renderedMarkdown.tableOfContents,
     gtmLayer: row.gtm_layer ?? seoSidecar?.gtm_layer ?? null,
     frontmatter,
     useCases: frontmatter?.useCases ?? [],

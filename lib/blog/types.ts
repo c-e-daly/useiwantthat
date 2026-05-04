@@ -11,6 +11,7 @@ import type {
   TwitterFields,
   UseCase,
 } from "@/lib/blog/prophet-frontmatter.types";
+import type { MarkdownTableOfContentsItem } from "@/lib/blog/markdown";
 
 export type BlogPostStatus = "draft" | "scheduled" | "published";
 
@@ -49,6 +50,7 @@ export type BlogPostDetail = BlogPostSummary & {
   markdownPath: string;
   markdown: string;
   html: string;
+  tableOfContents: MarkdownTableOfContentsItem[];
   gtmLayer: Json | null;
   frontmatter: Partial<PostFrontmatter> | null;
   useCases: UseCase[];
