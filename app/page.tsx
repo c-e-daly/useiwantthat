@@ -183,7 +183,7 @@ export default function AbTestHomePage() {
 
           <div className="mx-auto mt-20 max-w-5xl">
             <div className="relative rounded-askrami border border-black/10 bg-white p-2 shadow-2xl">
-              <div className="flex items-center gap-1.5 rounded-t-[4px] border-b border-surface-border bg-surface-subtle/50 px-4 py-3">
+              <div className="flex items-center gap-1.5 rounded-tsm border-b border-surface-border bg-surface-subtle/50 px-4 py-3">
                 <div className="h-2.5 w-2.5 rounded-full bg-[#FF5F56]" />
                 <div className="h-2.5 w-2.5 rounded-full bg-[#FFBD2E]" />
                 <div className="h-2.5 w-2.5 rounded-full bg-[#27C93F]" />
@@ -261,7 +261,7 @@ export default function AbTestHomePage() {
                     ))}
                   </div>
 
-                  <div className="absolute -bottom-6 -right-2 max-w-[240px] rounded-lg bg-black p-4 text-left text-white shadow-xl md:right-10 md:bottom-16">
+                  <div className="absolute -bottom-6 -right-2 max-w-60 rounded-lg bg-black p-4 text-left text-white shadow-xl md:right-10 md:bottom-16">
                     <p className="text-sm font-semibold">Offer logic in motion</p>
                     <p className="mt-1 text-[12px] opacity-80">
                       Floors, counters, and agent-submitted offers all route
