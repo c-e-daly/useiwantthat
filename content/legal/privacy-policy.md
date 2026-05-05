@@ -1,16 +1,16 @@
-# **I Want That\! PRIVACY NOTICE**
+# **I Want That! PRIVACY NOTICE**
 
 Last Updated May 5, 2026
 
 ## **1\. Introduction**
 
-This Privacy Notice describes how I Want That\!, Inc., a Delaware corporation ("I Want That\!," "we", "us" or "our") handles personal data that we collect through our websites and mobile applications that link to this Privacy Notice (collectively, the “Service”), as well as through our marketing and other activities described in this Privacy Notice. Use of the Service is subject to our SaaS Services Agreement.
+This Privacy Notice describes how I Want That!, Inc., a Delaware corporation ("I Want That!," "we", "us" or "our") handles personal data that we collect through our websites and mobile applications that link to this Privacy Notice (collectively, the “Service”), as well as through our marketing and other activities described in this Privacy Notice. Use of the Service is subject to our SaaS Services Agreement.
 
 If you have any questions or concerns about our use of your personal data, please contact us.
 
 ## **2\. Scope of this Privacy Notice**
 
-I Want That\! provides businesses with a cloud-based communication hub that their teams use for customer-related communications. The Service is not intended for use by individuals for personal, family, household, or other consumer purposes, and the personal data covered by this Privacy Notice pertains to individuals acting in a business or commercial capacity. This Privacy Notice does not apply to personal data about I Want That\! personnel or job candidates, or to personal data that I Want That\! processes on behalf of customers in our capacity as a processor or service provider, including data that they authorize us to access in their Google Workspace accounts.
+I Want That! provides businesses with a cloud-based communication hub that their teams use for customer-related communications. The Service is not intended for use by individuals for personal, family, household, or other consumer purposes, and the personal data covered by this Privacy Notice pertains to individuals acting in a business or commercial capacity. This Privacy Notice does not apply to personal data about I Want That! personnel or job candidates, or to personal data that I Want That! processes on behalf of customers in our capacity as a processor or service provider, including data that they authorize us to access in their Google Workspace accounts.
 
 ## **3\. Personal data we collect**
 
@@ -78,7 +78,7 @@ Professional advisors. We may share all categories of personal data with profess
 
 Authorities and others. We may share all categories of personal data with law enforcement, government authorities, and private parties, as we believe in good faith to be necessary or appropriate for the compliance and protection purposes described above. See our Law Enforcement Data Request Guidelines for details on how we handle law enforcement requests.
 
-Business transferees. Parties (and their advisors) to business transactions involving a corporate divestiture, merger, consolidation, acquisition, reorganization, sale or other disposition of all or any portion of the business or assets of, or equity interests in, I Want That\! or our affiliates (including, in connection with a bankruptcy or similar proceedings) may acquire all categories of personal data that we handle in connection with such transactions or we may share it with them in the context of negotiations of or due diligence for such transactions.
+Business transferees. Parties (and their advisors) to business transactions involving a corporate divestiture, merger, consolidation, acquisition, reorganization, sale or other disposition of all or any portion of the business or assets of, or equity interests in, I Want That! or our affiliates (including, in connection with a bankruptcy or similar proceedings) may acquire all categories of personal data that we handle in connection with such transactions or we may share it with them in the context of negotiations of or due diligence for such transactions.
 
 ## **6\. Your choices**
 
@@ -167,9 +167,9 @@ The information provided in this notice applies only to individuals in the Unite
 
 The personal data that we collect from you is identified and described in greater detail in the section of the Privacy Notice entitled Personal data we collect.
 
-Controller. I Want That\!, Inc. is the controller of your personal data described in this Privacy Notice unless you have entered into a service contract with or received direct marketing communications from a different I Want That\! affiliate, in which case that entity is the controller. If you have questions about the controller of your personal data, please contact us. You may contact the relevant controller by email at compliance@useiwantthat.com or by mail at:
+Controller. I Want That!, Inc. is the controller of your personal data described in this Privacy Notice unless you have entered into a service contract with or received direct marketing communications from a different I Want That! affiliate, in which case that entity is the controller. If you have questions about the controller of your personal data, please contact us. You may contact the relevant controller by email at compliance@useiwantthat.com or by mail at:
 
-I Want That\!, Inc., 
+I Want That!, Inc., 
 
 Legal bases for processing. European data protection law requires that we have a “legal basis” for each purpose for which we process your personal data. Depending on the purpose for collecting your information, we may rely on one of the following legal bases:
 
@@ -240,7 +240,7 @@ To exercise any of these rights, please contact us. We may request specific info
 
 Your right to lodge a complaint with your supervisory authority. If you are not satisfied with our response to a request you make, or how we process your personal data, you can make a complaint to the data protection regulator in your habitual place of residence.
 
-International data transfers. We are headquartered in the United States and may use service providers that operate in the United States and other countries. Therefore, we may transfer your personal data to recipients outside of the European Economic Area, UK, and Switzerland. Some of these recipients are located in countries which have been formally recognized as providing an adequate level of protection for personal data by the relevant governmental body in the European Union, UK or Switzerland, as applicable, in which case, we rely on the relevant "adequacy decisions". Where the transfer is not subject to an adequacy decision or regulations, we take appropriate safeguards to ensure your personal data remains protected in accordance with this Privacy Notice and applicable laws by entering into appropriate data transfer mechanism permitted under Article 46 of the GDPR / UK GDPR (as applicable). With respect to data transfers to the United States, I Want That\!, Inc. relies on its certification to the United States Department of Commerce that we adhere to the Data Privacy Framework Principles (“Principles”) of the EU-U.S. Data Privacy Framework, the UK Extension to the EU-U.S. Data Privacy Framework, and the Swiss-U.S. Data Privacy Framework, as further described in the I Want That\! Data Privacy Framework Certification Notice, which supplements this Privacy Notice with respect to personal data we process as a controller. Other relevant mechanisms include the European Commission’s Standard Contractual Clauses or the UK International Data Transfer Addendum (as applicable). A copy of our data transfer mechanism can be provided on request.
+International data transfers. We are headquartered in the United States and may use service providers that operate in the United States and other countries. Therefore, we may transfer your personal data to recipients outside of the European Economic Area, UK, and Switzerland. Some of these recipients are located in countries which have been formally recognized as providing an adequate level of protection for personal data by the relevant governmental body in the European Union, UK or Switzerland, as applicable, in which case, we rely on the relevant "adequacy decisions". Where the transfer is not subject to an adequacy decision or regulations, we take appropriate safeguards to ensure your personal data remains protected in accordance with this Privacy Notice and applicable laws by entering into appropriate data transfer mechanism permitted under Article 46 of the GDPR / UK GDPR (as applicable). With respect to data transfers to the United States, I Want That!, Inc. relies on its certification to the United States Department of Commerce that we adhere to the Data Privacy Framework Principles (“Principles”) of the EU-U.S. Data Privacy Framework, the UK Extension to the EU-U.S. Data Privacy Framework, and the Swiss-U.S. Data Privacy Framework, as further described in the I Want That! Data Privacy Framework Certification Notice, which supplements this Privacy Notice with respect to personal data we process as a controller. Other relevant mechanisms include the European Commission’s Standard Contractual Clauses or the UK International Data Transfer Addendum (as applicable). A copy of our data transfer mechanism can be provided on request.
 
 English version controls
 

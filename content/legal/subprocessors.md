@@ -1,10 +1,10 @@
-# **I Want That\! Subprocessors**
+# **I Want That! Subprocessors**
 
 Effective May 5, 2026
 
 ## **What is a Subprocessor**
 
-A subprocessor is a third-party entity engaged by I Want That\!, Inc., a Delaware corporation to perform services that may require the entity to access to or process Personal Data that I Want That\! handles on behalf of its customers. Front engages different types of subprocessors to perform various functions as explained below.
+A subprocessor is a third-party entity engaged by I Want That!, Inc., a Delaware corporation to perform services that may require the entity to access to or process Personal Data that I Want That! handles on behalf of its customers. Front engages different types of subprocessors to perform various functions as explained below.
 
 ## **Third Party Subprocessors**
 
@@ -19,15 +19,15 @@ A subprocessor is a third-party entity engaged by I Want That\!, Inc., a Delawar
 | Stripe stripe.com | Cloud platform payment processing and compliance | United States |
 | Sendgrid by Twilio, Inc. 101 Spear Street, First Floor, San Francisco, CA 94105 [twilio.com](https://www.twilio.com/) | Email service provider | United States |
 
-1 The entity country for this subprocessor will depend on the region chosen for your I Want That\! account. If you choose the United States Service Region the subprocessor location is primarily the United States, and we use the United States service region option with that subprocessor. If you choose the EU Service Region the subprocessor location will primarily be one of the European Union countries.
+1 The entity country for this subprocessor will depend on the region chosen for your I Want That! account. If you choose the United States Service Region the subprocessor location is primarily the United States, and we use the United States service region option with that subprocessor. If you choose the EU Service Region the subprocessor location will primarily be one of the European Union countries.
 
-## **I Want That\! Group Subprocessors**
+## **I Want That! Group Subprocessors**
 
 The following entities control, are controlled by, or are under common control with I Want That, Inc.
 
 | Entity Name | Processing Activity | Entity Country |
 | ----- | ----- | ----- |
-| I Want That\!, Inc. | Technical and Operational Support for all I Want That\! Services. | United States |
+| I Want That!, Inc. | Technical and Operational Support for all I Want That! Services. | United States |
 |  |  |  |
 |  |  |  |
 
