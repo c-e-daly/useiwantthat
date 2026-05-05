@@ -3,7 +3,7 @@ import Link from "next/link";
 import { BarChart3, Bot, ShieldCheck } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Sellers | Shopify App + Price Builder",
+  title: "Prophect from I Want That! | Shopify App + Price Builder",
   description:
     "Install the I Want That! Shopify app to run Customer Generated Offers, Price Builder elasticity controls, and agentic offer processing.",
 };
