@@ -283,6 +283,49 @@ function renderCta(content: string[], counts: HeadingIdCounts) {
     .join("\n");
 }
 
+function renderImage(content: string[]) {
+  const { fields } = parseDirectiveFields(content);
+  const src = safeUrl(fields.src || fields.image);
+  const alt = escapeHtml(fields.alt || "");
+  const caption = fields.caption || fields.title || "";
+  const credit = fields.credit || "";
+  const variant = fields.variant === "full" ? "full" : "contained";
+
+  if (!src) {
+    return "";
+  }
+
+  const captionParts = [caption, credit ? `Credit: ${credit}` : ""].filter(Boolean);
+
+  return [
+    `<figure class="prophet-image prophet-image-${variant}">`,
+    `<img src="${src}" alt="${alt}" loading="lazy" decoding="async" />`,
+    captionParts.length ? `<figcaption>${captionParts.map(renderInlineMarkdown).join(" · ")}</figcaption>` : "",
+    "</figure>",
+  ]
+    .filter(Boolean)
+    .join("\n");
+}
+
+function renderQuote(content: string[]) {
+  const { fields, body } = parseDirectiveFields(content);
+  const quote = body.join("\n").trim() || fields.quote || fields.text || "";
+  const attribution = fields.attribution || fields.author || fields.source || "";
+
+  if (!quote) {
+    return "";
+  }
+
+  return [
+    `<figure class="prophet-quote">`,
+    `<blockquote>${renderMarkdown(quote).html}</blockquote>`,
+    attribution ? `<figcaption>${renderInlineMarkdown(attribution)}</figcaption>` : "",
+    "</figure>",
+  ]
+    .filter(Boolean)
+    .join("\n");
+}
+
 function renderCards(content: string[], counts: HeadingIdCounts) {
   const items = parseDirectiveItems(content);
 
@@ -504,6 +547,14 @@ function renderDirective(name: string, content: string[], counts: HeadingIdCount
 
   if (normalized === "cta") {
     return renderCta(content, counts);
+  }
+
+  if (normalized === "image" || normalized === "figure") {
+    return renderImage(content);
+  }
+
+  if (normalized === "quote" || normalized === "pullquote") {
+    return renderQuote(content);
   }
 
   if (normalized === "cards" || normalized === "card-grid") {
