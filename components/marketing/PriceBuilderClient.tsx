@@ -274,7 +274,7 @@ export function PriceBuilderClient() {
           tone="positive"
         />
         <Metric
-          label="Allowance protected"
+          label="Allowance Shield"
           value={formatCurrency(results.opportunityCost)}
           tone="positive"
         />
