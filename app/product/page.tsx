@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 const SHOPIFY_APP_URL = "https://apps.shopify.com/iwtapp-shop";
 const DEMO_URL = "https://meetings.hubspot.com/chris-e-daly/customer-demo";
 
-export default function SellersPage() {
+export default function ProductPage() {
   return (
     <div className="min-h-screen bg-white">
       <section className="border-b border-slate-200 bg-slate-950 text-white">

@@ -280,5 +280,5 @@ curl -X POST https://www.useiwantthat.com/api/revalidate \
 curl -X POST https://www.useiwantthat.com/api/revalidate \
   -H "content-type: application/json" \
   -H "x-revalidate-token: $REVALIDATE_TOKEN" \
-  -d '{"paths":["/blog","/sellers"]}'
+  -d '{"paths":["/blog","/product"]}'
 ```

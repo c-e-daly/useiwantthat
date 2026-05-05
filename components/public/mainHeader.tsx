@@ -70,7 +70,7 @@ export function MainHeader() {
         {/* Navigation */}
         <nav className="hidden items-center space-x-8 text-sm font-medium md:flex">
           <Link 
-            href="/sellers"
+            href="/product"
             className="text-gray-900 hover:text-indigo-600 transition duration-150"
           >
             SELLERS

@@ -212,7 +212,7 @@ Supported variants:
 ```md
 :::cta
 title: Turn more paid clicks into buyers
-href: /sellers
+href: /product
 label: See Prophet for sellers
 Use Customer Generated Offers to capture price intent and reduce wasted paid traffic.
 :::
