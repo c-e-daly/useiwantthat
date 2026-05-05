@@ -34,6 +34,7 @@ export function BlogArticleRenderer({ post, jsonLd = [], includeGtm = false, pre
   const showRelatedSection = showRelatedArticles || showUseCaseLinks;
   const showFinalCta = Boolean(post.internalLinks?.ctaText && config.modules.showFinalCta);
   const showTableOfContents = config.sidebar.tableOfContents && post.tableOfContents.length > 0;
+  const bodyHasFaq = post.tableOfContents.some((item) => item.text.toLowerCase() === "faq") || post.html.includes('class="prophet-faq"');
   const heroImage = post.coverImageUrl;
   const heroImageAlt = post.og?.imageAlt || post.title;
 
@@ -149,7 +150,7 @@ export function BlogArticleRenderer({ post, jsonLd = [], includeGtm = false, pre
             </section>
           ) : null}
 
-          {config.modules.showFaq && post.aeo?.faq?.length ? (
+          {config.modules.showFaq && post.aeo?.faq?.length && !bodyHasFaq ? (
             <section className="mt-12 border-t border-slate-200 pt-8">
               <h2 className="text-2xl font-semibold text-slate-900">FAQ</h2>
               <div className="mt-4 space-y-5">

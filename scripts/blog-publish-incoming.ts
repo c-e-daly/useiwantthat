@@ -211,8 +211,11 @@ function updateFrontmatterImages(postMarkdown: string, imageUrl: string | null) 
   return `${nextFrontmatter}\n${content}`;
 }
 
-function selectAsset(manifest: ManifestFile, role: string) {
-  return manifest.assets?.find((asset) => asset.role === role);
+function selectAsset(manifest: ManifestFile, role: string, slug?: string) {
+  return (
+    manifest.assets?.find((asset) => asset.role === role) ??
+    manifest.assets?.find((asset) => slug && new RegExp(`^${slug.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}-${role}\\.(png|jpe?g|webp|gif)$`, "i").test(asset.filename))
+  );
 }
 
 async function downloadText(bucket: string, path: string) {
@@ -367,8 +370,8 @@ async function main() {
   const manifest = JSON.parse(await downloadText(bucket, joinPath(incomingFolder, "manifest.json"))) as ManifestFile;
   const incomingMarkdownPath = joinPath(incomingFolder, manifest.markdownFile ?? "post.md");
   const incomingPostMarkdown = await downloadText(bucket, incomingMarkdownPath);
-  const heroAsset = selectAsset(manifest, "hero");
-  const ogAsset = selectAsset(manifest, "og");
+  const heroAsset = selectAsset(manifest, "hero", slug);
+  const ogAsset = selectAsset(manifest, "og", slug);
   const heroImageUrl = heroAsset ? getAppServedAssetUrl(joinPath(incomingFolder, heroAsset.filename)) : null;
   const ogImageUrl = ogAsset ? getAppServedAssetUrl(joinPath(incomingFolder, ogAsset.filename)) : getGeneratedOgImageUrl(slug);
   const postMarkdown = updateFrontmatterImages(incomingPostMarkdown, ogImageUrl);

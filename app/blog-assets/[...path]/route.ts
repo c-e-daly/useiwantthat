@@ -6,7 +6,8 @@ type BlogAssetRouteContext = {
   params: Promise<{ path: string[] }>;
 };
 
-const SAFE_ASSET_PATH = /^blog\/incoming\/\d{4}\/\d{2}\/[a-z0-9-]+\/[a-z0-9._-]+\.(png|jpe?g|webp|gif)$/i;
+const SAFE_ASSET_PATH =
+  /^(?:blog\/incoming\/\d{4}\/\d{2}\/[a-z0-9-]+|blog\/images(?:\/\d{4}\/\d{2})?(?:\/[a-z0-9-]+)?|images(?:\/[a-z0-9-]+)?)\/[a-z0-9._-]+\.(png|jpe?g|webp|gif)$|^[a-z0-9-]+-(?:hero|og)\.(png|jpe?g|webp|gif)$/i;
 
 export const runtime = "nodejs";
 

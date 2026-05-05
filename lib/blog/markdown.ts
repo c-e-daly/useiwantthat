@@ -552,8 +552,9 @@ export function renderMarkdown(markdown: string, headingCounts: HeadingIdCounts 
   for (let lineIndex = 0; lineIndex < lines.length; lineIndex += 1) {
     const rawLine = lines[lineIndex];
     const line = rawLine.trimEnd();
+    const blockLine = line.trimStart();
 
-    if (line.startsWith("```")) {
+    if (blockLine.startsWith("```")) {
       closeLists();
       if (!inCodeBlock) {
         html.push("<pre><code>");
@@ -570,7 +571,7 @@ export function renderMarkdown(markdown: string, headingCounts: HeadingIdCounts 
       continue;
     }
 
-    if (line.trimStart().startsWith(":::")) {
+    if (blockLine.startsWith(":::")) {
       closeLists();
       const directive = collectDirective(lines, lineIndex);
       html.push(renderDirective(directive.name, directive.content, headingCounts));
@@ -578,13 +579,13 @@ export function renderMarkdown(markdown: string, headingCounts: HeadingIdCounts 
       continue;
     }
 
-    if (isTableRow(line) && lineIndex + 1 < lines.length && isTableDelimiter(lines[lineIndex + 1])) {
+    if (isTableRow(blockLine) && lineIndex + 1 < lines.length && isTableDelimiter(lines[lineIndex + 1])) {
       closeLists();
-      const tableLines = [line, lines[lineIndex + 1]];
+      const tableLines = [blockLine, lines[lineIndex + 1].trimStart()];
       lineIndex += 2;
 
-      while (lineIndex < lines.length && lines[lineIndex].trim() && isTableRow(lines[lineIndex])) {
-        tableLines.push(lines[lineIndex]);
+      while (lineIndex < lines.length && lines[lineIndex].trim() && isTableRow(lines[lineIndex].trimStart())) {
+        tableLines.push(lines[lineIndex].trimStart());
         lineIndex += 1;
       }
 
@@ -593,15 +594,15 @@ export function renderMarkdown(markdown: string, headingCounts: HeadingIdCounts 
       continue;
     }
 
-    if (!line) {
+    if (!blockLine) {
       closeLists();
       continue;
     }
 
-    if (/^#{1,6}\s/.test(line)) {
+    if (/^#{1,6}\s/.test(blockLine)) {
       closeLists();
-      const level = line.match(/^#+/)?.[0].length ?? 1;
-      const heading = parseHeadingText(line.replace(/^#{1,6}\s+/, ""));
+      const level = blockLine.match(/^#+/)?.[0].length ?? 1;
+      const heading = parseHeadingText(blockLine.replace(/^#{1,6}\s+/, ""));
       const cleanHeadingText = stripInlineMarkdown(heading.text);
 
       if (level === 2 && cleanHeadingText.toLowerCase() === "table of contents") {
@@ -621,46 +622,46 @@ export function renderMarkdown(markdown: string, headingCounts: HeadingIdCounts 
       continue;
     }
 
-    if (/^!\[[^\]]*\]\([^)]+\)$/.test(line.trim())) {
+    if (/^!\[[^\]]*\]\([^)]+\)$/.test(blockLine)) {
       closeLists();
-      html.push(`<figure class="prophet-image">${renderInlineMarkdown(line.trim())}</figure>`);
+      html.push(`<figure class="prophet-image">${renderInlineMarkdown(blockLine)}</figure>`);
       continue;
     }
 
-    if (/^>\s?/.test(line)) {
+    if (/^>\s?/.test(blockLine)) {
       closeLists();
-      html.push(`<blockquote>${renderInlineMarkdown(line.replace(/^>\s?/, ""))}</blockquote>`);
+      html.push(`<blockquote>${renderInlineMarkdown(blockLine.replace(/^>\s?/, ""))}</blockquote>`);
       continue;
     }
 
-    if (/^\d+\.\s+/.test(line)) {
+    if (/^\d+\.\s+/.test(blockLine)) {
       if (!inOrderedList) {
         closeLists();
         html.push("<ol>");
         inOrderedList = true;
       }
-      html.push(`<li>${renderInlineMarkdown(line.replace(/^\d+\.\s+/, ""))}</li>`);
+      html.push(`<li>${renderInlineMarkdown(blockLine.replace(/^\d+\.\s+/, ""))}</li>`);
       continue;
     }
 
-    if (/^[-*]\s+/.test(line)) {
+    if (/^[-*]\s+/.test(blockLine)) {
       if (!inUnorderedList) {
         closeLists();
         html.push("<ul>");
         inUnorderedList = true;
       }
-      html.push(`<li>${renderInlineMarkdown(line.replace(/^[-*]\s+/, ""))}</li>`);
+      html.push(`<li>${renderInlineMarkdown(blockLine.replace(/^[-*]\s+/, ""))}</li>`);
       continue;
     }
 
-    if (/^---+$/.test(line)) {
+    if (/^---+$/.test(blockLine)) {
       closeLists();
       html.push("<hr />");
       continue;
     }
 
     closeLists();
-    html.push(`<p>${renderInlineMarkdown(line)}</p>`);
+    html.push(`<p>${renderInlineMarkdown(blockLine)}</p>`);
   }
 
   closeLists();

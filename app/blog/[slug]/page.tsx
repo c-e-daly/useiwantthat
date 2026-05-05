@@ -32,7 +32,7 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
 
   try {
     const post = await getPostDetailBySlug(slug);
-    const image = post.coverImageUrl || post.og?.image || undefined;
+    const image = post.socialImageUrl || post.coverImageUrl || undefined;
 
     return {
       title: post.seoTitle,
@@ -69,7 +69,7 @@ function buildJsonLd(post: BlogPostDetail) {
       dateModified: post.updatedAt,
       author: post.schema?.article?.author || { "@type": "Organization", name: "Prophet" },
       publisher: post.schema?.article?.publisher || { "@type": "Organization", name: "Prophet" },
-      image: post.coverImageUrl ? [post.coverImageUrl] : undefined,
+      image: post.socialImageUrl ? [post.socialImageUrl] : undefined,
       wordCount: post.wordCount ?? undefined,
       mainEntityOfPage: post.canonicalUrl ?? undefined,
     },

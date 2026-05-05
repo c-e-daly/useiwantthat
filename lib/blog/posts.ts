@@ -40,8 +40,32 @@ function resolveAbsoluteUrl(value: string | null | undefined): string | null {
   return `${SITE_URL}/${value.replace(/^\/+/, "")}`;
 }
 
-function resolveOgImageUrl(frontmatter: Partial<PostFrontmatter> | null, row: BlogPostRecord) {
-  return resolveAbsoluteUrl(frontmatter?.og?.image) ?? row.cover_image_url;
+function resolveBlogImageUrl(value: string | null | undefined): string | null {
+  if (!value) {
+    return null;
+  }
+
+  const cleanValue = value.trim();
+
+  if (/^https?:\/\//i.test(cleanValue)) {
+    return cleanValue;
+  }
+
+  const storagePath = cleanValue.replace(/^\/+/, "");
+
+  if (/^(blog\/incoming|blog\/images|images)\//i.test(storagePath) || /^[a-z0-9-]+-(hero|og)\.(png|jpe?g|webp|gif)$/i.test(storagePath)) {
+    return `${SITE_URL}/blog-assets/${storagePath}`;
+  }
+
+  return resolveAbsoluteUrl(cleanValue);
+}
+
+function resolveCoverImageUrl(frontmatter: Partial<PostFrontmatter> | null, row: BlogPostRecord) {
+  return resolveBlogImageUrl(row.cover_image_url) ?? resolveBlogImageUrl(frontmatter?.og?.image);
+}
+
+function resolveSocialImageUrl(frontmatter: Partial<PostFrontmatter> | null, row: BlogPostRecord) {
+  return resolveBlogImageUrl(frontmatter?.og?.image) ?? resolveBlogImageUrl(frontmatter?.twitter?.image) ?? resolveBlogImageUrl(row.cover_image_url);
 }
 
 function readFirstNonEmpty(...values: Array<string | null | undefined>) {
@@ -71,7 +95,8 @@ function mapSummary(row: BlogPostRecord, frontmatter: Partial<PostFrontmatter> |
     tags: frontmatter?.tags?.length ? frontmatter.tags : row.tags ?? [],
     publishedAt: frontmatter?.publishedAt || row.published_at || row.created_at,
     updatedAt: frontmatter?.updatedAt || row.updated_at,
-    coverImageUrl: resolveOgImageUrl(frontmatter, row),
+    coverImageUrl: resolveCoverImageUrl(frontmatter, row),
+    socialImageUrl: resolveSocialImageUrl(frontmatter, row),
     path: getPostPath(row.slug),
     pillar,
     pillarTitle: pillar ? BLOG_PILLARS[pillar].title : null,

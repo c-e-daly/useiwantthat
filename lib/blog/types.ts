@@ -31,6 +31,7 @@ export type BlogPostSummary = {
   publishedAt: string;
   updatedAt: string;
   coverImageUrl: string | null;
+  socialImageUrl: string | null;
   path: string;
   pillar: ContentPillar | null;
   pillarTitle: string | null;

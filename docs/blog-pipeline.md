@@ -41,6 +41,9 @@ and optional revalidation.
 - Markdown prefix: `blog/markdown`. Override with `SUPABASE_BLOG_MARKDOWN_PREFIX`.
 - SEO prefix: `blog/seo`. Override with `SUPABASE_BLOG_SEO_PREFIX`.
 - Image prefix convention: `blog/images`.
+- Required stable generated image filenames:
+  - `[slug]-hero.png` for the visible article hero image
+  - `[slug]-og.png` for Open Graph, Twitter, and Article schema image metadata
 - Processed marker prefix convention: `blog/processed`.
 - Review prefix convention: `blog/review`.
 - Period-based folders are supported, for example:
@@ -231,12 +234,12 @@ Article body exported from Google Docs as Markdown.
   "markdownFile": "post.md",
   "assets": [
     {
-      "filename": "hero.png",
+      "filename": "bfcm-discounts-destroy-shopify-margins-hero.png",
       "role": "hero",
       "contentType": "image/png"
     },
     {
-      "filename": "og.png",
+      "filename": "bfcm-discounts-destroy-shopify-margins-og.png",
       "role": "og",
       "contentType": "image/png"
     }
@@ -252,12 +255,15 @@ Article body exported from Google Docs as Markdown.
   "source": "google-drive",
   "sourceDocUrl": "https://docs.google.com/...",
   "uploadedAt": "2026-05-01T14:30:00.000Z",
-  "files": ["post.md", "manifest.json", "hero.png", "og.png"]
+  "files": ["post.md", "manifest.json", "bfcm-discounts-destroy-shopify-margins-hero.png", "bfcm-discounts-destroy-shopify-margins-og.png"]
 }
 ```
 
 The transfer agent should keep asset filenames stable between `manifest.json`,
-Markdown image references, and uploaded objects in the incoming folder.
+Markdown image references, and uploaded objects in the incoming folder. The
+publisher stores the hero image on `blog_posts.cover_image_url` and rewrites
+frontmatter `og.image`, `twitter.image`, and `schema.article.image` to the
+resolved `[slug]-og.png` app-served asset URL.
 
 ## Optional revalidate payload examples
 

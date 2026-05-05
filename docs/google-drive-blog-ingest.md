@@ -121,6 +121,8 @@ semantically clean:
   layout and comparison modules. Do not use tables for layout.
 - Use stable image filenames in the source asset folder. Markdown image
   references, `manifest.json`, and uploaded object names should match.
+- Name generated article images `[slug]-hero.png` and `[slug]-og.png` so the
+  publisher can map the visible hero separately from social metadata.
 - Keep hero/OG image intent in frontmatter and assets. Body images are article
   content images.
 
@@ -135,4 +137,4 @@ For images, create a sibling folder inside the source Drive folder named one of:
 [slug] assets
 ```
 
-Any `image/*` files in that folder are uploaded into the same incoming prefix as the post. Filenames containing `hero` or `cover` are marked as `hero`; filenames containing `og` are marked as `og`; everything else is marked as an article image.
+Any `image/*` files in that folder are uploaded into the same incoming prefix as the post. Filenames containing `hero` or `cover` are marked as `hero`; filenames containing `og` are marked as `og`; everything else is marked as an article image. Prefer exact generated filenames: `[slug]-hero.png` and `[slug]-og.png`.

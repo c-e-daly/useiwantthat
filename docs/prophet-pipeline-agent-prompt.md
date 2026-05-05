@@ -45,8 +45,8 @@ After the YAML frontmatter is generated and prepended to the article markdown, t
 blog/incoming/YYYY/MM/[slug]/
   post.md
   manifest.json
-  hero.png
-  og.png
+  [slug]-hero.png
+  [slug]-og.png
   [other-article-images]
   _ready.json
 ```
@@ -67,7 +67,7 @@ Example `_ready.json`:
   "source": "google-drive",
   "sourceDocUrl": "https://docs.google.com/...",
   "uploadedAt": "2026-05-01T14:30:00.000Z",
-  "files": ["post.md", "manifest.json", "hero.png", "og.png"]
+  "files": ["post.md", "manifest.json", "bfcm-discounts-destroy-shopify-margins-hero.png", "bfcm-discounts-destroy-shopify-margins-og.png"]
 }
 ```
 
@@ -111,12 +111,12 @@ The Markdown body contract:
   "markdownFile": "post.md",
   "assets": [
     {
-      "filename": "hero.png",
+      "filename": "bfcm-discounts-destroy-shopify-margins-hero.png",
       "role": "hero",
       "contentType": "image/png"
     },
     {
-      "filename": "og.png",
+      "filename": "bfcm-discounts-destroy-shopify-margins-og.png",
       "role": "og",
       "contentType": "image/png"
     }
@@ -125,6 +125,9 @@ The Markdown body contract:
 ```
 
 The transfer agent should keep asset filenames stable between `manifest.json`, markdown image references, and the uploaded objects in the incoming folder.
+Generated hero and OG image assets must use `[slug]-hero.png` and
+`[slug]-og.png` respectively. The publisher maps the hero asset to the visible
+article image and the OG asset to social metadata.
 
 ---
 

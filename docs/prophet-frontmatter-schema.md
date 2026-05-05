@@ -166,7 +166,7 @@ aeo:
 og:
   title: ""         # defaults to seo.metaTitle if blank — agent can override for social tone
   description: ""   # defaults to seo.metaDescription if blank — can be more conversational
-  image: ""         # path to OG image in Supabase storage. Format: /og/[slug].png
+  image: ""         # path to OG image in Supabase storage. Prefer [slug]-og.png resolved by the publisher.
   imageAlt: ""      # descriptive alt text for OG image
   imageWidth: 1200
   imageHeight: 630
