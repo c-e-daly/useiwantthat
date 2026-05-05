@@ -69,11 +69,17 @@ export function MainHeader() {
 
         {/* Navigation */}
         <nav className="hidden items-center space-x-8 text-sm font-medium md:flex">
+           <Link 
+            href="/ask-rami"
+             className="text-gray-900 hover:text-indigo-600 transition duration-150"
+             >
+              ASK RAMI
+            </Link>
           <Link 
             href="/product"
             className="text-gray-900 hover:text-indigo-600 transition duration-150"
           >
-            SELLERS
+            PRODUCT
           </Link>
           <div
             ref={toolsMenuRef}
