@@ -102,3 +102,19 @@ export function getBlogStorageConfig() {
       process.env.SUPABASE_BLOG_SEO_PREFIX ?? derivePrefix(basePrefix, "seo"),
   };
 }
+
+export function getPublicBlogStorageUrl(bucket: string, path: string) {
+  const explicitStorageUrl = process.env.SUPABASE_STORAGE_PUBLIC_URL;
+  const url = process.env.SUPABASE_URL ?? process.env.NEXT_PUBLIC_SUPABASE_URL;
+  const cleanPath = path.replace(/^\/+/, "");
+
+  if (explicitStorageUrl) {
+    return `${explicitStorageUrl.replace(/\/+$/, "")}/${cleanPath}`;
+  }
+
+  if (url) {
+    return `${url.replace(/\/+$/, "")}/storage/v1/object/public/${bucket}/${cleanPath}`;
+  }
+
+  return cleanPath;
+}

@@ -1,7 +1,7 @@
 import { createClient } from "@supabase/supabase-js";
 import nextEnv from "@next/env";
 import { parseMarkdownWithFrontmatter } from "../lib/blog/frontmatter";
-import { getBlogStorageConfig } from "../lib/blog/storageConfig";
+import { getBlogStorageConfig, getPublicBlogStorageUrl } from "../lib/blog/storageConfig";
 import { BLOG_PILLARS } from "../lib/blog/pillars";
 import type { ContentPillar, PostFrontmatter } from "../lib/blog/prophet-frontmatter.types";
 
@@ -133,18 +133,7 @@ function getIncomingFolderFromReadyPath(readyPath: string) {
 }
 
 function getPublicStorageUrl(bucket: string, path: string) {
-  const explicitStorageUrl = readEnv("SUPABASE_STORAGE_PUBLIC_URL");
-  const url = readEnv("SUPABASE_URL") ?? readEnv("NEXT_PUBLIC_SUPABASE_URL");
-
-  if (explicitStorageUrl) {
-    return `${explicitStorageUrl.replace(/\/+$/, "")}/${path.replace(/^\/+/, "")}`;
-  }
-
-  if (url) {
-    return `${url.replace(/\/+$/, "")}/storage/v1/object/public/${bucket}/${path.replace(/^\/+/, "")}`;
-  }
-
-  return path;
+  return getPublicBlogStorageUrl(bucket, path);
 }
 
 function getCanonicalUrl(slug: string) {
@@ -155,11 +144,6 @@ function getCanonicalUrl(slug: string) {
 function getGeneratedOgImageUrl(slug: string) {
   const siteUrl = readEnv("NEXT_PUBLIC_SITE_URL") ?? "https://www.useiwantthat.com";
   return `${siteUrl.replace(/\/+$/, "")}/og/${slug}.png`;
-}
-
-function getAppServedAssetUrl(path: string) {
-  const siteUrl = readEnv("NEXT_PUBLIC_SITE_URL") ?? "https://www.useiwantthat.com";
-  return `${siteUrl.replace(/\/+$/, "")}/blog-assets/${path.replace(/^\/+/, "")}`;
 }
 
 function yamlString(value: string) {
@@ -372,8 +356,8 @@ async function main() {
   const incomingPostMarkdown = await downloadText(bucket, incomingMarkdownPath);
   const heroAsset = selectAsset(manifest, "hero", slug);
   const ogAsset = selectAsset(manifest, "og", slug);
-  const heroImageUrl = heroAsset ? getAppServedAssetUrl(joinPath(incomingFolder, heroAsset.filename)) : null;
-  const ogImageUrl = ogAsset ? getAppServedAssetUrl(joinPath(incomingFolder, ogAsset.filename)) : getGeneratedOgImageUrl(slug);
+  const heroImageUrl = heroAsset ? getPublicStorageUrl(bucket, joinPath(incomingFolder, heroAsset.filename)) : null;
+  const ogImageUrl = ogAsset ? getPublicStorageUrl(bucket, joinPath(incomingFolder, ogAsset.filename)) : getGeneratedOgImageUrl(slug);
   const postMarkdown = updateFrontmatterImages(incomingPostMarkdown, ogImageUrl);
   const { frontmatter, content } = parseMarkdownWithFrontmatter(postMarkdown);
 

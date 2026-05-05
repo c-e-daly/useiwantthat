@@ -4,7 +4,7 @@ import { parseMarkdownWithFrontmatter } from "@/lib/blog/frontmatter";
 import { renderMarkdown } from "@/lib/blog/markdown";
 import { BLOG_PILLARS, getPostPath } from "@/lib/blog/pillars";
 import { createBlogSupabaseAdminClient } from "@/lib/blog/supabaseAdmin";
-import { getBlogStorageConfig } from "@/lib/blog/storageConfig";
+import { getBlogStorageConfig, getPublicBlogStorageUrl } from "@/lib/blog/storageConfig";
 import type { BlogPostDetail, BlogPostRecord, BlogPostStatus, BlogPostSummary } from "@/lib/blog/types";
 import type { ContentPillar, PostFrontmatter } from "@/lib/blog/prophet-frontmatter.types";
 import type { Json } from "@/src/types/database.types";
@@ -40,12 +40,30 @@ function resolveAbsoluteUrl(value: string | null | undefined): string | null {
   return `${SITE_URL}/${value.replace(/^\/+/, "")}`;
 }
 
+function extractAppServedBlogAssetPath(value: string): string | null {
+  if (value.startsWith("/blog-assets/")) {
+    return value.slice("/blog-assets/".length);
+  }
+
+  try {
+    const url = new URL(value);
+    return url.pathname.startsWith("/blog-assets/") ? url.pathname.slice("/blog-assets/".length) : null;
+  } catch {
+    return null;
+  }
+}
+
 function resolveBlogImageUrl(value: string | null | undefined): string | null {
   if (!value) {
     return null;
   }
 
   const cleanValue = value.trim();
+  const appServedAssetPath = extractAppServedBlogAssetPath(cleanValue);
+
+  if (appServedAssetPath) {
+    return getPublicBlogStorageUrl(BLOG_BUCKET, appServedAssetPath);
+  }
 
   if (/^https?:\/\//i.test(cleanValue)) {
     return cleanValue;
@@ -54,10 +72,17 @@ function resolveBlogImageUrl(value: string | null | undefined): string | null {
   const storagePath = cleanValue.replace(/^\/+/, "");
 
   if (/^(blog\/incoming|blog\/images|images)\//i.test(storagePath) || /^[a-z0-9-]+-(hero|og)\.(png|jpe?g|webp|gif)$/i.test(storagePath)) {
-    return `${SITE_URL}/blog-assets/${storagePath}`;
+    return getPublicBlogStorageUrl(BLOG_BUCKET, storagePath);
   }
 
   return resolveAbsoluteUrl(cleanValue);
+}
+
+function normalizeRenderedBlogAssetUrls(html: string): string {
+  return html.replace(/(<img\b[^>]*\bsrc=")([^"]+)(")/gi, (match, prefix: string, src: string, suffix: string) => {
+    const appServedAssetPath = extractAppServedBlogAssetPath(src);
+    return appServedAssetPath ? `${prefix}${getPublicBlogStorageUrl(BLOG_BUCKET, appServedAssetPath)}${suffix}` : match;
+  });
 }
 
 function resolveCoverImageUrl(frontmatter: Partial<PostFrontmatter> | null, row: BlogPostRecord) {
@@ -243,7 +268,7 @@ async function buildPostDetail(row: BlogPostRecord): Promise<BlogPostDetail> {
       readFirstNonEmpty(row.canonical_url, seoSidecar?.canonical_url, frontmatter?.canonical) ?? buildCanonicalUrl(row.slug),
     markdownPath: row.markdown_path,
     markdown,
-    html: renderedMarkdown.html,
+    html: normalizeRenderedBlogAssetUrls(renderedMarkdown.html),
     tableOfContents: renderedMarkdown.tableOfContents,
     gtmLayer: row.gtm_layer ?? seoSidecar?.gtm_layer ?? null,
     frontmatter,
