@@ -9,6 +9,7 @@ const subscribe = () => () => {};
 const getServerSnapshot = () => false;
 const getHostnameSnapshot = () => window.location.hostname.startsWith('app.');
 const SHOPIFY_APP_URL = 'https://apps.shopify.com/iwtapp-shop';
+const MENU_CLOSE_DELAY_MS = 1500;
 
 const toolsNavItems = [
   {
@@ -85,7 +86,7 @@ export function MainHeader() {
     }
     closeTimer.current = setTimeout(() => {
       setOpenMenu(null);
-    }, 1500);
+    }, MENU_CLOSE_DELAY_MS);
   }
 
   function renderDropdown(
@@ -132,6 +133,7 @@ export function MainHeader() {
             <Link
               key={item.href}
               href={item.href}
+              onClick={() => setOpenMenu(null)}
               className="block rounded-askrami px-4 py-3 transition hover:bg-surface-subtle focus:bg-surface-subtle focus:outline-none"
             >
               <span className="block text-sm font-semibold text-black">
