@@ -13,6 +13,7 @@ import {
   ShieldCheck,
   Tags,
 } from "lucide-react";
+import { playbooks } from "@/lib/playbooks";
 
 const SHOPIFY_APP_URL = "https://apps.shopify.com/iwtapp-shop";
 const DEMO_URL = "https://meetings.hubspot.com/chris-e-daly/customer-demo";
@@ -52,6 +53,7 @@ const problemPoints = [
 const featureSections = [
   {
     icon: MousePointerClick,
+    href: playbooks.cac.href,
     eyebrow: "Offers",
     title: "Let customers tell you what they will pay.",
     body: "Stop guessing at the price that converts. When a customer makes an offer, Prophet evaluates it against your margin floors and financial goals in real time.",
@@ -60,6 +62,7 @@ const featureSections = [
   },
   {
     icon: RefreshCw,
+    href: playbooks.counterOffer.href,
     eyebrow: "Counter Offers",
     title: "Close the gap, keep the margin.",
     body: "A customer offers $42. Your floor is $51. Without Prophet, they leave. With Prophet, they get a counter at $54 and stay in motion.",
@@ -68,6 +71,7 @@ const featureSections = [
   },
   {
     icon: BarChart3,
+    href: playbooks.clearance.href,
     eyebrow: "Price Builder",
     title: "Know your floor before any offer arrives.",
     body: "Free shipping is not free. Discounts are not free. Prophet makes every cost explicit: COGS, shipping, handling, and platform fees.",
@@ -76,6 +80,7 @@ const featureSections = [
   },
   {
     icon: ClipboardList,
+    href: playbooks.programs.href,
     eyebrow: "Programs",
     title: "Align your offers to your calendar.",
     body: "BFCM is coming. Q1 is slow. A Meta campaign starts next week. Programs control how aggressive Prophet gets and when.",
@@ -84,6 +89,7 @@ const featureSections = [
   },
   {
     icon: Megaphone,
+    href: playbooks.remarketing.href,
     eyebrow: "Remarketing",
     title: "Re-engage without paying for the click twice.",
     body: "You already paid to bring them to your store. When they do not buy, Prophet gives them a reason to come back that is not another coupon code.",
@@ -92,6 +98,7 @@ const featureSections = [
   },
   {
     icon: LogOut,
+    href: playbooks.exitIntent.href,
     eyebrow: "Exit Intent",
     title: "Do not capture emails. Capture orders.",
     body: "Every exit popup asks for an email address. Prophet asks for something more valuable: what would you actually pay?",
@@ -287,10 +294,11 @@ export default function ProductPage() {
           </div>
 
           <div className="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-            {featureSections.map(({ icon: Icon, eyebrow, title, body, detail }) => (
-              <article
+            {featureSections.map(({ icon: Icon, href, eyebrow, title, body, detail }) => (
+              <Link
                 key={eyebrow}
-                className="rounded-askrami border border-surface-border bg-white p-6 shadow-sm"
+                href={href}
+                className="group rounded-askrami border border-surface-border bg-white p-6 shadow-sm transition hover:-translate-y-0.5 hover:border-brand/30 hover:shadow-card"
               >
                 <div className="flex h-12 w-12 items-center justify-center rounded-askrami bg-brand/10 text-brand">
                   <Icon className="h-5 w-5" />
@@ -303,7 +311,11 @@ export default function ProductPage() {
                 </h3>
                 <p className="mt-4 leading-relaxed text-neutral-muted">{body}</p>
                 <p className="mt-4 leading-relaxed text-neutral-muted">{detail}</p>
-              </article>
+                <span className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-brand">
+                  View playbook
+                  <ArrowRight className="h-4 w-4 transition group-hover:translate-x-1" />
+                </span>
+              </Link>
             ))}
           </div>
         </div>
