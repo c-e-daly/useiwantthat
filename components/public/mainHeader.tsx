@@ -188,7 +188,7 @@ export function MainHeader() {
             href={SHOPIFY_APP_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="rounded-full bg-indigo-600 px-4 py-2 text-sm font-semibold text-white shadow-md hover:bg-indigo-700 transition duration-150"
+            className="rounded-askrami bg-brand px-4 py-2 text-sm font-semibold text-white shadow-md transition duration-150 hover:bg-brand-deep"
           >
             Start on Shopify
           </Link>
