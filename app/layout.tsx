@@ -3,7 +3,7 @@ import { ReactNode } from "react";
 import type { Metadata } from "next";
 import "./styles/globals.css";
 import { SpeedInsights } from "@vercel/speed-insights/next"
-import { Inter, Kaushan_Script } from "next/font/google"; 
+import localFont from "next/font/local";
 import Script from "next/script";
 import { MainHeader } from "@/components/public/mainHeader";
 import { Footer } from "@/components/public/footer";
@@ -25,17 +25,29 @@ const POSTHOG_KEY =
 const POSTHOG_HOST =
   process.env.NEXT_PUBLIC_POSTHOG_HOST ?? process.env.POSTHOG_HOST;
 
-const kaushan = Kaushan_Script({ 
+const kaushan = localFont({
+  src: "../public/fonts/Kaushan_Script/KaushanScript-Regular.ttf",
   weight: "400",
-  subsets: ["latin"], 
+  style: "normal",
   variable: "--font-kaushan",
-  display: 'swap' 
+  display: "swap",
 });
 
-const inter = Inter({ 
-  subsets: ["latin"], 
+const inter = localFont({
+  src: [
+    {
+      path: "../public/fonts/Inter/Inter-VariableFont_opsz,wght.ttf",
+      style: "normal",
+      weight: "100 900",
+    },
+    {
+      path: "../public/fonts/Inter/Inter-Italic-VariableFont_opsz,wght.ttf",
+      style: "italic",
+      weight: "100 900",
+    },
+  ],
   variable: "--font-inter",
-  display: 'swap' 
+  display: "swap",
 });
 
 export default function RootLayout({ children }: { children: ReactNode }) {
