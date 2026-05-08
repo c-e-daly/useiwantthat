@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
 import type { Playbook } from "@/lib/playbooks";
+import { playbookSupplements } from "@/lib/playbook-supplements";
 
 const formatLabel = (value: string) => value.replaceAll("_", " ");
 
@@ -10,6 +11,7 @@ type PlaybookPageProps = {
 
 export function PlaybookPage({ playbook }: PlaybookPageProps) {
   const Icon = playbook.icon;
+  const supplement = playbookSupplements[playbook.slug];
 
   return (
     <div className="bg-white">
@@ -112,6 +114,147 @@ export function PlaybookPage({ playbook }: PlaybookPageProps) {
           ))}
         </div>
       </section>
+
+      {supplement ? (
+        <section className="border-b border-surface-border bg-surface-subtle/40 py-16 md:py-20">
+          <div className="container mx-auto px-4">
+            <div className="max-w-3xl">
+              <p className="text-xs font-bold uppercase tracking-widest text-brand">
+                {supplement.eyebrow}
+              </p>
+              <h2 className="mt-4 text-4xl font-bold tracking-tight text-black">
+                {supplement.title}
+              </h2>
+              <p className="mt-4 text-lg leading-relaxed text-neutral-muted">
+                {supplement.intro}
+              </p>
+            </div>
+
+            <div className="mt-12 space-y-10">
+              {supplement.sections.map((section) => (
+                <article
+                  key={section.title}
+                  className="rounded-askrami border border-surface-border bg-white p-6 shadow-sm md:p-8"
+                >
+                  {section.eyebrow ? (
+                    <p className="text-xs font-bold uppercase tracking-widest text-brand">
+                      {section.eyebrow}
+                    </p>
+                  ) : null}
+                  <h3 className="text-2xl font-bold tracking-tight text-black md:text-3xl">
+                    {section.title}
+                  </h3>
+                  {section.body ? (
+                    <p className="mt-3 max-w-4xl leading-relaxed text-neutral-muted">
+                      {section.body}
+                    </p>
+                  ) : null}
+
+                  {section.cards ? (
+                    <div className="mt-6 grid gap-4 md:grid-cols-3">
+                      {section.cards.map((card) => (
+                        <div
+                          key={`${section.title}-${card.title}`}
+                          className={[
+                            "rounded-askrami border p-5",
+                            card.tone === "brand"
+                              ? "border-brand/30 bg-brand/10"
+                              : card.tone === "warning"
+                                ? "border-orange-200 bg-orange-50"
+                                : "border-surface-border bg-surface-subtle",
+                          ].join(" ")}
+                        >
+                          {card.eyebrow ? (
+                            <p className="text-xs font-bold uppercase tracking-widest text-neutral-muted">
+                              {card.eyebrow}
+                            </p>
+                          ) : null}
+                          <h4 className="mt-2 text-xl font-bold tracking-tight text-black">
+                            {card.title}
+                          </h4>
+                          {card.body ? (
+                            <p className="mt-3 text-sm leading-relaxed text-neutral-muted">
+                              {card.body}
+                            </p>
+                          ) : null}
+                          {card.items ? (
+                            <div className="mt-4 space-y-2">
+                              {card.items.map((item) => (
+                                <div key={item} className="flex gap-2 text-sm">
+                                  <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-brand" />
+                                  <span className="text-neutral-muted">
+                                    {item}
+                                  </span>
+                                </div>
+                              ))}
+                            </div>
+                          ) : null}
+                        </div>
+                      ))}
+                    </div>
+                  ) : null}
+
+                  {section.table ? (
+                    <div className="mt-6 overflow-x-auto rounded-askrami border border-surface-border">
+                      <div
+                        className="grid min-w-[680px] bg-black text-xs font-bold uppercase tracking-widest text-white"
+                        style={{
+                          gridTemplateColumns: `repeat(${section.table!.columns.length}, minmax(0, 1fr))`,
+                        }}
+                      >
+                        {section.table.columns.map((column) => (
+                          <div key={column} className="p-4">
+                            {column}
+                          </div>
+                        ))}
+                      </div>
+                      {section.table.rows.map((row) => (
+                        <div
+                          key={row.join("-")}
+                          className="grid min-w-[680px] border-t border-surface-border text-sm"
+                          style={{
+                            gridTemplateColumns: `repeat(${section.table!.columns.length}, minmax(0, 1fr))`,
+                          }}
+                        >
+                          {row.map((cell, index) => (
+                            <div
+                              key={`${row.join("-")}-${cell}-${index}`}
+                              className={[
+                                "p-4 leading-relaxed",
+                                index === 0
+                                  ? "font-semibold text-black"
+                                  : "text-neutral-muted",
+                              ].join(" ")}
+                            >
+                              {cell}
+                            </div>
+                          ))}
+                        </div>
+                      ))}
+                    </div>
+                  ) : null}
+
+                  {section.checklist ? (
+                    <div className="mt-6 grid gap-3 md:grid-cols-2">
+                      {section.checklist.map((item) => (
+                        <div
+                          key={item}
+                          className="flex gap-3 rounded-askrami border border-surface-border bg-surface-subtle p-4"
+                        >
+                          <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-brand" />
+                          <p className="text-sm leading-relaxed text-neutral-muted">
+                            {item}
+                          </p>
+                        </div>
+                      ))}
+                    </div>
+                  ) : null}
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+      ) : null}
 
       <section className="py-16 md:py-20">
         <div className="container mx-auto grid gap-12 px-4 lg:grid-cols-[0.9fr_1.1fr]">
