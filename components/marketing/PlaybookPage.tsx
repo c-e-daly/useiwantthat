@@ -81,7 +81,7 @@ export function PlaybookPage({ playbook }: PlaybookPageProps) {
                       </span>
                     ) : isExitIntentPlaybook ? (
                       <div
-                        className="w-full rounded-askrami border border-surface-border bg-white px-4 py-3 text-sm font-semibold text-neutral-muted shadow-sm"
+                        className="w-4/5 rounded-askrami border border-surface-border bg-white px-4 py-3 text-sm font-semibold text-neutral-muted shadow-sm"
                         aria-label="Disabled email input preview"
                       >
                         email
