@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
 import type { Playbook } from "@/lib/playbooks";
 import { playbookSupplements } from "@/lib/playbook-supplements";
@@ -12,6 +13,7 @@ type PlaybookPageProps = {
 export function PlaybookPage({ playbook }: PlaybookPageProps) {
   const Icon = playbook.icon;
   const supplement = playbookSupplements[playbook.slug];
+  const isClearancePlaybook = playbook.slug === "clearance-playbook";
 
   return (
     <div className="bg-white">
@@ -60,7 +62,18 @@ export function PlaybookPage({ playbook }: PlaybookPageProps) {
                   {playbook.contentImage.beforeLabel}
                 </p>
                 <div className="mt-8 rounded-askrami border border-black/10 bg-white p-5 shadow-card">
-                  <div className="h-28 rounded-askrami bg-black/5" />
+                  <div className="flex h-28 items-center justify-center overflow-hidden rounded-askrami bg-black/5">
+                    {isClearancePlaybook ? (
+                      <Image
+                        src="/ClearanceIcon.png"
+                        alt=""
+                        width={1024}
+                        height={1536}
+                        className="h-full max-h-24 w-auto object-contain"
+                        priority={false}
+                      />
+                    ) : null}
+                  </div>
                   <h2 className="mt-5 text-xl font-bold tracking-tight text-black">
                     {playbook.contentImage.beforeTitle}
                   </h2>
