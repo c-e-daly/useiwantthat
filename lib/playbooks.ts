@@ -11,7 +11,7 @@ import {
 export type PlaybookType =
   | "offers"
   | "counter_offers"
-  | "price_builder"
+  | "clearance"
   | "programs"
   | "remarketing"
   | "exit_intent";
@@ -139,7 +139,7 @@ export const playbooks = {
     href: "/playbooks/clearance-playbook",
     icon: BarChart3,
     title: "Clear Inventory Without Teaching Every Customer to Wait",
-    type: "price_builder",
+    type: "clearance",
     businessGoal: "inventory_velocity",
     tagline: "Clearance works better when the floor is explicit.",
     description:
@@ -151,7 +151,7 @@ export const playbooks = {
     contentImage: {
       alt: "Clearance comparison between a sitewide markdown and a controlled floor-based offer.",
       beforeLabel: "Markdown",
-      beforeTitle: "Storewide clearance sale",
+      beforeTitle: "Storewide clearance",
       beforeDetail: "Cuts price everywhere and trains customers to wait.",
       afterLabel: "Floor-based offer",
       afterTitle: "Controlled clearance",

@@ -13,7 +13,10 @@ type PlaybookPageProps = {
 export function PlaybookPage({ playbook }: PlaybookPageProps) {
   const Icon = playbook.icon;
   const supplement = playbookSupplements[playbook.slug];
+  const isCacPlaybook = playbook.slug === "cac-playbook";
   const isClearancePlaybook = playbook.slug === "clearance-playbook";
+  const isExitIntentPlaybook = playbook.slug === "exit-intent-playbook";
+  const isProgramsPlaybook = playbook.slug === "programs-playbook";
 
   return (
     <div className="bg-white">
@@ -72,6 +75,26 @@ export function PlaybookPage({ playbook }: PlaybookPageProps) {
                         className="h-full max-h-24 w-auto object-contain"
                         priority={false}
                       />
+                    ) : isCacPlaybook ? (
+                      <span className="text-3xl font-black tracking-tight text-black">
+                        20% off
+                      </span>
+                    ) : isExitIntentPlaybook ? (
+                      <div
+                        className="w-full rounded-askrami border border-surface-border bg-white px-4 py-3 text-sm font-semibold text-neutral-muted shadow-sm"
+                        aria-label="Disabled email input preview"
+                      >
+                        email
+                      </div>
+                    ) : isProgramsPlaybook ? (
+                      <div className="rounded-full bg-white px-5 py-3 text-center shadow-sm ring-1 ring-black/10">
+                        <div className="text-base font-black leading-tight tracking-tight text-black">
+                          25% off entire site
+                        </div>
+                        <div className="mt-0.5 text-xs font-semibold lowercase leading-tight text-neutral-muted">
+                          this week only
+                        </div>
+                      </div>
                     ) : null}
                   </div>
                   <h2 className="mt-5 text-xl font-bold tracking-tight text-black">
