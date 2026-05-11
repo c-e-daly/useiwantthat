@@ -20,11 +20,11 @@ const DEMO_URL = "https://meetings.hubspot.com/chris-e-daly/customer-demo";
 const CAC_CALCULATOR_URL = "/tools/cac-calculator";
 
 export const metadata: Metadata = {
-  title: "Prophet | Convert Existing Shopify Traffic Without More Ad Spend",
+  title: "Vector | Offer Intelligence & Decision Platform",
   description:
-    "Prophet helps Shopify merchants convert existing traffic with customer offers, automated counters, margin floors, programs, remarketing, and exit intent.",
+    "Vector helps Shopify merchants convert existing traffic with customer offers, automated counters, margin floors, programs, remarketing, and exit intent.",
   openGraph: {
-    title: "Prophet - Stop paying the ad tax on every sale",
+    title: "Vector - Offer Intelligence & Decision Platform",
     description:
       "Turn existing Shopify traffic into revenue with intelligent offers, counter offers, Price Builder, programs, remarketing, and exit intent.",
     url: "https://useiwantthat.com/product",
@@ -56,7 +56,7 @@ const featureSections = [
     href: playbooks.cac.href,
     eyebrow: "Offers",
     title: "Let customers tell you what they will pay.",
-    body: "Stop guessing at the price that converts. When a customer makes an offer, Prophet evaluates it against your margin floors and financial goals in real time.",
+    body: "Stop guessing at the price that converts. When a customer makes an offer, Vector evaluates it against your margin floors and financial goals in real time.",
     detail:
       "Accept the right offers automatically. Decline the rest without lifting a finger. No spreadsheets. No daily decisions. Just sales that protect your business.",
   },
@@ -65,7 +65,7 @@ const featureSections = [
     href: playbooks.counterOffer.href,
     eyebrow: "Counter Offers",
     title: "Close the gap, keep the margin.",
-    body: "A customer offers $42. Your floor is $51. Without Prophet, they leave. With Prophet, they get a counter at $54 and stay in motion.",
+    body: "A customer offers $42. Your floor is $51. Without Vector, they leave. With Vector, they get a counter at $54 and stay in motion.",
     detail:
       "Every negotiation you were losing to a bounce becomes a conversion at a price you chose.",
   },
@@ -74,7 +74,7 @@ const featureSections = [
     href: playbooks.clearance.href,
     eyebrow: "Price Builder",
     title: "Know your floor before any offer arrives.",
-    body: "Free shipping is not free. Discounts are not free. Prophet makes every cost explicit: COGS, shipping, handling, and platform fees.",
+    body: "Free shipping is not free. Discounts are not free. Vector makes every cost explicit: COGS, shipping, handling, and platform fees.",
     detail:
       "Set your floor once and avoid accidentally accepting a losing deal again.",
   },
@@ -83,7 +83,7 @@ const featureSections = [
     href: playbooks.programs.href,
     eyebrow: "Programs",
     title: "Align your offers to your calendar.",
-    body: "BFCM is coming. Q1 is slow. A Meta campaign starts next week. Programs control how aggressive Prophet gets and when.",
+    body: "BFCM is coming. Q1 is slow. A Meta campaign starts next week. Programs control how aggressive Vector gets and when.",
     detail:
       "Widen acceptance thresholds before a push. Tighten them when demand is strong. Your offer strategy adapts to your business.",
   },
@@ -92,7 +92,7 @@ const featureSections = [
     href: playbooks.remarketing.href,
     eyebrow: "Remarketing",
     title: "Re-engage without paying for the click twice.",
-    body: "You already paid to bring them to your store. When they do not buy, Prophet gives them a reason to come back that is not another coupon code.",
+    body: "You already paid to bring them to your store. When they do not buy, Vector gives them a reason to come back that is not another coupon code.",
     detail:
       "A personalized offer invitation brings lapsed visitors back on their terms. You get the conversion. Meta does not get the retargeting fee.",
   },
@@ -101,7 +101,7 @@ const featureSections = [
     href: playbooks.exitIntent.href,
     eyebrow: "Exit Intent",
     title: "Do not capture emails. Capture orders.",
-    body: "Every exit popup asks for an email address. Prophet asks for something more valuable: what would you actually pay?",
+    body: "Every exit popup asks for an email address. Vector asks for something more valuable: what would you actually pay?",
     detail:
       "A visitor who names a price is a buyer. Capture purchase intent before it disappears.",
   },
@@ -134,7 +134,7 @@ const ctaLinks = [
   {
     href: DEMO_URL,
     label: "Get a demo",
-    description: "Walk through Prophet with your store economics.",
+    description: "Walk through Vector with your store economics.",
     external: true,
   },
   {
@@ -160,14 +160,14 @@ export default function ProductPage() {
         <div className="container relative mx-auto grid gap-12 px-4 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
           <div>
             <div className="mb-6 inline-flex items-center gap-2 rounded-full bg-brand/10 px-3 py-1 text-xs font-bold uppercase tracking-widest text-brand">
-              Prophet for Shopify
+              Vector for Shopify
             </div>
             <h1 className="max-w-5xl text-5xl font-bold leading-[1.05] tracking-tighter text-black md:text-7xl">
-              Prophet stops the ad tax on every sale.
+              Vector is your offer intelligence and decision platform.
             </h1>
             <p className="mt-7 max-w-2xl text-lg leading-relaxed text-neutral-muted md:text-xl">
               You spend $5 to $15 to get a visitor to your store. Then 98% of
-              them leave. Prophet turns your existing traffic into revenue
+              them leave. Vector turns your existing traffic into revenue
               without another ad dollar.
             </p>
 
@@ -209,7 +209,7 @@ export default function ProductPage() {
                 <div className="flex items-center justify-between border-b border-white/10 pb-4">
                   <div>
                     <p className="text-xs font-bold uppercase tracking-widest text-brand">
-                      Live Prophet decision
+                      Live Vector decision
                     </p>
                     <p className="mt-2 text-2xl font-bold tracking-tight text-white">
                       Counter offer sent
@@ -239,7 +239,7 @@ export default function ProductPage() {
                     Floor: $51. Customer offer: $42.
                   </p>
                   <p className="mt-2 text-sm leading-relaxed text-white/70">
-                    Prophet sends a $54 counter instead of losing the visitor to
+                    Vector sends a $54 counter instead of losing the visitor to
                     a bounce or training them to wait for a blanket sale.
                   </p>
                 </div>
@@ -261,7 +261,7 @@ export default function ProductPage() {
             <p className="mt-5 text-lg leading-relaxed text-white/70">
               Fixed prices do not work for customers who need a nudge. Blanket
               discounts do not work for a business that needs to survive.
-              Prophet finds the price where a shopper would buy automatically.
+              Vector finds the price where a shopper would buy automatically.
             </p>
           </div>
 
@@ -286,7 +286,7 @@ export default function ProductPage() {
         <div className="container mx-auto px-4">
           <div className="max-w-3xl">
             <p className="text-xs font-bold uppercase tracking-widest text-brand">
-              Product
+              Vector
             </p>
             <h2 className="mt-4 text-4xl font-bold tracking-tight text-black md:text-5xl">
               Six levers that convert traffic before you buy it again.
@@ -331,7 +331,7 @@ export default function ProductPage() {
               Your store already has everything it needs to grow.
             </h2>
             <p className="mt-5 text-lg leading-relaxed text-neutral-muted">
-              Prophet unlocks the revenue already sitting inside your traffic.
+              Vector unlocks the revenue already sitting inside your traffic.
               Use the CAC calculator to estimate how much paid and organic
               traffic is leaving without converting.
             </p>
@@ -386,7 +386,7 @@ export default function ProductPage() {
               Stop paying for the same shopper twice.
             </h2>
             <p className="mx-auto mt-5 max-w-2xl text-lg leading-relaxed text-white/70">
-              Install Prophet, book a walkthrough, or calculate the revenue
+              Install Vector, book a walkthrough, or calculate the revenue
               your current traffic is leaving behind.
             </p>
           </div>
@@ -414,7 +414,7 @@ export default function ProductPage() {
           <div className="mx-auto mt-8 flex max-w-3xl items-start gap-3 rounded-askrami border border-brand/30 bg-brand/15 p-5 text-left">
             <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-brand" />
             <p className="text-sm leading-relaxed text-white/75">
-              Prophet works with your Shopify store and your existing traffic.
+              Vector works with your Shopify store and your existing traffic.
               The goal is simple: convert more shoppers without another ad
               dollar or another blanket discount.
             </p>

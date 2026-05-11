@@ -180,7 +180,7 @@ export default function AboutPage() {
             href="/product"
             className="inline-flex items-center justify-center gap-2 rounded-askrami bg-brand px-6 py-3 text-sm font-semibold text-white transition hover:bg-brand-deep"
           >
-            See Prophet
+            See Vector
             <ArrowRight className="h-4 w-4" />
           </Link>
         </div>

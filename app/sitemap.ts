@@ -9,7 +9,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   const staticRoutes: MetadataRoute.Sitemap = [
     { url: `${BASE_URL}/`, lastModified: new Date() },
-    { url: `${BASE_URL}/consumers`, lastModified: new Date() },
+    { url: `${BASE_URL}/ask-rami`, lastModified: new Date() },
     { url: `${BASE_URL}/product`, lastModified: new Date() },
     { url: `${BASE_URL}/blog`, lastModified: new Date() },
     { url: `${BASE_URL}/legal`, lastModified: new Date() },

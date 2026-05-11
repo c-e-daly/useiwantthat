@@ -11,6 +11,19 @@ const getHostnameSnapshot = () => window.location.hostname.startsWith('app.');
 const SHOPIFY_APP_URL = 'https://apps.shopify.com/iwtapp-shop';
 const MENU_CLOSE_DELAY_MS = 1500;
 
+const productsNavItems = [
+  {
+    href: '/ask-rami',
+    label: 'Ask Rami',
+    description: 'Your Personal Buying Agent',
+  },
+  {
+    href: '/product',
+    label: 'Vector',
+    description: 'Offer Intelligence & Decision Platform',
+  },
+];
+
 const toolsNavItems = [
   {
     href: '/tools/cac-calculator',
@@ -57,11 +70,12 @@ const playbookNavItems = [
   },
 ];
 
-type MenuKey = 'tools' | 'playbooks';
+type MenuKey = 'products' | 'tools' | 'playbooks';
 
 export function MainHeader() {
   const [openMenu, setOpenMenu] = useState<MenuKey | null>(null);
   const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const productsMenuRef = useRef<HTMLDivElement>(null);
   const toolsMenuRef = useRef<HTMLDivElement>(null);
   const playbooksMenuRef = useRef<HTMLDivElement>(null);
   const isAppHost = useSyncExternalStore(
@@ -166,18 +180,7 @@ export function MainHeader() {
 
         {/* Navigation */}
         <nav className="hidden items-center space-x-8 text-sm font-medium md:flex">
-           <Link 
-            href="/ask-rami"
-             className="text-gray-900 hover:text-indigo-600 transition duration-150"
-             >
-              ASK RAMI
-            </Link>
-          <Link 
-            href="/product"
-            className="text-gray-900 hover:text-indigo-600 transition duration-150"
-          >
-            PRODUCT
-          </Link>
+          {renderDropdown('products', 'PRODUCTS', productsNavItems, productsMenuRef, 'w-80')}
           {renderDropdown('playbooks', 'PLAYBOOKS', playbookNavItems, playbooksMenuRef, 'w-80')}
           {renderDropdown('tools', 'TOOLS', toolsNavItems, toolsMenuRef)}
         </nav>

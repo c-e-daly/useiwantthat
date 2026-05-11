@@ -31,7 +31,7 @@ const contactOptions = [
     href: DEMO_URL,
     icon: MessageSquare,
     label: "Set a demo",
-    description: "Walk through Prophet, playbooks, and customer generated offers.",
+    description: "Walk through Vector, playbooks, and customer generated offers.",
     external: true,
   },
 ];
@@ -48,7 +48,7 @@ export default function ContactPage() {
             Talk through the fastest path to more profitable conversions.
           </h1>
           <p className="mt-6 max-w-2xl text-lg leading-relaxed text-neutral-muted md:text-xl">
-            Send a note, book a call, or set up a demo for Prophet, Ask Rami, or
+            Send a note, book a call, or set up a demo for Vector, Ask Rami, or
             one of the playbooks.
           </p>
         </div>
