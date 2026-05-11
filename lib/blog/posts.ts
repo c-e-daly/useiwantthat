@@ -4,7 +4,7 @@ import { parseMarkdownWithFrontmatter } from "@/lib/blog/frontmatter";
 import { renderMarkdown } from "@/lib/blog/markdown";
 import { BLOG_PILLARS, getPostPath } from "@/lib/blog/pillars";
 import { createBlogSupabaseAdminClient } from "@/lib/blog/supabaseAdmin";
-import { getBlogStorageConfig, getPublicBlogStorageUrl } from "@/lib/blog/storageConfig";
+import { getBlogAssetPathFromStorageUrl, getBlogStorageConfig, getPublicBlogStorageUrl } from "@/lib/blog/storageConfig";
 import type { BlogPostDetail, BlogPostRecord, BlogPostStatus, BlogPostSummary } from "@/lib/blog/types";
 import type { ContentPillar, PostFrontmatter } from "@/lib/blog/vector-frontmatter.types";
 import type { Json } from "@/src/types/database.types";
@@ -66,6 +66,11 @@ function resolveBlogImageUrl(value: string | null | undefined): string | null {
   }
 
   if (/^https?:\/\//i.test(cleanValue)) {
+    const storageAssetPath = getBlogAssetPathFromStorageUrl(cleanValue, BLOG_BUCKET);
+    if (storageAssetPath) {
+      return getPublicBlogStorageUrl(BLOG_BUCKET, storageAssetPath);
+    }
+
     return cleanValue;
   }
 
@@ -81,7 +86,12 @@ function resolveBlogImageUrl(value: string | null | undefined): string | null {
 function normalizeRenderedBlogAssetUrls(html: string): string {
   return html.replace(/(<img\b[^>]*\bsrc=")([^"]+)(")/gi, (match, prefix: string, src: string, suffix: string) => {
     const appServedAssetPath = extractAppServedBlogAssetPath(src);
-    return appServedAssetPath ? `${prefix}${getPublicBlogStorageUrl(BLOG_BUCKET, appServedAssetPath)}${suffix}` : match;
+    if (appServedAssetPath) {
+      return `${prefix}${getPublicBlogStorageUrl(BLOG_BUCKET, appServedAssetPath)}${suffix}`;
+    }
+
+    const storageAssetPath = getBlogAssetPathFromStorageUrl(src, BLOG_BUCKET);
+    return storageAssetPath ? `${prefix}${getPublicBlogStorageUrl(BLOG_BUCKET, storageAssetPath)}${suffix}` : match;
   });
 }
 

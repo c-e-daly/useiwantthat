@@ -104,17 +104,40 @@ export function getBlogStorageConfig() {
 }
 
 export function getPublicBlogStorageUrl(bucket: string, path: string) {
-  const explicitStorageUrl = process.env.SUPABASE_STORAGE_PUBLIC_URL;
-  const url = process.env.SUPABASE_URL ?? process.env.NEXT_PUBLIC_SUPABASE_URL;
   const cleanPath = path.replace(/^\/+/, "");
+  const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.useiwantthat.com").replace(/\/+$/, "");
 
-  if (explicitStorageUrl) {
-    return `${explicitStorageUrl.replace(/\/+$/, "")}/${cleanPath}`;
+  return `${siteUrl}/blog-assets/${cleanPath}`;
+}
+
+export function getBlogAssetPathFromStorageUrl(value: string, bucket: string) {
+  try {
+    const url = new URL(value);
+    const segments = url.pathname.split("/").filter(Boolean);
+    const storageIndex = segments.findIndex((segment) => segment === "storage");
+
+    if (storageIndex < 0 || segments[storageIndex + 1] !== "v1") {
+      return null;
+    }
+
+    const objectIndex = segments.indexOf("object", storageIndex + 2);
+    if (objectIndex >= 0) {
+      const objectSegments = segments.slice(objectIndex + 1);
+      const bucketIndex = objectSegments[0] === "public" ? 1 : 0;
+      const urlBucket = objectSegments[bucketIndex];
+
+      if (urlBucket === bucket) {
+        return objectSegments.slice(bucketIndex + 1).join("/") || null;
+      }
+    }
+
+    const s3Index = segments.indexOf("s3", storageIndex + 2);
+    if (s3Index >= 0 && segments[s3Index + 1] === bucket) {
+      return segments.slice(s3Index + 2).join("/") || null;
+    }
+  } catch {
+    return null;
   }
 
-  if (url) {
-    return `${url.replace(/\/+$/, "")}/storage/v1/object/public/${bucket}/${cleanPath}`;
-  }
-
-  return cleanPath;
+  return null;
 }
