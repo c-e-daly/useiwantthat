@@ -1,4 +1,4 @@
-import type { ContentPillar, UseCase } from "@/lib/blog/prophet-frontmatter.types";
+import type { ContentPillar, UseCase } from "@/lib/blog/vector-frontmatter.types";
 
 export type PillarConfig = {
   value: ContentPillar;

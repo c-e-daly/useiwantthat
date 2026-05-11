@@ -37,7 +37,7 @@ export const playbookSupplements: Record<string, PlaybookSupplement> = {
       {
         title: "The two levers of CAC",
         body:
-          "Prophet cannot change what you pay per click. It changes how many of those clicks become customers by replacing blanket discounts with intent capture and price discovery.",
+          "Vector cannot change what you pay per click. It changes how many of those clicks become customers by replacing blanket discounts with intent capture and price discovery.",
         cards: [
           { eyebrow: "Total ad spend", title: "$10,000" },
           { eyebrow: "New customers", title: "100" },
@@ -63,7 +63,7 @@ export const playbookSupplements: Record<string, PlaybookSupplement> = {
       {
         title: "Ad traffic signal detection",
         body:
-          "Prophet reads the parameters major ad platforms already append to landing page URLs, plus standard UTM fields for manually tagged campaigns.",
+          "Vector reads the parameters major ad platforms already append to landing page URLs, plus standard UTM fields for manually tagged campaigns.",
         cards: [
           {
             eyebrow: "Google Ads",
@@ -168,7 +168,7 @@ export const playbookSupplements: Record<string, PlaybookSupplement> = {
       {
         title: "The offer threshold system",
         body:
-          "Set the rules once and let Prophet route each offer into one of three decision zones.",
+          "Set the rules once and let Vector route each offer into one of three decision zones.",
         cards: [
           { eyebrow: "Auto accept", title: "0-30% off", body: "Offer stays inside the safe margin floor.", tone: "brand" },
           { eyebrow: "Counter zone", title: "30-50% off", body: "Offer is not dead, but it needs a margin-safe counter." },
@@ -257,7 +257,7 @@ export const playbookSupplements: Record<string, PlaybookSupplement> = {
           "Email recovery requires multiple later conversions before a purchase. Offer capture asks one question at the moment of intent.",
         cards: [
           { title: "Email funnel", body: "Visitor gives email, opens message, clicks back, then decides whether to buy." },
-          { title: "Offer funnel", body: "Visitor names a price and Prophet evaluates the order economics instantly.", tone: "brand" },
+          { title: "Offer funnel", body: "Visitor names a price and Vector evaluates the order economics instantly.", tone: "brand" },
         ],
       },
       {
@@ -310,12 +310,12 @@ export const playbookSupplements: Record<string, PlaybookSupplement> = {
     eyebrow: "Programs playbook",
     title: "Your offer strategy should change when your business does",
     intro:
-      "Programs let Prophet change offer behavior by campaign, season, customer segment, inventory window, or growth goal.",
+      "Programs let Vector change offer behavior by campaign, season, customer segment, inventory window, or growth goal.",
     sections: [
       {
         title: "What a program is",
         body:
-          "A program is a time-bounded set of offer rules scoped to a specific business context. It tells Prophet how aggressive or conservative to be, for which customers, on which products, and during which period.",
+          "A program is a time-bounded set of offer rules scoped to a specific business context. It tells Vector how aggressive or conservative to be, for which customers, on which products, and during which period.",
       },
       {
         title: "Basic vs. advanced",
@@ -394,14 +394,14 @@ export const playbookSupplements: Record<string, PlaybookSupplement> = {
       {
         title: "The uncomfortable truth about cart abandonment",
         body:
-          "Most carts are abandoned, and not every reason is recoverable. Some shoppers are intentionally waiting for the next discount. Prophet separates price intent from ordinary abandonment.",
+          "Most carts are abandoned, and not every reason is recoverable. Some shoppers are intentionally waiting for the next discount. Vector separates price intent from ordinary abandonment.",
       },
       {
-        title: "Standard recovery vs. Prophet recovery",
+        title: "Standard recovery vs. Vector recovery",
         body:
-          "Traditional recovery sends escalating discounts without a price signal. Prophet gives the shopper a way to say what would bring them back.",
+          "Traditional recovery sends escalating discounts without a price signal. Vector gives the shopper a way to say what would bring them back.",
         table: {
-          columns: ["Moment", "Standard sequence", "Prophet approach"],
+          columns: ["Moment", "Standard sequence", "Vector approach"],
           rows: [
             ["First message", "Reminder email", "Offer invitation"],
             ["Discount logic", "Merchant guesses", "Customer names price"],
@@ -413,7 +413,7 @@ export const playbookSupplements: Record<string, PlaybookSupplement> = {
       {
         title: "Four cart segments",
         body:
-          "Prophet tags abandoned carts by state. The accepted-offer-without-checkout segment is uniquely valuable because you know the price was not the issue.",
+          "Vector tags abandoned carts by state. The accepted-offer-without-checkout segment is uniquely valuable because you know the price was not the issue.",
         cards: [
           { title: "Viewed product, no cart", body: "Invite a first offer." },
           { title: "Carted, no offer", body: "Offer a path back into negotiation." },
@@ -424,12 +424,12 @@ export const playbookSupplements: Record<string, PlaybookSupplement> = {
       {
         title: "How the token link works",
         body:
-          "A Prophet remarketing token links the returning visitor back to the specific cart, product, and offer context. The token can be dropped into Shopify Flows so existing abandonment emails can open directly into an offer path.",
+          "A Vector remarketing token links the returning visitor back to the specific cart, product, and offer context. The token can be dropped into Shopify Flows so existing abandonment emails can open directly into an offer path.",
       },
       {
-        title: "Prophet remarketing vs. paid retargeting",
+        title: "Vector remarketing vs. paid retargeting",
         table: {
-          columns: ["Metric", "Paid retargeting", "Prophet remarketing"],
+          columns: ["Metric", "Paid retargeting", "Vector remarketing"],
           rows: [
             ["Cost", "Buy the visitor again", "Use owned recovery channels"],
             ["Message", "Repeat the pitch", "Invite a named price"],

@@ -3,7 +3,7 @@ import nextEnv from "@next/env";
 import { parseMarkdownWithFrontmatter } from "../lib/blog/frontmatter";
 import { getBlogStorageConfig, getPublicBlogStorageUrl } from "../lib/blog/storageConfig";
 import { BLOG_PILLARS } from "../lib/blog/pillars";
-import type { ContentPillar, PostFrontmatter } from "../lib/blog/prophet-frontmatter.types";
+import type { ContentPillar, PostFrontmatter } from "../lib/blog/vector-frontmatter.types";
 
 nextEnv.loadEnvConfig(process.cwd());
 

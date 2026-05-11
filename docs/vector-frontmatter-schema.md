@@ -1,4 +1,4 @@
-# Prophet blog frontmatter schema
+# Vector blog frontmatter schema
 
 Full specification for the agent-generated frontmatter block on every article.
 The Google Doc → Markdown → Agent → Supabase pipeline should produce and validate
@@ -89,7 +89,7 @@ seo:
   secondaryKeywords:
     - ""
 
-  # Meta title — under 60 characters. Format: [Keyword] — [Outcome] | Prophet
+  # Meta title — under 60 characters. Format: [Keyword] — [Outcome] | Vector
   metaTitle: ""
 
   # Meta description — 150–155 characters. Must contain primaryKeyword naturally.
@@ -194,10 +194,10 @@ schema:
     datePublished: ""   # matches publishedAt
     dateModified: ""    # matches updatedAt
     author:
-      name: "Prophet"
+      name: "Vector"
       url: "https://iwantthat.io"
     publisher:
-      name: "Prophet"
+      name: "Vector"
       logo: "https://iwantthat.io/logo.png"
     image: ""           # matches og.image (absolute URL)
     wordCount: 0        # matches wordCount above
@@ -251,7 +251,7 @@ internalLinks:
   # CTA target — primary call to action at end of article.
   # One of: install | calculator | demo | pillar | related-article
   ctaTarget: "install"
-  ctaText: ""       # CTA button label. e.g. "See how Prophet works"
+  ctaText: ""       # CTA button label. e.g. "See how Vector works"
 
 # ─────────────────────────────────────────────
 # CONTENT METADATA

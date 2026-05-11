@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import {
   ArrowRight,
@@ -159,6 +160,14 @@ export default function ProductPage() {
 
         <div className="container relative mx-auto grid gap-12 px-4 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
           <div>
+            <Image
+              src="/vector-icon-wordmark-logo.png"
+              alt="Vector"
+              width={250}
+              height={100}
+              priority
+              className="mb-6 h-auto w-44 md:w-56"
+            />
             <div className="mb-6 inline-flex items-center gap-2 rounded-full bg-brand/10 px-3 py-1 text-xs font-bold uppercase tracking-widest text-brand">
               Vector for Shopify
             </div>

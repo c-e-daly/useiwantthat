@@ -1,6 +1,6 @@
 import posthog from "posthog-js";
 
-export type ProphetCalculatorEvent = {
+export type VectorCalculatorEvent = {
   icp_persona: string;
   inputs: {
     monthly_ad_spend: number;
@@ -14,7 +14,7 @@ export type ProphetCalculatorEvent = {
     cac: number;
     annual_revenue_unlocked: number;
     organic_lift_revenue_monthly: number;
-    prophet_roi_vs_ad_spend_pct: number;
+    vector_roi_vs_ad_spend_pct: number;
     orders_to_breakeven: number;
   };
   segmentation: {
@@ -36,7 +36,7 @@ declare global {
   }
 }
 
-export function trackProphetCalculatorSubmit(event: ProphetCalculatorEvent) {
+export function trackVectorCalculatorSubmit(event: VectorCalculatorEvent) {
   if (typeof window === "undefined") return;
 
   const payload = {
@@ -52,7 +52,7 @@ export function trackProphetCalculatorSubmit(event: ProphetCalculatorEvent) {
     cac: event.outputs.cac,
     annual_revenue_unlocked: event.outputs.annual_revenue_unlocked,
     organic_lift_revenue_monthly: event.outputs.organic_lift_revenue_monthly,
-    prophet_roi_vs_ad_spend_pct: event.outputs.prophet_roi_vs_ad_spend_pct,
+    vector_roi_vs_ad_spend_pct: event.outputs.vector_roi_vs_ad_spend_pct,
     orders_to_breakeven: event.outputs.orders_to_breakeven,
     revenue_band: event.segmentation.revenue_band,
     cac_severity: event.segmentation.cac_severity,
@@ -62,10 +62,10 @@ export function trackProphetCalculatorSubmit(event: ProphetCalculatorEvent) {
 
   window.dataLayer = window.dataLayer ?? [];
   window.dataLayer.push({
-    event: "prophet_calculator_submit",
+    event: "vector_calculator_submit",
     ...payload,
   });
 
-  posthog.capture("prophet calculator submitted", payload);
-  window.gtag?.("event", "prophet_calculator_submit", payload);
+  posthog.capture("vector calculator submitted", payload);
+  window.gtag?.("event", "vector_calculator_submit", payload);
 }

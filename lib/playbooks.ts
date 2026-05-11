@@ -211,7 +211,7 @@ export const playbooks = {
       beforeDetail: "A shopper below the floor leaves without another path to buy.",
       afterLabel: "Negotiation",
       afterTitle: "Counter offer sent",
-      afterDetail: "Prophet moves the customer toward a price that works.",
+      afterDetail: "Vector moves the customer toward a price that works.",
     },
     dataCollected: [
       {
@@ -311,7 +311,7 @@ export const playbooks = {
     businessGoal: "margin_recovery",
     tagline: "Offer strategy should change when the business changes.",
     description:
-      "Use programs to make Prophet more aggressive or more conservative around campaigns, slow periods, launches, and seasonal inventory windows.",
+      "Use programs to make Vector more aggressive or more conservative around campaigns, slow periods, launches, and seasonal inventory windows.",
     primaryMetric: "gross_margin",
     ctaLabel: "Plan an offer program",
     ctaHref: "/contact",

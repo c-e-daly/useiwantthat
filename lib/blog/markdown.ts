@@ -159,7 +159,7 @@ function renderTable(lines: string[]) {
   const renderAlign = (index: number) => ` data-align="${alignments[index] ?? "left"}"`;
 
   return [
-    `<div class="prophet-table-wrap"><table>`,
+    `<div class="vector-table-wrap"><table>`,
     "<thead>",
     `<tr>${headers.map((cell, index) => `<th${renderAlign(index)}>${renderInlineMarkdown(cell)}</th>`).join("")}</tr>`,
     "</thead>",
@@ -263,7 +263,7 @@ function renderButton(content: string[]) {
     return "";
   }
 
-  return `<p class="prophet-button-wrap"><a class="prophet-button prophet-button-${variant}" href="${href}">${renderInlineMarkdown(label)}</a></p>`;
+  return `<p class="vector-button-wrap"><a class="vector-button vector-button-${variant}" href="${href}">${renderInlineMarkdown(label)}</a></p>`;
 }
 
 function renderCta(content: string[], counts: HeadingIdCounts) {
@@ -273,10 +273,10 @@ function renderCta(content: string[], counts: HeadingIdCounts) {
   const label = fields.label || fields.button || "";
 
   return [
-    `<aside class="prophet-cta">`,
+    `<aside class="vector-cta">`,
     title ? `<h3>${renderInlineMarkdown(title)}</h3>` : "",
     body.length ? `<div>${renderMarkdown(body.join("\n"), counts).html}</div>` : "",
-    href && label ? `<a class="prophet-button prophet-button-primary" href="${href}">${renderInlineMarkdown(label)}</a>` : "",
+    href && label ? `<a class="vector-button vector-button-primary" href="${href}">${renderInlineMarkdown(label)}</a>` : "",
     "</aside>",
   ]
     .filter(Boolean)
@@ -298,7 +298,7 @@ function renderImage(content: string[]) {
   const captionParts = [caption, credit ? `Credit: ${credit}` : ""].filter(Boolean);
 
   return [
-    `<figure class="prophet-image prophet-image-${variant}">`,
+    `<figure class="vector-image vector-image-${variant}">`,
     `<img src="${src}" alt="${alt}" loading="lazy" decoding="async" />`,
     captionParts.length ? `<figcaption>${captionParts.map(renderInlineMarkdown).join(" · ")}</figcaption>` : "",
     "</figure>",
@@ -317,7 +317,7 @@ function renderQuote(content: string[]) {
   }
 
   return [
-    `<figure class="prophet-quote">`,
+    `<figure class="vector-quote">`,
     `<blockquote>${renderMarkdown(quote).html}</blockquote>`,
     attribution ? `<figcaption>${renderInlineMarkdown(attribution)}</figcaption>` : "",
     "</figure>",
@@ -333,13 +333,13 @@ function renderCards(content: string[], counts: HeadingIdCounts) {
     return "";
   }
 
-  return `<div class="prophet-card-grid">${items
+  return `<div class="vector-card-grid">${items
     .map((item) => {
       const href = safeUrl(item.href);
       const body = item.body || item.text || item.description || "";
 
       return [
-        href ? `<a class="prophet-card" href="${href}">` : `<article class="prophet-card">`,
+        href ? `<a class="vector-card" href="${href}">` : `<article class="vector-card">`,
         item.title ? `<h3>${renderInlineMarkdown(item.title)}</h3>` : "",
         body ? `<div>${renderMarkdown(body, counts).html}</div>` : "",
         href ? "</a>" : "</article>",
@@ -355,7 +355,7 @@ function renderFaq(content: string[], counts: HeadingIdCounts) {
     return "";
   }
 
-  return `<div class="prophet-faq">${items
+  return `<div class="vector-faq">${items
     .map((item) => {
       const question = item.question || item.title || "";
       const answer = item.answer || item.body || "";
@@ -377,7 +377,7 @@ function renderSteps(content: string[], counts: HeadingIdCounts) {
     return "";
   }
 
-  return `<ol class="prophet-steps">${items
+  return `<ol class="vector-steps">${items
     .map((item, index) => {
       const title = item.title || item.step || `Step ${index + 1}`;
       const body = item.body || item.text || "";
@@ -425,7 +425,7 @@ function renderVideo(content: string[]) {
   }
 
   return [
-    `<figure class="prophet-video">`,
+    `<figure class="vector-video">`,
     `<iframe src="${src}" title="${escapeHtml(title)}" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`,
     fields.caption ? `<figcaption>${renderInlineMarkdown(fields.caption)}</figcaption>` : "",
     "</figure>",
@@ -441,7 +441,7 @@ function renderCarousel(content: string[]) {
     return "";
   }
 
-  return `<div class="prophet-carousel" aria-label="Media carousel">${items
+  return `<div class="vector-carousel" aria-label="Media carousel">${items
     .map((item) => {
       const src = safeUrl(item.src || item.image);
       const alt = escapeHtml(item.alt || item.title || "");
@@ -526,15 +526,15 @@ function renderDirective(name: string, content: string[], counts: HeadingIdCount
   if (normalized === "split" || normalized === "columns" || normalized === "two-column" || normalized === "two-columns") {
     const columns = splitColumns(content);
     const renderedColumns = (columns.length ? columns : [content]).map((column) => `<div>${renderMarkdown(column.join("\n"), counts).html}</div>`);
-    return `<div class="prophet-split">${renderedColumns.join("\n")}</div>`;
+    return `<div class="vector-split">${renderedColumns.join("\n")}</div>`;
   }
 
   if (normalized === "stat" || normalized === "stat-callout") {
     const [value = "", ...description] = content.filter((line) => line.trim());
     return [
-      `<aside class="prophet-stat">`,
-      `<p class="prophet-stat-value">${renderInlineMarkdown(value)}</p>`,
-      description.length ? `<div class="prophet-stat-body">${renderMarkdown(description.join("\n"), counts).html}</div>` : "",
+      `<aside class="vector-stat">`,
+      `<p class="vector-stat-value">${renderInlineMarkdown(value)}</p>`,
+      description.length ? `<div class="vector-stat-body">${renderMarkdown(description.join("\n"), counts).html}</div>` : "",
       "</aside>",
     ]
       .filter(Boolean)
@@ -578,7 +578,7 @@ function renderDirective(name: string, content: string[], counts: HeadingIdCount
   }
 
   const blockClass = normalized === "summary-box" ? "summary" : normalized;
-  return `<aside class="prophet-block prophet-block-${blockClass}">${renderMarkdown(content.join("\n"), counts).html}</aside>`;
+  return `<aside class="vector-block vector-block-${blockClass}">${renderMarkdown(content.join("\n"), counts).html}</aside>`;
 }
 
 export function renderMarkdown(markdown: string, headingCounts: HeadingIdCounts = new Map()): RenderedMarkdown {
@@ -675,7 +675,7 @@ export function renderMarkdown(markdown: string, headingCounts: HeadingIdCounts 
 
     if (/^!\[[^\]]*\]\([^)]+\)$/.test(blockLine)) {
       closeLists();
-      html.push(`<figure class="prophet-image">${renderInlineMarkdown(blockLine)}</figure>`);
+      html.push(`<figure class="vector-image">${renderInlineMarkdown(blockLine)}</figure>`);
       continue;
     }
 

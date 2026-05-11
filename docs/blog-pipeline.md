@@ -1,6 +1,6 @@
 # Blog Pipeline
 
-This is the canonical architecture note for the Prophet blog pipeline. The blog
+This is the canonical architecture note for the Vector blog pipeline. The blog
 system is the most sophisticated content subsystem in the app: it spans Google
 Drive export, Supabase Storage staging, frontmatter validation, Supabase row
 promotion, Markdown rendering, template-aware article layout, preview, sitemap,
@@ -76,8 +76,8 @@ See `docs/google-drive-blog-ingest.md`.
 ## Agent publish sequence
 
 1. Export Google Doc to Markdown.
-2. Generate Prophet YAML frontmatter at the top of the Markdown using
-   `docs/prophet-frontmatter-schema.md`.
+2. Generate Vector YAML frontmatter at the top of the Markdown using
+   `docs/vector-frontmatter-schema.md`.
 3. Preserve the article body. Body content may use the component syntax in
    `docs/blog-markdown-components.md`.
 4. Run frontmatter validation before publish. If
@@ -133,7 +133,7 @@ npm run blog:publish:incoming -- --slug=your-slug
 
 ## Resolved app contract
 
-- The Markdown file is the source of truth for Prophet frontmatter fields:
+- The Markdown file is the source of truth for Vector frontmatter fields:
   pillar, template, SEO, AEO, schema flags, internal links, author, reading time,
   and CTA metadata.
 - The `blog_posts` row remains the publish index and storage pointer. It
@@ -198,7 +198,7 @@ frontmatter or the incoming manifest rather than in body directives.
 
 ## Incoming bundle contract
 
-`post.md` contains the complete Prophet YAML frontmatter block followed by the
+`post.md` contains the complete Vector YAML frontmatter block followed by the
 Google Doc Markdown body.
 
 `manifest.json` identifies the source doc/folder, author metadata, Markdown
@@ -212,7 +212,7 @@ source doc URL, upload timestamp, and list of expected files.
 
 ```md
 ---
-[complete Prophet YAML frontmatter]
+[complete Vector YAML frontmatter]
 ---
 
 # Article H1

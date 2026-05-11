@@ -1,7 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import { trackProphetCalculatorSubmit } from "@/lib/analytics/prophetCalculator";
+import { trackVectorCalculatorSubmit } from "@/lib/analytics/vectorCalculator";
 
 type CalculatorState = {
   adSpend: number;
@@ -56,7 +56,7 @@ export function CacCalculatorSection() {
     const roiPct =
       annualAdSpend > 0 ? Math.round((annualUnlocked / annualAdSpend) * 100) : 0;
 
-    trackProphetCalculatorSubmit({
+    trackVectorCalculatorSubmit({
       icp_persona: "fashion_apparel",
       inputs: {
         monthly_ad_spend: values.adSpend,
@@ -70,7 +70,7 @@ export function CacCalculatorSection() {
         cac: Math.round(results.cac),
         annual_revenue_unlocked: annualUnlocked,
         organic_lift_revenue_monthly: results.savings,
-        prophet_roi_vs_ad_spend_pct: roiPct,
+        vector_roi_vs_ad_spend_pct: roiPct,
         orders_to_breakeven: 0,
       },
       segmentation: {

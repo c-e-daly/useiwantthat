@@ -8,30 +8,30 @@ const DEMO_URL = "https://meetings.hubspot.com/chris-e-daly/customer-demo";
 
 export const metadata: Metadata = {
   title:
-    "Prophet — Stop Paying the Ad Tax. Convert the Traffic You Already Have.",
+    "Vector — Stop Paying the Ad Tax. Convert the Traffic You Already Have.",
   description:
-    "Prophet lets Shopify merchants accept customer-generated offers, counter automatically, and convert 3–5× more of their existing traffic — without spending another dollar on ads.",
+    "Vector lets Shopify merchants accept customer-generated offers, counter automatically, and convert 3–5× more of their existing traffic — without spending another dollar on ads.",
   openGraph: {
-    title: "Prophet — Convert Your Traffic. Not Someone Else's.",
+    title: "Vector — Convert Your Traffic. Not Someone Else's.",
     description:
-      "Your store already has what it needs to grow. Prophet unlocks the revenue that's already in your traffic — with intelligent offers, automated counters, and exit intent that captures orders, not emails.",
-    images: ["https://useiwantthat.com/og-prophet.png"],
+      "Your store already has what it needs to grow. Vector unlocks the revenue that's already in your traffic — with intelligent offers, automated counters, and exit intent that captures orders, not emails.",
+    images: ["https://useiwantthat.com/vector-icon-wordmark-logo.png"],
     url: "https://useiwantthat.com",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Prophet — Convert Your Traffic. Not Someone Else's.",
+    title: "Vector — Convert Your Traffic. Not Someone Else's.",
     description:
-      "Stop paying $5–$15 per click for visitors who leave. Prophet converts the traffic you already have with intelligent customer offers and automated decisions.",
-    images: ["https://useiwantthat.com/og-prophet.png"],
+      "Stop paying $5–$15 per click for visitors who leave. Vector converts the traffic you already have with intelligent customer offers and automated decisions.",
+    images: ["https://useiwantthat.com/vector-icon-wordmark-logo.png"],
   },
 };
 
 const ctaPoints = [
   "Model paid CAC, break-even orders, and gross-profit impact.",
   "Compare ad revenue against organic revenue you already earned.",
-  "Estimate the annual upside from lifting organic conversion with Prophet.",
+  "Estimate the annual upside from lifting organic conversion with Vector.",
 ];
 
 export default function CacCalculatorPage() {
@@ -48,7 +48,7 @@ export default function CacCalculatorPage() {
             </h1>
             <p className="mt-5 max-w-xl text-lg leading-relaxed text-neutral-muted">
               Use your ad spend, conversion rate, margin, and organic traffic to
-              compare CAC against the revenue Prophet can unlock from shoppers
+              compare CAC against the revenue Vector can unlock from shoppers
               already on your site.
             </p>
 
@@ -83,7 +83,7 @@ export default function CacCalculatorPage() {
                     it again.
                   </p>
                   <p className="mt-1 text-sm text-neutral-muted">
-                    Prophet focuses on the organic and direct sessions with no
+                    Vector focuses on the organic and direct sessions with no
                     added ad tax.
                   </p>
                 </div>

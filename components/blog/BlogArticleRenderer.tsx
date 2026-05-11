@@ -34,7 +34,7 @@ export function BlogArticleRenderer({ post, jsonLd = [], includeGtm = false, pre
   const showRelatedSection = showRelatedArticles || showUseCaseLinks;
   const showFinalCta = Boolean(post.internalLinks?.ctaText && config.modules.showFinalCta);
   const showTableOfContents = config.sidebar.tableOfContents && post.tableOfContents.length > 0;
-  const bodyHasFaq = post.tableOfContents.some((item) => item.text.toLowerCase() === "faq") || post.html.includes('class="prophet-faq"');
+  const bodyHasFaq = post.tableOfContents.some((item) => item.text.toLowerCase() === "faq") || post.html.includes('class="vector-faq"');
   const heroImage = post.coverImageUrl;
   const heroImageAlt = post.og?.imageAlt || post.title;
 

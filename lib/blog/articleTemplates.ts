@@ -1,4 +1,4 @@
-import type { PostTemplate } from "@/lib/blog/prophet-frontmatter.types";
+import type { PostTemplate } from "@/lib/blog/vector-frontmatter.types";
 
 export type ArticleTemplateVisualStyle = "standard" | "data" | "comparison" | "playbook";
 export type ArticleTemplateIntroTreatment = "plain" | "lead" | "problem-statement" | "data-lede";

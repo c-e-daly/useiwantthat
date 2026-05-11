@@ -6,7 +6,7 @@ import { BLOG_PILLARS, getPostPath } from "@/lib/blog/pillars";
 import { createBlogSupabaseAdminClient } from "@/lib/blog/supabaseAdmin";
 import { getBlogStorageConfig, getPublicBlogStorageUrl } from "@/lib/blog/storageConfig";
 import type { BlogPostDetail, BlogPostRecord, BlogPostStatus, BlogPostSummary } from "@/lib/blog/types";
-import type { ContentPillar, PostFrontmatter } from "@/lib/blog/prophet-frontmatter.types";
+import type { ContentPillar, PostFrontmatter } from "@/lib/blog/vector-frontmatter.types";
 import type { Json } from "@/src/types/database.types";
 
 const {

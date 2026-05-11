@@ -1,7 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import { trackProphetCalculatorSubmit } from "@/lib/analytics/prophetCalculator";
+import { trackVectorCalculatorSubmit } from "@/lib/analytics/vectorCalculator";
 
 type CalculatorState = {
   adSpend: number;
@@ -10,7 +10,7 @@ type CalculatorState = {
   margin: number;
   paidCvr: number;
   orgCvr: number;
-  prophetLift: number;
+  vectorLift: number;
   orgVisitors: number;
 };
 
@@ -22,7 +22,7 @@ type CalculatorResults = {
   cac: number;
   ordersBreakEven: number;
   orgConvCurrent: number;
-  orgConvProphet: number;
+  orgConvVector: number;
   additionalOrders: number;
   additionalRevenue: number;
   additionalGrossProfit: number;
@@ -30,7 +30,7 @@ type CalculatorResults = {
   annualAdSpend: number;
   annualAdRevenue: number;
   orgRevenueCurrent: number;
-  prophetRoiVsAdSpendPct: number;
+  vectorRoiVsAdSpendPct: number;
   paidBar: number;
   orgBar: number;
   liftBar: number;
@@ -43,7 +43,7 @@ const initialState: CalculatorState = {
   margin: 45,
   paidCvr: 1.4,
   orgCvr: 2.2,
-  prophetLift: 1.8,
+  vectorLift: 1.8,
   orgVisitors: 5000,
 };
 
@@ -88,7 +88,7 @@ export function CacCalculatorClient() {
     const margin = clampFinite(values.margin, 45) / 100;
     const paidCvr = clampFinite(values.paidCvr, 0) / 100;
     const orgCvr = clampFinite(values.orgCvr, 0) / 100;
-    const prophetLift = clampFinite(values.prophetLift, 0) / 100;
+    const vectorLift = clampFinite(values.vectorLift, 0) / 100;
     const orgVisitors = clampFinite(values.orgVisitors, 0);
 
     const paidClicks = Math.round(adSpend / cpc);
@@ -100,8 +100,8 @@ export function CacCalculatorClient() {
       grossProfitPerOrder > 0 ? Math.ceil(cac / grossProfitPerOrder) : 0;
 
     const orgConvCurrent = Math.round(orgVisitors * orgCvr);
-    const orgConvProphet = Math.round(orgVisitors * (orgCvr + prophetLift));
-    const additionalOrders = orgConvProphet - orgConvCurrent;
+    const orgConvVector = Math.round(orgVisitors * (orgCvr + vectorLift));
+    const additionalOrders = orgConvVector - orgConvCurrent;
     const additionalRevenue = additionalOrders * aov;
     const additionalGrossProfit = additionalRevenue * margin;
     const annualUnlocked = additionalRevenue * 12;
@@ -109,7 +109,7 @@ export function CacCalculatorClient() {
     const annualAdRevenue = paidRevenue * 12;
     const orgRevenueCurrent = orgConvCurrent * aov;
     const maxBar = Math.max(paidRevenue, orgRevenueCurrent, additionalRevenue, 1);
-    const prophetRoiVsAdSpendPct =
+    const vectorRoiVsAdSpendPct =
       annualAdSpend > 0 ? Math.round((annualUnlocked / annualAdSpend) * 100) : 0;
 
     return {
@@ -120,7 +120,7 @@ export function CacCalculatorClient() {
       cac,
       ordersBreakEven,
       orgConvCurrent,
-      orgConvProphet,
+      orgConvVector,
       additionalOrders,
       additionalRevenue,
       additionalGrossProfit,
@@ -128,7 +128,7 @@ export function CacCalculatorClient() {
       annualAdSpend,
       annualAdRevenue,
       orgRevenueCurrent,
-      prophetRoiVsAdSpendPct,
+      vectorRoiVsAdSpendPct,
       paidBar: Math.round((paidRevenue / maxBar) * 100),
       orgBar: Math.round((orgRevenueCurrent / maxBar) * 100),
       liftBar: Math.round((additionalRevenue / maxBar) * 100),
@@ -154,7 +154,7 @@ export function CacCalculatorClient() {
       offer_opportunity_score: getOfferOpportunityScore(results),
     };
 
-    trackProphetCalculatorSubmit({
+    trackVectorCalculatorSubmit({
       icp_persona: "fashion_apparel",
       inputs: {
         monthly_ad_spend: values.adSpend,
@@ -168,7 +168,7 @@ export function CacCalculatorClient() {
         cac: Math.round(results.cac),
         annual_revenue_unlocked: Math.round(results.annualUnlocked),
         organic_lift_revenue_monthly: Math.round(results.additionalRevenue),
-        prophet_roi_vs_ad_spend_pct: results.prophetRoiVsAdSpendPct,
+        vector_roi_vs_ad_spend_pct: results.vectorRoiVsAdSpendPct,
         orders_to_breakeven: results.ordersBreakEven,
       },
       segmentation,
@@ -241,13 +241,13 @@ export function CacCalculatorClient() {
           onChange={(value) => updateValue("orgCvr", value)}
         />
         <RangeField
-          label="Prophet CVR lift"
+          label="Vector CVR lift"
           min={0.5}
           max={4}
           step={0.1}
-          value={values.prophetLift}
-          output={`+${values.prophetLift.toFixed(1)}%`}
-          onChange={(value) => updateValue("prophetLift", value)}
+          value={values.vectorLift}
+          output={`+${values.vectorLift.toFixed(1)}%`}
+          onChange={(value) => updateValue("vectorLift", value)}
         />
         <RangeField
           label="Monthly organic / direct visitors"
@@ -261,7 +261,7 @@ export function CacCalculatorClient() {
       </div>
 
       <button
-        id="prophet_calculator_submit"
+        id="vector_calculator_submit"
         type="button"
         onClick={handleCalculate}
         className="mt-6 w-full rounded-askrami bg-brand px-6 py-4 text-base font-bold text-white shadow-lg transition hover:bg-brand-deep focus:outline-none focus:ring-4 focus:ring-brand/20"
@@ -317,7 +317,7 @@ function CalculatorResultsPanel({ results }: { results: CalculatorResults }) {
       <div className="my-6 h-px bg-surface-border" />
 
       <p className="text-xs font-bold uppercase tracking-widest text-brand">
-        Prophet on organic
+        Vector on organic
       </p>
       <div className="mt-4 grid gap-3 sm:grid-cols-2 xl:grid-cols-3">
         <Metric
@@ -325,8 +325,8 @@ function CalculatorResultsPanel({ results }: { results: CalculatorResults }) {
           value={formatNumber(results.orgConvCurrent)}
         />
         <Metric
-          label="Organic conversions with Prophet"
-          value={formatNumber(results.orgConvProphet)}
+          label="Organic conversions with Vector"
+          value={formatNumber(results.orgConvVector)}
           tone="positive"
         />
         <Metric
@@ -378,7 +378,7 @@ function CalculatorResultsPanel({ results }: { results: CalculatorResults }) {
             className="bg-emerald-600"
           />
           <Bar
-            label="Prophet lift on organic"
+            label="Vector lift on organic"
             value={`${formatCurrency(results.additionalRevenue)} / mo`}
             width={results.liftBar}
             className="bg-brand"
@@ -389,7 +389,7 @@ function CalculatorResultsPanel({ results }: { results: CalculatorResults }) {
       <p className="mt-6 rounded-askrami border border-surface-border bg-surface-subtle p-4 text-sm leading-relaxed text-neutral-muted">
         At your current CAC of {formatCurrency(results.cac)}, you need a customer
         to order {results.ordersBreakEven}x before paid acquisition breaks even
-        against gross profit. Prophet&apos;s organic lift adds revenue at $0 CAC,
+        against gross profit. Vector&apos;s organic lift adds revenue at $0 CAC,
         so every dollar goes straight to margin contribution.
       </p>
     </>

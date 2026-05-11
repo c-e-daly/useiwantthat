@@ -1,5 +1,5 @@
 /**
- * Prophet blog frontmatter — TypeScript types
+ * Vector blog frontmatter — TypeScript types
  * Import into your NextJS app for type-safe frontmatter parsing.
  *
  * Usage:

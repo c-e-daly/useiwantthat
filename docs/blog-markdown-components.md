@@ -1,6 +1,6 @@
 # Blog Markdown component contract
 
-The blog source of truth is Markdown body content plus Prophet YAML frontmatter.
+The blog source of truth is Markdown body content plus Vector YAML frontmatter.
 Use normal Markdown for core article elements, and use strict `:::` directive
 blocks for reusable article modules.
 
@@ -213,7 +213,7 @@ Supported variants:
 :::cta
 title: Turn more paid clicks into buyers
 href: /product
-label: See Prophet for sellers
+label: See Vector for sellers
 Use Customer Generated Offers to capture price intent and reduce wasted paid traffic.
 :::
 ```
@@ -246,7 +246,7 @@ variant. Hero and OG images stay outside the body in the post bundle/frontmatter
 src: /blog-assets/blog/incoming/2026/05/example/example-chart.png
 alt: Chart comparing CAC and discount allowance
 caption: CAC creates a larger cash drag than the average discount allowance.
-credit: Prophet analysis
+credit: Vector analysis
 variant: full
 :::
 ```
@@ -277,7 +277,7 @@ for simpler quotes.
 
 ```md
 :::quote
-attribution: Prophet
+attribution: Vector
 The real margin killer is not the offer. It is paying for clicks that do not convert.
 :::
 ```

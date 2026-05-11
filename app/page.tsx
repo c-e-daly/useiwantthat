@@ -11,7 +11,7 @@ import {
 import { CacCalculatorSection } from "@/components/marketing/CacCalculatorSection";
 
 export const metadata: Metadata = {
-  title: "I Want That! | useiwantthat.com",
+  title: "I Want That! | Negotiated Commerce Platform",
 };
 
 const liveOffers = [

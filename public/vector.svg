@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" xmlns:bx="https://boxy-svg.com">
+  <g>
+    <text style="fill: rgb(51, 51, 51); font-family: &quot;DM Sans&quot;; font-size: 40px; white-space: pre;" x="202.491" y="266.431">vector</text>
+    <g transform="matrix(1, 0, 0, 1, -40.047264, 133.518265)">
+      <rect x="215.377" y="111.284" width="20.332" height="24.236" style="stroke: rgb(51, 51, 51); stroke-width: 0.25px; fill: rgb(255, 255, 255);"/>
+      <rect x="220.183" y="107.625" width="11.096" height="29.953" style="fill: rgb(255, 255, 255); stroke: rgb(255, 255, 255);"/>
+      <g transform="matrix(1, 0, 0, 1, -0.305008, -0.164009)">
+        <g transform="matrix(1, 0, 0, 1, 1, -0.017998)">
+          <ellipse style="fill: rgb(216, 216, 216);" cx="220.792" cy="116.437" rx="2.5" ry="2.5"/>
+          <ellipse style="fill: rgb(216, 216, 216); stroke-width: 1;" cx="220.792" cy="123.584" rx="2.5" ry="2.5"/>
+          <ellipse style="fill: rgb(216, 216, 216); stroke-width: 1;" cx="220.792" cy="130.731" rx="2.5" ry="2.5"/>
+        </g>
+        <g transform="matrix(1, 0, 0, 1, 1, 0.017998)">
+          <ellipse style="stroke-width: 1; fill: rgb(43, 43, 43);" cx="228.904" cy="116.401" rx="2.5" ry="2.5"/>
+          <ellipse style="fill: rgb(216, 216, 216); stroke-width: 1;" cx="228.904" cy="123.548" rx="2.5" ry="2.5"/>
+          <ellipse style="fill: rgb(216, 216, 216); stroke-width: 1;" cx="228.904" cy="130.695" rx="2.5" ry="2.5"/>
+        </g>
+      </g>
+    </g>
+  </g>
+  <defs>
+    <style bx:fonts="DM Sans">@import url(https://fonts.googleapis.com/css2?family=DM+Sans%3Aital%2Cwght%400%2C100..1000%3B1%2C100..1000&amp;display=swap);</style>
+  </defs>
+</svg>

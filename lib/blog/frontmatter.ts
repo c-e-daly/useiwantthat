@@ -1,4 +1,4 @@
-import type { PostFrontmatter } from "@/lib/blog/prophet-frontmatter.types";
+import type { PostFrontmatter } from "@/lib/blog/vector-frontmatter.types";
 
 type YamlContainer = Record<string, unknown> | unknown[];
 

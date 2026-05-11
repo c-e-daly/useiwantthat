@@ -10,7 +10,7 @@ import type {
   SchemaFields,
   TwitterFields,
   UseCase,
-} from "@/lib/blog/prophet-frontmatter.types";
+} from "@/lib/blog/vector-frontmatter.types";
 import type { MarkdownTableOfContentsItem } from "@/lib/blog/markdown";
 
 export type BlogPostStatus = "draft" | "scheduled" | "published";

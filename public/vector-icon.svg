@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 750 750" xmlns:bx="https://boxy-svg.com">
+  <defs>
+    <bx:export>
+      <bx:file format="png" href="#object-0" path="vector-icon-square.png"/>
+    </bx:export>
+  </defs>
+  <g transform="matrix(1, 0, 0, 1, 379, 17.257999)" id="object-0">
+    <rect x="-379" y="-17.258" width="750" height="750" style="fill: rgb(255, 255, 255);"/>
+    <g transform="matrix(1, 0, 0, 1, -479.324982, -348.983002)">
+      <rect x="175.33" y="349.121" width="600" height="715.208" style="stroke: rgb(51, 51, 51); stroke-width: 7.378; fill: rgb(255, 255, 255);"/>
+      <rect x="311.608" y="356.1" width="327.444" height="700" style="fill: rgb(255, 255, 255); stroke: rgb(255, 255, 255); stroke-width: 29.51;"/>
+      <g transform="matrix(29.51013, 0, 0, 29.51013, -6189.474609, -2939.724365)">
+        <g transform="matrix(1, 0, 0, 1, 1, -0.017998)">
+          <ellipse style="fill: rgb(216, 216, 216);" cx="220.792" cy="116.437" rx="2.5" ry="2.5"/>
+          <ellipse style="fill: rgb(216, 216, 216); stroke-width: 1;" cx="220.792" cy="123.584" rx="2.5" ry="2.5"/>
+          <ellipse style="fill: rgb(216, 216, 216); stroke-width: 1;" cx="220.792" cy="130.731" rx="2.5" ry="2.5"/>
+        </g>
+        <g transform="matrix(1, 0, 0, 1, 1, 0.017998)">
+          <ellipse style="stroke-width: 1; fill: rgb(43, 43, 43);" cx="228.904" cy="116.401" rx="2.5" ry="2.5"/>
+          <ellipse style="fill: rgb(216, 216, 216); stroke-width: 1;" cx="228.904" cy="123.548" rx="2.5" ry="2.5"/>
+          <ellipse style="fill: rgb(216, 216, 216); stroke-width: 1;" cx="228.904" cy="130.695" rx="2.5" ry="2.5"/>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

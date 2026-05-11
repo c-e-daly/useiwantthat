@@ -51,7 +51,7 @@ Create or select an image before adding the page to the sitemap.
 - Preferred size: `1200 x 630`
 - Format: PNG or JPG
 - Store site-owned static images in `public/`
-- Use absolute URLs in metadata, for example `https://useiwantthat.com/og-prophet.png`
+- Use absolute URLs in metadata, for example `https://useiwantthat.com/vector-icon-wordmark-logo.png`
 - Image should still read clearly when cropped in social previews
 - Include the page/product/playbook subject, not a generic abstract background
 - Do not reference image files that are not present in `public/`
