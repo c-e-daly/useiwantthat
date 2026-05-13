@@ -135,10 +135,10 @@ export default function AskRamiPage() {
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <Link
-                href="/contact"
+                href="https://app.useiwantthat.com"
                 className="inline-flex items-center justify-center gap-2 rounded-askrami bg-brand px-6 py-3 text-sm font-semibold text-white transition hover:bg-brand-deep"
               >
-                Join the beta
+                Sign up
                 <ArrowRight className="h-4 w-4" />
               </Link>
               <Link
@@ -419,10 +419,10 @@ export default function AskRamiPage() {
             </h2>
           </div>
           <Link
-            href="/contact"
+            href="https://app.useiwantthat.com"
             className="inline-flex items-center justify-center gap-2 rounded-askrami bg-brand px-6 py-3 text-sm font-semibold text-white transition hover:bg-brand-deep"
           >
-            Get early access
+            Sign up
             <ArrowRight className="h-4 w-4" />
           </Link>
         </div>
