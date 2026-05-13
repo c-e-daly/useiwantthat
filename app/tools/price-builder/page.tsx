@@ -1,31 +1,21 @@
-import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight, CheckCircle2, ShieldCheck } from "lucide-react";
 import { PriceBuilderClient } from "@/components/marketing/PriceBuilderClient";
+import { buildPageMetadata } from "@/lib/seo/metadata";
 
 const SHOPIFY_APP_URL = "https://apps.shopify.com/iwtapp-shop";
 const DEMO_URL = "https://meetings.hubspot.com/chris-e-daly/customer-demo";
 
-export const metadata: Metadata = {
+export const metadata = buildPageMetadata({
   title: "Price Builder | Protect SKU Profitability",
   description:
     "Model COGS, profit markup, and dollar-based unit allowances so Shopify merchants can unlock price elasticity while protecting gross profit.",
-  openGraph: {
-    title: "Price Builder — Unlock Price Elasticity Without Sacrificing Profit",
-    description:
-      "Profitability starts at the SKU. Price Builder helps Shopify merchants account for shipping, financing, discounts, shrink, and market adjustments before pricing offers go live.",
-    images: ["https://useiwantthat.com/og-price-builder.png"],
-    url: "https://useiwantthat.com/tools/price-builder",
-    type: "website",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Price Builder — Protect Profit at the SKU Level",
-    description:
-      "Model COGS, markup, and unit-level opportunity costs so discounts, free shipping, and financing do not quietly erase gross profit.",
-    images: ["https://useiwantthat.com/og-price-builder.png"],
-  },
-};
+  path: "/tools/price-builder",
+  image: "/og-price-builder.png",
+  twitterTitle: "Price Builder - Protect Profit at the SKU Level",
+  twitterDescription:
+    "Model COGS, markup, and unit-level opportunity costs so discounts, free shipping, and financing do not quietly erase gross profit.",
+});
 
 const ctaPoints = [
   "Start with COGS and dollar profit markup, just like a Shopify selling price.",

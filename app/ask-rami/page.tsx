@@ -1,14 +1,15 @@
-import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, CheckCircle2, Search, ShoppingBag, Sparkles } from "lucide-react";
 import { RamiAvatar } from "@/components/public/RamiAvatar";
+import { buildPageMetadata } from "@/lib/seo/metadata";
 
-export const metadata: Metadata = {
+export const metadata = buildPageMetadata({
   title: "Ask Rami | Your Personal AI Buying Agent",
   description:
     "Ask Rami helps consumers find products, make offers, track purchases, and shop with more control.",
-};
+  path: "/ask-rami",
+});
 
 const painPoints = [
   "Endless searching across sites",

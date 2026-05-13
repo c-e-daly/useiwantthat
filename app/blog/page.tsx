@@ -1,13 +1,14 @@
-import type { Metadata } from "next";
 import Link from "next/link";
 import { BLOG_PILLARS } from "@/lib/blog/pillars";
 import { getPublishedPostSummaries } from "@/lib/blog/posts";
+import { buildPageMetadata } from "@/lib/seo/metadata";
 
-export const metadata: Metadata = {
+export const metadata = buildPageMetadata({
   title: "Blog | I Want That!",
   description:
     "Insights on customer generated offers, price elasticity, and agentic commerce for Shopify brands.",
-};
+  path: "/blog",
+});
 
 export const revalidate = 300;
 

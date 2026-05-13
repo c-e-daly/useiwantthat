@@ -1,4 +1,3 @@
-import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import {
@@ -15,23 +14,18 @@ import {
   Tags,
 } from "lucide-react";
 import { playbooks } from "@/lib/playbooks";
+import { buildPageMetadata } from "@/lib/seo/metadata";
 
 const SHOPIFY_APP_URL = "https://apps.shopify.com/iwtapp-shop";
 const DEMO_URL = "https://meetings.hubspot.com/chris-e-daly/customer-demo";
 const CAC_CALCULATOR_URL = "/tools/cac-calculator";
 
-export const metadata: Metadata = {
+export const metadata = buildPageMetadata({
   title: "Vector | Offer Intelligence & Decision Platform",
   description:
     "Vector helps Shopify merchants convert existing traffic with customer offers, automated counters, margin floors, programs, remarketing, and exit intent.",
-  openGraph: {
-    title: "Vector - Offer Intelligence & Decision Platform",
-    description:
-      "Turn existing Shopify traffic into revenue with intelligent offers, counter offers, Price Builder, programs, remarketing, and exit intent.",
-    url: "https://useiwantthat.com/product",
-    type: "website",
-  },
-};
+  path: "/product",
+});
 
 const problemPoints = [
   {

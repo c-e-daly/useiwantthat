@@ -1,16 +1,17 @@
-import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight, CalendarDays, Mail, MessageSquare } from "lucide-react";
+import { buildPageMetadata } from "@/lib/seo/metadata";
 
 const EMAIL_URL =
   "mailto:chris@useiwantthat.com?subject=I%20Want%20That%20conversation";
 const CALL_URL = "https://meetings.hubspot.com/chris-e-daly/customer-demo";
 const DEMO_URL = "https://meetings.hubspot.com/chris-e-daly/customer-demo";
 
-export const metadata: Metadata = {
+export const metadata = buildPageMetadata({
   title: "Contact | I Want That!",
   description: "Contact I Want That! to send an email, book a call, or set up a demo.",
-};
+  path: "/contact",
+});
 
 const contactOptions = [
   {

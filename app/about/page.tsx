@@ -1,12 +1,13 @@
-import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
+import { buildPageMetadata } from "@/lib/seo/metadata";
 
-export const metadata: Metadata = {
+export const metadata = buildPageMetadata({
   title: "About | I Want That!",
   description:
     "I Want That! was built by a retailer for retailers to help sellers convert more buyers and grow profitably.",
-};
+  path: "/about",
+});
 
 const buyerSegments = [
   {
