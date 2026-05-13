@@ -233,7 +233,7 @@ export function PlaybookPage({ playbook }: PlaybookPageProps) {
                   {section.table ? (
                     <div className="mt-6 overflow-x-auto rounded-askrami border border-surface-border">
                       <div
-                        className="grid min-w-[680px] bg-black text-xs font-bold uppercase tracking-widest text-white"
+                        className="grid min-w-170 bg-black text-xs font-bold uppercase tracking-widest text-white"
                         style={{
                           gridTemplateColumns: `repeat(${section.table!.columns.length}, minmax(0, 1fr))`,
                         }}
@@ -247,7 +247,7 @@ export function PlaybookPage({ playbook }: PlaybookPageProps) {
                       {section.table.rows.map((row) => (
                         <div
                           key={row.join("-")}
-                          className="grid min-w-[680px] border-t border-surface-border text-sm"
+                          className="grid min-w-170 border-t border-surface-border text-sm"
                           style={{
                             gridTemplateColumns: `repeat(${section.table!.columns.length}, minmax(0, 1fr))`,
                           }}
