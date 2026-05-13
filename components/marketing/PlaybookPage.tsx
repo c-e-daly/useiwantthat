@@ -68,7 +68,7 @@ export function PlaybookPage({ playbook }: PlaybookPageProps) {
                   <div className="flex h-28 items-center justify-center overflow-hidden rounded-askrami bg-black/5">
                     {isClearancePlaybook ? (
                       <Image
-                        src="/ClearanceIcon.png"
+                        src="/clearance-icon.png"
                         alt=""
                         width={1024}
                         height={1536}

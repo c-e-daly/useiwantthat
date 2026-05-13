@@ -6,7 +6,7 @@ export function RamiAvatar() {
       {/* The Main Icon Container */}
       <div className="w-24 h-24 md:w-32 md:h-32 rounded-full border-4 border-surface-subtle bg-white overflow-hidden shadow-card flex items-center justify-center p-4">
         <Image 
-          src="/MeetRamiCircleIcon.png" 
+          src="/meet-rami-icon.png" 
           alt="Rami the Buying Agent" 
           width={128} 
           height={128}
@@ -32,7 +32,7 @@ export function RamiAppHeader() {
       <div className="w-24 h-24 md:w-32 md:h-32 rounded-full border-4 border-surface-subtle 
 bg-white overflow-hidden shadow-card flex items-center justify-center p-4">
         <Image 
-          src="/MeetRamiCircleIcon.png" 
+          src="/meet-rami-icon.png" 
           alt="Rami the Buying Agent" 
           width={80} 
           height={80}
