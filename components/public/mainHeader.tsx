@@ -26,6 +26,11 @@ const productsNavItems = [
 
 const toolsNavItems = [
   {
+    href: '/tools/goodness-of-fit',
+    label: 'Goodness of Fit',
+    description: 'Assess readiness for customer generated offers.',
+  },
+  {
     href: '/tools/cac-calculator',
     label: 'CAC Calculator',
     description: 'Model ad tax and organic revenue recovery.',

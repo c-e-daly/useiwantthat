@@ -1,0 +1,326 @@
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: var(--font-sans); }
+.nc-wrap { padding: 1.5rem 0 2rem; }
+.nc-section-label { font-size: 11px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-text-tertiary); margin-bottom: 1rem; }
+.nc-intro { color: var(--color-text-secondary); font-size: 14px; line-height: 1.6; margin: -0.25rem 0 1.25rem; max-width: 760px; }
+.nc-question-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 12px; margin-bottom: 1.5rem; }
+.nc-question { background: var(--color-background-primary); border: 0.5px solid var(--color-border-tertiary); border-radius: var(--border-radius-lg); padding: 1rem; }
+.nc-question-title { font-size: 13px; font-weight: 500; color: var(--color-text-primary); line-height: 1.45; margin-bottom: 10px; }
+.nc-question-help { font-size: 12px; color: var(--color-text-tertiary); line-height: 1.45; margin-bottom: 12px; }
+.nc-options { display: grid; gap: 8px; }
+.nc-option { display: flex; align-items: flex-start; gap: 8px; font-size: 12px; color: var(--color-text-secondary); line-height: 1.35; cursor: pointer; }
+.nc-option input { margin-top: 2px; accent-color: var(--color-text-info); }
+.nc-divider { border: none; border-top: 0.5px solid var(--color-border-tertiary); margin: 1.5rem 0; }
+.nc-results-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 12px; margin-bottom: 1.5rem; }
+.nc-metric { background: var(--color-background-secondary); border-radius: var(--border-radius-md); padding: 0.9rem 1rem; }
+.nc-metric-label { font-size: 12px; color: var(--color-text-secondary); margin-bottom: 4px; line-height: 1.4; }
+.nc-metric-val { font-size: 22px; font-weight: 500; color: var(--color-text-primary); }
+.nc-metric-val.green { color: #0F6E56; }
+.nc-metric-val.red { color: #993C1D; }
+.nc-metric-val.orange { color: #9A5B12; }
+.nc-highlight-card { border-radius: var(--border-radius-lg); padding: 1.25rem; border: 2px solid var(--color-border-info); background: var(--color-background-info); margin-bottom: 1.5rem; }
+.nc-highlight-label { font-size: 12px; color: var(--color-text-info); margin-bottom: 4px; }
+.nc-highlight-val { font-size: 30px; font-weight: 500; color: var(--color-text-info); margin-bottom: 6px; line-height: 1.15; }
+.nc-highlight-sub { font-size: 13px; color: var(--color-text-info); opacity: 0.86; line-height: 1.55; }
+.nc-bar-section { margin-bottom: 1.5rem; }
+.nc-bar-label-row { display: flex; justify-content: space-between; gap: 12px; margin-bottom: 5px; }
+.nc-bar-label { font-size: 12px; color: var(--color-text-secondary); }
+.nc-bar-track { height: 10px; background: var(--color-background-secondary); border-radius: 5px; overflow: hidden; margin-bottom: 10px; }
+.nc-bar-fill { height: 100%; border-radius: 5px; transition: width 0.3s ease; }
+.nc-bar-green { background: #1D9E75; }
+.nc-bar-orange { background: #D89A30; }
+.nc-bar-red { background: #D85A30; }
+.nc-diagnosis-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; margin-bottom: 1.5rem; }
+.nc-diagnosis-card { background: var(--color-background-primary); border: 0.5px solid var(--color-border-tertiary); border-radius: var(--border-radius-lg); padding: 1rem; }
+.nc-diagnosis-title { font-size: 13px; font-weight: 500; color: var(--color-text-primary); margin-bottom: 8px; }
+.nc-diagnosis-list { list-style: none; display: grid; gap: 7px; }
+.nc-diagnosis-list li { font-size: 12px; color: var(--color-text-secondary); line-height: 1.45; padding-left: 16px; position: relative; }
+.nc-diagnosis-list li:before { content: "•"; position: absolute; left: 0; color: var(--color-text-tertiary); }
+.nc-footer-note { font-size: 12px; color: var(--color-text-tertiary); line-height: 1.6; padding-top: 0.5rem; }
+</style>
+
+<div class="nc-wrap" id="negotiatedCommerceFitTool">
+  <h2 class="sr-only">Negotiated Commerce Fit Assessment</h2>
+
+  <p class="nc-section-label">Negotiated commerce fit assessment</p>
+  <p class="nc-intro">
+    This tool scores whether your store is operationally and philosophically ready for customer generated offers. It is not asking whether you like discounts. It is asking whether you understand price elasticity, customer portfolios, margin protection, and the value hidden inside customers who do not buy at the current price.
+  </p>
+
+  <div class="nc-question-grid">
+    <div class="nc-question">
+      <div class="nc-question-title">How do you view discounts?</div>
+      <div class="nc-question-help">Negotiated commerce treats discounts as pricing allowances and opportunity cost, not automatic margin destruction.</div>
+      <div class="nc-options">
+        <label class="nc-option"><input type="radio" name="qDiscounts" value="10" checked> Discounts are already priced into my model and should be managed intelligently.</label>
+        <label class="nc-option"><input type="radio" name="qDiscounts" value="5"> Discounts are useful, but we do not measure them well yet.</label>
+        <label class="nc-option"><input type="radio" name="qDiscounts" value="0"> Discounts hurt the brand and margins. We avoid them.</label>
+      </div>
+    </div>
+
+    <div class="nc-question">
+      <div class="nc-question-title">How do you think about customers?</div>
+      <div class="nc-question-help">The model works best when you believe different customers create value in different ways.</div>
+      <div class="nc-options">
+        <label class="nc-option"><input type="radio" name="qCustomers" value="10" checked> Every customer may have value if we understand the right price and moment.</label>
+        <label class="nc-option"><input type="radio" name="qCustomers" value="5"> We care mostly about our best customers but want better segmentation.</label>
+        <label class="nc-option"><input type="radio" name="qCustomers" value="0"> Heavy discount customers are not worth our time.</label>
+      </div>
+    </div>
+
+    <div class="nc-question">
+      <div class="nc-question-title">How do you manage acquisition?</div>
+      <div class="nc-question-help">If CAC is rising, increasing customer yield from existing traffic becomes a strategic lever.</div>
+      <div class="nc-options">
+        <label class="nc-option"><input type="radio" name="qCAC" value="10" checked> CAC is expensive and we need more conversion from the traffic we already have.</label>
+        <label class="nc-option"><input type="radio" name="qCAC" value="5"> CAC matters, but we still mostly optimize campaigns and channels.</label>
+        <label class="nc-option"><input type="radio" name="qCAC" value="0"> We are fine paying high CAC as long as first-order performance looks acceptable.</label>
+      </div>
+    </div>
+
+    <div class="nc-question">
+      <div class="nc-question-title">How do you price products?</div>
+      <div class="nc-question-help">Strong fit requires understanding COGS, markup, and allowances like shipping, shrink, finance, and markdown room.</div>
+      <div class="nc-options">
+        <label class="nc-option"><input type="radio" name="qPricing" value="10" checked> We understand product-level economics and can define protected margin floors.</label>
+        <label class="nc-option"><input type="radio" name="qPricing" value="5"> We know margin generally, but item-level allowance logic needs work.</label>
+        <label class="nc-option"><input type="radio" name="qPricing" value="0"> We mostly price by competitor checks or simple margin targets.</label>
+      </div>
+    </div>
+
+    <div class="nc-question">
+      <div class="nc-question-title">How do you handle inventory and clearance?</div>
+      <div class="nc-question-help">Negotiation is especially useful when fixed sale prices leave money on the table.</div>
+      <div class="nc-options">
+        <label class="nc-option"><input type="radio" name="qInventory" value="10" checked> We have inventory where negotiated price discovery could improve sell-through and margin.</label>
+        <label class="nc-option"><input type="radio" name="qInventory" value="5"> We run sales, but have not tested customer-led price discovery.</label>
+        <label class="nc-option"><input type="radio" name="qInventory" value="0"> We rarely have inventory pressure and do not want flexible pricing.</label>
+      </div>
+    </div>
+
+    <div class="nc-question">
+      <div class="nc-question-title">How do you evaluate performance?</div>
+      <div class="nc-question-help">The manifesto favors customer portfolio management over simple cohort thinking.</div>
+      <div class="nc-options">
+        <label class="nc-option"><input type="radio" name="qAnalytics" value="10" checked> We want portfolio-level analysis: New, Stable, Growth, Declining, Reactivated, Defected.</label>
+        <label class="nc-option"><input type="radio" name="qAnalytics" value="5"> We use cohorts and reports, but need better customer intelligence.</label>
+        <label class="nc-option"><input type="radio" name="qAnalytics" value="0"> We mostly watch revenue, ROAS, and conversion rate.</label>
+      </div>
+    </div>
+
+    <div class="nc-question">
+      <div class="nc-question-title">How do you feel about agentic commerce?</div>
+      <div class="nc-question-help">Future fit improves if you want AI agents and shoppers to know your store can receive offers.</div>
+      <div class="nc-options">
+        <label class="nc-option"><input type="radio" name="qAgents" value="10" checked> We want to be ready for AI-agent traffic and offer-capable commerce.</label>
+        <label class="nc-option"><input type="radio" name="qAgents" value="5"> Interesting, but not immediate.</label>
+        <label class="nc-option"><input type="radio" name="qAgents" value="0"> We do not want agents or shoppers negotiating with us.</label>
+      </div>
+    </div>
+
+    <div class="nc-question">
+      <div class="nc-question-title">What is your operating mindset?</div>
+      <div class="nc-question-help">This system is for operators willing to test, measure, counter, and learn.</div>
+      <div class="nc-options">
+        <label class="nc-option"><input type="radio" name="qMindset" value="10" checked> We are grinders. We will test offers, counteroffers, portfolios, and margin rules.</label>
+        <label class="nc-option"><input type="radio" name="qMindset" value="5"> We are open to testing if the guardrails are clear.</label>
+        <label class="nc-option"><input type="radio" name="qMindset" value="0"> We prefer fixed rules, fixed prices, and minimal experimentation.</label>
+      </div>
+    </div>
+  </div>
+
+  <hr class="nc-divider">
+
+  <p class="nc-section-label">Your negotiated commerce fit score</p>
+
+  <div class="nc-results-grid">
+    <div class="nc-metric">
+      <div class="nc-metric-label">Overall fit score</div>
+      <div class="nc-metric-val green" id="ncScore">100</div>
+    </div>
+    <div class="nc-metric">
+      <div class="nc-metric-label">Readiness level</div>
+      <div class="nc-metric-val" id="ncLevel">Strong</div>
+    </div>
+    <div class="nc-metric">
+      <div class="nc-metric-label">Strategic fit</div>
+      <div class="nc-metric-val" id="ncStrategic">High</div>
+    </div>
+    <div class="nc-metric">
+      <div class="nc-metric-label">Operational gap</div>
+      <div class="nc-metric-val orange" id="ncGap">Low</div>
+    </div>
+  </div>
+
+  <div class="nc-highlight-card">
+    <div class="nc-highlight-label" id="ncVerdictLabel">Verdict</div>
+    <div class="nc-highlight-val" id="ncVerdict">You are a strong fit for negotiated commerce.</div>
+    <div class="nc-highlight-sub" id="ncVerdictSub">Your answers suggest you see pricing, discounts, customer value, and CAC as connected operating levers — not isolated tactics.</div>
+  </div>
+
+  <p class="nc-section-label">Fit profile</p>
+
+  <div class="nc-bar-section">
+    <div class="nc-bar-label-row">
+      <span class="nc-bar-label">Negotiated commerce alignment</span>
+      <span class="nc-bar-label" id="ncFitLabel">100%</span>
+    </div>
+    <div class="nc-bar-track"><div class="nc-bar-fill nc-bar-green" id="ncFitBar" style="width: 100%"></div></div>
+
+    <div class="nc-bar-label-row">
+      <span class="nc-bar-label">Needs operational setup</span>
+      <span class="nc-bar-label" id="ncSetupLabel">0%</span>
+    </div>
+    <div class="nc-bar-track"><div class="nc-bar-fill nc-bar-orange" id="ncSetupBar" style="width: 0%"></div></div>
+
+    <div class="nc-bar-label-row">
+      <span class="nc-bar-label">Anti-fit resistance</span>
+      <span class="nc-bar-label" id="ncResistanceLabel">0%</span>
+    </div>
+    <div class="nc-bar-track"><div class="nc-bar-fill nc-bar-red" id="ncResistanceBar" style="width: 0%"></div></div>
+  </div>
+
+  <div class="nc-diagnosis-grid">
+    <div class="nc-diagnosis-card">
+      <div class="nc-diagnosis-title">What this says about you</div>
+      <ul class="nc-diagnosis-list" id="ncStrengths"></ul>
+    </div>
+    <div class="nc-diagnosis-card">
+      <div class="nc-diagnosis-title">What to fix before launch</div>
+      <ul class="nc-diagnosis-list" id="ncRisks"></ul>
+    </div>
+  </div>
+
+  <p class="nc-footer-note" id="ncFooterNote">
+    Negotiated commerce is not a discount button. It is a customer intelligence and price discovery system. The better you understand your allowances, customer portfolios, and CAC pressure, the stronger the fit.
+  </p>
+</div>
+
+<script>
+(function () {
+  const groups = ['qDiscounts','qCustomers','qCAC','qPricing','qInventory','qAnalytics','qAgents','qMindset'];
+
+  const strengths = {
+    qDiscounts: 'You understand that discounts can be managed as pricing allowances instead of treated as automatic margin damage.',
+    qCustomers: 'You are willing to look for value across the full customer base, not only the easiest full-price buyer.',
+    qCAC: 'You recognize that improving customer yield from existing traffic can be more profitable than simply buying more traffic.',
+    qPricing: 'You have the foundation to protect profit with item-level floors, COGS, markup, and allowance logic.',
+    qInventory: 'You have situations where customer-led price discovery can improve sell-through without defaulting to blanket markdowns.',
+    qAnalytics: 'You are ready to evaluate customers by portfolio behavior instead of relying only on channel or cohort reporting.',
+    qAgents: 'You are thinking ahead to agentic commerce, where offer capability becomes a competitive signal.',
+    qMindset: 'You have the operating mindset to test, counter, measure, and improve negotiated outcomes.'
+  };
+
+  const risks = {
+    qDiscounts: 'Clarify whether discounts are margin-destroying promotions or pre-planned pricing allowances.',
+    qCustomers: 'Reframe discount-seeking customers as potential portfolio contributors, not automatically low-value buyers.',
+    qCAC: 'Measure whether paid acquisition requires repeat orders to break even against gross profit.',
+    qPricing: 'Build item-level economics before automating offer decisions: COGS, markup, shipping, shrink, finance, and discount allowances.',
+    qInventory: 'Identify where flexible pricing can outperform fixed clearance pricing.',
+    qAnalytics: 'Move beyond revenue and ROAS into customer portfolios, deciles, retention, reactivation, and margin contribution.',
+    qAgents: 'Decide whether offer-capable AI-agent traffic should become part of your future commerce strategy.',
+    qMindset: 'Negotiated commerce requires testing and learning. Fixed-price-only teams may struggle with the operating model.'
+  };
+
+  function selectedValue(group) {
+    const checked = document.querySelector('input[name="' + group + '"]:checked');
+    return checked ? Number(checked.value) : 0;
+  }
+
+  function setText(id, value) {
+    const el = document.getElementById(id);
+    if (el) el.textContent = value;
+  }
+
+  function setClass(id, className) {
+    const el = document.getElementById(id);
+    if (!el) return;
+    el.classList.remove('green', 'red', 'orange');
+    if (className) el.classList.add(className);
+  }
+
+  function setList(id, items) {
+    const el = document.getElementById(id);
+    if (!el) return;
+    el.innerHTML = '';
+    items.slice(0, 4).forEach(function (item) {
+      const li = document.createElement('li');
+      li.textContent = item;
+      el.appendChild(li);
+    });
+  }
+
+  function calcFit() {
+    const values = groups.map(selectedValue);
+    const total = values.reduce(function (sum, v) { return sum + v; }, 0);
+    const max = groups.length * 10;
+    const score = Math.round((total / max) * 100);
+    const partialCount = values.filter(function (v) { return v === 5; }).length;
+    const zeroCount = values.filter(function (v) { return v === 0; }).length;
+    const setup = Math.round((partialCount / groups.length) * 100);
+    const resistance = Math.round((zeroCount / groups.length) * 100);
+
+    let level = 'Strong';
+    let strategic = 'High';
+    let gap = 'Low';
+    let scoreClass = 'green';
+    let verdict = 'You are a strong fit for negotiated commerce.';
+    let sub = 'Your answers suggest you see pricing, discounts, customer value, and CAC as connected operating levers — not isolated tactics.';
+
+    if (score < 40) {
+      level = 'Weak';
+      strategic = 'Low';
+      gap = 'High';
+      scoreClass = 'red';
+      verdict = 'You are probably not ready for negotiated commerce.';
+      sub = 'Your answers show meaningful resistance to the operating model. Start with pricing discipline, customer portfolio thinking, and CAC economics before adding negotiation.';
+    } else if (score < 70) {
+      level = 'Emerging';
+      strategic = 'Moderate';
+      gap = 'Medium';
+      scoreClass = 'orange';
+      verdict = 'You may be a fit, but the operating model needs work.';
+      sub = 'There is enough alignment to test negotiated commerce, but you should tighten the margin rules, customer segmentation, and measurement model first.';
+    }
+
+    setText('ncScore', score + '/100');
+    setText('ncLevel', level);
+    setText('ncStrategic', strategic);
+    setText('ncGap', gap);
+    setText('ncVerdict', verdict);
+    setText('ncVerdictSub', sub);
+    setText('ncFitLabel', score + '%');
+    setText('ncSetupLabel', setup + '%');
+    setText('ncResistanceLabel', resistance + '%');
+
+    document.getElementById('ncFitBar').style.width = score + '%';
+    document.getElementById('ncSetupBar').style.width = setup + '%';
+    document.getElementById('ncResistanceBar').style.width = resistance + '%';
+
+    setClass('ncScore', scoreClass);
+    setClass('ncGap', gap === 'Low' ? 'green' : gap === 'Medium' ? 'orange' : 'red');
+
+    const strongItems = groups.filter(function (g) { return selectedValue(g) === 10; }).map(function (g) { return strengths[g]; });
+    const riskItems = groups.filter(function (g) { return selectedValue(g) < 10; }).map(function (g) { return risks[g]; });
+
+    setList('ncStrengths', strongItems.length ? strongItems : ['You have not selected any strong-fit signals yet.']);
+    setList('ncRisks', riskItems.length ? riskItems : ['No major readiness gaps based on these answers. Your next step is implementation and measurement.']);
+
+    setText('ncFooterNote', score >= 70
+      ? 'Your best next step is to pilot negotiated commerce on a defined program: clearance, bounceback, remarketing, or high-CAC traffic recovery. Protect margin floors first, then let customers reveal their price points.'
+      : score >= 40
+        ? 'Your best next step is to define item-level economics and customer portfolio goals before opening up offers broadly.'
+        : 'Your best next step is not a negotiation tool. It is a pricing and customer value reset: understand CAC, COGS, margin allowances, and customer portfolios first.'
+    );
+  }
+
+  groups.forEach(function (group) {
+    document.querySelectorAll('input[name="' + group + '"]').forEach(function (input) {
+      input.addEventListener('change', calcFit);
+    });
+  });
+
+  calcFit();
+})();
+</script>

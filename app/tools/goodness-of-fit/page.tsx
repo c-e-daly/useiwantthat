@@ -1,27 +1,25 @@
 import Link from "next/link";
-import { ArrowRight, BarChart3, CheckCircle2 } from "lucide-react";
-import { CacCalculatorClient } from "@/components/marketing/CacCalculatorClient";
+import { ArrowRight, CheckCircle2, Gauge } from "lucide-react";
+import { GoodnessOfFitClient } from "@/components/marketing/GoodnessOfFitClient";
 import { buildPageMetadata } from "@/lib/seo/metadata";
 
-const SHOPIFY_APP_URL = "https://apps.shopify.com/iwtapp-shop";
 const DEMO_URL = "https://meetings.hubspot.com/chris-e-daly/customer-demo";
 
 export const metadata = buildPageMetadata({
-  title:
-    "Vector — Stop Paying the Ad Tax. Convert the Traffic You Already Have.",
+  title: "Negotiated Commerce Fit Assessment | I Want That!",
   description:
-    "Vector lets Shopify merchants accept customer-generated offers, counter automatically, and convert 3–5× more of their existing traffic — without spending another dollar on ads.",
-  path: "/tools/cac-calculator",
+    "Assess whether your store is ready for customer generated offers, margin-protected counters, customer portfolios, and negotiated commerce.",
+  path: "/tools/goodness-of-fit",
   image: "/vector-icon-wordmark-logo.png",
-  twitterTitle: "Vector - Convert Your Traffic. Not Someone Else's.",
+  twitterTitle: "Negotiated Commerce Fit Assessment",
   twitterDescription:
-    "Stop paying $5-$15 per click for visitors who leave. Vector converts the traffic you already have with intelligent customer offers and automated decisions.",
+    "Find out whether your store is operationally ready for customer generated offers and negotiated commerce.",
 });
 
-const ctaPoints = [
-  "Model paid CAC, break-even orders, and gross-profit impact.",
-  "Compare ad revenue against organic revenue you already earned.",
-  "Estimate the annual upside from lifting organic conversion with Vector.",
+const fitSignals = [
+  "You see discounts as pricing allowances, not automatic margin destruction.",
+  "You want more yield from the traffic you already paid to acquire.",
+  "You can define margin floors, customer portfolios, and offer rules.",
 ];
 
 export default function GoodnessOfFitPage() {
@@ -31,15 +29,15 @@ export default function GoodnessOfFitPage() {
         <div className="mx-auto grid max-w-6xl gap-10 px-6 py-14 lg:grid-cols-[0.9fr_1.1fr] lg:items-start lg:py-20">
           <div className="lg:sticky lg:top-24">
             <p className="text-xs font-bold uppercase tracking-widest text-brand">
-              CAC calculator
+              Negotiated commerce fit
             </p>
             <h1 className="mt-4 text-4xl font-bold tracking-tight text-black md:text-6xl">
-              See what paid traffic is really costing your store.
+              Is your store ready for customer generated offers?
             </h1>
             <p className="mt-5 max-w-xl text-lg leading-relaxed text-neutral-muted">
-              Use your ad spend, conversion rate, margin, and organic traffic to
-              compare CAC against the revenue Vector can unlock from shoppers
-              already on your site.
+              Customer generated offers work best when a shop understands price
+              elasticity, margin protection, customer portfolios, and the value
+              hidden inside buyers who do not convert at the current price.
             </p>
 
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
@@ -49,38 +47,35 @@ export default function GoodnessOfFitPage() {
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2 rounded-askrami bg-brand px-6 py-3 text-sm font-semibold text-white transition hover:bg-brand-deep"
               >
-                Book a demo
+                Talk through results
                 <ArrowRight className="h-4 w-4" />
               </Link>
               <Link
-                href={SHOPIFY_APP_URL}
-                target="_blank"
-                rel="noopener noreferrer"
+                href="/pricing"
                 className="inline-flex items-center justify-center rounded-askrami border border-surface-border bg-white px-6 py-3 text-sm font-semibold text-black transition hover:bg-surface-subtle"
               >
-                Install on Shopify
+                View pricing
               </Link>
             </div>
 
             <div className="mt-8 rounded-askrami border border-surface-border bg-white p-5 shadow-sm">
               <div className="flex items-center gap-3">
                 <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-askrami bg-brand/10 text-brand">
-                  <BarChart3 className="h-5 w-5" />
+                  <Gauge className="h-5 w-5" />
                 </div>
                 <div>
                   <p className="text-sm font-bold text-black">
-                    Traffic you already paid for should convert before you buy
-                    it again.
+                    Negotiated commerce is an operating model.
                   </p>
                   <p className="mt-1 text-sm text-neutral-muted">
-                    Vector focuses on the organic and direct sessions with no
-                    added ad tax.
+                    This assessment checks whether the core inputs are in place
+                    before you invite customers to name a price.
                   </p>
                 </div>
               </div>
 
               <ul className="mt-5 space-y-3">
-                {ctaPoints.map((point) => (
+                {fitSignals.map((point) => (
                   <li
                     key={point}
                     className="flex gap-3 text-sm text-neutral-muted"
@@ -93,7 +88,7 @@ export default function GoodnessOfFitPage() {
             </div>
           </div>
 
-          <CacCalculatorClient />
+          <GoodnessOfFitClient />
         </div>
       </section>
     </div>
