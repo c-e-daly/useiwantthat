@@ -217,6 +217,12 @@ export function MainHeader() {
           {renderDropdown('playbooks', 'PLAYBOOKS', playbookNavItems, playbooksMenuRef, 'w-80')}
           {renderDropdown('tools', 'TOOLS', toolsNavItems, toolsMenuRef)}
           <Link
+            href="/pricing"
+            className="text-gray-900 transition duration-150 hover:text-indigo-600 focus:outline-none focus-visible:text-indigo-600"
+          >
+            PRICING
+          </Link>
+          <Link
             href="/blog"
             className="text-gray-900 transition duration-150 hover:text-indigo-600 focus:outline-none focus-visible:text-indigo-600"
           >
@@ -260,7 +266,14 @@ export function MainHeader() {
           {renderMobileSection('Products', productsNavItems)}
           {renderMobileSection('Playbooks', playbookNavItems)}
           {renderMobileSection('Tools', toolsNavItems)}
-          <div className="border-t border-gray-100 py-3">
+          <div className="space-y-1 border-t border-gray-100 py-3">
+            <Link
+              href="/pricing"
+              onClick={() => setMobileMenuOpen(false)}
+              className="block rounded-askrami px-3 py-2 text-sm font-semibold text-black transition hover:bg-surface-subtle focus:bg-surface-subtle focus:outline-none"
+            >
+              Pricing
+            </Link>
             <Link
               href="/blog"
               onClick={() => setMobileMenuOpen(false)}
