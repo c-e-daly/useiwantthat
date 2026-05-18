@@ -21,6 +21,9 @@ export function Footer() {
             <Link href="/contact" className="hover:text-indigo-600 transition duration-150">
               Contact
             </Link>
+            <Link href="/blog" className="hover:text-indigo-600 transition duration-150">
+              Blog
+            </Link>
             <Link href="/privacy-policy" className="hover:text-indigo-600 transition duration-150">
               Privacy Policy
             </Link>

@@ -6,7 +6,7 @@ import { buildPageMetadata } from "@/lib/seo/metadata";
 export const metadata = buildPageMetadata({
   title: "Blog | I Want That!",
   description:
-    "Insights on customer generated offers, price elasticity, and agentic commerce for Shopify brands.",
+    "Insights on negotiated commerce, customer generated offers, customer yield, and agentic commerce for Shopify brands.",
   path: "/blog",
 });
 
@@ -20,9 +20,9 @@ export default async function BlogIndexPage() {
       <section className="border-b border-slate-200 bg-slate-50">
         <div className="mx-auto max-w-5xl px-6 py-14">
           <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">I Want That Blog</p>
-          <h1 className="mt-3 text-4xl font-bold tracking-tight text-slate-900">Price Intelligence for Modern Commerce</h1>
+          <h1 className="mt-3 text-4xl font-bold tracking-tight text-slate-900">Negotiated Commerce for Modern Stores</h1>
           <p className="mt-4 max-w-2xl text-base text-slate-600">
-            Playbooks for sellers using Customer Generated Offers, Ask Rami traffic, and Shopify price elasticity systems.
+            Hub articles and branch posts for sellers using customer generated offers as the start of a negotiation.
           </p>
         </div>
       </section>

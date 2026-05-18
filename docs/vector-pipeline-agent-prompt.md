@@ -151,10 +151,10 @@ article image and the OG asset to social metadata.
   - Anchored around a specific statistic → data-story  
   - Problem defined → costs quantified → solution provided → problem-fix  
 - If pillar is provided in hint, use it. Otherwise infer from primary keyword and dominant H2 topics:  
-  - CVR, conversion, exit intent, CGO, offers → conversion-rate-optimisation  
-  - CAC, ad spend, paid traffic, ROAS, retargeting → customer-acquisition-cost  
-  - Pricing, margins, discounts, clearance, markup → pricing-strategy  
-  - Inventory, stock, clearance, cash flow → inventory-management  
+  - CAC, discounts, paid traffic, ROAS, retargeting, customer value → customer-yield  
+  - Pricing, margins, discounts, clearance, markup → markup-performance  
+  - CVR, conversion, exit intent, CGO, offers, negotiation → negotiated-commerce  
+  - Customer segments, saved customers, offer history, lifecycle strategy → customer-portfolios  
   - AI agents, agentic, AI shopping → agentic-commerce  
 - Infer useCases from body content. Map to the defined enum values.  
 - Infer funnelStage:  

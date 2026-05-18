@@ -2,7 +2,7 @@ import { cache } from "react";
 import { notFound } from "next/navigation";
 import { parseMarkdownWithFrontmatter } from "@/lib/blog/frontmatter";
 import { renderMarkdown } from "@/lib/blog/markdown";
-import { BLOG_PILLARS, getPostPath } from "@/lib/blog/pillars";
+import { BLOG_PILLARS, getPostPath, resolveContentPillar } from "@/lib/blog/pillars";
 import { createBlogSupabaseAdminClient } from "@/lib/blog/supabaseAdmin";
 import { getBlogAssetPathFromStorageUrl, getBlogStorageConfig, getPublicBlogStorageUrl } from "@/lib/blog/storageConfig";
 import type { BlogPostDetail, BlogPostRecord, BlogPostStatus, BlogPostSummary } from "@/lib/blog/types";
@@ -23,10 +23,6 @@ type SeoSidecar = {
 };
 
 const SITE_URL = (process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.useiwantthat.com").replace(/\/+$/, "");
-
-function isContentPillar(value: unknown): value is ContentPillar {
-  return typeof value === "string" && value in BLOG_PILLARS;
-}
 
 function resolveAbsoluteUrl(value: string | null | undefined): string | null {
   if (!value) {
@@ -120,7 +116,7 @@ function getSummaryExcerpt(row: BlogPostRecord, frontmatter?: Partial<PostFrontm
 }
 
 function mapSummary(row: BlogPostRecord, frontmatter: Partial<PostFrontmatter> | null = null): BlogPostSummary {
-  const pillar = isContentPillar(frontmatter?.pillar) ? frontmatter.pillar : null;
+  const pillar = resolveContentPillar(frontmatter?.pillar);
 
   return {
     slug: row.slug,

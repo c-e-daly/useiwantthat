@@ -52,8 +52,8 @@ scheduledFor: ""  # optional — omit if publishing immediately
 template: ""
 
 # Content pillar — maps to site taxonomy and internal linking rules.
-# One of: conversion-rate-optimisation | customer-acquisition-cost |
-#         pricing-strategy | inventory-management | agentic-commerce
+# One of: customer-yield | markup-performance | negotiated-commerce |
+#         agentic-commerce | customer-portfolios
 pillar: ""
 
 # Use case tag — links article to product use case pages.
@@ -371,7 +371,7 @@ A branch post uses:
 ```yaml
 pillarPost: false
 pillarBranch: true
-pillarPostSlug: "conversion-marketing-tactics-for-shopify-stores"
+pillarPostSlug: "customer-yield"
 ```
 
 Final URL: `https://iwantthat.io/blog/[slug]`

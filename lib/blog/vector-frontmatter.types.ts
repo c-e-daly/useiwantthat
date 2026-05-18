@@ -22,11 +22,11 @@ export type PostTemplate =
   | 'versus'
 
 export type ContentPillar =
-  | 'conversion-rate-optimisation'
-  | 'customer-acquisition-cost'
-  | 'pricing-strategy'
-  | 'inventory-management'
+  | 'customer-yield'
+  | 'markup-performance'
+  | 'negotiated-commerce'
   | 'agentic-commerce'
+  | 'customer-portfolios'
 
 export type UseCase =
   | 'clearance'
@@ -330,11 +330,11 @@ export interface PostSummary {
 // ─────────────────────────────────────────────
 
 export const PILLAR_URL_PREFIX: Record<ContentPillar, string> = {
-  'conversion-rate-optimisation': '/blog/conversion',
-  'customer-acquisition-cost':    '/blog/acquisition',
-  'pricing-strategy':             '/blog/pricing',
-  'inventory-management':         '/blog/inventory',
-  'agentic-commerce':             '/blog/agentic',
+  'customer-yield':       '/blog/customer-yield',
+  'markup-performance':   '/blog/markup-performance',
+  'negotiated-commerce':  '/blog/negotiated-commerce',
+  'agentic-commerce':     '/blog/agentic-commerce',
+  'customer-portfolios':  '/blog/customer-portfolios',
 }
 
 /**
