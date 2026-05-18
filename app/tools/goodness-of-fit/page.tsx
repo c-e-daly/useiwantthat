@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowRight, CheckCircle2, Gauge } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { GoodnessOfFitClient } from "@/components/marketing/GoodnessOfFitClient";
 import { buildPageMetadata } from "@/lib/seo/metadata";
 
@@ -16,18 +16,12 @@ export const metadata = buildPageMetadata({
     "Find out whether your store is operationally ready for customer generated offers and negotiated commerce.",
 });
 
-const fitSignals = [
-  "You see discounts as pricing allowances, not automatic margin destruction.",
-  "You want more yield from the traffic you already paid to acquire.",
-  "You can define margin floors, customer portfolios, and offer rules.",
-];
-
 export default function GoodnessOfFitPage() {
   return (
     <div className="min-h-screen bg-white">
       <section className="border-b border-surface-border bg-surface-subtle/50">
         <div className="mx-auto grid max-w-6xl gap-10 px-6 py-14 lg:grid-cols-[0.9fr_1.1fr] lg:items-start lg:py-20">
-          <div className="lg:sticky lg:top-24">
+          <div>
             <p className="text-xs font-bold uppercase tracking-widest text-brand">
               Negotiated commerce fit
             </p>
@@ -56,35 +50,6 @@ export default function GoodnessOfFitPage() {
               >
                 View pricing
               </Link>
-            </div>
-
-            <div className="mt-8 rounded-askrami border border-surface-border bg-white p-5 shadow-sm">
-              <div className="flex items-center gap-3">
-                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-askrami bg-brand/10 text-brand">
-                  <Gauge className="h-5 w-5" />
-                </div>
-                <div>
-                  <p className="text-sm font-bold text-black">
-                    Negotiated commerce is an operating model.
-                  </p>
-                  <p className="mt-1 text-sm text-neutral-muted">
-                    This assessment checks whether the core inputs are in place
-                    before you invite customers to name a price.
-                  </p>
-                </div>
-              </div>
-
-              <ul className="mt-5 space-y-3">
-                {fitSignals.map((point) => (
-                  <li
-                    key={point}
-                    className="flex gap-3 text-sm text-neutral-muted"
-                  >
-                    <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-brand" />
-                    <span>{point}</span>
-                  </li>
-                ))}
-              </ul>
             </div>
           </div>
 

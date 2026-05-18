@@ -273,26 +273,60 @@ export function GoodnessOfFitClient() {
       </div>
 
       {submittedAnswers ? (
-        <section className="mt-10 rounded-askrami border border-surface-border bg-white p-5 shadow-sm md:p-6">
-          <p className="text-xs font-bold uppercase tracking-widest text-brand">
-            Your negotiated commerce fit score
-          </p>
+        <section className="rounded-askrami border border-surface-border bg-white p-5 shadow-sm md:p-6 lg:col-span-2">
+          <div className="grid gap-6 lg:grid-cols-[0.85fr_1.15fr] lg:items-start">
+            <div className="rounded-askrami border border-surface-border bg-surface-subtle/50 p-5">
+              <div className="flex items-center gap-3">
+                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-askrami bg-brand/10 text-brand">
+                  <Gauge className="h-5 w-5" />
+                </div>
+                <div>
+                  <p className="text-sm font-bold text-black">
+                    Negotiated commerce is an operating model.
+                  </p>
+                  <p className="mt-1 text-sm text-neutral-muted">
+                    This assessment checks whether the core inputs are in place
+                    before you invite customers to name a price.
+                  </p>
+                </div>
+              </div>
 
-          <div className="mt-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
-            <Metric label="Overall fit score" value={`${assessment.score}/100`} tone={assessment.scoreTone} />
-            <Metric label="Readiness level" value={assessment.level} />
-            <Metric label="Strategic fit" value={assessment.strategic} />
-            <Metric label="Operational gap" value={assessment.gap} tone={assessment.gapTone} />
-          </div>
+              <ul className="mt-5 space-y-3">
+                {[
+                  "You see discounts as pricing allowances, not automatic margin destruction.",
+                  "You want more yield from the traffic you already paid to acquire.",
+                  "You can define margin floors, customer portfolios, and offer rules.",
+                ].map((point) => (
+                  <li key={point} className="flex gap-3 text-sm text-neutral-muted">
+                    <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-brand" />
+                    <span>{point}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
 
-          <div className="mt-6 rounded-askrami border-2 border-brand/25 bg-brand/10 p-5">
-            <p className="text-sm font-semibold text-brand">Verdict</p>
-            <h3 className="mt-2 text-2xl font-bold tracking-tight text-black">
-              {assessment.verdict}
-            </h3>
-            <p className="mt-3 leading-relaxed text-neutral-muted">
-              {assessment.sub}
-            </p>
+            <div>
+              <p className="text-xs font-bold uppercase tracking-widest text-brand">
+                Your negotiated commerce fit score
+              </p>
+
+              <div className="mt-5 grid gap-3 sm:grid-cols-2 xl:grid-cols-4">
+                <Metric label="Overall fit score" value={`${assessment.score}/100`} tone={assessment.scoreTone} />
+                <Metric label="Readiness level" value={assessment.level} />
+                <Metric label="Strategic fit" value={assessment.strategic} />
+                <Metric label="Operational gap" value={assessment.gap} tone={assessment.gapTone} />
+              </div>
+
+              <div className="mt-6 rounded-askrami border-2 border-brand/25 bg-brand/10 p-5">
+                <p className="text-sm font-semibold text-brand">Verdict</p>
+                <h3 className="mt-2 text-2xl font-bold tracking-tight text-black">
+                  {assessment.verdict}
+                </h3>
+                <p className="mt-3 leading-relaxed text-neutral-muted">
+                  {assessment.sub}
+                </p>
+              </div>
+            </div>
           </div>
 
           <div className="mt-6 space-y-5">
@@ -316,7 +350,7 @@ export function GoodnessOfFitClient() {
             <p className="text-xs font-bold uppercase tracking-widest text-brand">
               Your answers
             </p>
-            <div className="mt-4 grid gap-3">
+            <div className="mt-4 grid gap-3 lg:grid-cols-2">
               {questions.map((question, index) => (
                 <div
                   key={question.id}
