@@ -11,15 +11,16 @@ import {
   ShieldCheck,
   X,
 } from "lucide-react";
+import { trackGoodnessOfFitSubmit } from "@/lib/analytics/goodnessOfFit";
 
 type Question = {
   id: string;
   title: string;
   help: string;
   options: [
-    { score: 0; label: string },
-    { score: 5; label: string },
-    { score: 10; label: string },
+    { score: 0; key: string; label: string },
+    { score: 5; key: string; label: string },
+    { score: 10; key: string; label: string },
   ];
   strength: string;
   risk: string;
@@ -33,9 +34,9 @@ const questions: Question[] = [
     title: "How do you view discounts?",
     help: "Negotiated commerce treats discounts as pricing allowances and opportunity cost, not automatic margin destruction.",
     options: [
-      { score: 0, label: "Discounts hurt the brand and margins. We avoid them." },
-      { score: 5, label: "Discounts are useful, but we do not measure them well yet." },
-      { score: 10, label: "Discounts are already priced into my model and should be managed intelligently." },
+      { score: 0, key: "avoid_discounts", label: "Discounts hurt the brand and margins. We avoid them." },
+      { score: 5, key: "useful_unmeasured", label: "Discounts are useful, but we do not measure them well yet." },
+      { score: 10, key: "managed_allowances", label: "Discounts are already priced into my model and should be managed intelligently." },
     ],
     strength:
       "You understand that discounts can be managed as pricing allowances instead of treated as automatic margin damage.",
@@ -46,9 +47,9 @@ const questions: Question[] = [
     title: "How do you think about customers?",
     help: "The model works best when you believe different customers create value in different ways.",
     options: [
-      { score: 0, label: "Heavy discount customers are not worth our time." },
-      { score: 5, label: "We care mostly about our best customers but want better segmentation." },
-      { score: 10, label: "Every customer may have value if we understand the right price and moment." },
+      { score: 0, key: "discount_customers_low_value", label: "Heavy discount customers are not worth our time." },
+      { score: 5, key: "best_customers_segmentation", label: "We care mostly about our best customers but want better segmentation." },
+      { score: 10, key: "every_customer_may_have_value", label: "Every customer may have value if we understand the right price and moment." },
     ],
     strength:
       "You are willing to look for value across the full customer base, not only the easiest full-price buyer.",
@@ -59,9 +60,9 @@ const questions: Question[] = [
     title: "How do you manage acquisition?",
     help: "If CAC is rising, increasing customer yield from existing traffic becomes a strategic lever.",
     options: [
-      { score: 0, label: "We are fine paying high CAC as long as first-order performance looks acceptable." },
-      { score: 5, label: "CAC matters, but we still mostly optimize campaigns and channels." },
-      { score: 10, label: "CAC is expensive and we need more conversion from the traffic we already have." },
+      { score: 0, key: "high_cac_acceptable", label: "We are fine paying high CAC as long as first-order performance looks acceptable." },
+      { score: 5, key: "campaign_channel_optimization", label: "CAC matters, but we still mostly optimize campaigns and channels." },
+      { score: 10, key: "need_more_existing_traffic_yield", label: "CAC is expensive and we need more conversion from the traffic we already have." },
     ],
     strength:
       "You recognize that improving customer yield from existing traffic can be more profitable than simply buying more traffic.",
@@ -72,9 +73,9 @@ const questions: Question[] = [
     title: "How do you price products?",
     help: "Strong fit requires understanding COGS, markup, and allowances like shipping, shrink, finance, and markdown room.",
     options: [
-      { score: 0, label: "We mostly price by competitor checks or simple margin targets." },
-      { score: 5, label: "We know margin generally, but item-level allowance logic needs work." },
-      { score: 10, label: "We understand product-level economics and can define protected margin floors." },
+      { score: 0, key: "competitor_simple_margin", label: "We mostly price by competitor checks or simple margin targets." },
+      { score: 5, key: "general_margin_needs_allowances", label: "We know margin generally, but item-level allowance logic needs work." },
+      { score: 10, key: "product_economics_margin_floors", label: "We understand product-level economics and can define protected margin floors." },
     ],
     strength:
       "You have the foundation to protect profit with item-level floors, COGS, markup, and allowance logic.",
@@ -85,9 +86,9 @@ const questions: Question[] = [
     title: "How do you handle inventory and clearance?",
     help: "Negotiation is especially useful when fixed sale prices leave money on the table.",
     options: [
-      { score: 0, label: "We rarely have inventory pressure and do not want flexible pricing." },
-      { score: 5, label: "We run sales, but have not tested customer-led price discovery." },
-      { score: 10, label: "We have inventory where negotiated price discovery could improve sell-through and margin." },
+      { score: 0, key: "no_inventory_pressure", label: "We rarely have inventory pressure and do not want flexible pricing." },
+      { score: 5, key: "sales_no_price_discovery", label: "We run sales, but have not tested customer-led price discovery." },
+      { score: 10, key: "price_discovery_sell_through", label: "We have inventory where negotiated price discovery could improve sell-through and margin." },
     ],
     strength:
       "You have situations where customer-led price discovery can improve sell-through without defaulting to blanket markdowns.",
@@ -98,9 +99,9 @@ const questions: Question[] = [
     title: "How do you evaluate performance?",
     help: "The manifesto favors customer portfolio management over simple cohort thinking.",
     options: [
-      { score: 0, label: "We mostly watch revenue, ROAS, and conversion rate." },
-      { score: 5, label: "We use cohorts and reports, but need better customer intelligence." },
-      { score: 10, label: "We want portfolio-level analysis: New, Stable, Growth, Declining, Reactivated, Defected." },
+      { score: 0, key: "revenue_roas_cvr_only", label: "We mostly watch revenue, ROAS, and conversion rate." },
+      { score: 5, key: "cohorts_need_customer_intelligence", label: "We use cohorts and reports, but need better customer intelligence." },
+      { score: 10, key: "portfolio_level_analysis", label: "We want portfolio-level analysis: New, Stable, Growth, Declining, Reactivated, Defected." },
     ],
     strength:
       "You are ready to evaluate customers by portfolio behavior instead of relying only on channel or cohort reporting.",
@@ -111,9 +112,9 @@ const questions: Question[] = [
     title: "How do you feel about agentic commerce?",
     help: "Future fit improves if you want AI agents and shoppers to know your store can receive offers.",
     options: [
-      { score: 0, label: "We do not want agents or shoppers negotiating with us." },
-      { score: 5, label: "Interesting, but not immediate." },
-      { score: 10, label: "We want to be ready for AI-agent traffic and offer-capable commerce." },
+      { score: 0, key: "no_agent_negotiation", label: "We do not want agents or shoppers negotiating with us." },
+      { score: 5, key: "agentic_interesting_later", label: "Interesting, but not immediate." },
+      { score: 10, key: "ready_for_agentic_offers", label: "We want to be ready for AI-agent traffic and offer-capable commerce." },
     ],
     strength:
       "You are thinking ahead to agentic commerce, where offer capability becomes a competitive signal.",
@@ -124,9 +125,9 @@ const questions: Question[] = [
     title: "What is your operating mindset?",
     help: "This system is for operators willing to test, measure, counter, and learn.",
     options: [
-      { score: 0, label: "We prefer fixed rules, fixed prices, and minimal experimentation." },
-      { score: 5, label: "We are open to testing if the guardrails are clear." },
-      { score: 10, label: "We are grinders. We will test offers, counteroffers, portfolios, and margin rules." },
+      { score: 0, key: "fixed_prices_minimal_testing", label: "We prefer fixed rules, fixed prices, and minimal experimentation." },
+      { score: 5, key: "open_with_guardrails", label: "We are open to testing if the guardrails are clear." },
+      { score: 10, key: "test_counter_measure_learn", label: "We are grinders. We will test offers, counteroffers, portfolios, and margin rules." },
     ],
     strength:
       "You have the operating mindset to test, counter, measure, and improve negotiated outcomes.",
@@ -151,6 +152,10 @@ function sliderValueToScore(value: string): 0 | 5 | 10 {
 
 function answerLabel(question: Question, score: 0 | 5 | 10) {
   return question.options.find((option) => option.score === score)?.label ?? "";
+}
+
+function answerKey(question: Question, score: 0 | 5 | 10) {
+  return question.options.find((option) => option.score === score)?.key ?? "unknown";
 }
 
 function getAssessment(answers: AnswerState) {
@@ -236,6 +241,33 @@ export function GoodnessOfFitClient() {
   }
 
   function submitAssessment() {
+    const finalAssessment = getAssessment(answers);
+
+    trackGoodnessOfFitSubmit({
+      assessment: {
+        fit_score: finalAssessment.score,
+        readiness_level: finalAssessment.level.toLowerCase(),
+        strategic_fit: finalAssessment.strategic.toLowerCase(),
+        operational_gap: finalAssessment.gap.toLowerCase(),
+        alignment_pct: finalAssessment.score,
+        setup_pct: finalAssessment.setup,
+        resistance_pct: finalAssessment.resistance,
+        strong_fit_count: questions.filter((question) => answers[question.id] === 10).length,
+        setup_gap_count: questions.filter((question) => answers[question.id] === 5).length,
+        resistance_count: questions.filter((question) => answers[question.id] === 0).length,
+      },
+      answers: {
+        discounts: { score: answers.discounts, answer: answerKey(questions[0], answers.discounts) },
+        customers: { score: answers.customers, answer: answerKey(questions[1], answers.customers) },
+        cac: { score: answers.cac, answer: answerKey(questions[2], answers.cac) },
+        pricing: { score: answers.pricing, answer: answerKey(questions[3], answers.pricing) },
+        inventory: { score: answers.inventory, answer: answerKey(questions[4], answers.inventory) },
+        analytics: { score: answers.analytics, answer: answerKey(questions[5], answers.analytics) },
+        agents: { score: answers.agents, answer: answerKey(questions[6], answers.agents) },
+        mindset: { score: answers.mindset, answer: answerKey(questions[7], answers.mindset) },
+      },
+    });
+
     setSubmittedAnswers(answers);
     setIsOpen(false);
   }
