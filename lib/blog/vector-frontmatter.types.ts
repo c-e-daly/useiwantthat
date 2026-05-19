@@ -352,7 +352,7 @@ export function buildPostPath(slug: string): string {
 /**
  * Blocking validation rules. Returns array of failure reasons.
  * Empty array = all blocking rules passed.
- * Run in your Supabase listener before moving to published bucket.
+ * Run before publishing a local markdown post.
  */
 export function validateFrontmatter(fm: PostFrontmatter): string[] {
   const failures: string[] = []

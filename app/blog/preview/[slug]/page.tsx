@@ -55,7 +55,7 @@ export default async function BlogPreviewPage({ params, searchParams }: BlogPrev
       post={post}
       preview={{
         label: "Private blog preview",
-        message: "This post is not included in the public blog index unless its row status is published.",
+        message: "This post is not included in the public blog index unless its frontmatter is published.",
       }}
     />
   );

@@ -1,27 +1,14 @@
+import { readFile, readdir } from "node:fs/promises";
+import path from "node:path";
 import { cache } from "react";
 import { notFound } from "next/navigation";
 import { parseMarkdownWithFrontmatter } from "@/lib/blog/frontmatter";
 import { renderMarkdown } from "@/lib/blog/markdown";
 import { BLOG_PILLARS, getPostPath, resolveContentPillar } from "@/lib/blog/pillars";
-import { createBlogSupabaseAdminClient } from "@/lib/blog/supabaseAdmin";
-import { getBlogAssetPathFromStorageUrl, getBlogStorageConfig, getPublicBlogStorageUrl } from "@/lib/blog/storageConfig";
-import type { BlogPostDetail, BlogPostRecord, BlogPostStatus, BlogPostSummary } from "@/lib/blog/types";
-import type { ContentPillar, PostFrontmatter } from "@/lib/blog/vector-frontmatter.types";
-import type { Json } from "@/src/types/database.types";
+import type { BlogPostDetail, BlogPostStatus, BlogPostSummary } from "@/lib/blog/types";
+import type { PostFrontmatter } from "@/lib/blog/vector-frontmatter.types";
 
-const {
-  bucket: BLOG_BUCKET,
-  markdownPrefix: BLOG_MARKDOWN_PREFIX,
-  seoPrefix: BLOG_SEO_PREFIX,
-} = getBlogStorageConfig();
-
-type SeoSidecar = {
-  seo_title?: string;
-  seo_description?: string;
-  canonical_url?: string;
-  gtm_layer?: Json;
-};
-
+const BLOG_CONTENT_DIR = path.join(process.cwd(), "content", "blog");
 const SITE_URL = (process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.useiwantthat.com").replace(/\/+$/, "");
 
 function resolveAbsoluteUrl(value: string | null | undefined): string | null {
@@ -36,69 +23,6 @@ function resolveAbsoluteUrl(value: string | null | undefined): string | null {
   return `${SITE_URL}/${value.replace(/^\/+/, "")}`;
 }
 
-function extractAppServedBlogAssetPath(value: string): string | null {
-  if (value.startsWith("/blog-assets/")) {
-    return value.slice("/blog-assets/".length);
-  }
-
-  try {
-    const url = new URL(value);
-    return url.pathname.startsWith("/blog-assets/") ? url.pathname.slice("/blog-assets/".length) : null;
-  } catch {
-    return null;
-  }
-}
-
-function resolveBlogImageUrl(value: string | null | undefined): string | null {
-  if (!value) {
-    return null;
-  }
-
-  const cleanValue = value.trim();
-  const appServedAssetPath = extractAppServedBlogAssetPath(cleanValue);
-
-  if (appServedAssetPath) {
-    return getPublicBlogStorageUrl(BLOG_BUCKET, appServedAssetPath);
-  }
-
-  if (/^https?:\/\//i.test(cleanValue)) {
-    const storageAssetPath = getBlogAssetPathFromStorageUrl(cleanValue, BLOG_BUCKET);
-    if (storageAssetPath) {
-      return getPublicBlogStorageUrl(BLOG_BUCKET, storageAssetPath);
-    }
-
-    return cleanValue;
-  }
-
-  const storagePath = cleanValue.replace(/^\/+/, "");
-
-  if (/^(blog\/incoming|blog\/images|images)\//i.test(storagePath) || /^[a-z0-9-]+-(hero|og)\.(png|jpe?g|webp|gif)$/i.test(storagePath)) {
-    return getPublicBlogStorageUrl(BLOG_BUCKET, storagePath);
-  }
-
-  return resolveAbsoluteUrl(cleanValue);
-}
-
-function normalizeRenderedBlogAssetUrls(html: string): string {
-  return html.replace(/(<img\b[^>]*\bsrc=")([^"]+)(")/gi, (match, prefix: string, src: string, suffix: string) => {
-    const appServedAssetPath = extractAppServedBlogAssetPath(src);
-    if (appServedAssetPath) {
-      return `${prefix}${getPublicBlogStorageUrl(BLOG_BUCKET, appServedAssetPath)}${suffix}`;
-    }
-
-    const storageAssetPath = getBlogAssetPathFromStorageUrl(src, BLOG_BUCKET);
-    return storageAssetPath ? `${prefix}${getPublicBlogStorageUrl(BLOG_BUCKET, storageAssetPath)}${suffix}` : match;
-  });
-}
-
-function resolveCoverImageUrl(frontmatter: Partial<PostFrontmatter> | null, row: BlogPostRecord) {
-  return resolveBlogImageUrl(row.cover_image_url) ?? resolveBlogImageUrl(frontmatter?.og?.image);
-}
-
-function resolveSocialImageUrl(frontmatter: Partial<PostFrontmatter> | null, row: BlogPostRecord) {
-  return resolveBlogImageUrl(frontmatter?.og?.image) ?? resolveBlogImageUrl(frontmatter?.twitter?.image) ?? resolveBlogImageUrl(row.cover_image_url);
-}
-
 function readFirstNonEmpty(...values: Array<string | null | undefined>) {
   return values.find((value) => typeof value === "string" && value.trim().length > 0);
 }
@@ -107,28 +31,70 @@ function buildCanonicalUrl(slug: string) {
   return `${SITE_URL}${getPostPath(slug)}`;
 }
 
-function getSummaryTitle(row: BlogPostRecord, frontmatter?: Partial<PostFrontmatter> | null) {
-  return frontmatter?.og?.title || frontmatter?.seo?.metaTitle || row.title;
+function getFirstHeading(markdown: string) {
+  return markdown.match(/^#\s+(.+)$/m)?.[1]?.trim();
 }
 
-function getSummaryExcerpt(row: BlogPostRecord, frontmatter?: Partial<PostFrontmatter> | null) {
-  return frontmatter?.aeo?.tldr ?? row.excerpt ?? frontmatter?.seo?.metaDescription ?? "";
+function normalizeSlug(value: string) {
+  return value
+    .toLowerCase()
+    .trim()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "");
 }
 
-function mapSummary(row: BlogPostRecord, frontmatter: Partial<PostFrontmatter> | null = null): BlogPostSummary {
+function deriveSlug(fileName: string, frontmatter: Partial<PostFrontmatter> | null, markdown: string) {
+  return normalizeSlug(frontmatter?.slug || getFirstHeading(markdown) || fileName.replace(/\.md$/i, ""));
+}
+
+function getPostStatus(frontmatter: Partial<PostFrontmatter> | null): BlogPostStatus {
+  if (frontmatter?.published === false) {
+    return "draft";
+  }
+
+  const scheduledFor = frontmatter?.scheduledFor;
+  if (scheduledFor && new Date(scheduledFor) > new Date()) {
+    return "scheduled";
+  }
+
+  return "published";
+}
+
+function isPublishable(frontmatter: Partial<PostFrontmatter> | null) {
+  return getPostStatus(frontmatter) === "published" && (!frontmatter?.publishedAt || new Date(frontmatter.publishedAt) <= new Date());
+}
+
+function getSummaryTitle(slug: string, markdown: string, frontmatter?: Partial<PostFrontmatter> | null) {
+  return frontmatter?.og?.title || frontmatter?.seo?.metaTitle || getFirstHeading(markdown) || slug;
+}
+
+function getSummaryExcerpt(frontmatter?: Partial<PostFrontmatter> | null) {
+  return frontmatter?.aeo?.tldr ?? frontmatter?.seo?.metaDescription ?? "";
+}
+
+function resolveCoverImageUrl(frontmatter: Partial<PostFrontmatter> | null) {
+  return resolveAbsoluteUrl(frontmatter?.og?.image);
+}
+
+function resolveSocialImageUrl(frontmatter: Partial<PostFrontmatter> | null) {
+  return resolveAbsoluteUrl(frontmatter?.twitter?.image) ?? resolveAbsoluteUrl(frontmatter?.og?.image);
+}
+
+function mapSummary(fileName: string, markdown: string, frontmatter: Partial<PostFrontmatter> | null = null): BlogPostSummary {
+  const slug = deriveSlug(fileName, frontmatter, markdown);
   const pillar = resolveContentPillar(frontmatter?.pillar);
 
   return {
-    slug: row.slug,
-    title: getSummaryTitle(row, frontmatter),
-    excerpt: getSummaryExcerpt(row, frontmatter),
-    persona: row.persona,
-    tags: frontmatter?.tags?.length ? frontmatter.tags : row.tags ?? [],
-    publishedAt: frontmatter?.publishedAt || row.published_at || row.created_at,
-    updatedAt: frontmatter?.updatedAt || row.updated_at,
-    coverImageUrl: resolveCoverImageUrl(frontmatter, row),
-    socialImageUrl: resolveSocialImageUrl(frontmatter, row),
-    path: getPostPath(row.slug),
+    slug,
+    title: getSummaryTitle(slug, markdown, frontmatter),
+    excerpt: getSummaryExcerpt(frontmatter),
+    persona: frontmatter?.funnelStage ?? null,
+    tags: frontmatter?.tags ?? [],
+    publishedAt: frontmatter?.publishedAt || new Date(0).toISOString(),
+    updatedAt: frontmatter?.updatedAt || frontmatter?.publishedAt || new Date(0).toISOString(),
+    coverImageUrl: resolveCoverImageUrl(frontmatter),
+    socialImageUrl: resolveSocialImageUrl(frontmatter),
+    path: getPostPath(slug),
     pillar,
     pillarTitle: pillar ? BLOG_PILLARS[pillar].title : null,
     template: frontmatter?.template ?? null,
@@ -143,142 +109,61 @@ function mapSummary(row: BlogPostRecord, frontmatter: Partial<PostFrontmatter> |
   };
 }
 
-export const getPublishedPostSummaries = cache(async (limit = 1000): Promise<BlogPostSummary[]> => {
-  const supabase = createBlogSupabaseAdminClient();
-
-  const { data, error } = await supabase
-    .from("blog_posts")
-    .select(
-      "id, slug, title, excerpt, persona, tags, cover_image_url, canonical_url, seo_title, seo_description, gtm_layer, markdown_path, seo_path, published_at, status, created_at, updated_at"
-    )
-    .eq("status", "published")
-    .lte("published_at", new Date().toISOString())
-    .order("published_at", { ascending: false })
-    .limit(limit);
-
-  if (error) {
-    throw new Error(`Failed to fetch published blog posts: ${error.message}`);
+async function readMarkdownFiles() {
+  try {
+    const entries = await readdir(BLOG_CONTENT_DIR);
+    return entries.filter((entry) => entry.endsWith(".md") && entry.toLowerCase() !== "readme.md");
+  } catch {
+    return [];
   }
+}
 
-  const rows = data as BlogPostRecord[];
+async function readPostFile(fileName: string) {
+  const rawMarkdown = await readFile(path.join(BLOG_CONTENT_DIR, fileName), "utf8");
+  const { frontmatter, content } = parseMarkdownWithFrontmatter(rawMarkdown);
 
-  return Promise.all(
-    rows.map(async (row) => {
-      try {
-        const markdown = await getMarkdownFromStorage(row.markdown_path);
-        const { frontmatter } = parseMarkdownWithFrontmatter(markdown);
-        return mapSummary(row, frontmatter);
-      } catch {
-        return mapSummary(row);
-      }
-    })
-  );
+  return {
+    fileName,
+    frontmatter,
+    markdown: content,
+    rawMarkdown,
+    status: getPostStatus(frontmatter),
+  };
+}
+
+const getAllLocalPosts = cache(async () => {
+  const files = await readMarkdownFiles();
+  const posts = await Promise.all(files.map(readPostFile));
+
+  return posts.filter((post) => post.frontmatter).sort((a, b) => {
+    const aDate = a.frontmatter?.publishedAt || "";
+    const bDate = b.frontmatter?.publishedAt || "";
+    return bDate.localeCompare(aDate);
+  });
 });
 
-async function getPostRecordBySlug(slug: string, statuses: BlogPostStatus[] = ["published"]): Promise<BlogPostRecord | null> {
-  const supabase = createBlogSupabaseAdminClient();
+export const getPublishedPostSummaries = cache(async (limit = 1000): Promise<BlogPostSummary[]> => {
+  const posts = await getAllLocalPosts();
+  return posts
+    .filter((post) => isPublishable(post.frontmatter))
+    .slice(0, limit)
+    .map((post) => mapSummary(post.fileName, post.markdown, post.frontmatter));
+});
 
-  let query = supabase
-    .from("blog_posts")
-    .select(
-      "id, slug, title, excerpt, persona, tags, cover_image_url, canonical_url, seo_title, seo_description, gtm_layer, markdown_path, seo_path, published_at, status, created_at, updated_at"
-    )
-    .eq("slug", slug)
-    .in("status", statuses);
-
-  if (statuses.length === 1 && statuses[0] === "published") {
-    query = query.lte("published_at", new Date().toISOString());
-  }
-
-  const { data, error } = await query.maybeSingle();
-
-  if (error) {
-    throw new Error(`Failed to fetch blog post '${slug}': ${error.message}`);
-  }
-
-  return (data as BlogPostRecord | null) ?? null;
-}
-
-function normalizeStoragePath(storagePath: string): string {
-  return storagePath.replace(/^\/+/, "").trim();
-}
-
-function joinStoragePath(prefix: string, value: string): string {
-  const cleanPrefix = prefix.replace(/^\/+|\/+$/g, "");
-  const cleanValue = value.replace(/^\/+/, "");
-  return cleanPrefix ? `${cleanPrefix}/${cleanValue}` : cleanValue;
-}
-
-function stripPrefix(value: string, prefix: string): string {
-  const cleanValue = value.replace(/^\/+/, "");
-  const cleanPrefix = prefix.replace(/^\/+|\/+$/g, "");
-  return cleanValue.startsWith(`${cleanPrefix}/`) ? cleanValue.slice(cleanPrefix.length + 1) : cleanValue;
-}
-
-function resolveMarkdownStoragePath(markdownPath: string): string {
-  const normalized = normalizeStoragePath(markdownPath);
-  return normalized.startsWith("blog/") ? normalized : joinStoragePath(BLOG_MARKDOWN_PREFIX, normalized);
-}
-
-function resolveSeoStoragePath(row: BlogPostRecord): string {
-  if (row.seo_path) {
-    const normalized = normalizeStoragePath(row.seo_path);
-    return normalized.startsWith("blog/") ? normalized : joinStoragePath(BLOG_SEO_PREFIX, normalized);
-  }
-
-  const markdownPath = resolveMarkdownStoragePath(row.markdown_path);
-  const markdownRelative = stripPrefix(markdownPath, BLOG_MARKDOWN_PREFIX);
-  const seoRelative = markdownRelative.replace(/\.md$/i, ".json");
-  return joinStoragePath(BLOG_SEO_PREFIX, seoRelative);
-}
-
-async function downloadTextFromStorage(storagePath: string): Promise<string> {
-  const supabase = createBlogSupabaseAdminClient();
-  const { data, error } = await supabase.storage.from(BLOG_BUCKET).download(storagePath);
-
-  if (error) {
-    throw new Error(`Failed to download from ${BLOG_BUCKET}/${storagePath}: ${error.message}`);
-  }
-
-  return data.text();
-}
-
-async function getMarkdownFromStorage(markdownPath: string): Promise<string> {
-  const storagePath = resolveMarkdownStoragePath(markdownPath);
-  return downloadTextFromStorage(storagePath);
-}
-
-async function getSeoSidecarFromStorage(row: BlogPostRecord): Promise<SeoSidecar | null> {
-  const storagePath = resolveSeoStoragePath(row);
-
-  try {
-    const content = await downloadTextFromStorage(storagePath);
-    const parsed = JSON.parse(content) as SeoSidecar;
-    return parsed;
-  } catch {
-    return null;
-  }
-}
-
-async function buildPostDetail(row: BlogPostRecord): Promise<BlogPostDetail> {
-  const rawMarkdown = await getMarkdownFromStorage(row.markdown_path);
-  const { frontmatter, content: markdown } = parseMarkdownWithFrontmatter(rawMarkdown);
-  const seoSidecar = await getSeoSidecarFromStorage(row);
+async function buildPostDetail(fileName: string, markdown: string, frontmatter: Partial<PostFrontmatter> | null): Promise<BlogPostDetail> {
+  const summary = mapSummary(fileName, markdown, frontmatter);
   const renderedMarkdown = renderMarkdown(markdown);
-  const summary = mapSummary(row, frontmatter);
 
   return {
     ...summary,
-    seoTitle: readFirstNonEmpty(row.seo_title, seoSidecar?.seo_title, frontmatter?.seo?.metaTitle, row.title) ?? row.title,
-    seoDescription:
-      readFirstNonEmpty(row.seo_description, seoSidecar?.seo_description, frontmatter?.seo?.metaDescription, row.excerpt) ?? "",
-    canonicalUrl:
-      readFirstNonEmpty(row.canonical_url, seoSidecar?.canonical_url, frontmatter?.canonical) ?? buildCanonicalUrl(row.slug),
-    markdownPath: row.markdown_path,
+    seoTitle: readFirstNonEmpty(frontmatter?.seo?.metaTitle, summary.title) ?? summary.title,
+    seoDescription: readFirstNonEmpty(frontmatter?.seo?.metaDescription, summary.excerpt) ?? "",
+    canonicalUrl: buildCanonicalUrl(summary.slug),
+    markdownPath: path.join("content", "blog", fileName),
     markdown,
-    html: normalizeRenderedBlogAssetUrls(renderedMarkdown.html),
+    html: renderedMarkdown.html,
     tableOfContents: renderedMarkdown.tableOfContents,
-    gtmLayer: row.gtm_layer ?? seoSidecar?.gtm_layer ?? null,
+    gtmLayer: null,
     frontmatter,
     useCases: frontmatter?.useCases ?? [],
     funnelStage: frontmatter?.funnelStage ?? null,
@@ -293,22 +178,32 @@ async function buildPostDetail(row: BlogPostRecord): Promise<BlogPostDetail> {
   };
 }
 
-export const getPostDetailBySlug = cache(async (slug: string): Promise<BlogPostDetail> => {
-  const row = await getPostRecordBySlug(slug);
+async function findLocalPostBySlug(slug: string, statuses: BlogPostStatus[]) {
+  const posts = await getAllLocalPosts();
+  return (
+    posts.find((post) => {
+      const summary = mapSummary(post.fileName, post.markdown, post.frontmatter);
+      return summary.slug === slug && statuses.includes(post.status);
+    }) ?? null
+  );
+}
 
-  if (!row) {
+export const getPostDetailBySlug = cache(async (slug: string): Promise<BlogPostDetail> => {
+  const post = await findLocalPostBySlug(slug, ["published"]);
+
+  if (!post || !isPublishable(post.frontmatter)) {
     notFound();
   }
 
-  return buildPostDetail(row);
+  return buildPostDetail(post.fileName, post.markdown, post.frontmatter);
 });
 
 export async function getPreviewPostDetailBySlug(slug: string): Promise<BlogPostDetail | null> {
-  const row = await getPostRecordBySlug(slug, ["draft", "scheduled", "published"]);
-  return row ? buildPostDetail(row) : null;
+  const post = await findLocalPostBySlug(slug, ["draft", "scheduled", "published"]);
+  return post ? buildPostDetail(post.fileName, post.markdown, post.frontmatter) : null;
 }
 
-export const getPublishedPostsForPillar = cache(async (pillar: ContentPillar): Promise<BlogPostSummary[]> => {
+export const getPublishedPostsForPillar = cache(async (pillar: NonNullable<BlogPostSummary["pillar"]>): Promise<BlogPostSummary[]> => {
   const posts = await getPublishedPostSummaries();
   return posts.filter((post) => post.pillar === pillar);
 });

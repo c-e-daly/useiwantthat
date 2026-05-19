@@ -1,17 +1,20 @@
 import type { MetadataRoute } from "next";
 import { getPublishedPostSummaries } from "@/lib/blog/posts";
+import { getPublishedGlossaryTerms } from "@/lib/glossary/terms";
 import { LEGAL_DOCUMENTS } from "@/lib/legal/documents";
 
 const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.useiwantthat.com";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const posts = await getPublishedPostSummaries();
+  const glossaryTerms = await getPublishedGlossaryTerms();
 
   const staticRoutes: MetadataRoute.Sitemap = [
     { url: `${BASE_URL}/`, lastModified: new Date() },
     { url: `${BASE_URL}/ask-rami`, lastModified: new Date() },
     { url: `${BASE_URL}/product`, lastModified: new Date() },
     { url: `${BASE_URL}/blog`, lastModified: new Date() },
+    { url: `${BASE_URL}/glossary`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.7 },
     { url: `${BASE_URL}/legal`, lastModified: new Date() },
     ...LEGAL_DOCUMENTS.map((document) => ({
       url: `${BASE_URL}${document.path}`,
@@ -26,5 +29,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: post.sitemapPriority ?? (post.featured ? 0.9 : post.pillar ? 0.7 : 0.6),
   }));
 
-  return [...staticRoutes, ...postRoutes];
+  const glossaryRoutes: MetadataRoute.Sitemap = glossaryTerms.map((term) => ({
+    url: `${BASE_URL}${term.path}`,
+    lastModified: term.lastUpdated ? new Date(term.lastUpdated) : new Date(),
+    changeFrequency: "monthly",
+    priority: term.sitemapPriority,
+  }));
+
+  return [...staticRoutes, ...postRoutes, ...glossaryRoutes];
 }

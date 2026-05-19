@@ -1,4 +1,3 @@
-import type { Database, Json } from "@/src/types/database.types";
 import type {
   AeoFields,
   ContentPillar,
@@ -16,13 +15,6 @@ import type {
 import type { MarkdownTableOfContentsItem } from "@/lib/blog/markdown";
 
 export type BlogPostStatus = "draft" | "scheduled" | "published";
-
-type BlogPostTableRow = Database["public"]["Tables"]["blog_posts"]["Row"];
-
-export type BlogPostRecord = Omit<BlogPostTableRow, "status" | "gtm_layer"> & {
-  status: BlogPostStatus;
-  gtm_layer: Json | null;
-};
 
 export type BlogPostSummary = {
   slug: string;
@@ -56,7 +48,7 @@ export type BlogPostDetail = BlogPostSummary & {
   markdown: string;
   html: string;
   tableOfContents: MarkdownTableOfContentsItem[];
-  gtmLayer: Json | null;
+  gtmLayer: Record<string, unknown> | null;
   frontmatter: Partial<PostFrontmatter> | null;
   useCases: UseCase[];
   funnelStage: FunnelStage | null;
