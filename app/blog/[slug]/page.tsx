@@ -10,6 +10,8 @@ type BlogPostPageProps = {
   params: Promise<{ slug: string }>;
 };
 
+const SITE_URL = (process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.useiwantthat.com").replace(/\/+$/, "");
+
 export const revalidate = 300;
 
 export async function generateStaticParams() {
@@ -33,23 +35,38 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
   try {
     const post = await getPostDetailBySlug(slug);
     const image = post.socialImageUrl || post.coverImageUrl || undefined;
+    const ogTitle = post.og?.title || post.seoTitle;
+    const ogDescription = post.og?.description || post.seoDescription;
+    const twitterTitle = post.twitter?.title || ogTitle;
+    const twitterDescription = post.twitter?.description || ogDescription;
 
     return {
       title: post.seoTitle,
       description: post.seoDescription,
+      robots: parseRobotsDirective(post.frontmatter?.seo?.robots),
       alternates: post.canonicalUrl ? { canonical: post.canonicalUrl } : undefined,
       openGraph: {
-        title: post.seoTitle,
-        description: post.seoDescription,
-        type: "article",
+        title: ogTitle,
+        description: ogDescription,
+        url: post.canonicalUrl ?? undefined,
+        type: post.og?.type ?? "article",
         publishedTime: post.publishedAt,
         modifiedTime: post.updatedAt,
-        images: image ? [image] : undefined,
+        images: image
+          ? [
+              {
+                url: image,
+                width: post.og?.imageWidth,
+                height: post.og?.imageHeight,
+                alt: post.og?.imageAlt,
+              },
+            ]
+          : undefined,
       },
       twitter: {
-        card: "summary_large_image",
-        title: post.twitter?.title || post.seoTitle,
-        description: post.twitter?.description || post.seoDescription,
+        card: post.twitter?.card ?? "summary_large_image",
+        title: twitterTitle,
+        description: twitterDescription,
         images: image ? [image] : undefined,
       },
     };
@@ -58,19 +75,48 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
   }
 }
 
+function parseRobotsDirective(value: string | null | undefined): Metadata["robots"] {
+  const directives = new Set(
+    (value || "index, follow")
+      .toLowerCase()
+      .split(",")
+      .map((directive) => directive.trim())
+      .filter(Boolean)
+  );
+
+  return {
+    index: !directives.has("noindex"),
+    follow: !directives.has("nofollow"),
+  };
+}
+
+function extractHowToSteps(markdown: string) {
+  return markdown
+    .split(/\r?\n/)
+    .map((line) => line.match(/^\s*\d+\.\s+(.+)$/)?.[1]?.trim())
+    .filter((step): step is string => Boolean(step))
+    .map((step) => ({
+      "@type": "HowToStep",
+      name: step,
+      text: step,
+    }));
+}
+
 function buildJsonLd(post: BlogPostDetail) {
+  const articleSchema = post.schema?.article;
+  const articleImage = articleSchema?.image || post.socialImageUrl;
   const jsonLd: Array<Record<string, unknown>> = [
     {
       "@context": "https://schema.org",
       "@type": "Article",
-      headline: post.schema?.article?.headline || post.seoTitle,
-      description: post.schema?.article?.description || post.seoDescription,
-      datePublished: post.publishedAt,
-      dateModified: post.updatedAt,
-      author: post.schema?.article?.author || { "@type": "Organization", name: "Vector" },
-      publisher: post.schema?.article?.publisher || { "@type": "Organization", name: "Vector" },
-      image: post.socialImageUrl ? [post.socialImageUrl] : undefined,
-      wordCount: post.wordCount ?? undefined,
+      headline: articleSchema?.headline || post.seoTitle,
+      description: articleSchema?.description || post.seoDescription,
+      datePublished: articleSchema?.datePublished || post.publishedAt,
+      dateModified: articleSchema?.dateModified || post.updatedAt,
+      author: articleSchema?.author || { "@type": "Organization", name: "Vector" },
+      publisher: articleSchema?.publisher || { "@type": "Organization", name: "Vector" },
+      image: articleImage ? [articleImage] : undefined,
+      wordCount: articleSchema?.wordCount ?? post.wordCount ?? undefined,
       mainEntityOfPage: post.canonicalUrl ?? undefined,
     },
   ];
@@ -90,14 +136,27 @@ function buildJsonLd(post: BlogPostDetail) {
     });
   }
 
+  if (post.schema?.howTo?.enabled) {
+    const steps = extractHowToSteps(post.markdown);
+
+    jsonLd.push({
+      "@context": "https://schema.org",
+      "@type": "HowTo",
+      name: post.schema.howTo.name || post.title,
+      description: post.schema.howTo.description || post.aeo?.tldr || post.seoDescription,
+      totalTime: post.schema.howTo.totalTime || undefined,
+      step: steps.length ? steps : undefined,
+    });
+  }
+
   if (!post.schema || post.schema.breadcrumb.enabled) {
     jsonLd.push({
       "@context": "https://schema.org",
       "@type": "BreadcrumbList",
       itemListElement: [
-        { "@type": "ListItem", position: 1, name: "Blog", item: "/blog" },
+        { "@type": "ListItem", position: 1, name: "Blog", item: `${SITE_URL}/blog` },
         post.pillarTitle && post.pillar
-          ? { "@type": "ListItem", position: 2, name: post.pillarTitle, item: getPillarPath(post.pillar) }
+          ? { "@type": "ListItem", position: 2, name: post.pillarTitle, item: `${SITE_URL}${getPillarPath(post.pillar)}` }
           : null,
         { "@type": "ListItem", position: post.pillar ? 3 : 2, name: post.title, item: post.canonicalUrl ?? post.path },
       ].filter(Boolean),

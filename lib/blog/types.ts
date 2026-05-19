@@ -8,6 +8,8 @@ import type {
   PostFrontmatter,
   PostTemplate,
   SchemaFields,
+  SitemapChangefreq,
+  SitemapPriority,
   TwitterFields,
   UseCase,
 } from "@/lib/blog/vector-frontmatter.types";
@@ -42,6 +44,8 @@ export type BlogPostSummary = {
   pillarBranch: boolean;
   pillarPostSlug: string | null;
   aeoTldr: string | null;
+  sitemapPriority: SitemapPriority | null;
+  sitemapChangefreq: SitemapChangefreq | null;
 };
 
 export type BlogPostDetail = BlogPostSummary & {

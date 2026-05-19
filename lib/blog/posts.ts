@@ -138,6 +138,8 @@ function mapSummary(row: BlogPostRecord, frontmatter: Partial<PostFrontmatter> |
     pillarBranch: frontmatter?.pillarBranch ?? false,
     pillarPostSlug: frontmatter?.pillarPostSlug ?? null,
     aeoTldr: frontmatter?.aeo?.tldr ?? null,
+    sitemapPriority: frontmatter?.seo?.sitemapPriority ?? null,
+    sitemapChangefreq: frontmatter?.seo?.sitemapChangefreq ?? null,
   };
 }
 
