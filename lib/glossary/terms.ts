@@ -156,8 +156,9 @@ function stripFirstH1(markdown: string) {
 }
 
 function extractTerm(markdown: string, fallbackTitle: string) {
-  const heading = markdown.match(/^#\s+What is\s+(.+?)\??\s*$/m)?.[1]?.trim();
-  return heading || fallbackTitle.replace(/^What is\s+/i, "").replace(/\?.*$/, "").trim();
+  const singularHeading = markdown.match(/^#\s+What is\s+(?:the\s+)?(.+?)\??\s*$/im)?.[1]?.trim();
+  const pluralHeading = markdown.match(/^#\s+What are\s+(.+?)\??\s*$/im)?.[1]?.trim();
+  return singularHeading || pluralHeading || fallbackTitle.replace(/^What is\s+(?:the\s+)?/i, "").replace(/^What are\s+/i, "").replace(/\?.*$/, "").trim();
 }
 
 function extractFaq(markdown: string): GlossaryFaqEntry[] {
