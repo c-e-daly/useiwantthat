@@ -1,4 +1,5 @@
 import type { MetadataRoute } from "next";
+import { getPublishedHubDetails } from "@/lib/blog/hubs";
 import { getPublishedPostSummaries } from "@/lib/blog/posts";
 import { getPublishedGlossaryTerms } from "@/lib/glossary/terms";
 import { LEGAL_DOCUMENTS } from "@/lib/legal/documents";
@@ -7,6 +8,7 @@ const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.useiwantthat.c
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const posts = await getPublishedPostSummaries();
+  const hubs = await getPublishedHubDetails();
   const glossaryTerms = await getPublishedGlossaryTerms();
 
   const staticRoutes: MetadataRoute.Sitemap = [
@@ -29,6 +31,13 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: post.sitemapPriority ?? (post.featured ? 0.9 : post.pillar ? 0.7 : 0.6),
   }));
 
+  const hubRoutes: MetadataRoute.Sitemap = hubs.map((hub) => ({
+    url: `${BASE_URL}${hub.path}`,
+    lastModified: new Date(hub.updatedAt || hub.publishedAt),
+    changeFrequency: hub.sitemapChangefreq ?? "monthly",
+    priority: hub.sitemapPriority ?? 0.9,
+  }));
+
   const glossaryRoutes: MetadataRoute.Sitemap = glossaryTerms.map((term) => ({
     url: `${BASE_URL}${term.path}`,
     lastModified: term.lastUpdated ? new Date(term.lastUpdated) : new Date(),
@@ -36,5 +45,5 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: term.sitemapPriority,
   }));
 
-  return [...staticRoutes, ...postRoutes, ...glossaryRoutes];
+  return [...staticRoutes, ...hubRoutes, ...postRoutes, ...glossaryRoutes];
 }

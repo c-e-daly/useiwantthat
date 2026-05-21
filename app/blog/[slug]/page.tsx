@@ -2,8 +2,11 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { BlogArticleRenderer } from "@/components/blog/BlogArticleRenderer";
+import { BlogPillarHubRenderer } from "@/components/blog/BlogPillarHubRenderer";
+import { getHubDetailBySlug } from "@/lib/blog/hubs";
 import { BLOG_PILLARS, getPillarBySegment, getPillarPath } from "@/lib/blog/pillars";
 import { getPostDetailBySlug, getPublishedPostsForPillar, getPublishedPostSummaries } from "@/lib/blog/posts";
+import type { BlogHubDetail } from "@/lib/blog/hubs";
 import type { BlogPostDetail } from "@/lib/blog/types";
 
 type BlogPostPageProps = {
@@ -25,6 +28,32 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
   const pillar = getPillarBySegment(slug);
 
   if (pillar) {
+    const hub = await getHubDetailBySlug(slug);
+
+    if (hub) {
+      const robots = parseRobotsDirective(hub.frontmatter.seo?.robots);
+
+      return {
+        title: hub.seoTitle,
+        description: hub.seoDescription,
+        robots: hub.status === "published" ? robots : { index: false, follow: false },
+        alternates: { canonical: hub.canonicalUrl },
+        openGraph: {
+          title: hub.seoTitle,
+          description: hub.seoDescription,
+          url: hub.canonicalUrl,
+          type: "website",
+          images: hub.socialImageUrl ? [{ url: hub.socialImageUrl }] : undefined,
+        },
+        twitter: {
+          card: hub.socialImageUrl ? "summary_large_image" : "summary",
+          title: hub.seoTitle,
+          description: hub.seoDescription,
+          images: hub.socialImageUrl ? [hub.socialImageUrl] : undefined,
+        },
+      };
+    }
+
     return {
       title: `${pillar.title} | I Want That Blog`,
       description: pillar.description,
@@ -166,6 +195,71 @@ function buildJsonLd(post: BlogPostDetail) {
   return jsonLd;
 }
 
+function extractHubFaq(markdown: string) {
+  const faqSection = markdown.match(/## FAQ\s*\n([\s\S]*?)(?:\n##\s+|$)/i)?.[1] ?? "";
+  const entries: Array<{ question: string; answer: string }> = [];
+  const pattern = /\*\*(.+?\?)\*\*\s*\n+([\s\S]*?)(?=\n\*\*.+?\?\*\*|\s*$)/g;
+  let match: RegExpExecArray | null;
+
+  while ((match = pattern.exec(faqSection))) {
+    const question = match[1].trim();
+    const answer = match[2].trim().replace(/\s+/g, " ");
+
+    if (question && answer) {
+      entries.push({ question, answer });
+    }
+  }
+
+  return entries;
+}
+
+function buildHubJsonLd(hub: BlogHubDetail) {
+  const jsonLd: Array<Record<string, unknown>> = [
+    {
+      "@context": "https://schema.org",
+      "@type": "CollectionPage",
+      name: hub.title,
+      description: hub.seoDescription,
+      url: hub.canonicalUrl,
+      datePublished: hub.publishedAt,
+      dateModified: hub.updatedAt,
+      image: hub.socialImageUrl ?? undefined,
+      mainEntity: {
+        "@type": "ItemList",
+        name: `${hub.pillarTitle} articles`,
+        itemListOrder: "https://schema.org/ItemListOrderDescending",
+      },
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: "Blog", item: `${SITE_URL}/blog` },
+        { "@type": "ListItem", position: 2, name: hub.pillarTitle, item: hub.canonicalUrl },
+      ],
+    },
+  ];
+
+  const faq = hub.aeo.faq_schema ? extractHubFaq(hub.markdown) : [];
+
+  if (faq.length) {
+    jsonLd.push({
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      mainEntity: faq.map((entry) => ({
+        "@type": "Question",
+        name: entry.question,
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: entry.answer,
+        },
+      })),
+    });
+  }
+
+  return jsonLd;
+}
+
 async function PillarPage({ slug }: { slug: string }) {
   const pillar = getPillarBySegment(slug);
 
@@ -174,6 +268,11 @@ async function PillarPage({ slug }: { slug: string }) {
   }
 
   const posts = await getPublishedPostsForPillar(pillar.value);
+  const hub = await getHubDetailBySlug(slug);
+
+  if (hub) {
+    return <BlogPillarHubRenderer hub={hub} posts={posts} jsonLd={buildHubJsonLd(hub)} />;
+  }
 
   return (
     <div className="bg-white">
