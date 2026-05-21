@@ -104,4 +104,4 @@ Answer two.
 ## Footer CTA
 
 **Clear CTA headline.** One sentence explaining why the reader should take the
-next action. -> [Primary action](/product)
+next action. -> [Primary action](/vector)

@@ -195,7 +195,7 @@ export function BlogArticleRenderer({ post, jsonLd = [], includeGtm = false, pre
                   : null}
               </div>
               {showFinalCta ? (
-                <Link href="/product" className="mt-6 inline-block rounded-lg bg-slate-900 px-5 py-3 text-sm font-semibold text-white hover:bg-orange-600">
+                <Link href="/vector" className="mt-6 inline-block rounded-lg bg-slate-900 px-5 py-3 text-sm font-semibold text-white hover:bg-orange-600">
                   {post.internalLinks?.ctaText}
                 </Link>
               ) : null}

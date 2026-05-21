@@ -18,7 +18,7 @@ const productsNavItems = [
     description: 'Your Personal Buying Agent',
   },
   {
-    href: '/product',
+    href: '/vector',
     label: 'Vector',
     description: 'Offer Intelligence & Decision Platform',
   },

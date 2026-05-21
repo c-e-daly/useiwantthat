@@ -24,7 +24,7 @@ export const metadata = buildPageMetadata({
   title: "Vector | Offer Intelligence & Decision Platform",
   description:
     "Vector helps Shopify merchants convert existing traffic with customer offers, automated counters, margin floors, programs, remarketing, and exit intent.",
-  path: "/product",
+  path: "/vector",
   image: "/images/og/vector-og.png",
 });
 
@@ -147,7 +147,7 @@ const ctaLinks = [
   },
 ];
 
-export default function ProductPage() {
+export default function VectorPage() {
   return (
     <div className="min-h-screen bg-white">
       <section className="relative overflow-hidden border-b border-surface-border pt-20 pb-16 md:pt-28 md:pb-24">
