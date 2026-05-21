@@ -12,7 +12,7 @@ export const metadata = buildPageMetadata({
   description:
     "Vector lets Shopify merchants accept customer-generated offers, counter automatically, and convert 3–5× more of their existing traffic — without spending another dollar on ads.",
   path: "/tools/cac-calculator",
-  image: "/vector-icon-wordmark-logo.png",
+  image: "/images/og/cac-yield-og.png",
   twitterTitle: "Vector - Convert Your Traffic. Not Someone Else's.",
   twitterDescription:
     "Stop paying $5-$15 per click for visitors who leave. Vector converts the traffic you already have with intelligent customer offers and automated decisions.",

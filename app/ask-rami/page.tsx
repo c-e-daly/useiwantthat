@@ -9,6 +9,7 @@ export const metadata = buildPageMetadata({
   description:
     "Ask Rami helps consumers find products, make offers, track purchases, and shop with more control.",
   path: "/ask-rami",
+  image: "/images/og/ask-rami-og.png",
 });
 
 const painPoints = [

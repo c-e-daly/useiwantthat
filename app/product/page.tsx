@@ -25,6 +25,7 @@ export const metadata = buildPageMetadata({
   description:
     "Vector helps Shopify merchants convert existing traffic with customer offers, automated counters, margin floors, programs, remarketing, and exit intent.",
   path: "/product",
+  image: "/images/og/vector-og.png",
 });
 
 const problemPoints = [

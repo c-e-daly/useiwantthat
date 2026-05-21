@@ -11,7 +11,7 @@ export const metadata = buildPageMetadata({
   description:
     "Model COGS, profit markup, and dollar-based unit allowances so Shopify merchants can unlock price elasticity while protecting gross profit.",
   path: "/tools/price-builder",
-  image: "/og-price-builder.png",
+  image: "/images/og/price-builder-og.png",
   twitterTitle: "Price Builder - Protect Profit at the SKU Level",
   twitterDescription:
     "Model COGS, markup, and unit-level opportunity costs so discounts, free shipping, and financing do not quietly erase gross profit.",

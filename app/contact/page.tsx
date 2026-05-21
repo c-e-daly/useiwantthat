@@ -11,6 +11,7 @@ export const metadata = buildPageMetadata({
   title: "Contact | I Want That!",
   description: "Contact I Want That! to send an email, book a call, or set up a demo.",
   path: "/contact",
+  image: "/images/og/contact-og.png",
 });
 
 const contactOptions = [

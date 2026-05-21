@@ -1,4 +1,3 @@
-import type { Metadata } from "next";
 import Link from "next/link";
 import {
   ArrowRight,
@@ -9,10 +8,15 @@ import {
   TrendingUp,
 } from "lucide-react";
 import { CacCalculatorSection } from "@/components/marketing/CacCalculatorSection";
+import { buildPageMetadata } from "@/lib/seo/metadata";
 
-export const metadata: Metadata = {
+export const metadata = buildPageMetadata({
   title: "I Want That! | Negotiated Commerce Platform",
-};
+  description:
+    "I Want That! helps sellers convert more buyers with customer generated offers, automated counters, and margin-aware negotiated commerce.",
+  path: "/",
+  image: "/images/og/home-og.png",
+});
 
 const liveOffers = [
   {

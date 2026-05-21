@@ -1,13 +1,15 @@
-import type { Metadata } from "next";
 import { LegalDocumentPage } from "@/components/public/legalDocumentPage";
 import { getLegalDocumentMeta } from "@/lib/legal/documents";
+import { buildPageMetadata } from "@/lib/seo/metadata";
 
 const document = getLegalDocumentMeta("cookie-policy");
 
-export const metadata: Metadata = {
+export const metadata = buildPageMetadata({
   title: `${document.title} | I Want That!`,
   description: document.description,
-};
+  path: document.path,
+  image: "/images/og/cookie-policy-og-og.png",
+});
 
 export default function CookiePolicyPage() {
   return <LegalDocumentPage slug="cookie-policy" />;

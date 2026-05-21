@@ -22,6 +22,7 @@ export const metadata = buildPageMetadata({
   description:
     "Pricing plans for Vector customer generated offers, negotiated commerce programs, counter offers, analytics, and agentic commerce.",
   path: "/pricing",
+  image: "/images/og/pricing-og.png",
 });
 
 const plans = [

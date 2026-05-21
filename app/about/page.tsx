@@ -7,6 +7,7 @@ export const metadata = buildPageMetadata({
   description:
     "I Want That! was built by a retailer for retailers to help sellers convert more buyers and grow profitably.",
   path: "/about",
+  image: "/images/og/about-og.png",
 });
 
 const buyerSegments = [
