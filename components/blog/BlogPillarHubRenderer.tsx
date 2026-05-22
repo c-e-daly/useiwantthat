@@ -36,7 +36,6 @@ export function BlogPillarHubRenderer({ hub, posts, jsonLd = [] }: BlogPillarHub
 
       <header className="border-b border-slate-200 bg-slate-50">
         <div className="mx-auto max-w-6xl px-6 py-14">
-          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">Content pillar</p>
           <h1 className="mt-3 max-w-4xl text-4xl font-bold tracking-tight text-slate-950">{hub.title}</h1>
           <p className="mt-5 max-w-3xl text-lg leading-8 text-slate-700">{hub.aeo.tldr || hub.description}</p>
           <div className="mt-6 flex flex-wrap items-center gap-3 text-sm text-slate-500">

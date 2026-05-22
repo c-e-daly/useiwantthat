@@ -26,7 +26,7 @@ aeo:
 
 relationships:
   related_tool: cac-calculator
-  related_playbook: none
+  related_playbook: /playbooks/cac-playbook
   sibling_hubs:
     - /blog/markup-performance
     - /blog/customer-portfolios
