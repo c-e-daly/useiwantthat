@@ -105,3 +105,7 @@ Answer two.
 
 **Clear CTA headline.** One sentence explaining why the reader should take the
 next action. -> [Primary action](/vector)
+
+Related tool and playbook links are rendered automatically from
+`relationships.related_tool` and `relationships.related_playbook`. Add body
+links only when the CTA appears inside the article copy.

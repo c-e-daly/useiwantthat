@@ -8,6 +8,21 @@ type BlogPillarHubRendererProps = {
   jsonLd?: Array<Record<string, unknown>>;
 };
 
+const RELATED_TOOLS: Record<string, { title: string; path: string; label: string }> = {
+  "cac-calculator": { title: "CAC Calculator", path: "/tools/cac-calculator", label: "Run calculator" },
+  "price-builder": { title: "Price Builder", path: "/tools/price-builder", label: "Build price" },
+  "goodness-of-fit": { title: "Goodness of Fit", path: "/tools/goodness-of-fit", label: "Take assessment" },
+};
+
+const RELATED_PLAYBOOKS: Record<string, { title: string; path: string; label: string }> = {
+  "/playbooks/cac-playbook": { title: "CAC Playbook", path: "/playbooks/cac-playbook", label: "Read playbook" },
+  "/playbooks/clearance-playbook": { title: "Clearance Playbook", path: "/playbooks/clearance-playbook", label: "Read playbook" },
+  "/playbooks/remarketing-playbook": { title: "Remarketing Playbook", path: "/playbooks/remarketing-playbook", label: "Read playbook" },
+  "/playbooks/exit-intent-playbook": { title: "Exit Intent Playbook", path: "/playbooks/exit-intent-playbook", label: "Read playbook" },
+  "/playbooks/programs-playbook": { title: "Programs Playbook", path: "/playbooks/programs-playbook", label: "Read playbook" },
+  "/playbooks/counter-offer-playbook": { title: "Counter Offer Playbook", path: "/playbooks/counter-offer-playbook", label: "Read playbook" },
+};
+
 function humanizeSlug(value: string) {
   return value
     .split("-")
@@ -27,6 +42,8 @@ function formatAuthor(value: string | null) {
 export function BlogPillarHubRenderer({ hub, posts, jsonLd = [] }: BlogPillarHubRendererProps) {
   const hasSidebar = hub.tableOfContents.length > 0 || hub.relationships.glossary_terms?.length;
   const latestPosts = posts.slice(0, 6);
+  const relatedTool = hub.relationships.related_tool ? RELATED_TOOLS[hub.relationships.related_tool] : null;
+  const relatedPlaybook = hub.relationships.related_playbook ? RELATED_PLAYBOOKS[hub.relationships.related_playbook] : null;
 
   return (
     <article className="bg-white">
@@ -51,6 +68,12 @@ export function BlogPillarHubRenderer({ hub, posts, jsonLd = [] }: BlogPillarHub
                   {takeaway}
                 </p>
               ))}
+            </div>
+          ) : null}
+          {relatedTool || relatedPlaybook ? (
+            <div className="mt-8 flex flex-wrap gap-3">
+              {relatedTool ? <ResourceLink href={relatedTool.path} title={relatedTool.title} label={relatedTool.label} /> : null}
+              {relatedPlaybook ? <ResourceLink href={relatedPlaybook.path} title={relatedPlaybook.title} label={relatedPlaybook.label} /> : null}
             </div>
           ) : null}
         </div>
@@ -107,6 +130,16 @@ export function BlogPillarHubRenderer({ hub, posts, jsonLd = [] }: BlogPillarHub
   );
 }
 
+function ResourceLink({ href, title, label }: { href: string; title: string; label: string }) {
+  return (
+    <Link href={href} className="inline-flex items-center gap-2 rounded-lg border border-[#0442bf]/20 bg-white px-4 py-3 text-sm font-semibold text-[#0442bf] transition hover:border-[#0442bf]/40 hover:bg-[#0442bf]/5">
+      <span>{title}</span>
+      <span aria-hidden="true">-&gt;</span>
+      <span>{label}</span>
+    </Link>
+  );
+}
+
 function HubSidebar({ hub }: { hub: BlogHubDetail }) {
   return (
     <nav className="space-y-8" aria-label="Hub navigation">
@@ -116,7 +149,7 @@ function HubSidebar({ hub }: { hub: BlogHubDetail }) {
           <ol className="mt-4 space-y-3 text-sm">
             {hub.tableOfContents.map((item) => (
               <li key={item.id} className={item.level === 3 ? "pl-4" : ""}>
-                <a href={`#${item.id}`} className="text-slate-600 hover:text-orange-700">
+                <a href={`#${item.id}`} className="text-slate-600 hover:text-[#0442bf]">
                   {item.text}
                 </a>
               </li>
@@ -131,7 +164,7 @@ function HubSidebar({ hub }: { hub: BlogHubDetail }) {
           <ol className="mt-4 space-y-3 text-sm">
             {hub.relationships.glossary_terms.slice(0, 10).map((term) => (
               <li key={term}>
-                <Link href={`/glossary/${term}`} className="text-slate-600 hover:text-orange-700">
+                <Link href={`/glossary/${term}`} className="text-slate-600 hover:text-[#0442bf]">
                   {humanizeSlug(term)}
                 </Link>
               </li>

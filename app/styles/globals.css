@@ -61,7 +61,7 @@
   }
 
   .blog-article-body a {
-    @apply font-medium text-orange-600 hover:text-orange-700;
+    @apply font-medium text-[#0442bf] hover:text-[#032f89];
   }
 
   .blog-article-body blockquote {

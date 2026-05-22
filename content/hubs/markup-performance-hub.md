@@ -276,7 +276,7 @@ Annually at minimum, quarterly if you're in a volatile category, and immediately
 
 ## **Footer CTA**
 
-**Build your defended floor and your funded allowances.** The Price Builder walks you through every component of the pricing equation — SKU by SKU — and tells you which allowances are underfunded today. → Run the Price Builder
+**Build your defended floor and your funded allowances.** The Price Builder walks you through every component of the pricing equation — SKU by SKU — and tells you which allowances are underfunded today. [Run the Price Builder →](/tools/price-builder)
 
 ## **Editorial notes (not for publication)**
 

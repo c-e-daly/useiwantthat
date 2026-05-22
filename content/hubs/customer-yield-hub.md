@@ -165,6 +165,6 @@ Cross-hub bridges.
 
 ---
 
-**Run your Yield Ladder in 90 seconds.** The CAC calculator gives you your bottleneck stage and a starting playbook. → Run the calculator
+**Run your Yield Ladder in 90 seconds.** The CAC calculator gives you your bottleneck stage and a starting playbook. [Run the calculator →](/tools/cac-calculator)
 
 ---
