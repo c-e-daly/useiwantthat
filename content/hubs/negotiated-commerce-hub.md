@@ -3,7 +3,7 @@ content_type: hub
 pillar: negotiated-commerce
 slug: negotiated-commerce
 title: "Negotiated Commerce: The Worldview Behind Modern Pricing"
-status: draft
+status: published
 publish_date: 2026-05-17
 updated_at: 2026-05-17
 author: chris-daly
@@ -41,17 +41,11 @@ relationships:
 
 # **Negotiated Commerce: The Worldview Behind Modern Pricing**
 
-**::: Hero Image \<img src=””\>:::**
-
 Every sale has at least two parties — a buyer and a seller. Every seller is thinking about the same thing: what can I offer this buyer to get them to buy? In direct-to-consumer commerce and even business-to-business sales, the game is loaded with historical data, algorithms, and forecasts. And every salesperson already knows the answer. Just ask the buyer what they want.
 
 Negotiated commerce is two parties coming to a mutually beneficial agreement. This is how commerce has worked for thousands of years in markets all around the world. The go-go era of direct-to-consumer commerce shifted the balance to the sellers. Customer generated offers shift it back.
 
 **Customer generated offers are the negotiation layer of digital commerce. And Shopify is just the beginning.**
-
----
-
-## **Table of Contents**
 
 ---
 
@@ -71,9 +65,6 @@ Vector is the platform that runs it. Vector is not a discount platform. Vector i
 
 ---
 
-## 
-
-*[Each subtopic below will expand into a 200-300 word context section with linked branch posts as those branches are written. Placeholder H3s and post slots shown below.]*
 
 ### **Negotiated Commerce in DTC Strategy 2026**
 
@@ -128,8 +119,6 @@ This essay walks through why the direct-to-consumer playbook of the last decade 
 ---
 
 ## **Recent Insights into Negotiated Commerce**
-
-*[Dynamic widget — auto-populated from CMS, sorted by publish date, last 5-6 posts in the negotiated-commerce cluster.]*
 
 * The DTC Playbook Is Broken. Here's What Replaces It.  
 * What 25 Years in Retail Taught Me About Inventory You Can't Sell  
