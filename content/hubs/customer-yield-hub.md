@@ -39,40 +39,11 @@ relationships:
   og_image: /images/hubs/yield-ladder-diagram.png
 ---
 
-### **[LEFT RAIL — STICKY]**
-
-#### **Table of Contents**
-
-* Why most CAC advice fails  
-* The Yield Ladder (the framework)  
-* What this pillar is NOT  
-* Run your numbers  
-* Start here — by reader state  
-* The subtopics  
-* Latest from this pillar  
-* FAQ
-
----
-
-#### **Key Terms**
-
-*The vocabulary used throughout this pillar.*
-
-**Customer Yield** — The return a store earns on every dollar spent acquiring a customer, measured across five ladder stages. *full definition →*
-
-**Yield Ladder** — A 5-stage diagnostic model — Spend, Capture, Convert, Repeat, Portfolio — that locates the bottleneck in your acquisition system. *full definition →*
-
-**Capture Rate** — The percentage of paid visitors who give you permission to talk to them again. Stage 2 of the Yield Ladder. *full definition →*
-
-**Repeat Rate** — The percentage of first-order buyers who place a second order. Stage 4 of the Yield Ladder and the single biggest CAC multiplier in the model. *full definition →*
-
-**Channel-Stage Fit** — Whether your acquisition channel is structurally capable of delivering your target yield at your current store stage. A pre-Stage-1 question. *full definition →*
 
 ## **How to Reduce Ecommerce CAC: The Yield Ladder Playbook**
 
 If your ecommerce CAC is climbing, the fix isn't cutting ad spend or chasing a new channel. It's diagnosing which of five stages in your acquisition system is leaking. Most ecommerce stores lose 60% of their potential customer yield at one specific stage — and it's not Spend. This playbook walks the five-stage Yield Ladder, shows you the benchmark CAC by vertical, and points you to the fix for your bottleneck stage.
 
-**Who this is for:** ecommerce operators running paid acquisition, doing $100K–$5M in revenue, with margins above 30% and a returning-customer rate below 40%. If you're spending more on Meta this quarter than last and getting less back, the Yield Ladder tells you where the leak is before you touch another budget line.
 
 ### **Why most CAC advice fails**
 
@@ -99,17 +70,6 @@ The Yield Ladder is five stages. Read top to bottom. Diagnose the lowest stage t
 **The rule:** fix the lowest broken stage first. A 1-point gain at Capture beats a 10-point gain at Spend, because Capture compounds through the three stages below it.
 
 *[og_image: /images/hubs/yield-ladder-diagram.png]*
-
----
-
-### **What this pillar is NOT**
-
-Anti-drift fencing. The Yield Ladder lives next to four other pillars and the lines blur fast.
-
-* **Not Markup Performance.** If your problem is gross margin or inventory velocity, you're on the wrong pillar. Yield assumes the unit economics work; Markup Performance fixes them when they don't.  
-* **Not Negotiated Commerce.** Negotiated Commerce is the worldview — pricing as a conversation, not a posted number. Customer Yield is the acquisition math underneath it.  
-* **Not Customer Portfolios.** Portfolios is the behavioral segmentation that happens *after* Stage 5. If you're asking which customers to invest in, that's Portfolios.  
-* **Not Agentic Commerce.** Agents are a channel, not a stage. When agentic traffic shows up at Capture, it lands on this ladder like any other source.
 
 ---
 
