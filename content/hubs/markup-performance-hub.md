@@ -1,12 +1,12 @@
 ---
 content_type: hub
 pillar: markup-performance
-title: "Markup Performance: The Five Allowances of Retail Pricing"
+title: "Markup Performance: The Five Key Allowances of Retail Pricing"
 slug: markup-performance
 publish_date: 2026-05-20
 updated_at: 2026-05-20
 author: chris-daly
-status: draft
+status: published
 
 seo:
   meta_title: "Retail Pricing Strategy: The Five Allowances That Defend Margin"
@@ -162,11 +162,8 @@ The retail operator's goal at price is to defend the floor and use the allowance
 
 If the tool tells you your floor is higher than your current selling price, you have a structural pricing problem — no amount of allowance work will fix it. If your floor is fine but your allowances are underfunded, you have a tactical problem that the cluster posts in this pillar will walk you through.
 
-## **Coming soon: SKU-level offer data**
 
-The Discount Allowance has always been hardest to tune because operators have no visibility into what customers would actually pay. Aggregate offer data is improving that. SKU-level offer data — coming soon to Prophet — gives operators per-SKU resolution on customer willingness to pay, so the Discount Allowance can be tuned per-SKU instead of per-store. We're publishing a dedicated data story on what SKU-level offer data tells inventory buyers, founders, and marketers next week. Watch this pillar.
-
-## **Start here — by reader state**
+## **Not Sure where to Begin?  Start here**
 
 Three entry points. Pick the one that matches where you are.
 
@@ -182,13 +179,6 @@ Three entry points. Pick the one that matches where you are.
 
 → Jump to the Price Builder Playbook — tactical, SKU-by-SKU, screenshots.
 
-## **The Subtopics**
-
-*Manually curated. The authoritative links to cluster posts. Updated 1–2x per quarter.*
-
-### **The reframe — start here**
-
-* **Markup vs Margin: Why Setting a Margin Target Is Solving the Equation Backwards** (Reframing Essay — Chris's POV piece on the most common pricing mistake in DTC)
 
 ### **The floor**
 
@@ -277,29 +267,3 @@ Annually at minimum, quarterly if you're in a volatile category, and immediately
 ## **Footer CTA**
 
 **Build your defended floor and your funded allowances.** The Price Builder walks you through every component of the pricing equation — SKU by SKU — and tells you which allowances are underfunded today. [Run the Price Builder →](/tools/price-builder)
-
-## **Editorial notes (not for publication)**
-
-* Primary keyword ("retail pricing strategy") is broad and competitive — pairs with "markup vs margin" as the winnable long-tail. Hub plays the head-term game while the cluster posts win the long-tails.
-
-* Framework name: "The Five Allowances" (short form) / "The Five Allowances of Markup Performance" (long form). Pairs structurally with The Yield Ladder.
-
-* Doctrine line for repeated use: "Defend the floor. Flex the allowances."
-
-* Floor-and-flex diagram is the most important visual asset in the pillar. Single SVG. LinkedIn carousel, YouTube short thumbnail, hub OG image, every cluster post header.
-
-* SKU-level CGO data story plants a flag in the hub (one paragraph) and ships as a standalone Data Story next week. Don't bundle the announcement into the hub launch — it dilutes the framework.
-
-* Settle Price glossary entry ships with this hub but the term belongs to Customer Portfolios long-term. The cross-pillar reference is intentional — allowances make Settle Price possible.
-
-* FAQ leads with the disambiguation question ("what is the difference between markup and margin") because that's the highest-volume operator query the pillar needs to answer for AEO extraction.
-
-### **Distribution atoms (calendar — not part of published page)**
-
-* LinkedIn carousel (May 26) — the floor-and-flex diagram, one slide per allowance, Chris's voice.
-
-* YouTube short (May 28, 60s) — Chris on camera: "Stop pricing for margin. Price for the floor and fund the allowances." Reads the pricing equation.
-
-* LinkedIn Article (May 29, 1,000 words) — "Why I've Spent 25 Years Telling Operators They're Pricing Backwards." Chris's voice, links to the hub.
-
-* Reddit post (June 1, r/ecommerce) — native, the markup vs margin reframe with one worked example. Soft CTA in comments.
