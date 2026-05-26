@@ -7,7 +7,7 @@ pillar: customer-portfolios
 ladder_stage: none
 publish_date: 2026-05-21
 last_updated: 2026-05-21
-status: full
+status: published
 robots: "index, follow"
 
 # SEO
