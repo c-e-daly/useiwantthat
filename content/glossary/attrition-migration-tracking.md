@@ -8,6 +8,7 @@ ladder_stage: none
 publish_date: 2026-05-21
 last_updated: 2026-05-21
 status: full
+robots: "index, follow"
 
 # SEO
 meta_title: "What is Attrition Migration Tracking? (AMT Methodology for CPM)"
