@@ -3,7 +3,7 @@ content_type: hub
 pillar: customer-portfolios
 slug: customer-portfolios
 title: "Customer Portfolio Management: The Six Behavioral States of Every Store"
-status: draft
+status: published
 publish_date: 2026-05-21
 updated_at: 2026-05-21
 author: chris-daly

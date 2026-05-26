@@ -1,4 +1,4 @@
-# Ask Rami Product Page Draft
+# Ask Rami Product Page Published
 
 ## Meet Ask Rami
 

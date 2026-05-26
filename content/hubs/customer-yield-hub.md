@@ -3,7 +3,7 @@ content_type: hub
 pillar: customer-yield
 slug: customer-yield
 title: "Customer Yield: The Acquisition Efficiency Playbook"
-status: draft
+status: published
 publish_date: 2026-05-21
 updated_at: 2026-05-21
 author: chris-daly
