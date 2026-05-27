@@ -3,9 +3,10 @@ import path from "node:path";
 import { cache } from "react";
 import { parseMarkdownWithFrontmatter } from "@/lib/blog/frontmatter";
 import { renderMarkdown } from "@/lib/blog/markdown";
+import { getSiteUrl } from "@/lib/site/url";
 
 const GLOSSARY_DIR = path.join(process.cwd(), "content", "glossary");
-const SITE_URL = (process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.useiwantthat.com").replace(/\/+$/, "");
+const SITE_URL = getSiteUrl();
 
 export type GlossaryPillar =
   | "customer-yield"

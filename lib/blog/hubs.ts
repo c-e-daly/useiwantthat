@@ -4,11 +4,12 @@ import { cache } from "react";
 import { BLOG_PILLARS, getPillarBySegment } from "@/lib/blog/pillars";
 import { parseMarkdownWithFrontmatter } from "@/lib/blog/frontmatter";
 import { renderMarkdown } from "@/lib/blog/markdown";
+import { getSiteUrl } from "@/lib/site/url";
 import type { ContentPillar, SitemapChangefreq, SitemapPriority } from "@/lib/blog/vector-frontmatter.types";
 import type { MarkdownTableOfContentsItem } from "@/lib/blog/markdown";
 
 const HUB_CONTENT_DIR = path.join(process.cwd(), "content", "hubs");
-const SITE_URL = (process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.useiwantthat.com").replace(/\/+$/, "");
+const SITE_URL = getSiteUrl();
 
 export type HubStatus = "draft" | "scheduled" | "published";
 

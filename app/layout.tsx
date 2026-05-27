@@ -9,9 +9,10 @@ import { MainHeader } from "@/components/public/mainHeader";
 import { Footer } from "@/components/public/footer";
 import { Toaster } from "react-hot-toast";
 import { PostHogProvider } from "@/src/providers/providers";
+import { getSiteUrl } from "@/lib/site/url";
 
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.useiwantthat.com"),
+  metadataBase: new URL(getSiteUrl()),
   title: "I Want That! | Interactive Product Tour",
   description: "Experience the consumer webapp in real-time.",
 };

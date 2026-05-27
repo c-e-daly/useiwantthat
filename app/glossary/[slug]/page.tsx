@@ -10,6 +10,7 @@ import {
   type GlossaryTerm,
 } from "@/lib/glossary/terms";
 import { buildPageMetadata } from "@/lib/seo/metadata";
+import { getSiteUrl } from "@/lib/site/url";
 
 type GlossaryTermPageProps = {
   params: Promise<{ slug: string }>;
@@ -21,7 +22,7 @@ const RELATED_TOOL_PATHS: Record<string, { title: string; path: string }> = {
   "goodness-of-fit": { title: "Goodness of Fit", path: "/tools/goodness-of-fit" },
 };
 
-const SITE_URL = (process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.useiwantthat.com").replace(/\/+$/, "");
+const SITE_URL = getSiteUrl();
 
 export async function generateStaticParams() {
   const terms = await getPublishedGlossaryTerms();

@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
-
-const DEFAULT_SITE_URL = "https://www.useiwantthat.com";
+import { absoluteSiteUrl } from "@/lib/site/url";
 
 type PageMetadataInput = {
   title: string;
@@ -13,18 +12,6 @@ type PageMetadataInput = {
   twitterDescription?: string;
 };
 
-function getSiteUrl() {
-  return (process.env.NEXT_PUBLIC_SITE_URL ?? DEFAULT_SITE_URL).replace(/\/+$/, "");
-}
-
-function absoluteUrl(value: string) {
-  if (/^https?:\/\//i.test(value)) {
-    return value;
-  }
-
-  return `${getSiteUrl()}/${value.replace(/^\/+/, "")}`;
-}
-
 export function buildPageMetadata({
   title,
   description,
@@ -35,11 +22,11 @@ export function buildPageMetadata({
   twitterTitle,
   twitterDescription,
 }: PageMetadataInput): Metadata {
-  const url = absoluteUrl(path);
+  const url = absoluteSiteUrl(path);
   const images = image
     ? [
         {
-          url: absoluteUrl(image),
+          url: absoluteSiteUrl(image),
           width: 1200,
           height: 630,
           alt: imageAlt ?? title,

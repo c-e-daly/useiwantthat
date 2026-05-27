@@ -5,11 +5,12 @@ import { notFound } from "next/navigation";
 import { parseMarkdownWithFrontmatter } from "@/lib/blog/frontmatter";
 import { renderMarkdown } from "@/lib/blog/markdown";
 import { BLOG_PILLARS, getPostPath, resolveContentPillar } from "@/lib/blog/pillars";
+import { getSiteUrl } from "@/lib/site/url";
 import type { BlogPostDetail, BlogPostStatus, BlogPostSummary } from "@/lib/blog/types";
 import type { PostFrontmatter } from "@/lib/blog/vector-frontmatter.types";
 
 const BLOG_CONTENT_DIR = path.join(process.cwd(), "content", "blog");
-const SITE_URL = (process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.useiwantthat.com").replace(/\/+$/, "");
+const SITE_URL = getSiteUrl();
 
 function resolveAbsoluteUrl(value: string | null | undefined): string | null {
   if (!value) {

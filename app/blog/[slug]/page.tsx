@@ -6,6 +6,7 @@ import { BlogPillarHubRenderer } from "@/components/blog/BlogPillarHubRenderer";
 import { getHubDetailBySlug } from "@/lib/blog/hubs";
 import { BLOG_PILLARS, getPillarBySegment, getPillarPath } from "@/lib/blog/pillars";
 import { getPostDetailBySlug, getPublishedPostsForPillar, getPublishedPostSummaries } from "@/lib/blog/posts";
+import { getSiteUrl } from "@/lib/site/url";
 import type { BlogHubDetail } from "@/lib/blog/hubs";
 import type { BlogPostDetail } from "@/lib/blog/types";
 
@@ -13,7 +14,7 @@ type BlogPostPageProps = {
   params: Promise<{ slug: string }>;
 };
 
-const SITE_URL = (process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.useiwantthat.com").replace(/\/+$/, "");
+const SITE_URL = getSiteUrl();
 
 export const revalidate = 300;
 

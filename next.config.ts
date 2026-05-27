@@ -2,14 +2,31 @@ import type { NextConfig } from "next";
 
 const siteHost = process.env.NEXT_PUBLIC_SITE_URL
   ? new URL(process.env.NEXT_PUBLIC_SITE_URL).hostname
-  : "www.useiwantthat.com";
+  : "useiwantthat.com";
 
 const nextConfig: NextConfig = {
+  async redirects() {
+    return [
+      {
+        source: "/:path*",
+        has: [{ type: "host", value: "www.useiwantthat.com" }],
+        destination: "https://useiwantthat.com/:path*",
+        permanent: true,
+      },
+    ];
+  },
   images: {
     remotePatterns: [
       {
         protocol: "https",
         hostname: siteHost,
+        port: "",
+        pathname: "/blog-assets/**",
+        search: "",
+      },
+      {
+        protocol: "https",
+        hostname: "www.useiwantthat.com",
         port: "",
         pathname: "/blog-assets/**",
         search: "",

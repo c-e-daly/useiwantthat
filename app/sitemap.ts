@@ -3,8 +3,9 @@ import { getPublishedHubDetails } from "@/lib/blog/hubs";
 import { getPublishedPostSummaries } from "@/lib/blog/posts";
 import { getPublishedGlossaryTerms } from "@/lib/glossary/terms";
 import { LEGAL_DOCUMENTS } from "@/lib/legal/documents";
+import { getSiteUrl } from "@/lib/site/url";
 
-const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.useiwantthat.com";
+const BASE_URL = getSiteUrl();
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const posts = await getPublishedPostSummaries();
