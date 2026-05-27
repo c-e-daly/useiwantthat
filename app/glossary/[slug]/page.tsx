@@ -40,7 +40,8 @@ export async function generateMetadata({ params }: GlossaryTermPageProps): Promi
     title: term.metaTitle,
     description: term.metaDescription,
     path: term.path,
-    image: term.ogImage ?? undefined,
+    image: `${term.path}/opengraph-image`,
+    imageAlt: `${term.title} | I Want That!`,
     type: "article",
   });
 }

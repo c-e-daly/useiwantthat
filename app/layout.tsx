@@ -11,6 +11,7 @@ import { Toaster } from "react-hot-toast";
 import { PostHogProvider } from "@/src/providers/providers";
 
 export const metadata: Metadata = {
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.useiwantthat.com"),
   title: "I Want That! | Interactive Product Tour",
   description: "Experience the consumer webapp in real-time.",
 };
