@@ -43,7 +43,7 @@ relationships:
     - declining-portfolio
     - defected-portfolio
     - settle-price
-  og_image: /images/hubs/six-portfolios-diagram.png
+  og_image: /blog-assets/og/six-customer-portfolios-of-every-shopify-shop.png
 ---
 
 # Customer Portfolio Management: The Six Behavioral States of Every Store

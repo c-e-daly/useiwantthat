@@ -1,50 +1,68 @@
-–  
-\# Core  
-title: "What Are Customer Generated Offers? The Negotiated Commerce Primer."   
-slug: what-are-customer-generated-offers   
-article\_type: DE   
-cluster: 3   
-primary\_keyword: "customer generated offers"   
-secondary\_keywords:
-
-- "what are customer generated offers"  
-- "negotiated commerce ecommerce"  
-- "make an offer shopify"  
-- "CGO ecommerce strategy"  
-- "customer offer management retail" 
-
-publish\_date: 2023-08-19   
-author: chris-daly   
-status: published 
-
-\#SEO  
-meta\_title: "What Are Customer Generated Offers? The Negotiated Commerce Primer" meta\_description: "Customer Generated Offers are offers a customer initiates to buy from your store. Here's how CGOs work, why they outperform blanket discounts, and how to automate them."   
-sitemapPriority: 0.9
-
-\#AEO  
-tldr: "Customer Generated Offers (CGOs) are offers that a customer initiates to purchase from your business — on a product, a cart, or a category. Unlike blanket discounts, CGOs are buyer-driven negotiations that reveal true willingness to pay, protect margin through BATNA mechanics, and build customer relationships that fixed-price commerce cannot." key\_takeaways:
-
-- "CGOs are not discounts — they are buyer-initiated negotiations that reveal true willingness to pay at the individual customer level."  
-- "The infrastructure for CGOs has four components: points of engagement, points of processing, consumer-facing pricing, and financial goal-setting."  
-- "Every retail price already has discounts baked in through IMU. CGOs do not cheapen your brand — they activate the negotiation space your pricing already created."
-
-faq\_schema: true
-
-\# Relationships   
-hub\_link: /negotiated-commerce   
-related\_playbook: /playbooks/counter-offer-playbook   
-related\_tool: price-builder   
-og\_image: /content/images/what-are-customer-generated-offers-og.png   
-sibling\_links:
-
-- /blog/dtc-playbook-broken  
-- /blog/agentic-commerce-offer-layer
-
+---
+slug: "what-are-customer-generated-offers"
+version: 1
+publishedAt: "2023-08-19T00:00:00Z"
+updatedAt: "2023-08-19T00:00:00Z"
+published: true
+template: "problem-fix"
+pillar: "negotiated-commerce"
+useCases:
+  - "agentic-offers"
+  - "conversion-growth"
+funnelStage: "awareness"
+icpSegment:
+  - "all"
+readingTimeMinutes: 10
+wordCount: 2102
+author:
+  name: "Chris Daly"
+  role: "Founder, I Want That"
+featured: false
+seo:
+  primaryKeyword: "What Are Customer Generated Offers? The Negotiated Commerce Primer."
+  secondaryKeywords: []
+  metaTitle: "What Are Customer Generated Offers? The Negotiated Commerce Primer"
+  metaDescription: "Customer Generated Offers are offers a customer initiates to buy from your store. Here's how CGOs work, why they outperform blanket discounts, and how to automate them."
+  robots: "index, follow"
+  sitemapPriority: 0.9
+  sitemapChangefreq: "monthly"
+  keywordDensityOk: true
+aeo:
+  tldr: "Customer Generated Offers (CGOs) are offers that a customer initiates to purchase from your business — on a product, a cart, or a category. Unlike blanket discounts, CGOs are buyer-driven negotiations that reveal true willingness to pay, protect margin through BATNA mechanics, and build customer relationships that fixed-price commerce cannot."
+  h2DirectAnswers: []
+  faq: []
+  keyTakeaways:
+    - "CGOs are not discounts — they are buyer-initiated negotiations that reveal true willingness to pay at the individual customer level."
+    - "The infrastructure for CGOs has four components: points of engagement, points of processing, consumer-facing pricing, and financial goal-setting."
+    - "Every retail price already has discounts baked in through IMU. CGOs do not cheapen your brand — they activate the negotiation space your pricing already created."
+  definedTerms: []
+  validation:
+    hasTldr: true
+    hasDirectAnswersAfterH2s: false
+    hasFaqSection: false
+    hasKeyTakeaways: true
+    hasNumberedListsForSteps: true
+    hasAttributedStats: false
+    allH2sHaveDirectAnswer: false
+    minWordCount: true
+og:
+  title: "What Are Customer Generated Offers? The Negotiated Commerce Primer."
+  description: "Customer Generated Offers are offers a customer initiates to buy from your store. Here's how CGOs work, why they outperform blanket discounts, and how to automate them."
+  image: "/blog-assets/og/what-are-customer-generated-offers-og.png"
+  imageAlt: "What are customer generated offers open graph image"
+  imageWidth: 1200
+  imageHeight: 630
+  type: "article"
+twitter:
+  card: "summary_large_image"
+  title: "What Are Customer Generated Offers? The Negotiated Commerce Primer."
+  description: "Customer Generated Offers are offers a customer initiates to buy from your store. Here's how CGOs work, why they outperform blanket discounts, and how to automate them."
+  image: "/blog-assets/og/what-are-customer-generated-offers-og.png"
 ---
 
 # What Are Customer Generated Offers? The Negotiated Commerce Primer.
 
-**Chris Daly**,  Founder, I Want That\! | 25 years in retail, worked with 40+ ecommerce brands.
+**Chris Daly**,  Founder, I Want That! | 25 years in retail, worked with 40+ ecommerce brands.
 
 ---
 
@@ -171,4 +189,3 @@ Start building your CGO infrastructure, see how the negotiation space in your cu
 - Asset cut: the BATNA diagram from the original post — recreate as a clean SVG in brand colors and commit to repo. Best LinkedIn asset from this post.  
 - FAQ schema: true — 7 entries  
 - sitemapPriority: 0.9 — this is the definitional anchor for the Negotiated Commerce pillar
-

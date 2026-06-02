@@ -1,47 +1,67 @@
-–  
-\# Core  
-title: "The Growth Portfolio: Turning Mid-Tier Buyers Into Top-Tier Spenders."   
-slug: growth-portfolio-nurture-mid-to-top-tier  
-article\_type: TP   
-cluster: 5   
-primary\_keyword: grow customer spend ecommerce   
-secondary\_keywords:  
-"growing customer retention shopify"  
-"yoy customer value increase dtc"  
-"customer generated offers loyal customers"  
-"referral program high value customers"  
-"growth customer portfolio ecommerce"   
-publish\_date: 2026-07-14   
-author: chris-daly   
-status: published
-
-\# SEO  
-meta\_title: "The Growth Customer Portfolio: Tactics to Accelerate Your Best Buyers" meta\_description: "Growth customers are increasing YOY, fully amortized, and profitable. Here's how to extend their brand duration, accelerate spend, and turn them into your acquisition engine."   
-sitemapPriority: 0.7
-
-\# AEO  
-tldr: "Growth portfolio customers are increasing in net sales year-over-year, fully amortized, and among the most profitable buyers on your file. The business goal is not to acquire or recover them — it is to accelerate their trajectory, extend their brand duration beyond the typical 4–6 year window, and activate them as a referral channel. Customer-generated offers work differently for this segment: these buyers negotiate from conviction, not price sensitivity."   
-key\_takeaways:  
-"Growth customers are your most profitable segment — fully amortized CAC, increasing spend, shorter repurchase cycles."  
-"The 4–6 year brand duration window is finite. Tactics that extend it are more valuable than tactics that maximize short-term spend."  
-"A growth customer making a CGO is not a discount-seeker. They are an engaged buyer signaling a deeper brand relationship."   
-faq\_schema: true
-
-\#Relationships  
-hub\_link: /customer-portfolios   
-related\_playbook: /playbooks/counter-offer-playbook   
-related\_tool: cac-calculator   
-og\_image: /content/images/growth-portfolio-nurture-mid-to-top-tier-og.png   
-sibling\_links:  
-/blog/portfolio-new-customers  
-/blog/portfolio-stable-customers  
-/blog/portfolio-declining-customers
-
+---
+slug: "growth-portfolio-nurture-mid-to-top-tier"
+version: 1
+publishedAt: "2026-06-02T00:00:00Z"
+updatedAt: "2026-06-02T00:00:00Z"
+published: true
+template: "playbook"
+pillar: "customer-portfolios"
+useCases:
+  - "remarketing"
+funnelStage: "consideration"
+icpSegment:
+  - "all"
+readingTimeMinutes: 13
+wordCount: 2887
+author:
+  name: "Chris Daly"
+  role: "Founder, I Want That"
+featured: false
+seo:
+  primaryKeyword: "The Growth Portfolio: Turning Mid-Tier Buyers Into Top-Tier Spenders."
+  secondaryKeywords: []
+  metaTitle: "The Growth Customer Portfolio: Tactics to Accelerate Your Best Buyers"
+  metaDescription: "Growth customers are increasing YOY, fully amortized, and profitable. Here's how to extend their brand duration, accelerate spend, and turn them into your acquisition engine."
+  robots: "index, follow"
+  sitemapPriority: 0.7
+  sitemapChangefreq: "monthly"
+  keywordDensityOk: true
+aeo:
+  tldr: "Growth portfolio customers are increasing in net sales year-over-year, fully amortized, and among the most profitable buyers on your file. The business goal is not to acquire or recover them — it is to accelerate their trajectory, extend their brand duration beyond the typical 4–6 year window, and activate them as a referral channel. Customer-generated offers work differently for this segment: these buyers negotiate from conviction, not price sensitivity."
+  h2DirectAnswers: []
+  faq: []
+  keyTakeaways:
+    - "Growth customers are your most profitable segment — fully amortized CAC, increasing spend, shorter repurchase cycles."
+    - "The 4–6 year brand duration window is finite. Tactics that extend it are more valuable than tactics that maximize short-term spend."
+    - "A growth customer making a CGO is not a discount-seeker. They are an engaged buyer signaling a deeper brand relationship."
+  definedTerms: []
+  validation:
+    hasTldr: true
+    hasDirectAnswersAfterH2s: false
+    hasFaqSection: false
+    hasKeyTakeaways: true
+    hasNumberedListsForSteps: false
+    hasAttributedStats: false
+    allH2sHaveDirectAnswer: false
+    minWordCount: true
+og:
+  title: "The Growth Portfolio: Turning Mid-Tier Buyers Into Top-Tier Spenders."
+  description: "Growth customers are increasing YOY, fully amortized, and profitable. Here's how to extend their brand duration, accelerate spend, and turn them into your acquisition engine."
+  image: "/blog-assets/og/growth-potfolio-mid-tier-to-top-tier-og.png"
+  imageAlt: "Growth portfolio open graph image"
+  imageWidth: 1200
+  imageHeight: 630
+  type: "article"
+twitter:
+  card: "summary_large_image"
+  title: "The Growth Portfolio: Turning Mid-Tier Buyers Into Top-Tier Spenders."
+  description: "Growth customers are increasing YOY, fully amortized, and profitable. Here's how to extend their brand duration, accelerate spend, and turn them into your acquisition engine."
+  image: "/blog-assets/og/growth-potfolio-mid-tier-to-top-tier-og.png"
 ---
 
 # The Growth Portfolio: How to Accelerate Your Best Buyers and Keep Them Longer
 
-Chris Daly, Founder of I Want That\! — 25 years in retail, worked with 40+ ecommerce brands.
+Chris Daly, Founder of I Want That! — 25 years in retail, worked with 40+ ecommerce brands.
 
 ## Who This Is For
 
@@ -211,4 +231,3 @@ Your growth customers are the most profitable segment on your file and the most 
 - Hub confirmation: `/customer-portfolios`  
 - Asset cut: the "what growth customers are delivering simultaneously" list (revenue retention / revenue growth / profitable growth / inventory turnover / sales velocity) is the LinkedIn carousel — one benefit per slide, with the CGO mechanic as the closing slide  
 - Calculator opportunity: embed the CAC calculator in the "What the Growth Portfolio Is" section — let operators calculate the amortized CAC on their own growth segment to make the profitability argument concrete
-

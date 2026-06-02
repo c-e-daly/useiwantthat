@@ -36,7 +36,7 @@ relationships:
     - capture-rate
     - repeat-rate
     - channel-stage-fit
-  og_image: /images/hubs/yield-ladder-diagram.png
+  og_image: /blog-assets/og/customer-yield-hub-og.png
 ---
 
 
@@ -69,7 +69,7 @@ The Yield Ladder is five stages. Read top to bottom. Diagnose the lowest stage t
 
 **The rule:** fix the lowest broken stage first. A 1-point gain at Capture beats a 10-point gain at Spend, because Capture compounds through the three stages below it.
 
-*[og_image: /images/hubs/yield-ladder-diagram.png]*
+*[og_image: /blog-assets/og/customer-yield-hub-og.png]*
 
 ---
 

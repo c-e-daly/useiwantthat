@@ -1,47 +1,67 @@
-–  
-\# Core  
-title: "The New Customer Portfolio: Converting First Buyers Into Second Orders."   
-Slug: new-portfolio-first-buyer-to-second-order  
-article\_type: TP   
-cluster: 5   
-primary\_keyword: first time customer conversion shopify   
-secondary\_keywords:  
-"bounceback offer ecommerce"  
-"new customer retention shopify"  
-"first purchase second purchase strategy"  
-"customer portfolio quintile segmentation"  
-"counter offer new customers"   
-publish\_date: 2026-07-16   
-author: chris-daly   
-status: published
-
-\#SEO  
-meta\_title: "Converting First-Time Buyers Into Second Orders on Shopify"   
-meta\_description: "Not every first-time buyer is worth the same. Here's how to segment new customers into quintiles and use bounceback counter-offers to drive the second purchase."  
-sitemapPriority: 0.7
-
-\# AEO  
-tldr: "New customers are not a monolith. Segmenting first-time buyers by quintile based on first-order value, category, and AOV reveals which ones are likely to return and what offer type will convert them. A bounceback counter-offer, timed correctly and sized to the quintile, is the most testable tool in your retention arsenal."   
-key\_takeaways:  
-"First-purchase category is the single best predictor of whether a new customer ever returns."  
-"Quintile 1 new customers need zero discount — they need access and recognition."  
-"The bounceback counter-offer should be structured differently for each quintile, not batch-blasted." faq\_schema: true
-
-\# Relationships  
-hub\_link: /customer-portfolios   
-related\_playbook: /playbooks/counter-offer-playbook   
-related\_tool: cac-calculator   
-og\_image: /content/images/new-portfolio-first-buyer-to-second-order-og   
-sibling\_links:  
-/blog/portfolio-stable-customers  
-/blog/portfolio-declining-customers  
-/blog/portfolio-reactivated-customers
-
+---
+slug: "new-portfolio-first-buyer-to-second-order"
+version: 1
+publishedAt: "2026-06-02T00:00:00Z"
+updatedAt: "2026-06-02T00:00:00Z"
+published: true
+template: "playbook"
+pillar: "customer-portfolios"
+useCases:
+  - "remarketing"
+funnelStage: "consideration"
+icpSegment:
+  - "all"
+readingTimeMinutes: 12
+wordCount: 2606
+author:
+  name: "Chris Daly"
+  role: "Founder, I Want That"
+featured: false
+seo:
+  primaryKeyword: "The New Customer Portfolio: Converting First Buyers Into Second Orders."
+  secondaryKeywords: []
+  metaTitle: "Converting First-Time Buyers Into Second Orders on Shopify"
+  metaDescription: "Not every first-time buyer is worth the same. Here's how to segment new customers into quintiles and use bounceback counter-offers to drive the second purchase."
+  robots: "index, follow"
+  sitemapPriority: 0.7
+  sitemapChangefreq: "monthly"
+  keywordDensityOk: true
+aeo:
+  tldr: "New customers are not a monolith. Segmenting first-time buyers by quintile based on first-order value, category, and AOV reveals which ones are likely to return and what offer type will convert them. A bounceback counter-offer, timed correctly and sized to the quintile, is the most testable tool in your retention arsenal."
+  h2DirectAnswers: []
+  faq: []
+  keyTakeaways:
+    - "First-purchase category is the single best predictor of whether a new customer ever returns."
+    - "Quintile 1 new customers need zero discount — they need access and recognition."
+    - "The bounceback counter-offer should be structured differently for each quintile, not batch-blasted."
+  definedTerms: []
+  validation:
+    hasTldr: true
+    hasDirectAnswersAfterH2s: false
+    hasFaqSection: false
+    hasKeyTakeaways: true
+    hasNumberedListsForSteps: false
+    hasAttributedStats: false
+    allH2sHaveDirectAnswer: false
+    minWordCount: true
+og:
+  title: "The New Customer Portfolio: Converting First Buyers Into Second Orders."
+  description: "Not every first-time buyer is worth the same. Here's how to segment new customers into quintiles and use bounceback counter-offers to drive the second purchase."
+  image: "/blog-assets/og/new-portfolio-first-buyer-to-second-order-og.png"
+  imageAlt: "New portfolio first buyer to second order open graph image"
+  imageWidth: 1200
+  imageHeight: 630
+  type: "article"
+twitter:
+  card: "summary_large_image"
+  title: "The New Customer Portfolio: Converting First Buyers Into Second Orders."
+  description: "Not every first-time buyer is worth the same. Here's how to segment new customers into quintiles and use bounceback counter-offers to drive the second purchase."
+  image: "/blog-assets/og/new-portfolio-first-buyer-to-second-order-og.png"
 ---
 
 # How to Convert First-Time Buyers Into Second Orders on Shopify: A Step-by-Step Guide
 
-Chris Daly, Founder of I Want That\! — 25 years in retail, worked with 40+ ecommerce brands.
+Chris Daly, Founder of I Want That! — 25 years in retail, worked with 40+ ecommerce brands.
 
 ## Who This Is For
 
@@ -82,7 +102,7 @@ Pull your existing repeat buyers, customers with two or more purchases, and look
 
 ### 2.1 Build the Category Return Index
 
-For each category, divide the number of customers who made a second purchase by the total number of first-time buyers in that category. Multiply by 100\. This is your Category Return Index (CRI).
+For each category, divide the number of customers who made a second purchase by the total number of first-time buyers in that category. Multiply by 100. This is your Category Return Index (CRI).
 
 A CRI of 130 means customers who first bought in that category return at 30% above average. A CRI of 60 means they return at 40% below average.
 
@@ -106,7 +126,7 @@ Q1 new customers spent the most on their first order, often without a discount. 
 
 ### Q2 — Incremental Unit Offer
 
-Q2 customers are strong first buyers with slightly more discount sensitivity than Q1. The right bounceback is an incremental unit offer , "add a second item from \[category they haven't tried\] and get free shipping." You are not discounting their next purchase; you are subsidizing trial in a new category. This is how you raise their Category Index and deepen the brand relationship.
+Q2 customers are strong first buyers with slightly more discount sensitivity than Q1. The right bounceback is an incremental unit offer , "add a second item from [category they haven't tried] and get free shipping." You are not discounting their next purchase; you are subsidizing trial in a new category. This is how you raise their Category Index and deepen the brand relationship.
 
 **Test:** free shipping on second category vs. fixed dollar threshold offer. Measure: AOV lift on second purchase and category breadth.
 
@@ -134,7 +154,7 @@ Q5 customers are your most expensive to re-engage and your least likely to becom
 
 Each quintile needs its own post-purchase trigger sequence in your email or SMS platform. This is not five campaigns, it is one system with five branches.
 
-Tag customers by quintile at the point of first purchase using Shopify order data or a Klaviyo segment. Trigger the bounceback sequence on day 7\. If no second purchase by day 21, send the second touch. If no second purchase by day 45, suppress or route to your reactivation flow.
+Tag customers by quintile at the point of first purchase using Shopify order data or a Klaviyo segment. Trigger the bounceback sequence on day 7. If no second purchase by day 21, send the second touch. If no second purchase by day 45, suppress or route to your reactivation flow.
 
 One critical discipline: do not overlap these flows with your standard post-purchase sequence. Customers should not receive a general "thanks for your order" nurture AND a quintile-specific bounceback. Choose one. The quintile-specific flow is almost always better.
 
@@ -186,7 +206,7 @@ What "working" looks like: Q1 second-purchase rate above 40% on no-discount offe
 
 **How do I know which quintile a new customer falls into if I don't have a marketing database?** You can build this in a Shopify export and a spreadsheet in under two hours. Export your customers with total net sales for a 12-month period, filter for single-transaction customers, sort descending by order value, and break the file into five equal groups using PERCENTILE(). The math is simple,  what matters is doing it consistently so your segments are comparable quarter over quarter.
 
-**What is a Category Return Index and how do I calculate it?** The Category Return Index (CRI) measures how likely a customer who first purchases in a specific category is to make a second purchase, relative to your store average. Calculate it by pulling your repeat buyers, grouping them by the category of their first order, and dividing each group's second-purchase rate by the store-wide second-purchase rate. Multiply by 100\. A CRI above 100 means that category drives above-average repeat behavior; below 100 means it under-indexes. Update it quarterly as your product mix evolves.
+**What is a Category Return Index and how do I calculate it?** The Category Return Index (CRI) measures how likely a customer who first purchases in a specific category is to make a second purchase, relative to your store average. Calculate it by pulling your repeat buyers, grouping them by the category of their first order, and dividing each group's second-purchase rate by the store-wide second-purchase rate. Multiply by 100. A CRI above 100 means that category drives above-average repeat behavior; below 100 means it under-indexes. Update it quarterly as your product mix evolves.
 
 **Should I suppress Q5 customers from the bounceback entirely?** Not immediately. Q5 customers are unlikely to become high-value repeat buyers, but some will. The right approach is to gate your investment,  require an engagement signal (a click, a preference selection) before spending offer dollars. Customers who engage are worth a modest offer. Customers who receive the email and do not interact within 14 days should be suppressed from further bounceback touches and routed to a low-cost nurture or suppressed entirely. The goal is to find the Q5 customers who behave like Q3 without subsidizing the ones who don't.
 
@@ -218,4 +238,3 @@ Ready to see what your new customer quintiles look like and which categories are
 - Hub confirmation: `/customer-portfolios`  
 - Asset cut: the Q1–Q5 counter-offer matrix (table format) is the single best LinkedIn asset from this post — pull it as a carousel  
 - Calculator opportunity: embed CAC calculator inline in the "How to Measure" section to let operators run their own second-purchase economics
-

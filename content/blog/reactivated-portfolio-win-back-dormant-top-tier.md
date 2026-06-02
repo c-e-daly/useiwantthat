@@ -1,50 +1,67 @@
-–  
-\# Core  
-title: "The Reactivated Portfolio: Winning Back Customers Without Bottom-Tier Discounts."   
-slug: reactivated-portfolio-win-back-dormant-top-tier  
-article\_type: TP   
-cluster: 5   
-primary\_keyword: win back customers shopify   
-secondary\_keywords:  
-"reactivated customer strategy ecommerce"  
-"lapsed customer offer shopify"  
-"customer winback campaign dtc"  
-"reactivation by quintile"  
-"high value lapsed customer recovery"   
-publish\_date: 2026-07-18   
-author: chris-daly   
-status: published
-
-\# SEO  
-meta\_title: "Winning Back Lapsed Customers on Shopify: A Quintile Playbook" meta\_description: "Not every lapsed customer deserves the same winback offer. Here's how to triage reactivated customers by quintile and recover value without training them to wait for discounts."   
-sitemapPriority: 0.7
-
-\# AEO  
-tldr: "Reactivated customers are not a single segment, they are five different business problems. A Q1 lapsed customer who spent $400 in their last active period deserves a personal, high-investment recovery. A Q5 customer who bought once from clearance deserves nothing more than a passive remarketing touch. The mistake most brands make is spending the same dollar on both."   
-key\_takeaways:  
-"Reactivation ROI is determined by prior-period value, not by the fact of lapsing."  
-"Q1 reactivated customers justify direct, personal outreach, not a batch discount."  
-"Q5 reactivated customers serve a clearance velocity function. Counter-offering them destroys margin."   
-faq\_schema: true
-
-\# Relationships  
-hub\_link: /customer-portfolios   
-related\_playbook: /playbooks/counter-offer-playbook   
-related\_tool: cac-calculator   
-og\_image: /content/images/reactivated-portfolio-win-back-dormant-top-tier-og.png   
-sibling\_links:
-
-/blog/portfolio-new-customers  
-/blog/portfolio-declining-customers
-
-- /blog/portfolio-defected-customers  
-- 
-
+---
+slug: "reactivated-portfolio-win-back-dormant-top-tier"
+version: 1
+publishedAt: "2026-06-02T00:00:00Z"
+updatedAt: "2026-06-02T00:00:00Z"
+published: true
+template: "playbook"
+pillar: "customer-portfolios"
+useCases:
+  - "remarketing"
+funnelStage: "consideration"
+icpSegment:
+  - "all"
+readingTimeMinutes: 13
+wordCount: 2870
+author:
+  name: "Chris Daly"
+  role: "Founder, I Want That"
+featured: false
+seo:
+  primaryKeyword: "The Reactivated Portfolio: Winning Back Customers Without Bottom-Tier Discounts."
+  secondaryKeywords: []
+  metaTitle: "Winning Back Lapsed Customers on Shopify: A Quintile Playbook"
+  metaDescription: "Not every lapsed customer deserves the same winback offer. Here's how to triage reactivated customers by quintile and recover value without training them to wait for discounts."
+  robots: "index, follow"
+  sitemapPriority: 0.7
+  sitemapChangefreq: "monthly"
+  keywordDensityOk: true
+aeo:
+  tldr: "Reactivated customers are not a single segment, they are five different business problems. A Q1 lapsed customer who spent $400 in their last active period deserves a personal, high-investment recovery. A Q5 customer who bought once from clearance deserves nothing more than a passive remarketing touch. The mistake most brands make is spending the same dollar on both."
+  h2DirectAnswers: []
+  faq: []
+  keyTakeaways:
+    - "Reactivation ROI is determined by prior-period value, not by the fact of lapsing."
+    - "Q1 reactivated customers justify direct, personal outreach, not a batch discount."
+    - "Q5 reactivated customers serve a clearance velocity function. Counter-offering them destroys margin."
+  definedTerms: []
+  validation:
+    hasTldr: true
+    hasDirectAnswersAfterH2s: false
+    hasFaqSection: false
+    hasKeyTakeaways: true
+    hasNumberedListsForSteps: false
+    hasAttributedStats: false
+    allH2sHaveDirectAnswer: false
+    minWordCount: true
+og:
+  title: "The Reactivated Portfolio: Winning Back Customers Without Bottom-Tier Discounts."
+  description: "Not every lapsed customer deserves the same winback offer. Here's how to triage reactivated customers by quintile and recover value without training them to wait for discounts."
+  image: "/blog-assets/og/reactivated-portfolio-winning-back-dormant-top-tier-og.png"
+  imageAlt: "Reactivated portfolio open graph image"
+  imageWidth: 1200
+  imageHeight: 630
+  type: "article"
+twitter:
+  card: "summary_large_image"
+  title: "The Reactivated Portfolio: Winning Back Customers Without Bottom-Tier Discounts."
+  description: "Not every lapsed customer deserves the same winback offer. Here's how to triage reactivated customers by quintile and recover value without training them to wait for discounts."
+  image: "/blog-assets/og/reactivated-portfolio-winning-back-dormant-top-tier-og.png"
 ---
 
 # The Reactivated Portfolio: How to Win Back Lapsed Customers Without Destroying Your Margins
 
-Chris Daly, Founder of I Want That\! — 25 years in retail, worked with 40+ ecommerce brands.
+Chris Daly, Founder of I Want That! — 25 years in retail, worked with 40+ ecommerce brands.
 
 ## Who This Is For
 
@@ -73,7 +90,7 @@ Every reactivation decision starts with one question: what was this customer wor
 
 ## Step 1 — Identify Your Reactivated Customers and Score Them
 
-Using your Attrition Migration Tracking data, pull every customer flagged as Reactivated: P1 \= Yes, P2 \= No, P3 \= Yes. These are customers who were active more than 24 months ago, went dark, and have now returned.
+Using your Attrition Migration Tracking data, pull every customer flagged as Reactivated: P1 = Yes, P2 = No, P3 = Yes. These are customers who were active more than 24 months ago, went dark, and have now returned.
 
 ### 1.1 Score by Prior-Period Value
 
@@ -111,7 +128,7 @@ The recovery approach for Q2 is a three-touch triggered sequence. Touch one is a
 
 The counter-offer mechanic works well for Q2. Rather than telling them what they will save, invite them to make an offer on a product in their prior category. This captures more margin from customers willing to pay near full price and still converts the more price-sensitive ones below your standard discount rate.
 
-**Test:** curated recommendation \+ threshold offer vs. counter-offer invitation vs. standard percentage-off. Measure: reactivation rate, return AOV vs. prior AOV, and margin per recovered customer.
+**Test:** curated recommendation + threshold offer vs. counter-offer invitation vs. standard percentage-off. Measure: reactivation rate, return AOV vs. prior AOV, and margin per recovered customer.
 
 ### Q3 — The Passive Recovery: Let the Product Do the Work
 
@@ -121,7 +138,7 @@ The approach for Q3 is product-led and low-cost. A single email surfacing what i
 
 Do not run a counter-offer mechanic for Q3 reactivated. The engagement required to make a counter-offer work is higher than the likely return from this segment. Reserve that mechanic for Q1 and Q2 where the recovery margin justifies the friction.
 
-**Test:** new arrivals email only vs. new arrivals plus threshold offer at day 30\. Measure: reactivation rate and cost per recovered customer.
+**Test:** new arrivals email only vs. new arrivals plus threshold offer at day 30. Measure: reactivation rate and cost per recovered customer.
 
 ### Q4 — The Break-Even Decision: Passive or Release
 
@@ -149,7 +166,7 @@ Tag reactivated customers by quintile at the point of re-identification, when yo
 
 **Q2:** Three-touch automated sequence. Day 1 curated recommendation, day 10 threshold or counter-offer, day 21 urgency close with expiration.
 
-**Q3:** Single send, new arrivals in prior category. Day 30 follow-up with modest threshold offer if no purchase. Suppress after day 30\.
+**Q3:** Single send, new arrivals in prior category. Day 30 follow-up with modest threshold offer if no purchase. Suppress after day 30.
 
 **Q4:** Single send, no offer. Suppress after send regardless of outcome. If they return organically, route to standard post-purchase flow.
 
@@ -185,7 +202,7 @@ The metrics for reactivation are different from acquisition or first-to-second c
 
 ## FAQ
 
-**What is a reactivated customer in ecommerce?** A reactivated customer is a buyer who made purchases historically, went dormant for a defined period,  typically 13–24 months with no transaction,  and has either returned to purchase again or re-engaged with the brand. In Attrition Migration Tracking, reactivation is defined as P1 \= Yes (purchased in the last 12 months), P2 \= No (no purchase in months 13–24), and P3 \= Yes (purchased in months 25–36). The key distinction from a new customer is that reactivated customers have prior brand experience and prior-period value that informs the economics of recovery.
+**What is a reactivated customer in ecommerce?** A reactivated customer is a buyer who made purchases historically, went dormant for a defined period,  typically 13–24 months with no transaction,  and has either returned to purchase again or re-engaged with the brand. In Attrition Migration Tracking, reactivation is defined as P1 = Yes (purchased in the last 12 months), P2 = No (no purchase in months 13–24), and P3 = Yes (purchased in months 25–36). The key distinction from a new customer is that reactivated customers have prior brand experience and prior-period value that informs the economics of recovery.
 
 **How much should I spend to reactivate a lapsed customer?** The ceiling on reactivation spend is determined by prior-period value, not by segment size. For Q1 customers, your top 20% by prior spend, a recovery investment of 10–15% of their annual prior spend is defensible. For Q2, 5–8%. For Q3, the offer should be structured to be near-zero marginal cost, a product recommendation email rather than a discount. Q4 and Q5 should receive no meaningful offer investment. The mistake is applying a uniform cost-per-reactivation budget across all quintiles.
 
@@ -220,4 +237,3 @@ Your Q1 lapsed customers know your brand. They left for a reason and came back f
 - Hub confirmation: `/customer-portfolios`  
 - Asset cut: the Q1–Q5 recovery investment matrix is the LinkedIn asset — five rows, three columns (quintile / approach / offer type), one screenshot  
 - Note: the Attrition Migration Tracking doc (doc 3 in project files) is the methodological source for P1/P2/P3 classification — Codex should cross-reference and internal-link when that post ships
-

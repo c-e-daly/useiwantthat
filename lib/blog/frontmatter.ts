@@ -51,6 +51,14 @@ function parseScalar(value: string): unknown {
     return null;
   }
 
+  if (clean === "[]") {
+    return [];
+  }
+
+  if (clean === "{}") {
+    return {};
+  }
+
   if (/^-?\d+(\.\d+)?$/.test(clean)) {
     return Number(clean);
   }
@@ -143,7 +151,7 @@ export function parseYamlSubset(source: string): Record<string, unknown> {
 
       const keyValue = item.match(/^([^:]+):\s*(.*)$/);
 
-      if (keyValue) {
+      if (keyValue && !item.startsWith(`"`) && !item.startsWith("'")) {
         const objectItem: Record<string, unknown> = {};
         objectItem[keyValue[1].trim()] = parseScalar(keyValue[2]);
         array.push(objectItem);

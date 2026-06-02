@@ -1,54 +1,67 @@
-–  
-\# Core  
-title: "The Stable Customer Portfolio: How to Keep Your Top 20% Buying."   
-slug: stable-portfolio-retaining-engaged-top-tier-buyers  
-article\_type: DE   
-cluster: 5   
-primary\_keyword: "retain top customers shopify"   
-secondary\_keywords:
-
-- "stable customer portfolio ecommerce"  
-- "customer retention shopify strategy"  
-- "customer portfolio management"  
-- "top customer retention ecommerce"  
-- "customer migration portfolio" 
-
-publish\_date: 2026-07-18   
-author: chris-daly   
-status: draft 
-
-\#SEO  
-meta\_title: "The Stable Customer Portfolio: Keep Your Top 20% Buying"   
-meta\_description: "Stable customers are your cash flow foundation, but stable isn't safe. Here's how to retain them, grow them, and stop them from going quietly Declining."   
-sitemapPriority: 0.7 
-
-\#AEO  
-tldr: "The Stable Portfolio contains customers who purchased in both the current and prior 12-month periods at the same quintile rank year over year. They sit on the diagonal of the migration matrix. Move them left and they become Growth. Let them drift right and they become Declining. Stable is not a destination, it is a decision point." 
-
-key\_takeaways:
-
-- "Stable customers are the diagonal of the migration matrix — they can move left toward Growth or right toward Declining based on your next marketing decision."  
-- "A Q2 Stable customer is one campaign away from your top tier. That is growth marketing with a known, proven target — not retention marketing."  
-- "The biggest mistake brands make with Stable customers is leaving them alone. Stable is a holding pattern, not a safe harbor." 
-
-faq\_schema: true
-
-\# Relationships   
-hub\_link: /customer-portfolios   
-related\_playbook: /playbooks/programs-playbook   
-related\_tool: none  
-og\_image: /content/images/stable-portfolio-retaining-engaged-top-tier-buyers-og.png   
-sibling\_links:
-
-- /blog/six-customer-portfolios-framework  
-- /blog/portfolio-growth-customers  
-- /blog/portfolio-declining-customers
-
+---
+slug: "stable-portfolio-retaining-engaged-top-tier-buyers"
+version: 1
+publishedAt: "2026-06-02T00:00:00Z"
+updatedAt: "2026-06-02T00:00:00Z"
+published: true
+template: "problem-fix"
+pillar: "customer-portfolios"
+useCases:
+  - "remarketing"
+funnelStage: "consideration"
+icpSegment:
+  - "all"
+readingTimeMinutes: 9
+wordCount: 1835
+author:
+  name: "Chris Daly"
+  role: "Founder, I Want That"
+featured: false
+seo:
+  primaryKeyword: "The Stable Customer Portfolio: How to Keep Your Top 20% Buying."
+  secondaryKeywords: []
+  metaTitle: "The Stable Customer Portfolio: Keep Your Top 20% Buying"
+  metaDescription: "Stable customers are your cash flow foundation, but stable isn't safe. Here's how to retain them, grow them, and stop them from going quietly Declining."
+  robots: "index, follow"
+  sitemapPriority: 0.7
+  sitemapChangefreq: "monthly"
+  keywordDensityOk: true
+aeo:
+  tldr: "The Stable Portfolio contains customers who purchased in both the current and prior 12-month periods at the same quintile rank year over year. They sit on the diagonal of the migration matrix. Move them left and they become Growth. Let them drift right and they become Declining. Stable is not a destination, it is a decision point."
+  h2DirectAnswers: []
+  faq: []
+  keyTakeaways:
+    - "Stable customers are the diagonal of the migration matrix — they can move left toward Growth or right toward Declining based on your next marketing decision."
+    - "A Q2 Stable customer is one campaign away from your top tier. That is growth marketing with a known, proven target — not retention marketing."
+    - "The biggest mistake brands make with Stable customers is leaving them alone. Stable is a holding pattern, not a safe harbor."
+  definedTerms: []
+  validation:
+    hasTldr: true
+    hasDirectAnswersAfterH2s: false
+    hasFaqSection: false
+    hasKeyTakeaways: true
+    hasNumberedListsForSteps: false
+    hasAttributedStats: false
+    allH2sHaveDirectAnswer: false
+    minWordCount: true
+og:
+  title: "The Stable Customer Portfolio: How to Keep Your Top 20% Buying."
+  description: "Stable customers are your cash flow foundation, but stable isn't safe. Here's how to retain them, grow them, and stop them from going quietly Declining."
+  image: "/blog-assets/og/stable-portfolio-retaining-engaged-top-tier-buyers-og.png"
+  imageAlt: "Stable portfolio open graph image"
+  imageWidth: 1200
+  imageHeight: 630
+  type: "article"
+twitter:
+  card: "summary_large_image"
+  title: "The Stable Customer Portfolio: How to Keep Your Top 20% Buying."
+  description: "Stable customers are your cash flow foundation, but stable isn't safe. Here's how to retain them, grow them, and stop them from going quietly Declining."
+  image: "/blog-assets/og/stable-portfolio-retaining-engaged-top-tier-buyers-og.png"
 ---
 
 # The Stable Customer Portfolio: How to Keep Your Top 20% Buying.
 
-**Chris Daly** — Founder, I Want That\! | 25 years in retail, worked with 40+ ecommerce brands.
+**Chris Daly** — Founder, I Want That! | 25 years in retail, worked with 40+ ecommerce brands.
 
 ---
 
@@ -138,7 +151,7 @@ The same "Stable" label covers both situations. Only the quintile tells you whic
 
 ---
 
-See how your Stable customers are distributed across quintiles and which ones are closest to Growth.  Sign up with Vector from I Want That\! On Shopify. →
+See how your Stable customers are distributed across quintiles and which ones are closest to Growth.  Sign up with Vector from I Want That! On Shopify. →
 
 ---
 
@@ -150,4 +163,3 @@ See how your Stable customers are distributed across quintiles and which ones ar
 - Image path: /images/blog/portfolio-stable-customers-hero.png  
 - FAQ schema: true — 7 FAQ entries  
 - Asset cut: the migration matrix diagonal visual  pull the diagonal row from the CustomerPortfolios.png matrix and annotate it for LinkedIn. Caption: "The diagonal is not safety. It is a decision point."
-

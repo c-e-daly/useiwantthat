@@ -1,50 +1,67 @@
-\---  
-\# core  
-title: "The Declining Portfolio: Spotting Customers Before They Disappear."  
-slug: declining-portfolio-demand-recapture  
-article\_type: TP  
-cluster: 5  
-primary\_keyword: "declining customers shopify"  
-secondary\_keywords:  
-  \- "customer defection early warning ecommerce"  
-  \- "negative ltv customer shopify"  
-  \- "declining customer offer strategy dtc"  
-  \- "customer contribution margin ecommerce"  
-  \- "when to let a customer go shopify"  
-publish\_date: 2026-07-16  
-author: chris-daly  
-status: draft
-
-\# SEO  
-meta\_title: "The Declining Customer Portfolio: When to Fight and When to Let Go"  
-meta\_description: "Declining customers are still active — but many have already left in everything but the data. Here's how to triage by quintile, protect margin, and know when to stop countering."  
-sitemapPriority: 0.7
-
-\# AEO  
-tldr: "Declining customers are active in the current 12-month window but spending less than the prior period on a year-over-year basis. Many are completing a behavioral exit the data hasn't fully recorded yet. The business discipline is triage: Q1 declining customers warrant a meaningful recovery investment; Q5 customers with negative lifetime contribution margin warrant almost none. Countering a CGO on ancillary low-margin products from a customer who has already decided to leave is not retention — it is paying them to stay unprofitable."  
-key\_takeaways:  
-  \- "Declining customers are often behaviorally gone before the data reflects it — act on the signal, not the calendar."  
-  \- "Negative contribution margin customers are not a retention problem. They are a cost center. Manage them accordingly."  
-  \- "Not every CGO deserves a counter. Ancillary low-margin product offers from declining customers are the clearest case for letting the transaction close at full price or not at all."  
-faq\_schema: true
-
-\# Relationships  
-hub\_link: /customer-portfolios  
-related\_playbook: /playbooks/counter-offer-playbook  
-related\_tool: cac-calculator  
-og\_image: /content/images/declining-portfolio-demand-recapture-og.png  
-sibling\_links:  
-  \- /blog/portfolio-growth-customers  
-  \- /blog/portfolio-stable-customers  
-  \- /blog/portfolio-reactivated-customers  
-  \- /blog/portfolio-defected-customers  
-\---
-
+---
+slug: "declining-portfolio-demand-recapture"
+version: 1
+publishedAt: "2026-06-02T00:00:00Z"
+updatedAt: "2026-06-02T00:00:00Z"
+published: true
+template: "playbook"
+pillar: "customer-portfolios"
+useCases:
+  - "remarketing"
+funnelStage: "consideration"
+icpSegment:
+  - "all"
+readingTimeMinutes: 14
+wordCount: 3121
+author:
+  name: "Chris Daly"
+  role: "Founder, I Want That"
+featured: false
+seo:
+  primaryKeyword: "The Declining Portfolio: Spotting Customers Before They Disappear."
+  secondaryKeywords: []
+  metaTitle: "The Declining Customer Portfolio: When to Fight and When to Let Go"
+  metaDescription: "Declining customers are still active — but many have already left in everything but the data. Here's how to triage by quintile, protect margin, and know when to stop countering."
+  robots: "index, follow"
+  sitemapPriority: 0.7
+  sitemapChangefreq: "monthly"
+  keywordDensityOk: true
+aeo:
+  tldr: "Declining customers are active in the current 12-month window but spending less than the prior period on a year-over-year basis. Many are completing a behavioral exit the data hasn't fully recorded yet. The business discipline is triage: Q1 declining customers warrant a meaningful recovery investment; Q5 customers with negative lifetime contribution margin warrant almost none. Countering a CGO on ancillary low-margin products from a customer who has already decided to leave is not retention — it is paying them to stay unprofitable."
+  h2DirectAnswers: []
+  faq: []
+  keyTakeaways:
+    - "Declining customers are often behaviorally gone before the data reflects it — act on the signal, not the calendar."
+    - "Negative contribution margin customers are not a retention problem. They are a cost center. Manage them accordingly."
+    - "Not every CGO deserves a counter. Ancillary low-margin product offers from declining customers are the clearest case for letting the transaction close at full price or not at all."
+  definedTerms: []
+  validation:
+    hasTldr: true
+    hasDirectAnswersAfterH2s: false
+    hasFaqSection: false
+    hasKeyTakeaways: true
+    hasNumberedListsForSteps: false
+    hasAttributedStats: false
+    allH2sHaveDirectAnswer: false
+    minWordCount: true
+og:
+  title: "The Declining Portfolio: Spotting Customers Before They Disappear."
+  description: "Declining customers are still active — but many have already left in everything but the data. Here's how to triage by quintile, protect margin, and know when to stop countering."
+  image: "/blog-assets/og/declining-portfolio-rekindle-demand-og.png"
+  imageAlt: "Declining portfolio rekindle demand open graph image"
+  imageWidth: 1200
+  imageHeight: 630
+  type: "article"
+twitter:
+  card: "summary_large_image"
+  title: "The Declining Portfolio: Spotting Customers Before They Disappear."
+  description: "Declining customers are still active — but many have already left in everything but the data. Here's how to triage by quintile, protect margin, and know when to stop countering."
+  image: "/blog-assets/og/declining-portfolio-rekindle-demand-og.png"
 ---
 
 # The Declining Portfolio: How to Spot Customers Before They Disappear — and Decide Which Ones Are Worth Keeping
 
-Chris Daly, Founder of I Want That\! — 25 years in retail, worked with 40+ ecommerce brands.
+Chris Daly, Founder of I Want That! — 25 years in retail, worked with 40+ ecommerce brands.
 
 ## Who This Is For
 
@@ -158,10 +175,10 @@ Customer-generated offers from declining customers require a two-variable screen
 
 The decision matrix is simple:
 
-- Core product \+ positive contribution margin customer → counter, scaled to quintile  
-- Core product \+ negative contribution margin customer → accept full price or decline  
-- Ancillary product \+ any customer → accept full price or decline, do not counter  
-- Ancillary product \+ negative contribution margin customer → decline engagement entirely
+- Core product + positive contribution margin customer → counter, scaled to quintile  
+- Core product + negative contribution margin customer → accept full price or decline  
+- Ancillary product + any customer → accept full price or decline, do not counter  
+- Ancillary product + negative contribution margin customer → decline engagement entirely
 
 ---
 
@@ -215,4 +232,3 @@ Knowing which declining customers are worth fighting for — and which ones are 
 - Hub confirmation: `/customer-portfolios`  
 - Asset cut: the CGO decision matrix (two-variable screen: product margin × customer contribution margin) is the single best LinkedIn asset — a 2×2 grid, four cells, four decisions. One image, immediately actionable.  
 - Note: the negative contribution margin customer argument is the most counterintuitive claim in this post — flag for Chris to add a real client anecdote in the Backstory position if this gets expanded to a RE later
-

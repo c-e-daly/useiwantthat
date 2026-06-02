@@ -42,7 +42,7 @@ relationships:
     - the-five-allowances
     - market-adjustment-allowance
     - settle-price
-  og_image: /images/hubs/five-allowances-diagram.png
+  og_image: /blog-assets/og/markup-performance-og.png
 
 ---
 
@@ -124,7 +124,7 @@ The Five Allowances are priced-in buffers that sit above the defended floor and 
 
 *The rule: fund all five allowances above the floor, in priced order. An underfunded allowance doesn't disappear — it eats Profit Markup until the line item shows up in the year-end P&L as "margin compression."*
 
-*[og_image: /images/hubs/five-allowances-diagram.png — floor-and-flex visual with the five allowances stacked above the four-component floor. LinkedIn carousel atom.]*
+*[og_image: /blog-assets/og/markup-performance-og.png — floor-and-flex visual with the five allowances stacked above the four-component floor. LinkedIn carousel atom.]*
 
 ## **The pricing equation**
 

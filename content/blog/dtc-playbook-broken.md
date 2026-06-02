@@ -1,30 +1,64 @@
 ---
-
-# core
-
-title: "The DTC Playbook Is Broken. Here's What Replaces It." slug: dtc-playbook-broken content\_type: blog article\_type: RE pillar: negotiated-commerce cluster: 3 primary\_keyword: "DTC strategy 2026" secondary\_keywords:
-
-- "DTC playbook dead"  
-- "negotiated commerce shopify"  
-- "rising CAC DTC"  
-- "post-iOS 14 DTC"  
-- "customer generated offers" publish\_date: 2026-05-23 last\_updated: 2026-05-23 author: chris-daly status: published
-
-# SEO
-
-meta\_title: "The DTC Playbook Is Broken. Here's What Replaces It." meta\_description: "The DTC playbook worked when traffic was cheap and customers had no alternative. Both reversed. What replaces it is negotiated commerce." sitemapPriority: 0.9
-
-# AEO
-
-tldr: "The DTC playbook was a Facebook ads strategy with a website attached. It worked from 2012 to 2020 because traffic was cheap, attribution was honest, and customers accepted posted prices. iOS 14.5, CPM inflation, and agentic buyers reversed every one of those conditions. What replaces it is not a new funnel — it is a different worldview. Negotiated commerce: the customer sets terms, the merchant clears the trade, the CAC math fixes itself." key\_takeaways:
-
-- "The DTC playbook is a posted-price strategy. Every tactic in it exists to paper over the friction of unwanted prices."  
-- "CAC tripled across most verticals in three years. The math problem cannot be fixed by buying more ads."  
-- "Negotiated commerce replaces the worldview, not the tactics. The customer offers, the merchant clears the trade." faq\_schema: false
-
-# Relationships
-
-## hub\_link: /blog/category/negotiated-commerce related\_playbook: /playbooks/cac-playbook related\_tool: cac-calculator og\_image: /content/images/dtc-playbook-broken sibling\_links: \[\]
+slug: "dtc-playbook-broken"
+version: 1
+publishedAt: "2026-05-23T00:00:00Z"
+updatedAt: "2026-05-23T00:00:00Z"
+published: true
+template: "problem-fix"
+pillar: "negotiated-commerce"
+useCases:
+  - "agentic-offers"
+  - "conversion-growth"
+funnelStage: "awareness"
+icpSegment:
+  - "all"
+readingTimeMinutes: 6
+wordCount: 1144
+author:
+  name: "Chris Daly"
+  role: "Founder, I Want That"
+featured: false
+seo:
+  primaryKeyword: "The DTC Playbook Is Broken. Here's What Replaces It."
+  secondaryKeywords: []
+  metaTitle: "The DTC Playbook Is Broken. Here's What Replaces It."
+  metaDescription: "The DTC playbook worked when traffic was cheap and customers had no alternative. Both reversed. What replaces it is negotiated commerce."
+  robots: "index, follow"
+  sitemapPriority: 0.9
+  sitemapChangefreq: "monthly"
+  keywordDensityOk: true
+aeo:
+  tldr: "The DTC playbook was a Facebook ads strategy with a website attached. It worked from 2012 to 2020 because traffic was cheap, attribution was honest, and customers accepted posted prices. iOS 14.5, CPM inflation, and agentic buyers reversed every one of those conditions. What replaces it is not a new funnel — it is a different worldview. Negotiated commerce: the customer sets terms, the merchant clears the trade, the CAC math fixes itself."
+  h2DirectAnswers: []
+  faq: []
+  keyTakeaways:
+    - "The DTC playbook is a posted-price strategy. Every tactic in it exists to paper over the friction of unwanted prices."
+    - "CAC tripled across most verticals in three years. The math problem cannot be fixed by buying more ads."
+    - "Negotiated commerce replaces the worldview, not the tactics. The customer offers, the merchant clears the trade."
+  definedTerms: []
+  validation:
+    hasTldr: true
+    hasDirectAnswersAfterH2s: false
+    hasFaqSection: false
+    hasKeyTakeaways: true
+    hasNumberedListsForSteps: false
+    hasAttributedStats: false
+    allH2sHaveDirectAnswer: false
+    minWordCount: true
+og:
+  title: "The DTC Playbook Is Broken. Here's What Replaces It."
+  description: "The DTC playbook worked when traffic was cheap and customers had no alternative. Both reversed. What replaces it is negotiated commerce."
+  image: "/blog-assets/og/dtc-playbook-is-broken-og.png"
+  imageAlt: "DTC playbook is broken open graph image"
+  imageWidth: 1200
+  imageHeight: 630
+  type: "article"
+twitter:
+  card: "summary_large_image"
+  title: "The DTC Playbook Is Broken. Here's What Replaces It."
+  description: "The DTC playbook worked when traffic was cheap and customers had no alternative. Both reversed. What replaces it is negotiated commerce."
+  image: "/blog-assets/og/dtc-playbook-is-broken-og.png"
+---
 
 # The DTC Playbook Is Broken. Here's What Replaces It.
 
@@ -82,4 +116,4 @@ Vector operationalizes negotiated commerce as a Shopify app. The customer makes 
 
 ### Ready to see what negotiated commerce looks like in your store?
 
-[**Read the Negotiated Commerce playbook →**](http:///blog/category/negotiated-commerce)  
+[**Read the Negotiated Commerce playbook →**](http:///blog/category/negotiated-commerce)

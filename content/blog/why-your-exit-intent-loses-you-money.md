@@ -1,102 +1,65 @@
-\---  
-\# core  
-title: "Your Exit Intent Is Losing You Thousands. Here's Why."  
-slug: exit-intent-losing-money  
-content\_type: blog  
-article\_type: PCF  
-pillar: customer-yield  
-cluster: 1  
-primary\_keyword: "exit intent popups not working"  
-secondary\_keywords:  
-  \- "alternative to exit intent popup"  
-  \- "exit intent best practices ecommerce"  
-  \- "customer generated offers shopify"  
-  \- "exit intent conversion rate"  
-publish\_date: 2026-05-28  
-last\_updated: 2026-05-28  
-author: chris-daly  
-status: published
-
-\# SEO  
-meta\_title: "Your Exit Intent Is Losing You Thousands. Here's Why."  
-meta\_description: "Most exit intent popups capture low-quality emails and offer weak discounts that train customers to ignore you. Five fixes that turn exits into sales."  
-sitemapPriority: 0.8
-
-\# AEO  
-tldr: "Exit intent popups in their current form damage paid traffic economics by capturing low-intent emails and offering blanket discounts that train buyers to ignore future offers. The fix is not better timing — it is replacing the email-grab with intent-capture: customer generated offers, product follows, and embedded forms that convert paid traffic into sales instead of list bloat."  
-key\_takeaways:  
-  \- "Most exit intent popups are optimizing the wrong metric — email captures over revenue."  
-  \- "10% off as a default exit offer trains customers to wait for discounts and devalues premium inventory."  
-  \- "Customer generated offers turn the popup from a list-building tool into a sales-closing tool."  
-faq\_schema: false
-
-\# Relationships  
-hub\_link: /blog/category/customer-yield  
-related\_playbook: /playbooks/exit-intent-playbook  
-related\_tool: cac-calculator  
-og\_image: content/images/exit-intent-losing-money  
-sibling\_links: \[\]  
-\---
-
-Got the draft. Strong puncture line, the voice is intact, and the "throwing $10 bills out the window" image is the kind of specific moment that earns the rest of the post. Editorial notes first, then the rewrite.
-
-**Editorial notes**
-
-* Classification: PCF as you tagged it. Customer Yield hub. 1,400-word target, you're at \~800, I'll get it to spec without inflation.  
-* The CTA-to-Calculator move is the right call — readers who feel the cost will run their own numbers, and the calculator is a stronger close than "install Vector" at this stage of the funnel.  
-* I added two things to your five fixes: a small reframe at the top of the "fixes" section so each one ladders to a customer-yield outcome rather than reading as a tactics list, and a "which fix is right for you" decision frame before the FAQ. Both keep your voice; both make the post rank better against "how to fix exit intent" queries.  
-* Flagged but not added: a 100-word "what it's actually costing you" math block would normally sit between the cost section and the fixes. You said you'd rather skip it and send people to the calculator — I respect that, but I left a one-liner placeholder where it would go in case you change your mind. Delete it on read if you don't want it.  
-* One word changed for tone: "shitty" → "weak" in the lead. Your call to revert. The puncture lands either way and "weak" is safer for LinkedIn syndication where the post will earn its first traffic. The second "shitty" later in the paragraph I kept because it's in dialogue and reads as voice, not as profanity.  
-* Pull-quote candidate: *"Your low-ball offer is like driving down the highway throwing $10 bills out the window."* That's the line that gets screenshotted.  
-* Asset-cut suggestion: LinkedIn post with the pull-quote \+ one stat (70% cart abandonment) \+ link. No video on this one — RE territory, not DS.
-
-**Frontmatter**
-
-```
 ---
-# core
-title: "Your Exit Intent Is Losing You Thousands. Here's Why."
-slug: exit-intent-losing-money
-content_type: blog
-article_type: PCF
-pillar: customer-yield
-cluster: 1
-primary_keyword: "exit intent popups not working"
-secondary_keywords:
-  - "alternative to exit intent popup"
-  - "exit intent best practices ecommerce"
-  - "customer generated offers shopify"
-  - "exit intent conversion rate"
-publish_date: 2026-05-28
-last_updated: 2026-05-28
-author: chris-daly
-status: published
-
-# SEO
-meta_title: "Your Exit Intent Is Losing You Thousands. Here's Why."
-meta_description: "Most exit intent popups capture low-quality emails and offer weak discounts that train customers to ignore you. Five fixes that turn exits into sales."
-sitemapPriority: 0.8
-
-# AEO
-tldr: "Exit intent popups in their current form damage paid traffic economics by capturing low-intent emails and offering blanket discounts that train buyers to ignore future offers. The fix is not better timing — it is replacing the email-grab with intent-capture: customer generated offers, product follows, and embedded forms that convert paid traffic into sales instead of list bloat."
-key_takeaways:
-  - "Most exit intent popups are optimizing the wrong metric — email captures over revenue."
-  - "10% off as a default exit offer trains customers to wait for discounts and devalues premium inventory."
-  - "Customer generated offers turn the popup from a list-building tool into a sales-closing tool."
-faq_schema: true
-
-# Relationships
-hub_link: /blog/category/customer-yield
-related_playbook: /playbooks/exit-intent-playbook
-related_tool: cac-calculator
-og_image: /api/og?slug=exit-intent-losing-money
-sibling_links: []
----
-```
-
+slug: "exit-intent-losing-money"
+version: 1
+publishedAt: "2026-05-28T00:00:00Z"
+updatedAt: "2026-05-28T00:00:00Z"
+published: true
+template: "problem-fix"
+pillar: "customer-yield"
+useCases:
+  - "exit-intent"
+funnelStage: "consideration"
+icpSegment:
+  - "all"
+readingTimeMinutes: 7
+wordCount: 1501
+author:
+  name: "Chris Daly"
+  role: "Founder, I Want That"
+featured: false
+seo:
+  primaryKeyword: "Your Exit Intent Is Losing You Thousands. Here's Why."
+  secondaryKeywords: []
+  metaTitle: "Your Exit Intent Is Losing You Thousands. Here's Why."
+  metaDescription: "Most exit intent popups capture low-quality emails and offer weak discounts that train customers to ignore you. Five fixes that turn exits into sales."
+  robots: "index, follow"
+  sitemapPriority: 0.8
+  sitemapChangefreq: "monthly"
+  keywordDensityOk: true
+aeo:
+  tldr: "Exit intent popups in their current form damage paid traffic economics by capturing low-intent emails and offering blanket discounts that train buyers to ignore future offers. The fix is not better timing — it is replacing the email-grab with intent-capture: customer generated offers, product follows, and embedded forms that convert paid traffic into sales instead of list bloat."
+  h2DirectAnswers: []
+  faq: []
+  keyTakeaways:
+    - "Most exit intent popups are optimizing the wrong metric — email captures over revenue."
+    - "10% off as a default exit offer trains customers to wait for discounts and devalues premium inventory."
+    - "Customer generated offers turn the popup from a list-building tool into a sales-closing tool."
+  definedTerms: []
+  validation:
+    hasTldr: true
+    hasDirectAnswersAfterH2s: false
+    hasFaqSection: false
+    hasKeyTakeaways: true
+    hasNumberedListsForSteps: false
+    hasAttributedStats: false
+    allH2sHaveDirectAnswer: false
+    minWordCount: true
+og:
+  title: "Your Exit Intent Is Losing You Thousands. Here's Why."
+  description: "Most exit intent popups capture low-quality emails and offer weak discounts that train customers to ignore you. Five fixes that turn exits into sales."
+  image: "/blog-assets/og/why-your-exit-intent-loses-you-money-og.png"
+  imageAlt: "Exit intent losing money open graph image"
+  imageWidth: 1200
+  imageHeight: 630
+  type: "article"
+twitter:
+  card: "summary_large_image"
+  title: "Your Exit Intent Is Losing You Thousands. Here's Why."
+  description: "Most exit intent popups capture low-quality emails and offer weak discounts that train customers to ignore you. Five fixes that turn exits into sales."
+  image: "/blog-assets/og/why-your-exit-intent-loses-you-money-og.png"
 ---
 
-# **Your Exit Intent Is Losing You Thousands. Here's Why.**
+# Your Exit Intent Is Losing You Thousands. Here's Why.
 
 The vast majority of DTC brands use exit intent popups to do one of two things: capture an email address, or make a weak offer that nobody takes.
 
@@ -128,23 +91,23 @@ A poor exit intent pushes premium buyers away. With 70% of carts already abandon
 
 ## **Five ways to fix your exit intent to generate sales, not emails**
 
-### **1\. Fix your timing**
+### **1. Fix your timing**
 
 Wait at least 15 to 30 seconds before the popup fires. Shoving a modal in the face of ad traffic the moment they land is a recipe for a costly bounce. Give the customer a chance to consume the product page. If you interrupt them, you inconvenience them and signal that you're more interested in building a list than selling a product.
 
-### **2\. Reserve it for unknown customers**
+### **2. Reserve it for unknown customers**
 
 Run the popup on unknown visitors only. Use your CDP or Shop Analytics to suppress it for known customers, especially the profitable ones. For known customers, you should already know if the buyer is break-even or profitable to your business and use a dynamic experience — not a generic 10% off — to manage that relationship. The popup that closes a new buyer is the same popup that insults a returning one.
 
-### **3\. Enable the user to follow the product**
+### **3. Enable the user to follow the product**
 
 One of the best signals of real intent is a customer who asks to be notified about a specific product. Let them follow a SKU for updates on price changes, new variants, sizes, colors, restocks. When a customer subscribes to follow a product, honor that — send updates on that product only, not your entire catalog. A product follower is a five-times-higher-intent lead than a generic email signup. Treat the signal accordingly.
 
-### **4\. Embed the popup into the product page**
+### **4. Embed the popup into the product page**
 
 Get the popup out of the customer's face. Collect emails or intent information in an embedded form that reveals on scroll or exit signal — not on first paint. And do not reveal the form while the customer is configuring or selecting product options. Stay out of their way during the moment of decision, or you'll lose the sale you already had.
 
-### **5\. Enable customer generated offers**
+### **5. Enable customer generated offers**
 
 If your goal is to maximize sales, acquire customers, and improve the yield rate on paid traffic, customer generated offers replace the popup entirely. Instead of asking the customer to take your weak offer, you let them make you one.
 
@@ -179,4 +142,3 @@ If you're above $2M and your CAC is climbing month over month, customer generate
 * The default exit intent popup is optimizing for email captures when it should be optimizing for revenue from the click you already paid for.  
 * 10% off as a blanket exit offer trains buyers to wait, devalues premium inventory, and insults returning customers who didn't need a discount.  
 * Customer generated offers replace the popup with a transaction — turning exit intent from a list-building tool into a sales-closing tool.
-

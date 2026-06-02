@@ -1,176 +1,64 @@
 ---
-slug: discounts-vs-advertising-cac
+slug: "discounts-vs-advertising-cac"
 version: 1
 publishedAt: "2026-05-01T18:35:00Z"
 updatedAt: "2026-05-01T18:35:00Z"
 published: true
-template: versus
-pillar: customer-acquisition-cost
+template: "versus"
+pillar: "customer-yield"
 useCases:
-  - agentic-offers
-  - conversion-growth
-funnelStage: consideration
+  - "agentic-offers"
+  - "conversion-growth"
+funnelStage: "consideration"
 icpSegment:
-  - all
-readingTimeMinutes: 5
-wordCount: 1760
+  - "all"
+readingTimeMinutes: 9
+wordCount: 2015
+author:
+  name: "Chris Daly"
+  role: "Founder, I Want That"
+featured: false
 seo:
-  primaryKeyword: Discounts vs Advertising CAC
-  secondaryKeywords:
-    - reduce CAC on ad platforms
-    - price elasticity of demand
-    - Customer Generated Offers
-    - initial markup pricing
-    - ad click conversion rate
-  metaTitle: Discounts vs Advertising CAC — The Real Profit Killer | Prophet
-  metaDescription: Stop blaming discounts for thin margins. Learn why your advertising CAC is the real profit killer and how to use Customer Generated Offers to reclaim your profit.
+  primaryKeyword: "Discounts vs Advertising CAC — The Real Profit Killer"
+  secondaryKeywords: []
+  metaTitle: "Discounts vs Advertising CAC — The Real Profit Killer | Prophet"
+  metaDescription: "Stop blaming discounts for thin margins. Learn why your advertising CAC is the real profit killer and how to use Customer Generated Offers to reclaim your profit."
   robots: "index, follow"
   sitemapPriority: 0.6
-  sitemapChangefreq: monthly
+  sitemapChangefreq: "monthly"
   keywordDensityOk: true
 aeo:
-  tldr: Advertising costs are a hard cash drain that often exceeds the cost of strategic discounting. By using Customer Generated Offers (CGOs) to increase ad click conversion, brands can lower their CAC and protect their profit markups through strategic price allowances.
-  h2DirectAnswers:
-    - heading: CAC is the cost to acquire a customer.
-      answer: Customer Acquisition Cost (CAC) is the sum total of marketing expenses in a period divided by the number of new customers acquired during that same timeframe.
-    - heading: Discounts are financial levers to drive conversion.
-      answer: Discounts serve as financial tools to unlock price elasticity; when accounted for in pricing via allowances, they move from being a hard cost to an incremental opportunity cost.
-    - heading: Discounts vs Cost to Acquire a Customer
-      answer: While discounts are decried for injuring margins, they are often secondary to the "hard cash" drain of advertising spend, which costs the business whether a customer converts or not.
-    - heading: Organic vs Paid | Stacked vs Unstacked | Discount Optimization
-      answer: As platform taxes increase, DTC brands must choose between paying high fees to platforms like Meta or providing smaller, strategic discounts directly to consumers to facilitate conversion.
-    - heading: Focus on Consumers
-      answer: Brands should prioritize giving value to consumers rather than platforms; stacking a strategic discount on an ad click can significantly reduce overall CAC by boosting conversion rates.
-    - heading: Increase Paid Traffic Conversion Rate
-      answer: To reduce CAC, you must increase the number of customers acquired from the same spend. Converting more clicks through better offers can drop a $200 CAC down to $40.
-    - heading: Lean Into Strategic Pricing with Allowances
-      answer: Incorporating allowances into your pricing shields profit markups while providing the flexibility to engage different customer price sensitivities.
-    - heading: Lean Into Customer Generated Offers (CGO’s)
-      answer: CGOs allow consumers to make offers on their carts, revealing their true price sensitivity and helping brands sort their portfolio by value perception.
-  faq:
-    - question: What are Customer Generated Offers?
-      answer: CGOs are offers made by the buyer to the seller for the contents of a shopping cart, shifting deal orchestration to the consumer to reveal true value perception.
-    - question: Will my shop be on sale all the time?
-      answer: No. CGOs are not about perpetual sales; they are targeted at full markup to facilitate value discovery and profit optimization.
-    - question: Do discounts hurt my brand?
-      answer: No. Discounts reveal price elasticity. Data shows only 20% of buyers purchase at full price, while 80% require different markup levels to drive unit volume.
-    - question: How can I reduce my CAC on ad platforms?
-      answer: By feeding CGO price-point data back into ad algorithms, brands can refine their offers and targeting, leading to higher click-to-conversion ratios.
+  tldr: "Advertising costs are a hard cash drain that often exceeds the cost of strategic discounting. By using Customer Generated Offers (CGOs) to increase ad click conversion, brands can lower their CAC and protect their profit markups through strategic price allowances."
+  h2DirectAnswers: []
+  faq: []
   keyTakeaways:
-    - Ad spend is a hard cost, while strategic discounts are built-in opportunity costs.
-    - Meta CAC often represents a 47% "discount" on AOV, far higher than the average 18% consumer discount.
-    - High CAC is a symptom of low click-to-order ratios; better offers solve this.
-  definedTerms:
-    - term: CAC
-      definition: Marketing expenses divided by the number of new customers.
-    - term: CGO
-      definition: Customer Generated Offers where the buyer proposes a price for their cart.
-    - term: MMU
-      definition: Maintained Markup, calculated as (COGS \+ Profit Markup) divided by Selling Price.
+    - "Ad spend is a hard cost, while strategic discounts are built-in opportunity costs."
+    - "Meta CAC often represents a 47% discount on AOV, far higher than the average 18% consumer discount."
+    - "High CAC is a symptom of low click-to-order ratios; better offers solve this."
+  definedTerms: []
   validation:
     hasTldr: true
-    hasDirectAnswersAfterH2s: true
-    hasFaqSection: true
+    hasDirectAnswersAfterH2s: false
+    hasFaqSection: false
     hasKeyTakeaways: true
     hasNumberedListsForSteps: false
-    hasAttributedStats: true
-    allH2sHaveDirectAnswer: true
+    hasAttributedStats: false
+    allH2sHaveDirectAnswer: false
     minWordCount: true
 og:
-  title: Discounts vs Advertising CAC — The Real Profit Killer
-  description: Is your CAC higher than your discount rate? Learn how to fix your margins with CGOs.
-  image: "/images/blog/discounts-vs-advertising-cac-og.png"
-  imageAlt: Comparison graph of Advertising CAC vs. Consumer Discounts.
+  title: "Discounts vs Advertising CAC — The Real Profit Killer"
+  description: "Stop blaming discounts for thin margins. Learn why your advertising CAC is the real profit killer and how to use Customer Generated Offers to reclaim your profit."
+  image: "/blog-assets/og/discounts-vs-advertising-cac-og.png"
+  imageAlt: "Discounts vs advertising CAC open graph image"
+  imageWidth: 1200
+  imageHeight: 630
+  type: "article"
 twitter:
-  card: summary\_large\_image
-  title: Discounts vs Advertising CAC — The Real Profit Killer
-  description: Stop blaming discounts. Your ad spend is the real margin killer.
-  image: "/images/blog/discounts-vs-advertising-cac-og.png"
-schema:
-  article:
-    enabled: true
-    headline: Discounts vs Advertising CAC — The Real Profit Killer
-    description: Analysis of how advertising costs impact DTC margins compared to strategic discounting.
-    datePublished: "2026-05-01T18:35:00Z"
-    dateModified: "2026-05-01T18:35:00Z"
-    author:
-      name: Prophet
-      url: https://iwantthat.io
-    publisher:
-      name: Prophet
-      logo: https://iwantthat.io/logo.png
-    image: "/images/blog/discounts-vs-advertising-cac-og.png"
-    wordCount: 1760
-  faqPage:
-    enabled: true
-  howTo:
-    enabled: false
-  breadcrumb:
-    enabled: true
-internalLinks:
-  pillarPage:
-    title: Customer Acquisition Cost
-    slug: /blog/acquisition
-  relatedArticles:
-    - title: "The Power of CGOs"
-      slug: power-of-cgos \# REVIEW
-    - title: "Strategic Pricing Allowances"
-      slug: pricing-allowances \# REVIEW
-  useCasePages:
-    - title: Agentic Offers
-      slug: /use-cases/agentic-offers
-    - title: Conversion Growth
-      slug: /use-cases/conversion-growth
-  ctaTarget: consultation
-  ctaText: Schedule a Free Consultation
-author:
-  name: Prophet Team
-  role: DTC Strategy
-tags:
-  - CAC
-  - CGO
-  - Profitability
-  - Ad Strategy
-featured: true
-holiday: false
-sourceDocUrl: "https://docs.google.com/document/d/1ZaTUXdck4ATYrGq-wZQeKij8IJByECWIjPVY2Ha0oJQ/edit?usp=drivesdk"
-pipeline:
-  processedAt: "2026-05-01T18:35:00Z"
-  agentVersion: "1.0.0"
-  validationPassed: true
-  publishBlocked: false
+  card: "summary_large_image"
+  title: "Discounts vs Advertising CAC — The Real Profit Killer"
+  description: "Stop blaming discounts for thin margins. Learn why your advertising CAC is the real profit killer and how to use Customer Generated Offers to reclaim your profit."
+  image: "/blog-assets/og/discounts-vs-advertising-cac-og.png"
 ---
-## Table of Contents
-
-[Discounts Are Not Killing Your Business, Advertising Costs Are](#discounts-are-not-killing-your-business,-advertising-costs-are)
-
-[Key Takeaways](#key-takeaways)
-
-[CAC is the cost to acquire a customer.](#cac-is-the-cost-to-acquire-a-customer.)
-
-[Discounts are financial levers to drive conversion.](#discounts-are-financial-levers-to-drive-conversion.)
-
-[Discounts vs Cost to Acquire a Customer](#discounts-vs-cost-to-acquire-a-customer)
-
-[Organic vs Paid | Stacked vs Unstacked | Discount Optimization](#organic-vs-paid-|-stacked-vs-unstacked-|-discount-optimization)
-
-[Focus on Consumers](#focus-on-consumers)
-
-[Increase Paid Traffic Conversion Rate](#increase-paid-traffic-conversion-rate)
-
-[Lean Into Strategic Pricing with Allowances](#lean-into-strategic-pricing-with-allowances)
-
-[Lean Into Customer Generated Offers (CGO’s)](#lean-into-customer-generated-offers-\(cgo’s\))
-
-[FAQ](#faq)
-
-[What are Customer Generated Offers?](#what-are-customer-generated-offers?)
-
-[Will My Shop Be On Sale All The Time?](#will-my-shop-be-on-sale-all-the-time?)
-
-[Don’t Discounts Hurt My Brand?](#don’t-discounts-hurt-my-brand?)
-
-[Is There Another Way to Reduce My CAC on Ad Platforms?](#is-there-another-way-to-reduce-my-cac-on-ad-platforms?)
 
 # Discounts Are Not Killing Your Business, Advertising Costs Are {#discounts-are-not-killing-your-business,-advertising-costs-are}
 
@@ -186,7 +74,7 @@ Let’s explore how to increase customer conversion from ad clicks to reduce the
 ### Key Takeaways {#key-takeaways}
 
 * Your CAC is killing your business because you do not convert on every click.  The CAC formula is sales and marketing expenses / number of new customers. If your $20000 advertising delivers 5000 clicks and 100 customers your CAC is $200.  The cost of those 5000 clicks is borne by the 100 customers.  
-* Meta Ads CTR is .9% \- 2% with 1 \-3% conversion. That means 97% is wasted.  This is a function of audience targeting, but almost always because the offer is not aligned to the consumer expectations.    
+* Meta Ads CTR is .9% - 2% with 1 -3% conversion. That means 97% is wasted.  This is a function of audience targeting, but almost always because the offer is not aligned to the consumer expectations.    
 * The average CAC on Meta is $68. The Average Order Value is $144 |  47.2%.  Your business cannot profit when you start at a 42% “discount” that is the CAC.  CAC is not considered a discount in the P\&L but rather a marketing and advertising expense.  But CAC is hard cash out of your pocket.  
 * The average discount rate to consumers is 18.2% | $26.  The average discount rate across vertical markets is 18.% which is 2400 basis points below the CAC "discount".  
 * Customer Generated Offers increase conversion rate of ad click reducing the CAC to more manageable levels and increasing customer portfolio growth.
@@ -199,7 +87,7 @@ Generally speaking the formula is the sum total of marketing expenses in a perio
 
 ## Discounts are financial levers to drive conversion. {#discounts-are-financial-levers-to-drive-conversion.}
 
-The fundamental disconnect on discounts is that they injure margins. And they do and they do not. The number one rule in pricing is that everything you give to a customer must be in your price.  If you offer discounts, an allowance for discounts must be in the price. If you offer “free” or discounted shipping, an allowance for shipping must be in the price.  The purpose of allowances are two-fold: 1\. They unlock price elasticity of demand; and 2\. They move discounts from being a hard cost to an opportunity cost and shield profit markups.
+The fundamental disconnect on discounts is that they injure margins. And they do and they do not. The number one rule in pricing is that everything you give to a customer must be in your price.  If you offer discounts, an allowance for discounts must be in the price. If you offer “free” or discounted shipping, an allowance for shipping must be in the price.  The purpose of allowances are two-fold: 1. They unlock price elasticity of demand; and 2. They move discounts from being a hard cost to an opportunity cost and shield profit markups.
 
 ## Discounts vs Cost to Acquire a Customer {#discounts-vs-cost-to-acquire-a-customer}
 
@@ -222,7 +110,7 @@ Discounts are often a part of customer acquisition and retention, but often decr
 |  | Discounts: |  |  | $30.00 | $0.00 |  | $30.00 | $0.00 |  |
 |  | Settle Price: |  |  | $129.98 | $159.98 |  | $129.98 | $159.98 |  |
 |  | Cash IN: |  |  | $129.98 | $159.98 |  | $129.98 | $159.98 |  |
-|  | Cash OUT: |  |  | $0.00 | \-$30.00 |  | $0.00 | \-$68.00 |  |
+|  | Cash OUT: |  |  | $0.00 | -$30.00 |  | $0.00 | -$68.00 |  |
 |  | Net Cash: |  |  | $129.98 | $129.98 |  | $129.98 | $91.98 |  |
 |  |  |  |  |  |  |  |  |  |  |
 
@@ -247,17 +135,17 @@ The number one business activity in direct to consumer brands is customer acquis
 
   ### Lean Into Strategic Pricing with Allowances {#lean-into-strategic-pricing-with-allowances}
 
-* Use allowances in your pricing.  Allowances become an opportunity cost that shields your profit markup \+ COGS while allowing you to engage a wider array of customers.  
-* Minimum MMU \= (COGS \+ Profit Markup) / Selling Price   
-  * ($30.00 \+ 60.00) / $159.98 \=  $90.00 / $159.98 \= 56.2%  
+* Use allowances in your pricing.  Allowances become an opportunity cost that shields your profit markup + COGS while allowing you to engage a wider array of customers.  
+* Minimum MMU = (COGS + Profit Markup) / Selling Price   
+  * ($30.00 + 60.00) / $159.98 =  $90.00 / $159.98 = 56.2%  
   * If you retain 56.2% of the selling price as net proceeds, you should hit your profit goals.  
-  * Profit Markup \= fixed operating expense / unit \+ variable operating expense / unit \+ profit / unit
+  * Profit Markup = fixed operating expense / unit + variable operating expense / unit + profit / unit
 
   ### Lean Into Customer Generated Offers (CGO’s) {#lean-into-customer-generated-offers-(cgo’s)}
 
 * Customer generated offers allow the consumer to make an offer on their cart.  Here’s why they should be a key component in your arsenal  
 * CGO’s unlock the consumer value equation value=fn(price, quality, service) and based on the price point they offer, you can now assess how the consumer sees the value of the products in their cart.    
-  * This reveals price point sensitivity \- a key to price elasticity of demand  
+  * This reveals price point sensitivity - a key to price elasticity of demand  
   * It also reveals the efficacy of brand and product brand efforts to protect pricing at a customer level  
 * Your generic offer will over discount on some and under discount on others.  CGO”s force the customer to express the value in dollars, not percent off.  
 * Most customer portfolios have 20% of buyers at full markup, 40% at about 80% of markup and 40% at 60% of markup.  CGO’s identify and sort them to improve marketing effectiveness
@@ -282,4 +170,4 @@ No.  Discounts do not hurt your brand. Discounts reveal price elasticity of dema
 
 100%.  Customer Generated Offers reveal the price point identity at a consumer level.  When that information is fed into ad platform algorithms, you can improve the offers to them and customers like them which should increase the click to conversion ratio and increase the yield of new customers from ads.  Imagine knowing the exact price point every customer in your audience converts at.  That is what CGO’s do for your customer portfolio and advertising efficacy.
 
-If you want to learn more about discount optimization, offer orchestration, price elasticity of demand and customer generated offers, schedule a free consultation with I Want That\! And we can show you the levers to improve CAC and customer acquisition.
+If you want to learn more about discount optimization, offer orchestration, price elasticity of demand and customer generated offers, schedule a free consultation with I Want That! And we can show you the levers to improve CAC and customer acquisition.

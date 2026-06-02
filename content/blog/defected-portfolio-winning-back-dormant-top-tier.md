@@ -1,52 +1,67 @@
-–  
-\# core  
-title: "The Defected Portfolio: Knowing When to Win Back and When to Let Go."   
-slug: defected-portfolio-winning-back-dormant-top-tier  
-article\_type: TP   
-cluster: 5   
-primary\_keyword: win back lapsed customers ecommerce secondary\_keywords:
-
-"defected customer strategy shopify"  
-"direct mail winback ecommerce"  
-"lapsed customer reactivation dtc"  
-"customer brand duration shopify"  
-"customer generated offer direct mail"   
-publish\_date: 2026-07-20   
-author: chris-daly   
-status: published
-
-\# SEO  
-meta\_title: "The Defected Customer Portfolio: When to Win Back and When to Let Go" meta\_description: "Defected customers voted with their absence. Most aren't coming back. Here's how to cherry-pick Q1, use direct mail CGOs, and release the rest with margin discipline."   
-sitemapPriority: 0.7
-
-\# AEO  
-tldr: "Defected customers have no activity in the current 12-month period and are classified as dormant or lost. Most are not recoverable, and after 12+ months of dormancy, most are not meaningfully contactable through digital channels. The playbook is selective by design: Q1 defected customers with positive contribution margin history warrant a direct mail recovery investment, including a physical CGO invitation on a core product. Q2 warrants a modest digital attempt where the audience is still reachable. Q3 through Q5 are released with nuance for brand duration cases where aging out is the cause, not brand failure." 
-
-key\_takeaways:
-
-"Defected customers voted with their absence. Distinguish brand failure from natural brand duration before investing in recovery."  
-"After 12+ months of dormancy, direct mail outperforms digital for Q1 recovery — the physical channel doesn't require a live digital relationship."  
-"A direct mail CGO invitation — QR code to a landing page, offer submitted on a core product  is the highest-engagement winback mechanic for top-quintile lapsed customers."   
-faq\_schema: true
-
-\# Relationships  
-hub\_link: /customer-portfolios   
-related\_playbook: /playbooks/counter-offer-playbook   
-related\_tool: cac-calculator   
-og\_image: /content/images/defected-portfolio-winning-back-dormant-top-tier-og.png 
-
-sibling\_links:  
-/blog/portfolio-declining-customers  
-/blog/portfolio-reactivated-customers  
-/blog/portfolio-stable-customers
-
-# 
-
+---
+slug: "defected-portfolio-winning-back-dormant-top-tier"
+version: 1
+publishedAt: "2026-06-02T00:00:00Z"
+updatedAt: "2026-06-02T00:00:00Z"
+published: true
+template: "playbook"
+pillar: "customer-portfolios"
+useCases:
+  - "remarketing"
+funnelStage: "consideration"
+icpSegment:
+  - "all"
+readingTimeMinutes: 16
+wordCount: 3567
+author:
+  name: "Chris Daly"
+  role: "Founder, I Want That"
+featured: false
+seo:
+  primaryKeyword: "The Defected Portfolio: Knowing When to Win Back and When to Let Go."
+  secondaryKeywords: []
+  metaTitle: "The Defected Customer Portfolio: When to Win Back and When to Let Go"
+  metaDescription: "Defected customers voted with their absence. Most aren't coming back. Here's how to cherry-pick Q1, use direct mail CGOs, and release the rest with margin discipline."
+  robots: "index, follow"
+  sitemapPriority: 0.7
+  sitemapChangefreq: "monthly"
+  keywordDensityOk: true
+aeo:
+  tldr: "Defected customers have no activity in the current 12-month period and are classified as dormant or lost. Most are not recoverable, and after 12+ months of dormancy, most are not meaningfully contactable through digital channels. The playbook is selective by design: Q1 defected customers with positive contribution margin history warrant a direct mail recovery investment, including a physical CGO invitation on a core product. Q2 warrants a modest digital attempt where the audience is still reachable. Q3 through Q5 are released with nuance for brand duration cases where aging out is the cause, not brand failure."
+  h2DirectAnswers: []
+  faq: []
+  keyTakeaways:
+    - "Defected customers voted with their absence. Distinguish brand failure from natural brand duration before investing in recovery."
+    - "After 12+ months of dormancy, direct mail outperforms digital for Q1 recovery — the physical channel doesn't require a live digital relationship."
+    - "A direct mail CGO invitation — QR code to a landing page, offer submitted on a core product — is the highest-engagement winback mechanic for top-quintile lapsed customers."
+  definedTerms: []
+  validation:
+    hasTldr: true
+    hasDirectAnswersAfterH2s: false
+    hasFaqSection: false
+    hasKeyTakeaways: true
+    hasNumberedListsForSteps: false
+    hasAttributedStats: false
+    allH2sHaveDirectAnswer: false
+    minWordCount: true
+og:
+  title: "The Defected Portfolio: Knowing When to Win Back and When to Let Go."
+  description: "Defected customers voted with their absence. Most aren't coming back. Here's how to cherry-pick Q1, use direct mail CGOs, and release the rest with margin discipline."
+  image: "/blog-assets/og/defected-portfolio-winning-back-dormant-top-tier-og.png"
+  imageAlt: "Defected portfolio winback open graph image"
+  imageWidth: 1200
+  imageHeight: 630
+  type: "article"
+twitter:
+  card: "summary_large_image"
+  title: "The Defected Portfolio: Knowing When to Win Back and When to Let Go."
+  description: "Defected customers voted with their absence. Most aren't coming back. Here's how to cherry-pick Q1, use direct mail CGOs, and release the rest with margin discipline."
+  image: "/blog-assets/og/defected-portfolio-winning-back-dormant-top-tier-og.png"
 ---
 
 # The Defected Portfolio: How to Win Back the Customers Worth Keeping and Release the Rest
 
-Chris Daly, Founder of I Want That\! — 25 years in retail, worked with 40+ ecommerce brands.
+Chris Daly, Founder of I Want That! — 25 years in retail, worked with 40+ ecommerce brands.
 
 ## Who This Is For
 
@@ -55,7 +70,7 @@ Shopify operators in the $500K–$5M range with a growing file of dormant custom
 ## What You Need Before You Start
 
 - 36 months of transaction history with customer ID, period net sales, and first-purchase date  
-- Attrition Migration Tracking output identifying Defected customers — P2 \= Yes (active in months 13–24), P1 \= No (no activity in last 12 months)  
+- Attrition Migration Tracking output identifying Defected customers — P2 = Yes (active in months 13–24), P1 = No (no activity in last 12 months)  
 - Lifetime contribution margin by customer, or a directional approximation using category margin applied to transaction history  
 - Physical mailing addresses for Q1 — direct mail is the primary recovery channel at this dormancy depth  
 - Brand duration calculation: first purchase date to last purchase date by customer
@@ -86,7 +101,7 @@ Before you invest a dollar in defected customer recovery, answer one question ho
 
 ## Step 1 — Classify and Score the Defected Segment
 
-Pull every customer with P2 \= Yes and P1 \= No. These are your defected customers active in the 13–24 month window, absent in the last 12\. Sort by P2 net sales descending — their last-active-period spend is the sorting variable, not their lifetime total. You are scoring them on the value they had when they were most recently engaged, not on a lifetime number that includes early low-value transactions.
+Pull every customer with P2 = Yes and P1 = No. These are your defected customers active in the 13–24 month window, absent in the last 12. Sort by P2 net sales descending — their last-active-period spend is the sorting variable, not their lifetime total. You are scoring them on the value they had when they were most recently engaged, not on a lifetime number that includes early low-value transactions.
 
 ### 1.1 Apply the Brand Duration Screen
 
@@ -124,7 +139,7 @@ The landing page should be simple: product image, current retail price, an offer
 
 Q2 defected customers had meaningful prior spend and positive contribution margin. They are worth a structured digital attempt where the audience is still reachable  and a clean release where it is not.
 
-**Email reactivation sequence:** a two-touch sequence. Touch one is a personal-register email that acknowledges the gap without gimmick — something like *"It's been a while. Here's what's new in \[their prior category\]."* No offer on the first touch. You are testing whether the digital relationship still exists before spending offer dollars. Touch two, sent at day 14 to non-openers and non-clickers, includes a threshold offer  spend $X, save $Y  anchored above their prior-period average transaction value.
+**Email reactivation sequence:** a two-touch sequence. Touch one is a personal-register email that acknowledges the gap without gimmick — something like *"It's been a while. Here's what's new in [their prior category]."* No offer on the first touch. You are testing whether the digital relationship still exists before spending offer dollars. Touch two, sent at day 14 to non-openers and non-clickers, includes a threshold offer  spend $X, save $Y  anchored above their prior-period average transaction value.
 
 **Paid retargeting:** if your pixel has enough signal remaining on Q2 customers, a retargeting campaign against the segment running concurrently with the email sequence increases touchpoints without proportionally increasing cost. Keep the creative product-specific and category-relevant, not a generic brand awareness unit.
 
@@ -186,7 +201,7 @@ For operators who have not run a direct mail program in the DTC era, the mechani
 
 ## FAQ
 
-**What is a defected customer in ecommerce portfolio management?** A defected customer is classified as Defected Lost in Attrition Migration Tracking — active in the prior 12–24 month period (P2 \= Yes) with no activity in the current 12-month period (P1 \= No). They are considered dormant or lost. Defection is distinct from declining, a declining customer is still transacting, albeit less. A defected customer has stopped entirely. The causes range from competitive displacement and service failure to natural brand duration, where the customer has simply aged out of the brand's core demographic or aesthetic.
+**What is a defected customer in ecommerce portfolio management?** A defected customer is classified as Defected Lost in Attrition Migration Tracking — active in the prior 12–24 month period (P2 = Yes) with no activity in the current 12-month period (P1 = No). They are considered dormant or lost. Defection is distinct from declining, a declining customer is still transacting, albeit less. A defected customer has stopped entirely. The causes range from competitive displacement and service failure to natural brand duration, where the customer has simply aged out of the brand's core demographic or aesthetic.
 
 **What is brand duration and why does it matter for defected customers?** Brand duration is the span from a customer's first purchase to their last — the length of their active relationship with the brand. In fashion and lifestyle brands, brand duration is often tied to life stage: a customer may have a natural 5–7 year affinity for a brand before their aesthetic, occasion, or income level shifts them elsewhere. When a defected customer has a long brand duration, the departure is more likely a natural conclusion than a recoverable failure. Chasing these customers with product offers misreads the situation. The right response for the brand's future is to have built a sibling brand that catches the customer at the next life stage before they leave.
 
@@ -223,4 +238,3 @@ Your defected Q1 customers were your best buyers. Some of them are still reachab
 - Hub confirmation: `/customer-portfolios`  
 - Asset cut: the direct mail CGO invitation mechanic — Step 3 in its entirety — is the strongest LinkedIn post in this cluster. Pull it as a standalone "how it works" breakdown. Five steps, one image of the mailer concept. This is the post that makes operators stop and think "nobody is doing this."  
 - RE candidate flagged: the brand duration / sibling brand argument ("shame on you for not having another brand") is a Reframe Essay waiting to happen. Title candidate: *"The Customer You Lost Was Wearing a Life Stage You Didn't Build For."* Flag for pillar 5 RE slot when portfolio TPs are complete.
-

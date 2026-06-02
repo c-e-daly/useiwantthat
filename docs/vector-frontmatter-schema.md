@@ -1,8 +1,99 @@
 # Vector blog frontmatter schema
 
-Full specification for the agent-generated frontmatter block on every article.
-The Google Doc → Markdown → Agent → Supabase pipeline should produce and validate
-all fields in this schema before a post is eligible for publish.
+Specification for blog article frontmatter.
+
+There are two contracts in use:
+
+1. **Local markdown publish contract** — the fields the current Next.js app reads
+   from `content/blog/*.md` to publish and render posts.
+2. **Full pipeline contract** — the richer Google Doc → Markdown → Agent →
+   Supabase metadata block used for validation, traceability, schema generation,
+   and future automation.
+
+The app can publish with the local subset. The pipeline should produce the full
+schema when possible, but `schema`, `internalLinks`, `tags`, `holiday`, and
+`pipeline` are not current local publish gates.
+
+## Current local publish gates
+
+A local `content/blog/*.md` post is public when:
+
+- The file starts with a valid `---` frontmatter block.
+- `published` is not `false`.
+- `scheduledFor` is absent or not in the future.
+- `publishedAt` is absent or not in the future.
+- The post has body markdown after the frontmatter.
+
+The current app reads these fields for rendering, metadata, cards, sitemap, and
+hub pages:
+
+```yaml
+slug: "lowercase-url-slug"
+version: 1
+publishedAt: "2026-06-02T00:00:00Z"
+updatedAt: "2026-06-02T00:00:00Z"
+published: true
+scheduledFor: "2026-06-15T00:00:00Z" # optional; omit for immediate publish
+template: "problem-fix"
+pillar: "customer-yield"
+useCases:
+  - "conversion-growth"
+funnelStage: "consideration"
+icpSegment:
+  - "all"
+readingTimeMinutes: 5
+wordCount: 1200
+author:
+  name: "Chris Daly"
+  role: "Founder, I Want That"
+featured: false
+seo:
+  primaryKeyword: "customer yield"
+  secondaryKeywords: []
+  metaTitle: "Customer Yield — The Metric Inside CAC"
+  metaDescription: "Customer Yield is the denominator inside CAC: the customers your spend produces. Learn how to improve acquisition efficiency without buying more traffic."
+  robots: "index, follow"
+  sitemapPriority: 0.7
+  sitemapChangefreq: "monthly"
+  keywordDensityOk: true
+aeo:
+  tldr: "One standalone answer paragraph."
+  h2DirectAnswers: []
+  faq: []
+  keyTakeaways:
+    - "Takeaway one."
+    - "Takeaway two."
+    - "Takeaway three."
+  definedTerms: []
+  validation:
+    hasTldr: true
+    hasDirectAnswersAfterH2s: false
+    hasFaqSection: false
+    hasKeyTakeaways: true
+    hasNumberedListsForSteps: false
+    hasAttributedStats: false
+    allH2sHaveDirectAnswer: false
+    minWordCount: true
+og:
+  title: "Social title"
+  description: "Social description"
+  image: "/blog-assets/og/example-og.png"
+  imageAlt: "Descriptive alt text"
+  imageWidth: 1200
+  imageHeight: 630
+  type: "article"
+twitter:
+  card: "summary_large_image"
+  title: "Social title"
+  description: "Social description"
+  image: "/blog-assets/og/example-og.png"
+```
+
+Use `[]` for empty arrays. Do not leave array keys blank.
+
+For source-controlled local images, store files under `content/images/og/` and
+reference them as `/blog-assets/og/[filename].png`. The app serves that path via
+`app/blog-assets/[...path]/route.ts`.
 
 ---
 
@@ -166,7 +257,7 @@ aeo:
 og:
   title: ""         # defaults to seo.metaTitle if blank — agent can override for social tone
   description: ""   # defaults to seo.metaDescription if blank — can be more conversational
-  image: ""         # path to OG image in Supabase storage. Prefer [slug]-og.png resolved by the publisher.
+  image: ""         # local path: /blog-assets/og/[filename].png; Supabase path may be resolved by publisher.
   imageAlt: ""      # descriptive alt text for OG image
   imageWidth: 1200
   imageHeight: 630
@@ -304,6 +395,11 @@ pipeline:
 
 ## Agent validation rules
 
+These rules apply to the **full pipeline contract**. They are stricter than the
+current local Next.js publish gates above. A local markdown file can build and
+publish without passing every rule below, but an automated submission pipeline
+should route failures to review.
+
 The agent must run these checks and set `pipeline.validationPassed` accordingly.
 If any **blocking** rule fails, set `pipeline.publishBlocked: true` and add the
 reason to `pipeline.blockReasons`. Non-blocking rules log a warning but do not block.
@@ -357,6 +453,10 @@ reason to `pipeline.blockReasons`. Non-blocking rules log a warning but do not b
 
 The canonical URL for every post is `/blog/[slug]`.
 
+The app also generates nested compatibility routes at `/blog/[pillar]/[slug]`
+for posts with a valid `pillar`, but `lib/blog/posts.ts` currently builds the
+canonical URL as `/blog/[slug]`.
+
 Use `pillar`, `pillarPost`, `pillarBranch`, `pillarPostSlug`, and internal links
 to establish pillar/branch relationships. A pillar post uses:
 
@@ -392,5 +492,7 @@ Final URL: `https://iwantthat.io/blog/[slug]`
 5. `canonical` field should be populated by NextJS at render time from
    `process.env.NEXT_PUBLIC_SITE_URL + "/blog/" + slug` — not hardcoded
    by the agent, so staging and production environments resolve correctly.
-6. The `og.image` path can be relative to Supabase storage or resolved by the
-   incoming publisher. NextJS should render absolute Open Graph image URLs.
+6. For local source-controlled images, use `/blog-assets/og/[filename].png`,
+   backed by `content/images/og/[filename].png`. For Supabase-hosted images,
+   the incoming publisher may resolve storage paths before writing final
+   frontmatter. NextJS renders absolute Open Graph image URLs at runtime.

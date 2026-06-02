@@ -36,7 +36,7 @@ relationships:
     - settle-price
     - profit-markup
     - market-adjustment-allowance
-  og_image: /blog/negotiated-commerce/negotiated-commerce-og.png
+  og_image: /blog-assets/og/negotiation-is-the-norm-not-the-exception-og.png
 ---
 
 # **Negotiated Commerce: The Worldview Behind Modern Pricing**

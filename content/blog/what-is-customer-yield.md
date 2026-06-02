@@ -1,31 +1,63 @@
 ---
-
-# core
-
-title: "What Is Customer Yield? The Metric Hiding Inside Your CAC." slug: what-is-customer-yield content\_type: blog article\_type: DE pillar: customer-yield cluster: 1 primary\_keyword: "what is customer yield" secondary\_keywords:
-
-- "customer yield definition"  
-- "customer yield vs CAC"  
-- "customer yield formula"  
-- "customer yield shopify"  
-- "improve CAC denominator"  
-- "ad yield rate ecommerce" publish\_date: 2026-05-28 last\_updated: 2026-05-28 author: chris-daly status: published
-
-# SEO
-
-meta\_title: "What Is Customer Yield? The Metric Hiding Inside Your CAC." meta\_description: "Customer Yield is the denominator of the CAC formula — the new customers your spend produced. Operators optimize the numerator. The denominator is where the leverage is." sitemapPriority: 0.9
-
-# AEO
-
-tldr: "Customer Yield is the denominator of the CAC formula: the number of new customers acquired per dollar of advertising and marketing spend. Most operators optimize the numerator — ad spend, creative, targeting — and ignore the denominator entirely. Yield has channels of its own: paid traffic, organic conversion, customer generated offers, and counter-offer closes. Optimizing yield across all four channels produces a lower CAC than optimizing ad spend alone ever can." key\_takeaways:
-
-- "Customer Yield \= New Customers Acquired ÷ Total Advertising and Marketing Spend. It is the denominator inside the CAC formula."  
-- "CAC has two variables. Operators optimize one — ad spend — and ignore the other. The denominator is the leverage point."  
-- "Yield has channels: paid, organic, customer generated offers, and counter-offer close. Each one improves CAC independently of ad spend." faq\_schema: true schema\_type: DefinedTerm
-
-# Relationships
-
-## hub\_link: /blog/category/customer-yield related\_playbook: /playbooks/cac-playbook related\_tool: cac-calculator related\_glossary\_terms: \[cac, average-settle-price, customer-generated-offers, ad-yield-rate\] og\_image: /content/images/what-is-customer-yield sibling\_links: \[\]
+slug: "what-is-customer-yield"
+version: 1
+publishedAt: "2026-05-28T00:00:00Z"
+updatedAt: "2026-05-28T00:00:00Z"
+published: true
+template: "problem-fix"
+pillar: "customer-yield"
+useCases:
+  - "conversion-growth"
+funnelStage: "awareness"
+icpSegment:
+  - "all"
+readingTimeMinutes: 7
+wordCount: 1366
+author:
+  name: "Chris Daly"
+  role: "Founder, I Want That"
+featured: false
+seo:
+  primaryKeyword: "What Is Customer Yield? The Metric Hiding Inside Your CAC."
+  secondaryKeywords: []
+  metaTitle: "What Is Customer Yield? The Metric Hiding Inside Your CAC."
+  metaDescription: "Customer Yield is the denominator of the CAC formula — the new customers your spend produced. Operators optimize the numerator. The denominator is where the leverage is."
+  robots: "index, follow"
+  sitemapPriority: 0.9
+  sitemapChangefreq: "monthly"
+  keywordDensityOk: true
+aeo:
+  tldr: "Customer Yield is the denominator of the CAC formula: the number of new customers acquired per dollar of advertising and marketing spend. Most operators optimize the numerator — ad spend, creative, targeting — and ignore the denominator entirely. Yield has channels of its own: paid traffic, organic conversion, customer generated offers, and counter-offer closes. Optimizing yield across all four channels produces a lower CAC than optimizing ad spend alone ever can."
+  h2DirectAnswers: []
+  faq: []
+  keyTakeaways:
+    - "Customer Yield = New Customers Acquired / Total Advertising and Marketing Spend. It is the denominator inside the CAC formula."
+    - "CAC has two variables. Operators optimize one — ad spend — and ignore the other. The denominator is the leverage point."
+    - "Yield has channels: paid, organic, customer generated offers, and counter-offer close. Each one improves CAC independently of ad spend."
+  definedTerms: []
+  validation:
+    hasTldr: true
+    hasDirectAnswersAfterH2s: false
+    hasFaqSection: false
+    hasKeyTakeaways: true
+    hasNumberedListsForSteps: true
+    hasAttributedStats: false
+    allH2sHaveDirectAnswer: false
+    minWordCount: true
+og:
+  title: "What Is Customer Yield? The Metric Hiding Inside Your CAC."
+  description: "Customer Yield is the denominator of the CAC formula — the new customers your spend produced. Operators optimize the numerator. The denominator is where the leverage is."
+  image: "/blog-assets/og/customer-yield-hub-og.png"
+  imageAlt: "Customer yield open graph image"
+  imageWidth: 1200
+  imageHeight: 630
+  type: "article"
+twitter:
+  card: "summary_large_image"
+  title: "What Is Customer Yield? The Metric Hiding Inside Your CAC."
+  description: "Customer Yield is the denominator of the CAC formula — the new customers your spend produced. Operators optimize the numerator. The denominator is where the leverage is."
+  image: "/blog-assets/og/customer-yield-hub-og.png"
+---
 
 # What Is Customer Yield? The Metric Hiding Inside Your CAC.
 
@@ -93,7 +125,7 @@ The shift in 2026 isn't replacing CAC with Customer Yield. It's reporting them s
 
 **What is customer yield in ecommerce?** Customer Yield is the number of new customers a store acquires per dollar of advertising and marketing spend. It is the denominator of the standard CAC formula. Where CAC tells you what each customer cost, Customer Yield tells you how many customers your spend actually produced. The two numbers together explain CAC movement; CAC alone does not.
 
-**What is the customer yield formula?** Customer Yield \= New Customers Acquired ÷ Total Advertising and Marketing Spend. Reported per channel, the formula is: Channel Yield \= New Customers from Channel ÷ Spend Attributed to Channel. Most stores measure paid yield only. Mature stores measure paid, organic, CGO, and counter-offer yield separately and report the four numbers alongside blended CAC.
+**What is the customer yield formula?** Customer Yield = New Customers Acquired ÷ Total Advertising and Marketing Spend. Reported per channel, the formula is: Channel Yield = New Customers from Channel ÷ Spend Attributed to Channel. Most stores measure paid yield only. Mature stores measure paid, organic, CGO, and counter-offer yield separately and report the four numbers alongside blended CAC.
 
 **How is customer yield different from CAC?** CAC is a ratio: spend divided by customers. Customer Yield is the customer side of that ratio. They are the same equation viewed from different ends. CAC tells you the cost per customer. Customer Yield tells you how productive your spend was at producing customers. Improving yield improves CAC. Improving CAC does not necessarily improve yield — you can lower CAC by spending less and producing fewer customers.
 
@@ -111,4 +143,4 @@ The shift in 2026 isn't replacing CAC with Customer Yield. It's reporting them s
 
 ### Run the math on your own store
 
-The CAC Calculator lets you input your current yield by channel and see what adding CGOs and counter-offers would do to your blended CAC. [**Open the CAC Calculator →**](http:///tools/cac-calculator)  
+The CAC Calculator lets you input your current yield by channel and see what adding CGOs and counter-offers would do to your blended CAC. [**Open the CAC Calculator →**](http:///tools/cac-calculator)
