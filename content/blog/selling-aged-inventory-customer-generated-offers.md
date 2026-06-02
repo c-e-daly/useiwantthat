@@ -121,7 +121,7 @@ The aged inventory that started as a white elephant problem becomes a content en
 
 Vector enables customer generated offers on any Shopify collection, including a secret bundle collection you can build this afternoon. Set your floor, seal your bundles, let customers make offers, and close the loop with a content credit. The liquidator does not need to know your number. Your customers already know it.
 
-:::Summary Box  
+:::summary
 - **Insight 1:** The markdown signal trains customers to wait, the offer mechanic puts them in the deal.  
 - **Insight 2:** Secret bundles remove the discount conversation and replace it with discovery, game mechanics, and genuine surprise.  
 - **Insight 3:** Customer generated content from bundle buyers is the most authentic acquisition content your brand will ever produce.  

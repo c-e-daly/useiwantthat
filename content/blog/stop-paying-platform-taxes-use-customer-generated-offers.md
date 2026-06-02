@@ -121,7 +121,7 @@ The DTC merchant who defaults to eBay for clearance has decided that paying a pl
 
 Vector adds customer generated offers to any Shopify collection in an afternoon. Set your floor, publish your Final Sale collection, and let your customers negotiate directly on your store. The platform tax goes to zero. The margin you recover stays yours.
 
-:::Summary Box  
+:::summary
 - **Insight 1:** Platform fees of 5–17% consume the same slice of revenue as your entire net profit margin.  
 - **Insight 2:** A Final Sale collection with customer-generated offers moves aged inventory at negotiated prices with no commission.  
 - **Insight 3:** Your existing customers are better buyers for your clearance inventory than any platform audience — and they cost nothing to reach.  

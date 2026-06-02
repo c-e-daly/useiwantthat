@@ -208,8 +208,7 @@ The decision matrix is simple:
 
 **Is it ever right to do nothing for a declining customer?** Yes — for Q5 customers with negative contribution margin, doing nothing is the correct answer. No email sequence, no counter-offer, no promotional investment. If they arrive inbound and purchase at full price, process the transaction. If they submit a CGO on an ancillary product, decline to engage. The opportunity cost of Q5 declining customer recovery investment is real — every dollar spent there is a dollar not spent on growth customer development or new customer acquisition.
 
-:::Summary Box
-
+:::summary
 - **The honest framing:** Most declining customers have already decided to leave. The data just hasn't caught up yet.  
 - **The two-variable CGO screen:** Product category margin and customer contribution margin. Both have to clear before a counter goes out.  
 - **The release decision:** Q5 declining customers with negative contribution margin are a cost center. Releasing them is not failure — it is margin discipline.

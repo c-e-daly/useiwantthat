@@ -141,8 +141,7 @@ The same "Stable" label covers both situations. Only the quintile tells you whic
 
 ---
 
-:::Summary Box
-
+:::summary
 - **What Stable means:** customers on the diagonal of the migration matrix, same quintile, both periods. Reliable, predictable, and one decision away from Growth or Declining depending on what you do next.  
 - **The quintile is everything:** Q1–Q2 Stable is a growth marketing opportunity. Q4–Q5 Stable is an early warning case. The same label covers both and only the quintile tells you which one you are managing.  
 - **The default mistake:** leaving Stable customers alone because nothing looks wrong. Stable is a holding pattern, not a safe harbor. Active management keeps them on the diagonal or moves them left. Passive management moves them right.

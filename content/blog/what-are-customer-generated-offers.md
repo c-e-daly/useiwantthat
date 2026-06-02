@@ -162,8 +162,7 @@ The markdown alternative would have moved the same inventory at a lower margin t
 
 ---
 
-:::Summary Box
-
+:::summary
 - **What CGOs are:** buyer-initiated offers that reveal true willingness to pay, not a discount mechanism but a negotiation infrastructure with margin floors, counter offer levers, and portfolio-aware decisioning built in.  
 - **Why they outperform discounts:** blanket codes give margin away to customers who didn't need the discount; CGOs give margin only where it closes a transaction that fixed pricing could not, and they generate data that compounds over time.  
 - **Where to start:** set your BATNA, map your customer portfolio to offer strategy, and automate the decisioning layering to those three steps as the whole system.

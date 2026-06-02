@@ -216,8 +216,7 @@ What "working" looks like: Q1 second-purchase rate above 40% on no-discount offe
 
 **What is the typical second-purchase rate for Shopify stores?** Most stores in the $200K–$2M revenue band see a 90-day second-purchase rate between 20% and 30% for new customers. Stores with strong category affinity (beauty, supplements, pet, hobby) tend to sit in the 30–40% range. Apparel and home goods typically land in the 18–25% range. If your second-purchase rate is below 20%, the problem is usually one of three things: wrong offer, wrong timing, or the first-purchase category is low-CRI and you are not adjusting your approach accordingly.
 
-:::Summary Box
-
+:::summary
 - **What this builds:** A quintile-segmented bounceback system where offer type matches first-purchase behavior, not a one-size discount.  
 - **Time to results:** 30-day read on Q1–Q2 conversion; 90-day cohort close for full picture.  
 - **The metric that proves it worked:** Second-purchase rate by quintile vs. your historical unmanaged baseline.

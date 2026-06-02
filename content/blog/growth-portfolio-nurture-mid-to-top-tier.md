@@ -207,8 +207,7 @@ The tactics that extend brand duration are: category breadth (customers in 3+ ca
 
 **Should I counter every CGO from a growth customer?** Yes, but the counter does not have to be a discount. For Q1–Q2 growth customers, a counter that acknowledges the offer and responds with free shipping or a gift with purchase is often sufficient to close the transaction at near-full margin. For Q3–Q4, a light discount (8–12%) with a category introduction incentive attached can serve double duty. The principle is that a growth customer who submits a CGO is already engaged, the counter is a service gesture, not a negotiation over price.
 
-:::Summary Box
-
+:::summary
 - **What growth customers are delivering:** Revenue retention, revenue growth, profitable margin, inventory velocity, and referral potential simultaneously.  
 - **The finite window:** Brand duration averages 4–6 years. Customers in year 3–4 need escalated engagement, not standard cadence.  
 - **The CGO principle:** A growth customer's offer is not a discount request. It is a relationship signal. Counter accordingly.

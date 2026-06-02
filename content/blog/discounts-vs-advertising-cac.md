@@ -69,8 +69,7 @@ But the advertising cost is a direct hard cost straight out of your bank account
 
 Let’s explore how to increase customer conversion from ad clicks to reduce the CAC and convert clicks to buyers.
 
-:::Summary Box
-
+:::summary
 ### Key Takeaways {#key-takeaways}
 
 * Your CAC is killing your business because you do not convert on every click.  The CAC formula is sales and marketing expenses / number of new customers. If your $20000 advertising delivers 5000 clicks and 100 customers your CAC is $200.  The cost of those 5000 clicks is borne by the 100 customers.  

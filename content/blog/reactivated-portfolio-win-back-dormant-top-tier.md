@@ -214,8 +214,7 @@ The metrics for reactivation are different from acquisition or first-to-second c
 
 **How often should I run reactivation campaigns?** Quarterly, aligned to your Attrition Migration Tracking reporting cadence. Running reactivation more frequently than quarterly risks fatiguing your lapsed file and training customers to wait for recovery offers. Running it less frequently means customers drift further from the brand before you attempt contact, which lowers recovery rates materially. The quarterly cadence also allows you to measure the prior quarter's recovery performance before committing offer dollars to the next cohort.
 
-:::Summary Box
-
+:::summary
 - **The triage principle:** Reactivation spend should be proportional to prior-period value — not to the fact of lapsing.  
 - **Q1 is personal, Q5 is passive:** High-value lapsed customers justify direct outreach and bespoke offers. Clearance buyers do not.  
 - **The right metric:** Cost per recovered customer by quintile, not open rate or bulk reactivation rate.

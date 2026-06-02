@@ -213,8 +213,7 @@ For operators who have not run a direct mail program in the DTC era, the mechani
 
 **When is it right to simply release a defected customer?** Q4 and Q5 defected customers should be released without exception. Q3 defected customers should be released after a single digital touch with no response. Q1–Q2 customers with negative contribution margin history should be released regardless of quintile. Q1–Q2 customers with brand durations of 5+ years who show demographic or behavioral signs of aging out of the brand's core profile should be released or, if the brand has a sibling line appropriate to their current life stage, redirected there rather than pursued with a product offer they have outgrown.
 
-:::Summary Box
-
+:::summary
 - **The governing principle:** Defected customers voted with their absence. Distinguish brand failure from natural brand duration before spending a dollar on recovery.  
 - **The channel reality:** After 12+ months of dormancy, direct mail outperforms digital for Q1 recovery. The physical channel doesn't degrade.  
 - **The CGO mechanic:** A direct mail offer invitation physical piece, QR code, dedicated landing page is the highest-engagement winback tool available for top-quintile lapsed customers. It asks them to name their terms. That is a different conversation than a coupon.

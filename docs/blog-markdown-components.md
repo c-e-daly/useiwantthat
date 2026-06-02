@@ -1,8 +1,10 @@
 # Blog Markdown component contract
 
 The blog source of truth is Markdown body content plus Vector YAML frontmatter.
-Use normal Markdown for core article elements, and use strict `:::` directive
-blocks for reusable article modules.
+Use normal Markdown for core article elements, and use strict three-colon
+`:::` directive blocks for reusable article modules. Do not use four-colon
+directives like `::::Summary Box`; the renderer only closes directives with an
+exact `:::` line.
 
 This document is the authoring contract for Google Docs exports, hand-authored
 Markdown, and any agent-generated body content. The implementation lives in
@@ -47,10 +49,17 @@ Do not put these in the Google Doc:
 - Duplicate FAQ sections when FAQ is generated from `aeo.faq`.
 - Hardcoded canonical URLs, schema JSON, or SEO metadata.
 
-Assets are stored beside the post bundle in Supabase Storage/S3. Generated hero
-and social images must be named `[slug]-hero.png` and `[slug]-og.png`. Inline
+For local source-controlled assets, store images under `content/images/` and
+reference them through `/blog-assets/...`. For example,
+`content/images/og/example-og.png` is referenced as
+`/blog-assets/og/example-og.png`. The route is implemented at
+`app/blog-assets/[...path]/route.ts`.
+
+Pipeline-ingested assets may still be stored beside the post bundle in Supabase
+Storage/S3. Generated hero and social images should be named `[slug]-hero.png`
+and `[slug]-og.png` before the publisher resolves their final URLs. Inline
 article images, carousel images, and downloadable assets should be referenced by
-their resolved storage path in the component block.
+their resolved public path in the component block.
 
 ## Component Registry
 
@@ -59,7 +68,7 @@ The blog page is a shell. Each post body is composed from these components.
 | Component | Authoring input | Required fields | Optional fields | Preferred styling |
 |---|---|---|---|---|
 | Headline | Google Docs Heading 1/2/3 | text | explicit anchor from export | Tight slate headings; H2/H3 feed generated TOC |
-| Paragraph | Normal text | text | links, emphasis, inline code | 7-line-height readable body copy |
+| Paragraph | Normal text | text | links, emphasis, inline code | Readable body copy with generous line height |
 | List | Native bulleted/numbered list | list items | nested prose is limited | Standard disc/decimal lists |
 | Table | Markdown/exported table | header row, body rows | alignment markers | Bordered, horizontally scrollable on mobile |
 | Image | `:::image` or Markdown image | `src`, `alt` | `caption`, `credit`, `variant` | Rounded bordered figure; contained or full width |
@@ -70,7 +79,7 @@ The blog page is a shell. Each post body is composed from these components.
 | Button | `:::button` | `label`, `href` | `variant` | Slate primary or bordered secondary |
 | CTA | `:::cta` | `title`, `href`, `label`, body | none | Dark end-of-section action block |
 | Cards | `:::cards` | item `title` and body | item `href` | Two-column card grid |
-| FAQ | `:::faq` or frontmatter `aeo.faq` | question, answer | none | Accordion inline; appended FAQ hidden if body FAQ exists |
+| FAQ | `:::faq` or frontmatter `aeo.faq` | question, answer | none | Inline accordion; frontmatter FAQ renders only when body FAQ is absent |
 | Steps | `:::steps` | item title/body | item `step` alias | Numbered process cards |
 | Video | `:::video` | provider/id or safe URL | title, caption | 16:9 embedded media |
 | Carousel | `:::carousel` | item `src`, `alt` | caption | Horizontal snap gallery |
@@ -156,6 +165,14 @@ Aliases:
 :::summary-box
 ...
 :::
+```
+
+Legacy four-colon blocks are invalid:
+
+```md
+::::Summary Box
+...
+::::
 ```
 
 ## Stat callout
