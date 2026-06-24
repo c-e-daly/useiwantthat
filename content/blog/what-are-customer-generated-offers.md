@@ -175,16 +175,3 @@ Start building your CGO infrastructure, see how the negotiation space in your cu
 
 ---
 
-**Codex handoff notes:**
-
-- This is a migrated post — original publish date 2023-08-19, preserve in frontmatter for authority signal  
-- 301 redirect required: `https://iwantthat.io/how-to-use-customer-generated-offers-to-power-commerce/` → `https://useiwantthat.com/blog/what-are-customer-generated-offers`  
-- Canonical tag on new URL must point to itself: `https://useiwantthat.com/blog/what-are-customer-generated-offers`  
-- Submit to Search Console immediately on go-live  
-- External citation slot: $4 trillion abandoned cart stat — source and link needed, flag for Codex  
-- Sibling links: /blog/dtc-playbook-broken, /blog/agentic-commerce-offer-layer, /blog/six-customer-portfolios-framework  
-- Hub confirmation: /negotiated-commerce  
-- Image: replace old WordPress DALL-E image with new pillar OG image at /images/blog/what-are-customer-generated-offers-hero.png  
-- Asset cut: the BATNA diagram from the original post — recreate as a clean SVG in brand colors and commit to repo. Best LinkedIn asset from this post.  
-- FAQ schema: true — 7 entries  
-- sitemapPriority: 0.9 — this is the definitional anchor for the Negotiated Commerce pillar

@@ -220,13 +220,3 @@ Your growth customers are the most profitable segment on your file and the most 
 
 ---
 
-**Codex handoff notes:**
-
-- External citation slot 1: brand duration / customer lifecycle benchmarks — Bain, HBR, or LoyaltyLion source on average customer lifespan in DTC ecommerce  
-- External citation slot 2: category breadth and retention correlation — any source linking multi-category purchasing to lower defection rates  
-- Sibling links: `/blog/portfolio-new-customers`, `/blog/portfolio-stable-customers`, `/blog/portfolio-declining-customers` — link bidirectionally when siblings ship  
-- Internal link: `/blog/customer-portfolio-management` (the DE overview post) — reference from the opening section  
-- Image path: `/images/blog/portfolio-growth-customers-hero.png`  
-- Hub confirmation: `/customer-portfolios`  
-- Asset cut: the "what growth customers are delivering simultaneously" list (revenue retention / revenue growth / profitable growth / inventory turnover / sales velocity) is the LinkedIn carousel — one benefit per slide, with the CGO mechanic as the closing slide  
-- Calculator opportunity: embed the CAC calculator in the "What the Growth Portfolio Is" section — let operators calculate the amortized CAC on their own growth segment to make the profitability argument concrete

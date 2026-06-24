@@ -154,11 +154,3 @@ See how your Stable customers are distributed across quintiles and which ones ar
 
 ---
 
-**Codex handoff notes:**
-
-- External citation slot: NRR benchmark data for ecommerce — flag for Codex to source in "Why Stable Customers Matter Now" section  
-- Sibling links: /blog/six-customer-portfolios-framework (primary — link from definition section), /blog/portfolio-growth-customers (link from "differs from Growth" section), /blog/portfolio-declining-customers (link from "drifts right" mention)  
-- Hub confirmation: /customer-portfolios  
-- Image path: /images/blog/portfolio-stable-customers-hero.png  
-- FAQ schema: true — 7 FAQ entries  
-- Asset cut: the migration matrix diagonal visual  pull the diagonal row from the CustomerPortfolios.png matrix and annotate it for LinkedIn. Caption: "The diagonal is not safety. It is a decision point."

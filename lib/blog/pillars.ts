@@ -48,13 +48,13 @@ const LEGACY_CONTENT_PILLARS: Record<string, ContentPillar> = {
 };
 
 export const USE_CASE_PATHS: Partial<Record<UseCase, { title: string; path: string }>> = {
-  clearance: { title: "Clearance", path: "/use-cases/clearance" },
-  "exit-intent": { title: "Exit intent", path: "/use-cases/exit-intent" },
-  remarketing: { title: "Remarketing", path: "/use-cases/remarketing" },
-  "special-collections": { title: "Special collections", path: "/use-cases/special-collections" },
-  "agentic-offers": { title: "Agentic offers", path: "/use-cases/agentic-offers" },
-  "conversion-growth": { title: "Conversion growth", path: "/use-cases/conversion-growth" },
-  "email-optin": { title: "Email opt-in", path: "/use-cases/email-optin" },
+  clearance: { title: "Clearance", path: "/playbooks/clearance-playbook" },
+  "exit-intent": { title: "Exit intent", path: "/playbooks/exit-intent-playbook" },
+  remarketing: { title: "Remarketing", path: "/playbooks/remarketing-playbook" },
+  "special-collections": { title: "Special collections", path: "/playbooks/programs-playbook" },
+  "agentic-offers": { title: "Agentic offers", path: "/playbooks/counter-offer-playbook" },
+  "conversion-growth": { title: "Conversion growth", path: "/playbooks/cac-playbook" },
+  "email-optin": { title: "Email opt-in", path: "/playbooks/exit-intent-playbook" },
 };
 
 export function getPillarBySegment(segment: string): PillarConfig | null {

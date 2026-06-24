@@ -221,13 +221,3 @@ Knowing which declining customers are worth fighting for — and which ones are 
 
 ---
 
-**Codex handoff notes:**
-
-- External citation slot 1: customer defection early warning signals — Bain, HBR, or similar source on behavioral indicators of customer exit before data reflects it  
-- External citation slot 2: contribution margin at customer level — any published source on negative LTV customer segments in DTC ecommerce  
-- Sibling links: `/blog/portfolio-growth-customers`, `/blog/portfolio-stable-customers`, `/blog/portfolio-reactivated-customers`, `/blog/portfolio-defected-customers` — link bidirectionally when siblings ship  
-- Internal link: `/blog/customer-portfolio-management` (DE overview) and `/blog/six-customer-portfolios-framework` — reference from opening section  
-- Image path: `/images/blog/portfolio-declining-customers-hero.png`  
-- Hub confirmation: `/customer-portfolios`  
-- Asset cut: the CGO decision matrix (two-variable screen: product margin × customer contribution margin) is the single best LinkedIn asset — a 2×2 grid, four cells, four decisions. One image, immediately actionable.  
-- Note: the negative contribution margin customer argument is the most counterintuitive claim in this post — flag for Chris to add a real client anecdote in the Backstory position if this gets expanded to a RE later

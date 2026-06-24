@@ -229,11 +229,3 @@ Ready to see what your new customer quintiles look like and which categories are
 
 ---
 
-**Codex handoff notes:**
-
-- External citation slot: second-purchase rate benchmarks — find a source from Klaviyo, LoyaltyLion, or similar with published Shopify repeat-rate data  
-- Sibling links: `/blog/portfolio-stable-customers`, `/blog/portfolio-declining-customers`, `/blog/portfolio-reactivated-customers` — link in both directions when siblings ship  
-- Image path: `/images/blog/portfolio-new-customers-hero.png`  
-- Hub confirmation: `/customer-portfolios`  
-- Asset cut: the Q1–Q5 counter-offer matrix (table format) is the single best LinkedIn asset from this post — pull it as a carousel  
-- Calculator opportunity: embed CAC calculator inline in the "How to Measure" section to let operators run their own second-purchase economics

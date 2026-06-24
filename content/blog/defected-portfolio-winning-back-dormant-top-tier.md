@@ -226,14 +226,3 @@ Your defected Q1 customers were your best buyers. Some of them are still reachab
 
 ---
 
-**Codex handoff notes:**
-
-- External citation slot 1: direct mail response rates for lapsed customer winback — DMA, USPS Delivers, or similar DA70+ postal authority source. Confirm or adjust the 15–25% recovery rate estimate.  
-- External citation slot 2: email deliverability degradation over time for inactive subscribers — Klaviyo, Mailchimp, or similar source with data on open rate decline after 12+ months of dormancy  
-- External citation slot 3: brand duration / customer lifecycle in fashion/lifestyle DTC — any published research on average customer lifespan by category  
-- Sibling links: `/blog/portfolio-declining-customers`, `/blog/portfolio-reactivated-customers`, `/blog/portfolio-stable-customers`, `/blog/portfolio-new-customers` — link bidirectionally when all siblings are published  
-- Internal link: `/blog/customer-portfolio-management` (DE overview) and `/blog/attrition-migration-tracking` — reference from Step 1  
-- Image path: `/images/blog/portfolio-defected-customers-hero.png`  
-- Hub confirmation: `/customer-portfolios`  
-- Asset cut: the direct mail CGO invitation mechanic — Step 3 in its entirety — is the strongest LinkedIn post in this cluster. Pull it as a standalone "how it works" breakdown. Five steps, one image of the mailer concept. This is the post that makes operators stop and think "nobody is doing this."  
-- RE candidate flagged: the brand duration / sibling brand argument ("shame on you for not having another brand") is a Reframe Essay waiting to happen. Title candidate: *"The Customer You Lost Was Wearing a Life Stage You Didn't Build For."* Flag for pillar 5 RE slot when portfolio TPs are complete.

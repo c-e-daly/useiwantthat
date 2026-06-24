@@ -227,12 +227,3 @@ Your Q1 lapsed customers know your brand. They left for a reason and came back f
 
 ---
 
-**Codex handoff notes:**
-
-- External citation slot: lapsed customer reactivation rate benchmarks — find DA70+ source from Klaviyo, Yotpo, or LoyaltyLion on average winback rates by segment  
-- Citation slot 2: clearance sell-through and markdown velocity — Shopify or NRF source on the role of clearance buyers in inventory health  
-- Sibling links: `/blog/portfolio-new-customers`, `/blog/portfolio-declining-customers`, `/blog/portfolio-defected-customers` — link bidirectionally when siblings ship  
-- Image path: `/images/blog/portfolio-reactivated-customers-hero.png`  
-- Hub confirmation: `/customer-portfolios`  
-- Asset cut: the Q1–Q5 recovery investment matrix is the LinkedIn asset — five rows, three columns (quintile / approach / offer type), one screenshot  
-- Note: the Attrition Migration Tracking doc (doc 3 in project files) is the methodological source for P1/P2/P3 classification — Codex should cross-reference and internal-link when that post ships

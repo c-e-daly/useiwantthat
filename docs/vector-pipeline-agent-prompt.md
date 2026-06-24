@@ -242,13 +242,13 @@ article image and the OG asset to social metadata.
     
 - internalLinks.useCasePages: map each useCase to its product page:  
     
-  - clearance → /use-cases/clearance  
-  - exit-intent → /use-cases/exit-intent  
-  - remarketing → /use-cases/remarketing  
-  - special-collections → /use-cases/special-collections  
-  - agentic-offers → /use-cases/agentic-offers  
-  - conversion-growth → /use-cases/conversion-growth  
-  - email-optin → /use-cases/email-optin
+  - clearance → /playbooks/clearance-playbook  
+  - exit-intent → /playbooks/exit-intent-playbook  
+  - remarketing → /playbooks/remarketing-playbook  
+  - special-collections → /playbooks/programs-playbook  
+  - agentic-offers → /playbooks/counter-offer-playbook  
+  - conversion-growth → /playbooks/cac-playbook  
+  - email-optin → /playbooks/exit-intent-playbook
 
 
 - internalLinks.ctaTarget: infer from funnelStage:  

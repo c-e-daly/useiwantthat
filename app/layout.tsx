@@ -110,6 +110,13 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           strategy="afterInteractive"
         />
         <Script
+          id="vtag-ai-js"
+          src="https://r2.leadsy.ai/tag.js"
+          data-pid="vc49TrUCJzlBraNS"
+          data-version="062024"
+          strategy="afterInteractive"
+        />
+        <Script
           id="hs-script-loader"
           src="https://js.hs-scripts.com/22554407.js"
           strategy="afterInteractive"
