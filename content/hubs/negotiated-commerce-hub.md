@@ -63,35 +63,6 @@ This is a system. It's built for shops that invest in customer growth and acquis
 
 Vector is the platform that runs it. Vector is not a discount platform. Vector is the negotiation layer that helps you scale negotiated commerce — using multiple levers to make sure the right offer reaches the right customer at the right time, when they make it to you.
 
----
-
-
-### **Negotiated Commerce in DTC Strategy 2026**
-
-*[Context paragraph + links to branch posts]*
-
-### **Margin Performance in Aged Inventory Using Negotiated Commerce**
-
-*[Context paragraph + links to branch posts]*
-
-### **Negotiated Commerce as the Primary DTC Growth Strategy**
-
-*[Context paragraph + links to branch posts]*
-
-### **Negotiated Commerce Bypasses Platform Fees to Increase Margins**
-
-*[Context paragraph + links to branch posts]*
-
-### **Negotiated Commerce Is the Evolution of Marketplaces Around the World**
-
-*[Context paragraph + links to branch posts]*
-
-### **Negotiated Commerce Meets Agentic Commerce — The Fight for Agent Attention**
-
-*[Context paragraph + links to branch posts]*
-
----
-
 ## **How Vector Supports Negotiated Commerce**
 
 What Vector does for your shop, operationally:
@@ -112,7 +83,7 @@ What Vector does for your shop, operationally:
 
 **New to negotiated commerce? Start here.**
 
-[The DTC Playbook Is Broken. Here's What Replaces It.](/blog/negotiated-commerce)
+[The DTC Playbook Is Broken. Here's What Replaces It.](/blog/dtc-playbook-broken)
 
 This essay walks through why the direct-to-consumer playbook of the last decade is breaking — and what the next generation of operators is building in its place. It's the foundational argument for everything else on this pillar.
 
@@ -120,11 +91,11 @@ This essay walks through why the direct-to-consumer playbook of the last decade 
 
 ## **Recent Insights into Negotiated Commerce**
 
-* The DTC Playbook Is Broken. Here's What Replaces It.  
-* What 25 Years in Retail Taught Me About Inventory You Can't Sell  
-* Why the Next Breakout DTC Brand Will Say Yes to More Offers  
-* Stop Selling on eBay: Why Your Negotiation Layer Belongs on Your Own Store  
-* The Rialto Market Lesson: What 800-Year-Old Negotiation Teaches Shopify Operators
+* [You Should Listen to Erving Goffman Before Doing a Percent Off Offer on Shopify](/blog/goffman-percent-off-offer)
+* [The DTC Playbook Is Broken. Here's What Replaces It.](/blog/dtc-playbook-broken)
+* [Selling Aged Inventory With Customer-Generated Offers](/blog/selling-aged-inventory-customer-generated-offers)
+* [What Are Customer-Generated Offers?](/blog/what-are-customer-generated-offers)
+* [Stop Paying Platform Taxes. Use Customer-Generated Offers.](/blog/stop-paying-platform-taxes-use-customer-generated-offers)
 
 ---
 

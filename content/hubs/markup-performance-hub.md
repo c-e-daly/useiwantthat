@@ -46,53 +46,27 @@ relationships:
 
 ---
 
-# **Retail Pricing Strategy: The Five Allowances That Defend Margin**
+# Retail Pricing Strategy: The Five Allowances That Defend Margin
 
 Most DTC operators set a margin target and back into a price. That's exactly backwards. Margin is what the market gives back after five allowances have done their work — and operators who don't fund the allowances explicitly lose margin every quarter without knowing why. The Five Allowances framework defends a price floor and flexes everything above it. This is the pricing discipline that makes Negotiated Commerce, Agentic Commerce, and Customer Portfolios mathematically possible.
 
 **Who this is for:** ecommerce operators in the $250K–$10M revenue band who price their own products, manage their own promotional cadence, and are watching margin erode despite stable COGS. If your gross margin moves more than 4 points quarter-over-quarter and you can't explain where it went, the allowances are where it went.
 
-## **Left Rail — Sticky (TOC + Key Terms)**
+## Key Terms
 
-[For dev: render this block in the left sidebar, sticky-eligible, collapses into accordion on mobile.]
+The vocabulary used throughout this pillar:
 
-### **Table of Contents**
+**Markup Performance** — The discipline of pricing for a defended floor (COGS + Profit Markup) and a flex zone built from five allowances. [Full definition →](/glossary/markup-performance)
 
-* Why most pricing advice fails
+**The Five Allowances** — Shrink, Financing, Shipping, Discounts, and Market Adjustment. The five priced-in buffers that let retail price flex without breaking margin. [Full definition →](/glossary/the-five-allowances)
 
-* Markup vs margin — the reframe
+**Profit Markup** — The portion of price above COGS that must cover Variable OpEx, Fixed OpEx, and Planned Net Profit. The floor that must be defended. [Full definition →](/glossary/profit-markup)
 
-* The Five Allowances (the framework)
+**Discount Allowance** — The markup buffer reserved for promotional activity, first-order offers, abandon-cart triggers, BFCM, and customer-generated offers. [Full definition →](/glossary/the-five-allowances)
 
-* The pricing equation
+**Market Adjustment Allowance** — The markup buffer reserved for non-promotional price flex: competitive moves, agentic-channel pressure, MAP enforcement gaps, and currency. [Full definition →](/glossary/market-adjustment-allowance)
 
-* What this pillar is NOT
-
-* Run your numbers
-
-* Start here — by reader state
-
-* The subtopics
-
-* Latest from this pillar
-
-* FAQ
-
-### **Key Terms**
-
-*The vocabulary used throughout this pillar.*
-
-**Markup Performance** — The discipline of pricing for a defended floor (COGS + Profit Markup) and a flex zone built from five allowances. *(full definition → /glossary/markup-performance)*
-
-**The Five Allowances** — Shrink, Financing, Shipping, Discounts, and Market Adjustment. The five priced-in buffers that let retail price flex without breaking margin. *(full definition → /glossary/the-five-allowances)*
-
-**Profit Markup** — The portion of price above COGS that must cover Variable OpEx, Fixed OpEx, and Planned Net Profit. The floor that must be defended. *(full definition → /glossary/profit-markup)*
-
-**Discount Allowance** — The markup buffer reserved for promotional activity, first-order offers, abandon-cart triggers, and customer-generated offers. *(full definition → /glossary/the-five-allowances)*
-
-**Market Adjustment Allowance** — The markup buffer reserved for non-promotional price flex: competitive moves, agentic-channel pressure, MAP enforcement gaps, currency. *(full definition → /glossary/market-adjustment-allowance)*
-
-## **Why most pricing advice fails**
+## Why most pricing advice fails
 
 The industry teaches DTC operators to price for a margin target. Pick a category benchmark — "apparel runs 65% gross margin" — back into a markup, post the price, run the promotions, and hope the year-end P&L matches the spreadsheet. It doesn't. Every quarter, the operator finds that 4 to 8 points of margin disappeared somewhere between the markup spreadsheet and the bank account.
 
@@ -100,7 +74,7 @@ The reason is structural. Margin is not an input. Margin is what's left after fi
 
 This pillar is the operating manual for pricing the mechanism instead of pricing the outcome. The framework is The Five Allowances. The doctrine is: defend the floor, flex the allowances.
 
-## **Markup vs margin — the reframe**
+## Markup vs margin — the reframe
 
 Most operators use markup and margin interchangeably. They are not the same number and they do not point at the same thing.
 
@@ -108,7 +82,7 @@ Markup is what you add to cost. Margin is what's left after sale. A 50% markup o
 
 **The reframe is operational, not mathematical.** Markup is the input you control. Margin is what the market gives back. Operators who set margin targets and back into markup are solving the equation backwards — they're committing to a downstream outcome before they've priced for the upstream allowances that determine whether the outcome holds. The Five Allowances framework moves the control point to where it belongs: at the markup, not at the margin.
 
-## **The Five Allowances**
+## The Five Allowances
 
 The Five Allowances are priced-in buffers that sit above the defended floor and absorb the volatility of running a retail business. They are listed below in order of volatility — from most stable (Shrink, which barely changes year-over-year) to most flexible (Market Adjustment, which can move week-over-week).
 
@@ -124,9 +98,7 @@ The Five Allowances are priced-in buffers that sit above the defended floor and 
 
 *The rule: fund all five allowances above the floor, in priced order. An underfunded allowance doesn't disappear — it eats Profit Markup until the line item shows up in the year-end P&L as "margin compression."*
 
-*[og_image: /blog-assets/og/markup-performance-og.png — floor-and-flex visual with the five allowances stacked above the four-component floor. LinkedIn carousel atom.]*
-
-## **The pricing equation**
+## The pricing equation
 
 Markup Performance reduces to a single equation. Memorize it. The equation is the framework, and the framework is the pillar.
 
@@ -154,79 +126,52 @@ Retail Price = COGS
 
 The retail operator's goal at price is to defend the floor and use the allowances. Everything above the floor flexes.
 
-## **Run your numbers**
+## Run your numbers
 
 **Before you read another article in this pillar, run your own pricing equation.** The Price Builder takes your COGS and the three layers of Profit Markup (Variable OpEx, Fixed OpEx, Planned Net Profit), then walks you through each of The Five Allowances with category-specific benchmarks. The output is your defended floor and your funded flex zone, SKU by SKU.
 
-[EMBED: price-builder]
+:::button
+href: /tools/price-builder
+label: Run the Price Builder
+:::
 
-If the tool tells you your floor is higher than your current selling price, you have a structural pricing problem — no amount of allowance work will fix it. If your floor is fine but your allowances are underfunded, you have a tactical problem that the cluster posts in this pillar will walk you through.
+If the tool tells you your floor is higher than your current selling price, you have a structural pricing problem — no amount of allowance work will fix it. If your floor is fine but your allowances are underfunded, you have a tactical problem: your markup is not funding the business you are actually running.
 
+## Markup Performance Articles
 
-## **Not Sure where to Begin?  Start here**
+Start with the article that matches the pricing question in front of you.
 
-Three entry points. Pick the one that matches where you are.
+**IMU Pricing 101: How Retail Pricing Math Actually Works**
 
-**"I've never thought about pricing this way and want the argument."**
+The starting point for retail pricing math: initial markup, maintained markup, gross margin, reductions, and contribution margin. [Read the IMU pricing guide →](/blog/imu-pricing-fundamentals)
 
-→ Start with Markup vs Margin: Why Setting a Margin Target Is Solving the Equation Backwards (the reframing essay).
+**The Price Builder Framework: Allowances, Floors, and What Margin Actually Means**
 
-**"My margin is slipping and I need to diagnose."**
+The operating model for pricing allowances, floors, and true SKU-level margin. [Read the Price Builder framework →](/blog/price-builder-framework-allowances)
 
-→ Run the Price Builder above, then read the cluster post for whichever allowance is underfunded.
+**Psychological Pricing: The 6 Tactics Behind Every Price Tag**
 
-**"I'm ready to reprice my catalog."**
+How charm pricing, even pricing, decoy pricing, and market adjustment change the way customers read a price. [Read the psychological pricing guide →](/blog/psychological-pricing-tactics)
 
-→ Jump to the Price Builder Playbook — tactical, SKU-by-SKU, screenshots.
+**Market Basket Composition: How Incremental Units Make Your Margin Shield Stronger**
 
+The allowance shield view of AUR, basket size, and incremental unit counter-offers. [Read the market basket composition guide →](/blog/market-basket-composition)
 
-### **The floor**
+**The 3 Retail Marketing Profit Models**
 
-* What Profit Markup Has to Cover — and Why Most Operators Underfund Fixed OpEx (Definitional Explainer)
+Why standard profit, clearance recovery, and acquisition/reactivation need different success metrics. [Read the profit models guide →](/blog/retail-marketing-profit-models)
 
-* Planned Net Profit Is Not a Margin Target — It's a Floor Component (Problem-Cost-Fix)
+## If your real problem is somewhere else
 
-### **Allowance 1 — Shrink**
+* **If acquisition cost is the issue, not pricing** → start at [Customer Yield](/blog/customer-yield).
 
-* DTC Shrink Is Lower Than You Think and Higher Than You're Pricing For (Data Story)
+* **If you want the worldview behind allowance-based pricing** → start at [Negotiated Commerce](/blog/negotiated-commerce).
 
-### **Allowance 2 — Financing**
+* **If you're trying to understand who's actually paying which price** → start at [Customer Portfolios](/blog/customer-portfolios).
 
-* Your Financing Allowance Doubled in 2023. Did You Reprice? (Problem-Cost-Fix)
+* **If AI agents are starting to negotiate against your prices** → start at [Agentic Commerce](/blog/agentic-commerce).
 
-### **Allowance 3 — Shipping**
-
-* Free Shipping Is Markup Spent — Here's How to Fund It (Problem-Cost-Fix)
-
-### **Allowance 4 — Discounts**
-
-* The Three Numbers You've Never Had: What SKU-Level Offer Data Tells Operators (Data Story)
-
-* BFCM Discounts Should Be Allowance-Funded, Not Margin-Funded (Decision Framework)
-
-### **Allowance 5 — Market Adjustment**
-
-* The Allowance That Makes Agentic Commerce Viable (bridge post to Agentic Commerce pillar)
-
-* MAP Pricing in a Negotiated-Commerce World (Decision Framework)
-
-## **Latest from this Pillar**
-
-*[Auto-populated from CMS, last 4–6 posts in category.]*
-
-## **If your real problem is somewhere else**
-
-Cross-hub bridges.
-
-* **If acquisition cost is the issue, not pricing** → start at Customer Yield.
-
-* **If you want the worldview behind allowance-based pricing** → start at Negotiated Commerce.
-
-* **If you're trying to understand who's actually paying which price** → start at Customer Portfolios.
-
-* **If AI agents are starting to negotiate against your prices** → start at Agentic Commerce.
-
-## **FAQ**
+## FAQ
 
 **What is the difference between markup and margin?**
 
@@ -264,6 +209,6 @@ No. Negotiated Commerce — pricing as a conversation rather than a posted numbe
 
 Annually at minimum, quarterly if you're in a volatile category, and immediately when one of the following triggers: COGS moves more than 5%, interest rates move more than 100 basis points, your shipping carrier announces a rate change, you launch a new promotional cadence, or a competitor begins materially undercutting in your category. The Five Allowances are not set-and-forget. They're an operating system.
 
-## **Footer CTA**
+## Build Your Defended Floor
 
 **Build your defended floor and your funded allowances.** The Price Builder walks you through every component of the pricing equation — SKU by SKU — and tells you which allowances are underfunded today. [Run the Price Builder →](/tools/price-builder)
