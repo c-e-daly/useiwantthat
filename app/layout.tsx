@@ -116,6 +116,11 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           src="https://js.hs-scripts.com/22554407.js"
           strategy="afterInteractive"
         />
+        <Script
+          src="https://analytics.ahrefs.com/analytics.js"
+          data-key="ZKYpB4eZEYnpHG0kST5ztg"
+          strategy="afterInteractive"
+        />
       </body>
     </html>
   );
