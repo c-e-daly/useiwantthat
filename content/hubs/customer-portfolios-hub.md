@@ -70,17 +70,41 @@ Cohort thinking is a relic of SaaS analytics imported into ecommerce without tra
 
 Every customer on file occupies exactly one of six portfolios at any given time. The classifications are produced by comparing two rolling 12-month windows: P1, the most recent 12 months, and P2, the 12 months prior to P1.
 
-**New.** First purchase in P1, no purchase history in P2 or earlier. The newest entrants to the brand. Quintiled within the New population by P1 net sales to identify high-value first-purchasers separately from low-value first-purchasers.
+### New Portfolio
 
-**Reactivated.** Purchase in P1 and purchase in P3, 24-36 months ago, but no purchase in P2. Customers who went dark and came back. Quintiled within the Reactivated population by P1 net sales. Often the highest-margin recovery opportunity in the file.
+First purchase in P1, no purchase history in P2 or earlier. The newest entrants to the brand. Quintiled within the New population by P1 net sales to identify high-value first-purchasers separately from low-value first-purchasers.
 
-**Growth.** Purchase in both P1 and P2, with quintile rank improving from P2 to P1, such as Q3 in P2 to Q2 in P1. The portfolio that fuels organic file expansion. These customers are increasing their commitment to the brand and should be invested in accordingly.
+[Read the New Portfolio drill-down →](/blog/new-portfolio-first-buyer-to-second-order)
 
-**Stable.** Purchase in both P1 and P2, with quintile rank unchanged from P2 to P1. The base of the file. Usually the largest portfolio by customer count and the one most operators take for granted. Stability is not free. Stable customers need retention work to stay Stable.
+### Reactivated Portfolio
 
-**Declining.** Purchase in both P1 and P2, with quintile rank dropping from P2 to P1, such as Q2 in P2 to Q3 in P1. The warning portfolio. Declining customers are still buying but spending less than they were, and they will defect next year if the movement is not reversed. This is the portfolio negotiated commerce was built to address.
+Purchase in P1 and purchase in P3, 24-36 months ago, but no purchase in P2. Customers who went dark and came back. Quintiled within the Reactivated population by P1 net sales. Often the highest-margin recovery opportunity in the file.
 
-**Defected.** Purchase in P2, no purchase in P1. Customers who shopped last year and have not this year. The hardest portfolio to recover, but the one that reveals the most about why customers leave. Quintile rank from the prior period, P2 quintile, is preserved so operators can prioritize defection recovery by historical value.
+[Read the Reactivated Portfolio drill-down →](/blog/reactivated-portfolio-win-back-dormant-top-tier)
+
+### Growth Portfolio
+
+Purchase in both P1 and P2, with quintile rank improving from P2 to P1, such as Q3 in P2 to Q2 in P1. The portfolio that fuels organic file expansion. These customers are increasing their commitment to the brand and should be invested in accordingly.
+
+[Read the Growth Portfolio drill-down →](/blog/growth-portfolio-nurture-mid-to-top-tier)
+
+### Stable Portfolio
+
+Purchase in both P1 and P2, with quintile rank unchanged from P2 to P1. The base of the file. Usually the largest portfolio by customer count and the one most operators take for granted. Stability is not free. Stable customers need retention work to stay Stable.
+
+[Read the Stable Portfolio drill-down →](/blog/stable-portfolio-retaining-engaged-top-tier-buyers)
+
+### Declining Portfolio
+
+Purchase in both P1 and P2, with quintile rank dropping from P2 to P1, such as Q2 in P2 to Q3 in P1. The warning portfolio. Declining customers are still buying but spending less than they were, and they will defect next year if the movement is not reversed. This is the portfolio negotiated commerce was built to address.
+
+[Read the Declining Portfolio drill-down →](/blog/declining-portfolio-demand-recapture)
+
+### Defected Portfolio
+
+Purchase in P2, no purchase in P1. Customers who shopped last year and have not this year. The hardest portfolio to recover, but the one that reveals the most about why customers leave. Quintile rank from the prior period, P2 quintile, is preserved so operators can prioritize defection recovery by historical value.
+
+[Read the Defected Portfolio drill-down →](/blog/defected-portfolio-winning-back-dormant-top-tier)
 
 The rule of CPM: every customer is in exactly one portfolio at exactly one quintile. The movement between portfolios, and between quintiles within portfolios, is where retail growth lives or dies.
 
@@ -92,23 +116,23 @@ AMT scores customers in two steps. First, the binary classification: did the cus
 
 The quintile movement is the diagnostic signal. A customer who was Q1 Stable in P2 and is now Q1 Growth in P1 is a top-tier customer increasing their commitment. A customer who was Q1 in P2 and is now Q3 in P1 is classified as Declining, and Q1-to-Q3 is a much louder alarm than Q4-to-Q5, even though both technically declined.
 
-Cluster posts in this pillar cover the AMT methodology in detail. The hub establishes the framework; the mechanics live in the playbooks.
+The portfolio drill-downs above cover the tactical execution for each customer state.
 
 ## The Offer Playbook By Portfolio
 
 The single most operationally valuable consequence of CPM is that each of the six portfolios responds to a different offer mechanism. Sending the wrong offer to the wrong portfolio is worse than sending no offer. It accelerates movement in the wrong direction.
 
-**New -> First-Order Offer.** Welcome series, first-purchase discount, value-exchange capture. The goal is the second order, not the lift on the first. Target Q1 New customers separately from Q5 New customers because they have different second-order trajectories.
+**New → First-Order Offer.** Welcome series, first-purchase discount, value-exchange capture. The goal is the second order, not the lift on the first. Target Q1 New customers separately from Q5 New customers because they have different second-order trajectories.
 
-**Reactivated -> Win-Back Acknowledgment.** These customers chose to come back. They need recognition, not a discount. A "welcome back" email that references their prior purchase outperforms a percentage-off offer. Discount-led win-backs train customers to wait for the next gap.
+**Reactivated → Win-Back Acknowledgment.** These customers chose to come back. They need recognition, not a discount. A "welcome back" email that references their prior purchase outperforms a percentage-off offer. Discount-led win-backs train customers to wait for the next gap.
 
-**Growth -> Clienteling and Early Access.** Do not discount Growth customers. They are increasing their commitment at posted price, so discounting them is leaving margin on the table and training them to expect less. Reward them with access, not with price.
+**Growth → Clienteling and Early Access.** Do not discount Growth customers. They are increasing their commitment at posted price, so discounting them is leaving margin on the table and training them to expect less. Reward them with access, not with price.
 
-**Stable -> Retention and Loyalty.** Stable customers need a reason to remain Stable. Loyalty programs, membership benefits, and multi-purchase incentives build switching cost. The threat to the Stable portfolio is silent erosion to Declining, so visibility and gentle re-engagement preserve them.
+**Stable → Retention and Loyalty.** Stable customers need a reason to remain Stable. Loyalty programs, membership benefits, and multi-purchase incentives build switching cost. The threat to the Stable portfolio is silent erosion to Declining, so visibility and gentle re-engagement preserve them.
 
-**Declining -> Customer-Generated Offers.** This is the portfolio negotiated commerce was built for. Declining customers know they are spending less and they know why: competing brands, price sensitivity, life changes. A CGO that lets them propose their price reveals their actual willingness-to-pay and gives the operator a chance to retain margin where a posted discount would forfeit it. Q1 Declining customers, recently top-tier customers who slipped, are the highest-priority CGO targets in the entire file.
+**Declining → Customer-Generated Offers.** This is the portfolio negotiated commerce was built for. Declining customers know they are spending less and they know why: competing brands, price sensitivity, life changes. A CGO that lets them propose their price reveals their actual willingness-to-pay and gives the operator a chance to retain margin where a posted discount would forfeit it. Q1 Declining customers, recently top-tier customers who slipped, are the highest-priority CGO targets in the entire file.
 
-**Defected -> Recapture Campaign.** Aggressive offers, often with category or product-line variation based on prior purchase history. Recapture campaigns work in proportion to the customer's prior quintile. Q1 Defected customers justify significantly higher recovery spend than Q5 Defected. A Q1 customer worth $1,200 per year in their prior life justifies a $50 recapture offer; a Q5 customer worth $80 does not.
+**Defected → Recapture Campaign.** Aggressive offers, often with category or product-line variation based on prior purchase history. Recapture campaigns work in proportion to the customer's prior quintile. Q1 Defected customers justify significantly higher recovery spend than Q5 Defected. A Q1 customer worth $1,200 per year in their prior life justifies a $50 recapture offer; a Q5 customer worth $80 does not.
 
 The playbook above is the default. Specific businesses will refine based on category, margin profile, and operational capacity. The principle is invariant: every portfolio has a different optimal offer mechanism.
 
@@ -118,7 +142,7 @@ The Settle Price a customer consistently accepts is itself a portfolio behavior 
 
 Settle Price patterns reveal something the portfolios alone cannot: the depth of a customer's position within their quintile. A Q5 Declining customer who only transacts at deep discount is structurally not the ideal customer profile. They are an infrequent buyer using promotional pricing to participate, and acquisition dollars spent finding more of them produce poor file economics. A Q1 Stable customer who consistently settles at posted price is the inverse: a customer the business should be building acquisition models to find lookalikes of.
 
-Cluster posts in this pillar cover Settle Price analysis by portfolio in depth: what the distributions look like, how to interpret them, and how they inform acquisition and ICP refinement.
+Settle Price analysis by portfolio shows which customers are paying near posted price, which customers require offer flexibility, and which acquisition audiences are likely to reproduce the same economics.
 
 ## Sell-Through And Unit Volume By Portfolio
 
@@ -126,68 +150,12 @@ Sell-through is not an inventory question. It is a portfolio question. Inventory
 
 Negotiated commerce gives operators the mechanism to match each portfolio's historical price points and volume patterns. A Stable Q3 customer who has historically purchased 2.4 units per transaction at AOVs near $85 should be presented with bundle structures and pricing that meet or beat that pattern. A Declining Q5 customer who has historically purchased 1.1 units per transaction at AOVs near $30 with high discount rates should be presented with a CGO, not a posted promotion, and the operator's accept-line should be priced against their Settle Price history.
 
-The cluster post on this topic is titled "Sell-Through by Portfolio: Using Negotiated Commerce to Match Customer Price Points and Volume Patterns," and it is the load-bearing tactical piece in this pillar.
-
-## What This Pillar Is Not
-
-Anti-drift fencing. CPM lives next to four other pillars and the lines blur fast.
-
-- **Not Customer Yield.** Yield is acquisition, what happens before a customer is on file. CPM is what happens after. The handoff is at Stage 5, Portfolio, of the Yield Ladder.
-- **Not Markup Performance.** Markup is what you price. CPM is who you are pricing for. The Discount Allowance and Market Adjustment Allowance fund the offers each portfolio receives, but the pricing math itself lives in Markup Performance.
-- **Not Negotiated Commerce.** Negotiated Commerce is the worldview: pricing as a conversation. CPM is one of the systems that operates inside the worldview. It tells you which customers are in conversations and what their pattern looks like.
-- **Not Agentic Commerce.** Agentic is who is negotiating on the buyer side: human, AI agent, hybrid. CPM is who they are in your file regardless of channel.
-- **Not cohort analysis.** Cohorts measure when customers entered. CPM measures where customers are now. The two are not interchangeable, and one is dramatically more operationally useful.
-
-## Start Here
-
-Three entry points. Pick the one that matches where you are.
-
-**"I want the argument for why CPM beats cohorts and RFM."**
-
-Start with Cohorts Tell You When. Portfolios Tell You Where, the reframing essay.
-
-**"I want to know what each of the six portfolios should be offered."**
-
-The offer playbook above is the summary; the cluster posts for each portfolio go deep.
-
-**"I want to see this running on my file."**
-
-CPM is built into Prophet's analytics engine. The file classification runs nightly. Reach out for a portfolio walkthrough.
-
-## The Subtopics
-
-Manually curated authoritative links to cluster posts. Update one or two times per quarter.
-
-### The Reframe
-
-- Cohorts Tell You When. Portfolios Tell You Where.
-
-### The Methodology
-
-- Attrition Migration Tracking: The 25-Year-Old Methodology That Still Beats Modern Cohort Analysis
-- Quintile Scoring vs RFM: Why Movement Matters More Than State
-
-### The Portfolios In Depth
-
-- The New Portfolio: How to Read First-Purchasers Before Their Second Order
-- The Reactivated Portfolio: Why Win-Back Discounts Are the Wrong Offer
-- The Growth Portfolio: Stop Discounting Customers Who Are Already Buying More
-- The Stable Portfolio: The Silent Erosion to Declining
-- The Declining Portfolio: The Portfolio Negotiated Commerce Was Built For
-- The Defected Portfolio: Recapture Spend Should Match Prior Quintile
-
-### Cross-Pillar Tactical Pieces
-
-- Settle Price Patterns by Portfolio: What Customer Willingness-to-Pay Reveals
-- Sell-Through by Portfolio: Using Negotiated Commerce to Match Customer Price Points and Volume Patterns
-- Category Indexing Inside Portfolios: Finding Cross-Sell Opportunities by Behavioral State
-
 ## If Your Real Problem Is Somewhere Else
 
-- **If acquisition cost is the issue** -> start at [Customer Yield](/blog/customer-yield). CPM tells you who you have; Yield tells you whether you can afford to find more of them.
-- **If pricing math is the issue** -> start at [Markup Performance](/blog/markup-performance). The allowances are what fund the offers each portfolio receives.
-- **If you want the worldview behind all of this** -> start at [Negotiated Commerce](/blog/negotiated-commerce).
-- **If AI agents are starting to represent your customers** -> start at [Agentic Commerce](/blog/agentic-commerce).
+- **If acquisition cost is the issue** → start at [Customer Yield](/blog/customer-yield). CPM tells you who you have; Yield tells you whether you can afford to find more of them.
+- **If pricing math is the issue** → start at [Markup Performance](/blog/markup-performance). The allowances are what fund the offers each portfolio receives.
+- **If you want the worldview behind all of this** → start at [Negotiated Commerce](/blog/negotiated-commerce).
+- **If AI agents are starting to represent your customers** → start at [Agentic Commerce](/blog/agentic-commerce).
 
 ## FAQ
 
@@ -227,6 +195,6 @@ Daily in Prophet's CPM engine. Every transaction updates the underlying P1 and P
 
 Yes, with one caveat. CPM requires a customer file large enough to quintile meaningfully: typically 1,000+ buyers minimum and 5,000+ for reliable quintile scoring within each portfolio. Stores under 1,000 buyers can still use the six portfolio classifications but may need to defer quintile scoring until the file grows.
 
-## Footer CTA
+## Ready To See Your Portfolio?
 
-**Your customer file is six audiences, not one.** CPM is built into Prophet's analytics engine and runs nightly across your transaction data. -> [Talk to us about a portfolio walkthrough](/contact)
+**Your customer file is six audiences, not one.** CPM is built into Prophet's analytics engine and runs nightly across your transaction data. → [Talk to us about a portfolio walkthrough](/contact)
