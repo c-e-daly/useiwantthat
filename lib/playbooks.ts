@@ -77,8 +77,7 @@ export const playbooks = {
     slug: "cac-playbook",
     href: "/playbooks/cac-playbook",
     icon: MousePointerClick,
-    title:
-      "Drive CAC Performance with Higher Yields Using Customer Generated Offers",
+    title: "Lower CAC Using Customer Generated Offers from I Want That!",
     type: "offers",
     businessGoal: "ad_conversion",
     tagline: "98% of ad traffic breaks with the wrong offer.",
@@ -362,7 +361,7 @@ export const playbooks = {
     slug: "remarketing-playbook",
     href: "/playbooks/remarketing-playbook",
     icon: Megaphone,
-    title: "Remarket With Offers Instead of Paying for the Click Twice",
+    title: "Remarket Using Customer Generated Offers from I Want That!",
     type: "remarketing",
     businessGoal: "retention",
     tagline: "Bring shoppers back with a reason that is not another ad tax.",

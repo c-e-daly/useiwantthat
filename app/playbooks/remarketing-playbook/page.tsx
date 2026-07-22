@@ -3,7 +3,7 @@ import { playbooks } from "@/lib/playbooks";
 import { buildPageMetadata } from "@/lib/seo/metadata";
 
 export const metadata = buildPageMetadata({
-  title: `${playbooks.remarketing.title} | I Want That!`,
+  title: playbooks.remarketing.title,
   description: playbooks.remarketing.description,
   path: playbooks.remarketing.href,
   image: "/images/og/remarketing-playbook-og.png",

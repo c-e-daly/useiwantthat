@@ -2,14 +2,14 @@
 content_type: hub
 pillar: customer-portfolios
 slug: customer-portfolios
-title: "Customer Portfolio Management: The Six Behavioral States of Every Store"
+title: "Customer Portfolio Management to Power DTC Marketing"
 status: published
 publish_date: 2026-05-21
 updated_at: 2026-05-21
 author: chris-daly
 
 seo:
-  meta_title: "Customer Portfolio Management: The Six Behavioral States of Every Store"
+  meta_title: "Customer Portfolio Management to Power DTC Marketing"
   meta_description: "Your customer file is not one audience. Customer Portfolio Management classifies every buyer into one of six behavioral states using quintile-based migration."
   sitemap_priority: 1.0
   sitemap_changefreq: monthly
@@ -46,7 +46,7 @@ relationships:
   og_image: /blog-assets/og/six-customer-portfolios-of-every-shopify-shop.png
 ---
 
-# Customer Portfolio Management: The Six Behavioral States of Every Store
+# Customer Portfolio Management to Power DTC Marketing
 
 The customer file is a portfolio of six behavioral states, and the only durable growth strategy is managing the movement between them. Cohorts tell you when customers entered the brand. Customer Portfolio Management, or CPM, tells you where they are now. The framework was engineered 25 years ago for retailers managing billion-dollar files; the math is the same for a Shopify operator at $500K. This pillar is the operating manual for seeing your business as six audiences instead of one, and matching each to the offer mechanism it actually responds to.
 
