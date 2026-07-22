@@ -67,6 +67,12 @@ Chris Daly, Founder of I Want That! — 25 years in retail, worked with 40+ ecom
 
 Shopify operators in the $300K–$5M range who have a lapsed customer file sitting unused and a winback campaign that treats a $400 customer the same as a $15 customer. If your reactivation strategy is a single batch email with a sitewide discount, you are leaving recovery margin on the table at the top and wasting offer dollars at the bottom.
 
+:::image
+src: /blog-assets/features/Reactivated%20Portfolio.png
+alt: Reactivated Portfolio customer migration insert
+variant: full
+:::
+
 ## What You Need Before You Start
 
 - 24–36 months of transaction history with customer ID, period net sales, category, AOV, and first-purchase date  
@@ -226,4 +232,3 @@ The metrics for reactivation are different from acquisition or first-to-second c
 Your Q1 lapsed customers know your brand. They left for a reason and came back for a reason. The question is whether you meet them at the level they earned. Install Vector to see your reactivated customer quintiles and build your first segmented recovery sequence →
 
 ---
-

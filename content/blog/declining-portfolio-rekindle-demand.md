@@ -67,6 +67,12 @@ Chris Daly, Founder of I Want That! — 25 years in retail, worked with 40+ ecom
 
 Shopify operators in the $300K–$5M range who have customers showing up as active in their 12-month window but spending materially less than the prior year — and no clear system for deciding which ones to fight for and which ones to release. If your declining segment is getting the same promotional cadence as your growth segment, you are spending recovery dollars on customers who have already decided to leave.
 
+:::image
+src: /blog-assets/features/Declining%20Portfolio.png
+alt: Declining Portfolio customer migration insert
+variant: full
+:::
+
 ## What You Need Before You Start
 
 - 24 months of transaction data with YOY net sales comparison by customer  
@@ -220,4 +226,3 @@ The decision matrix is simple:
 Knowing which declining customers are worth fighting for — and which ones are costing you money to retain — starts with seeing your portfolio clearly. Install Vector to build your Attrition Migration Tracking segmentation and run your first contribution margin screen →
 
 ---
-

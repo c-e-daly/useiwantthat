@@ -67,6 +67,12 @@ Chris Daly, Founder of I Want That! — 25 years in retail, worked with 40+ ecom
 
 Shopify operators in the $500K–$5M range with a growing file of dormant customers and no clear system for deciding which ones are worth a recovery investment and which ones are gone for good. If your winback strategy is a single batch email to everyone who hasn't purchased in 12 months, you are spending the same dollar on a Q1 customer who was worth $800 a year and a Q5 customer who was worth $15 lifetime. That is not a strategy. It is a hope.
 
+:::image
+src: /blog-assets/features/Defected%20Portfolio.png
+alt: Defected Portfolio customer migration insert
+variant: full
+:::
+
 ## What You Need Before You Start
 
 - 36 months of transaction history with customer ID, period net sales, and first-purchase date  
@@ -225,4 +231,3 @@ For operators who have not run a direct mail program in the DTC era, the mechani
 Your defected Q1 customers were your best buyers. Some of them are still reachable, just not through the channels you've been using. Install Vector and build your first direct mail CGO invitation to the customers worth winning back →
 
 ---
-

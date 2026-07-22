@@ -52,6 +52,12 @@ The customer file is a portfolio of six behavioral states, and the only durable 
 
 **Who this is for:** ecommerce operators with 5,000+ customers on file, where averaging the file produces a number that does not describe any actual customer. If your "average customer" does not match any customer you can think of, you have a portfolio you have not been managing as a portfolio.
 
+:::image
+src: /blog-assets/features/Customer%20Portfolio%20Management.png
+alt: Customer Portfolio Management six portfolio insert
+variant: full
+:::
+
 ## Why Cohort Thinking Fails
 
 Most modern ecommerce content treats the customer file as a stack of cohorts: the January 2024 cohort, the BFCM 2024 cohort, the Q1 2025 cohort. The cohort tells you one thing, when the customer entered the brand, and almost nothing about where they are now. A January 2024 customer who spent $400 in year one and $80 in year two is in the same cohort as a customer who spent $400 in year one and $1,200 in year two. The cohort cannot tell them apart. The portfolio can.

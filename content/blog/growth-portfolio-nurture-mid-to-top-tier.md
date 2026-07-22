@@ -67,6 +67,12 @@ Chris Daly, Founder of I Want That! — 25 years in retail, worked with 40+ ecom
 
 Shopify operators in the $500K–$5M range who have identified a segment of customers increasing in YOY net sales and are not doing nearly enough with them. If your growth customers are receiving the same batch email as everyone else on your file, you are under-investing in the segment most likely to fund your next two years of profitable revenue.
 
+:::image
+src: /blog-assets/features/Growth%20Portfolio.png
+alt: Growth Portfolio customer migration insert
+variant: full
+:::
+
 ## What You Need Before You Start
 
 - 24 months of transaction data with YOY net sales comparison by customer  
@@ -219,4 +225,3 @@ The tactics that extend brand duration are: category breadth (customers in 3+ ca
 Your growth customers are the most profitable segment on your file and the most underleveraged referral channel you have. Install Vector to identify your growth quintiles, activate CGO for your top buyers, and build the referral layer that turns your best customers into your best acquisition source →
 
 ---
-

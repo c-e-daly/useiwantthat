@@ -69,6 +69,12 @@ The most dangerous customer in your portfolio is the one you are not thinking ab
 
 *Stable is not a destination. It is a decision point — and most brands are making the wrong decision by default.*
 
+:::image
+src: /blog-assets/features/Stable%20Portfolio.png
+alt: Stable Portfolio customer migration insert
+variant: full
+:::
+
 ---
 
 ## What the Stable Customer Portfolio Is
@@ -153,4 +159,3 @@ The same "Stable" label covers both situations. Only the quintile tells you whic
 See how your Stable customers are distributed across quintiles and which ones are closest to Growth.  Sign up with Vector from I Want That! On Shopify. →
 
 ---
-

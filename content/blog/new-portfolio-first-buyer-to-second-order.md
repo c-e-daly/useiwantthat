@@ -67,6 +67,12 @@ Chris Daly, Founder of I Want That! — 25 years in retail, worked with 40+ ecom
 
 This guide is for Shopify operators in the $200K–$5M band who have a working acquisition engine and a growing new-customer count — but a second-purchase rate that isn't keeping pace. If your repeat rate sits below 30% and you're not running differentiated bounceback offers by segment, this is your next 30 minutes.
 
+:::image
+src: /blog-assets/features/New%20Portfolio.png
+alt: New Portfolio customer migration insert
+variant: full
+:::
+
 ## What You Need Before You Start
 
 - 12 months of transaction data with customer ID, order date, product category or collection, AOV, and discount used  
@@ -228,4 +234,3 @@ What "working" looks like: Q1 second-purchase rate above 40% on no-discount offe
 Ready to see what your new customer quintiles look like and which categories are driving,  or suppressing,  your second-purchase rate? Install Vector and pull your first segmentation report in under 20 minutes →
 
 ---
-
