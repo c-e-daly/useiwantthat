@@ -116,4 +116,4 @@ Vector operationalizes negotiated commerce as a Shopify app. The customer makes 
 
 ### Ready to see what negotiated commerce looks like in your store?
 
-[**Read the Negotiated Commerce playbook →**](http:///blog/category/negotiated-commerce)
+[**Read the Negotiated Commerce playbook →**](/blog/negotiated-commerce)

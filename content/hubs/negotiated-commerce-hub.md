@@ -99,49 +99,49 @@ This essay walks through why the direct-to-consumer playbook of the last decade 
 
 ---
 
-## **FAQ**
+## FAQ
 
-### **What is negotiated commerce?**
+**What is negotiated commerce?**
 
 Negotiated commerce is the system that aligns the needs and wants of buyers and sellers in digital transactions. Instead of the seller setting a fixed price and waiting for the buyer to accept it, the buyer (or an AI agent acting on their behalf) submits an offer. The seller evaluates it in real time against business rules — margin floors, inventory goals, customer portfolio strategy — and either accepts, counters, or declines.
 
-### **Is negotiated commerce just a fancy term for discounting?**
+**Is negotiated commerce just a fancy term for discounting?**
 
 No. Negotiated commerce includes shipping terms, ancillary services, bundles, upsells, cross-sells, and counter offers — a full toolkit for buyer and seller to reach mutually beneficial agreements. Discounts are one lever among many. Treating negotiated commerce as "discounting" misses 80% of what the system actually does.
 
-### **Do discounts hurt my brand?**
+**Do discounts hurt my brand?**
 
 No — unless you don't know how to price. Every dollar you give to a customer must already be in your price. Imagine a price that doesn't include the cost of goods sold. That's how most operators think about discounts: as something extracted from margin. The right way to price is to build planned reductions ("allowances") into the price from the start, then use those allowances to shape every negotiation.
 
-### **Is my brand on sale all the time if I run negotiated commerce?**
+**Is my brand on sale all the time if I run negotiated commerce?**
 
 No. Every brand lists products that are *for sale*. "On Sale" is a tool for marking down list prices on a site. In negotiated commerce, you start with your market price and let customers tell you what they'll pay. You are not "on sale" — you are *selling*.
 
-### **Can AI agents use negotiated commerce on my site?**
+**Can AI agents use negotiated commerce on my site?**
 
 Yes, when you enable it. When an agent searches for products and your brand is in the results, the agent can detect that your shop accepts offers, configure one for the customer, and submit it for processing. Stores that accept agent-submitted offers will capture traffic that stores requiring list-price purchases will lose.
 
-### **Are pricing allowances real in direct-to-consumer marketing?**
+**Are pricing allowances real in direct-to-consumer marketing?**
 
 Yes. Allowances have been in retail pricing and consumer marketing for more than 70 years. Every billion-dollar brand uses allowances to flex pricing for a broader customer audience, enabling economies of scale in unit volumes and increased profitability. The DTC era ignored allowances. Operators who reintroduce them recover margin instantly.
 
-### **Do I have to put all my products into the negotiated commerce system?**
+**Do I have to put all my products into the negotiated commerce system?**
 
 No. You control which products participate. Many shops start with a single category — typically aged inventory or a high-margin SKU set — and expand from there once the offer log produces learnings.
 
-### **How does negotiated commerce improve my margin performance?**
+**How does negotiated commerce improve my margin performance?**
 
 Vector assesses every offer in real time at the SKU variant level to determine if it meets your business needs or should be countered. If contribution margin protection is the goal, Vector works to maximize contribution margin per transaction. If cash conversion is the goal — moving inventory — Vector accepts offers above floor and counters below it.
 
-### **How does negotiated commerce improve my customer conversion rate?**
+**How does negotiated commerce improve my customer conversion rate?**
 
 Current ad-traffic conversion rates run around 1.2% on cold prospecting. When the customer has the option to make a deal, that number has lifted by more than 300 basis points in some deployments. Higher conversion on the same ad spend means lower customer acquisition cost without any change to the media plan.
 
-### **What is the financial impact of negotiated commerce on my business?**
+**What is the financial impact of negotiated commerce on my business?**
 
 Two metrics move first: net revenue retention and customer acquisition payback period. NRR improves because counter offers keep customers in the brand at protected margins instead of letting them defect to competitors. Payback period shortens because higher conversion yield reduces effective CAC. Together, those two shifts are the foundation of self-funded growth — retaining revenue year over year and paying off acquisition costs through higher customer yield.
 
-### **How does negotiated commerce integrate with my other marketing channels?**
+**How does negotiated commerce integrate with my other marketing channels?**
 
 Negotiated commerce works alongside email campaigns (where offers prompt customers to make their own), clearance programs (where offers protect margin during liquidation), and remarketing/retargeting campaigns (where the offer button converts abandoned carts that 15%-off codes can't).
 
