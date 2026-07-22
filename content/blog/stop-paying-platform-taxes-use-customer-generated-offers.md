@@ -65,13 +65,13 @@ twitter:
 
 ---
 
-### The Hook
+### Your next vacation to Venice is sitting in platform fees
 
 eBay charges 5–15% on every sale. Add listing fees and you are at 17% before you ship a single unit. Your net profit margin for the year is somewhere between 5% and 15%. You are handing your entire year's profit to a platform that did not source the product, did not build the brand, and does not care whether you are in business next year. Amazon takes more. Etsy takes more. Poshmark takes more. *Your next vacation to Venice is sitting in platform fees on inventory you already own.*
 
 ---
 
-### The Backstory
+### What eBay Taught me About Customer Generated Offers
 
 I listed over $100,000 in aged inventory on eBay. I know exactly what it costs because I paid it, 17.2% on average when listing fees and final value fees were combined. The inventory moved. I was grateful it moved. And then I did the math.
 
@@ -81,7 +81,7 @@ The reason most merchants keep listing on platforms is inertia and the belief th
 
 ---
 
-### The Evidence
+### The Platform Fees Are Extracting Profits from Your Business
 
 Platform fee structures as of 2026: eBay final value fees run 8–15% by category plus a $0.35 listing fee per item. Amazon referral fees run 8–17% depending on category, with FBA costs layered on top. Etsy charges 6.5% transaction fee plus 3–4% payment processing. Poshmark takes a flat 20% on sales over $15.
 
@@ -93,7 +93,7 @@ I moved $100,000 in inventory on eBay at an average platform cost of 17.2%. That
 
 ---
 
-### The Reframe
+### Your Site is the Market for All Customers
 
 The platform is not the market. You are the market.
 
@@ -107,7 +107,7 @@ The DTC merchant who defaults to eBay for clearance has decided that paying a pl
 
 ---
 
-### What This Means for You
+### Clearance is a Confession, Not a Concession
 
 1. **Run the platform fee calculation on last year's clearance volume.** Take every dollar you moved on eBay, Amazon, Etsy, or Poshmark and multiply it by the fee rate you actually paid, not the headline rate, the blended rate with listing fees included. That number is what negotiated commerce on your own store would have kept in your business.
 
