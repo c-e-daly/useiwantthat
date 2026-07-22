@@ -47,6 +47,12 @@ const nextConfig: NextConfig = {
         })
       ),
       {
+        source: "/blog/:path*",
+        has: [{ type: "host", value: "app.useiwantthat.com" }],
+        destination: "https://useiwantthat.com/blog/:path*",
+        permanent: true,
+      },
+      {
         source: "/blog/defected-portfolio-winning-back-dormant-top-tier",
         destination: "/blog/defected-portfolio-win-back-strategies",
         permanent: true,

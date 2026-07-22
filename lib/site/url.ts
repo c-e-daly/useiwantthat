@@ -1,5 +1,6 @@
 const CANONICAL_SITE_URL = "https://useiwantthat.com";
 const LEGACY_WWW_HOST = "www.useiwantthat.com";
+const APP_HOST = "app.useiwantthat.com";
 const CANONICAL_HOST = "useiwantthat.com";
 
 export function getSiteUrl() {
@@ -8,7 +9,7 @@ export function getSiteUrl() {
   try {
     const url = new URL(configuredUrl);
 
-    if (url.hostname === LEGACY_WWW_HOST) {
+    if (url.hostname === LEGACY_WWW_HOST || url.hostname === APP_HOST) {
       url.hostname = CANONICAL_HOST;
     }
 

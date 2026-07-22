@@ -37,8 +37,8 @@ const plans = [
   },
   {
     name: "Pro",
-    price: "$30",
-    annual: "$300 annually",
+    price: "$35",
+    annual: "$350 annually",
     period: "For shops proving customer generated offers.",
     offerLimit: "1,000 monthly / 12,000 annual offers",
     cta: "Start on Shopify",
@@ -47,8 +47,8 @@ const plans = [
   },
   {
     name: "Scale",
-    price: "$200",
-    annual: "$2,000 annually",
+    price: "$150",
+    annual: "$1,500 annually",
     period: "For active negotiated commerce programs.",
     offerLimit: "5,000 monthly / 60,000 annual offers",
     cta: "Book a demo",

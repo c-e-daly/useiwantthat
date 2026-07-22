@@ -5,7 +5,7 @@ The definition of scale is moving more volume over fixed assets.  If our pricing
 |  |  |  |  |  |
 | ----- | ----- | ----- | ----- | ----- |
 | Plan | Free | Pro | Scale | Agentic |
-| Features | $0.00 | $30/$300 | $200/$2000 | $500 / $5000 |
+| Features | $0.00 | $35/$350 | $150/$1500 | $500 / $5000 |
 | Offer Limits | 100/1200 | 1000/12000 | 5000/60000 | Unlimited |
 | Programs | X | X | X | X |
 | Storefront Offers | X | X | X | X |
