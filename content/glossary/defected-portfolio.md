@@ -11,7 +11,7 @@ status: published
 
 # SEO
 meta_title: "What is the Defected Portfolio? (Lost Customers in CPM)"
-meta_description: "The Defected Portfolio is customers who purchased in the prior 12 months but not in the current 12 months. The hardest portfolio to recover — and the most revealing."
+meta_description: "The Defected Portfolio is customers who purchased in the prior 12 months but not the current 12 — the hardest portfolio to recover, and most revealing."
 sitemapPriority: 0.7
 
 # AEO

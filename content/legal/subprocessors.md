@@ -1,4 +1,4 @@
-# **I Want That! Subprocessors**
+## **I Want That! Subprocessors**
 
 Effective May 5, 2026
 
@@ -30,4 +30,3 @@ The following entities control, are controlled by, or are under common control w
 | I Want That!, Inc. | Technical and Operational Support for all I Want That! Services. | United States |
 |  |  |  |
 |  |  |  |
-

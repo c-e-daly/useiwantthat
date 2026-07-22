@@ -21,7 +21,7 @@ seo:
   primaryKeyword: "The Reactivated Portfolio: Winning Back Customers Without Bottom-Tier Discounts."
   secondaryKeywords: []
   metaTitle: "Winning Back Lapsed Customers on Shopify: A Quintile Playbook"
-  metaDescription: "Not every lapsed customer deserves the same winback offer. Here's how to triage reactivated customers by quintile and recover value without training them to wait for discounts."
+  metaDescription: "Not every lapsed customer deserves the same winback offer. Here's how to triage reactivated customers by quintile and recover value without discount habits."
   robots: "index, follow"
   sitemapPriority: 0.7
   sitemapChangefreq: "monthly"

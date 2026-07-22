@@ -1,4 +1,4 @@
-# **Law Enforcement Data Request Guidelines**
+## **Law Enforcement Data Request Guidelines**
 
 Last Updated: May 5, 2026
 
@@ -28,4 +28,3 @@ These guidelines are intended to provide law enforcement authorities with inform
 7. Submitting Your Request. A data request may be served by email at compliance@useiwantthat.com
 
 For questions about these or any I Want That! policies, email us at compliance@useiwantthat.com
-

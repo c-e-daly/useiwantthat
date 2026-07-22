@@ -10,7 +10,7 @@ export const metadata = buildPageMetadata({
   title:
     "Vector — Stop Paying the Ad Tax. Convert the Traffic You Already Have.",
   description:
-    "Vector lets Shopify merchants accept customer-generated offers, counter automatically, and convert 3–5× more of their existing traffic — without spending another dollar on ads.",
+    "Vector lets Shopify merchants accept customer-generated offers, counter automatically, and convert 3-5x more of existing traffic — without extra ad spend.",
   path: "/tools/cac-calculator",
   image: "/images/og/cac-yield-og.png",
   twitterTitle: "Vector - Convert Your Traffic. Not Someone Else's.",

@@ -1,4 +1,4 @@
-# **DATA PROCESSING ADDENDUM**
+## **DATA PROCESSING ADDENDUM**
 
 Last updated May 5, 2026
 
@@ -266,4 +266,3 @@ Upon written request, customers can request their data to be deleted within the 
 Measures for allowing data portability and ensuring erasure
 
 I Want That! allows Customers to obtain Customer Personal Data in a structured, commonly used and machine-readable format. Customers can ask I Want That! to delete their Customer Data as described in the Data Processing Addendum and such requests generally will be processed within 30 days.
-

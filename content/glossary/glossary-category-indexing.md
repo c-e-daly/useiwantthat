@@ -11,7 +11,7 @@ status: published
 
 # SEO
 meta_title: "What is Category Indexing? (Definition for Retail and DTC Operators)"
-meta_description: "Category Indexing scores each customer's spend in a category against the file average. The cross-sell technique that reveals gaps and intensities binary purchase flags miss."
+meta_description: "Category Indexing scores each customer's spend in a category against the file average — the cross-sell technique revealing gaps binary purchase flags miss."
 sitemapPriority: 0.7
 
 # AEO

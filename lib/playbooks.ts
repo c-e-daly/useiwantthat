@@ -83,7 +83,7 @@ export const playbooks = {
     businessGoal: "ad_conversion",
     tagline: "98% of ad traffic breaks with the wrong offer.",
     description:
-      "Your ads use a blanket offer focused on the size of the discount, not the value of the product. Use customer generated offers on ad landing pages to increase yield and decrease CAC per customer.",
+      "Your ads use a blanket discount, not the product's value. Use customer generated offers on landing pages to increase yield and lower CAC.",
     primaryMetric: "cac_per_customer",
     ctaLabel: "Increase customer yield",
     ctaHref: "/tools/cac-calculator",

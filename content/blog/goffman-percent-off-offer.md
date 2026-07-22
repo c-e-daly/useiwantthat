@@ -25,7 +25,7 @@ seo:
     - "alternative to percent off discount"
     - "how discounts change customer expectations"
   metaTitle: "Why Percent-Off Discounts Retrain Your Customers"
-  metaDescription: "A percent-off sale doesn't just move product. It teaches customers a new baseline price. Sociologist Erving Goffman explained why decades before ecommerce existed."
+  metaDescription: "A percent-off sale doesn't just move product — it teaches customers a new baseline price. Sociologist Erving Goffman explained why, decades before ecommerce."
   robots: "index, follow"
   sitemapPriority: 0.9
   sitemapChangefreq: "monthly"

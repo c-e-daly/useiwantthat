@@ -25,7 +25,7 @@ seo:
     - "gross margin vs contribution margin"
     - "retail pricing math"
   metaTitle: "IMU Pricing 101: How Retail Pricing Math Works"
-  metaDescription: "IMU pricing is where every retail price starts. Learn the difference between initial markup, maintained markup, and gross margin, and where each one lives on your P&L."
+  metaDescription: "IMU pricing is where every retail price starts. Learn the difference between initial markup, maintained markup, and gross margin on your P&L."
   robots: "index, follow"
   sitemapPriority: 0.7
   sitemapChangefreq: "monthly"

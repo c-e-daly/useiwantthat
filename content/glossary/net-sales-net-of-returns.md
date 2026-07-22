@@ -11,7 +11,7 @@ status: published
 
 # SEO
 meta_title: "What is NOR Sales? (Net of Returns Definition)"
-meta_description: "NOR Sales is Gross Sales less discounts but before returns and cancellations. The middle layer of the three-layer sales hierarchy — and the cleanest measure of marketing performance."
+meta_description: "NOR Sales is Gross Sales less discounts, before returns and cancellations — the cleanest measure of marketing performance in the sales hierarchy."
 sitemapPriority: 0.7
 
 # AEO

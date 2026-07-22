@@ -10,7 +10,7 @@ author: chris-daly
 
 seo:
   meta_title: "How to Reduce Ecommerce CAC: The Yield Ladder (5 Stages)"
-  meta_description: "Ecommerce CAC isn't a marketing problem — it's a yield problem. The 5-stage Yield Ladder, vertical benchmarks, and a CAC calculator. From a 25-year retail operator."
+  meta_description: "Ecommerce CAC isn't a marketing problem — it's a yield problem. The 5-stage Yield Ladder, benchmarks, and a CAC calculator from a 25-year retail operator."
   sitemap_priority: 1.0
   sitemap_changefreq: monthly
   canonical_path: /blog/customer-yield

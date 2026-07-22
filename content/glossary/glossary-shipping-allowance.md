@@ -5,7 +5,7 @@ content_type: glossary
 pillar: markup-performance
 ladder_stage: none
 meta_title: "What is the Shipping Allowance? (Pricing for Freight and Fulfillment)"
-meta_description: "The Shipping Allowance is the markup buffer that absorbs inbound freight, outbound fulfillment, and free-shipping promotions. Allowance 3 of The Five Allowances."
+meta_description: "The Shipping Allowance is the markup buffer absorbing inbound freight, outbound fulfillment, and free-shipping promos — Allowance 3 of The Five Allowances."
 tldr: "The Shipping Allowance is the markup buffer that absorbs inbound freight, outbound fulfillment, and free-shipping promotions. It is Allowance 3 of The Five Allowances and the most underestimated pricing buffer in ecommerce."
 faq_schema: true
 schema_type: DefinedTerm

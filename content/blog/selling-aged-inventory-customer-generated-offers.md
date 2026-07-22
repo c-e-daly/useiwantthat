@@ -21,7 +21,7 @@ seo:
   primaryKeyword: "What 25 Years in Retail Taught Me About Inventory You Can't Sell"
   secondaryKeywords: []
   metaTitle: "What 25 Years in Retail Taught Me About Inventory You Can't Sell"
-  metaDescription: "A kid sold 1,000 bags of Snowman Poop for $1 each. There is a market for everything. Here's how negotiated commerce moves aged inventory without the markdown spiral."
+  metaDescription: "A kid sold 1,000 bags of Snowman Poop for $1 each. There's a market for everything. Here's how negotiated commerce moves aged inventory, no markdown spiral."
   robots: "index, follow"
   sitemapPriority: 0.8
   sitemapChangefreq: "monthly"

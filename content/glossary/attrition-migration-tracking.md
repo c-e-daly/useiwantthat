@@ -12,7 +12,7 @@ robots: "index, follow"
 
 # SEO
 meta_title: "What is Attrition Migration Tracking? (AMT Methodology for CPM)"
-meta_description: "Attrition Migration Tracking (AMT) is the methodology that produces The Six Portfolios using quintile scoring across rolling 12-month periods. Built 25 years ago for retail."
+meta_description: "Attrition Migration Tracking (AMT) produces The Six Portfolios using quintile scoring across rolling 12-month periods — built 25 years ago for retail."
 sitemapPriority: 0.7
 
 # AEO

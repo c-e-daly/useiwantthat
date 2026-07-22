@@ -21,7 +21,7 @@ seo:
   primaryKeyword: "What Is Customer Yield? The Metric Hiding Inside Your CAC."
   secondaryKeywords: []
   metaTitle: "What Is Customer Yield? The Metric Hiding Inside Your CAC."
-  metaDescription: "Customer Yield is the denominator of the CAC formula — the new customers your spend produced. Operators optimize the numerator. The denominator is where the leverage is."
+  metaDescription: "Customer Yield is the denominator of the CAC formula — the new customers your spend produced. Most operators only optimize the numerator."
   robots: "index, follow"
   sitemapPriority: 0.9
   sitemapChangefreq: "monthly"

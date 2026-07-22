@@ -11,7 +11,7 @@ status: published
 
 # SEO
 meta_title: "What is the Stable Portfolio? (Base Customers in CPM)"
-meta_description: "The Stable Portfolio is customers whose quintile rank held steady from P2 to P1. Usually the largest portfolio by count — and the one most operators take for granted."
+meta_description: "The Stable Portfolio is customers whose quintile rank held steady from P2 to P1 — usually the largest portfolio, and the one operators take for granted."
 sitemapPriority: 0.7
 
 # AEO

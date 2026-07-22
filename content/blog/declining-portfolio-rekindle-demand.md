@@ -21,7 +21,7 @@ seo:
   primaryKeyword: "The Declining Portfolio: Spotting Customers Before They Disappear."
   secondaryKeywords: []
   metaTitle: "The Declining Customer Portfolio: When to Fight and When to Let Go"
-  metaDescription: "Declining customers are still active — but many have already left in everything but the data. Here's how to triage by quintile, protect margin, and know when to stop countering."
+  metaDescription: "Declining customers are still active — but many have already left in everything but the data. Here's how to triage by quintile and know when to stop countering."
   robots: "index, follow"
   sitemapPriority: 0.7
   sitemapChangefreq: "monthly"

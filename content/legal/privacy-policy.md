@@ -1,4 +1,4 @@
-# **I Want That! PRIVACY NOTICE**
+## **I Want That! PRIVACY NOTICE**
 
 Last Updated May 5, 2026
 
@@ -245,4 +245,3 @@ International data transfers. We are headquartered in the United States and may 
 English version controls
 
 The information provided in non-English translations of this Privacy Notice are provided for convenience only. In the event of any ambiguity or conflict between translations, the English version is authoritative and controls.
-

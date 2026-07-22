@@ -25,7 +25,7 @@ seo:
     - "opportunity cost retail marketing"
     - "lifetime value acquisition cost"
   metaTitle: "3 Retail Marketing Profit Models Explained"
-  metaDescription: "Retail marketing profit models differ by campaign goal. See why clearance is measured against factoring, not profit, and acquisition against lifetime value, not margin."
+  metaDescription: "Retail marketing profit models differ by campaign goal. Clearance is measured against factoring, not profit; acquisition against lifetime value, not margin."
   robots: "index, follow"
   sitemapPriority: 0.7
   sitemapChangefreq: "monthly"

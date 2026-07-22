@@ -11,7 +11,7 @@ status: published
 
 # SEO
 meta_title: "What are Key Measures? (Core Retail and Ecommerce Metrics)"
-meta_description: "Key Measures are the core metrics of Customer Portfolio Management — Gross Sales, NOR Sales, Net Sales, AOV, AUR, UPT, and the related vocabulary that makes portfolio analysis possible."
+meta_description: "Key Measures are the core metrics of Customer Portfolio Management: Gross Sales, NOR Sales, Net Sales, AOV, AUR, UPT, and the vocabulary of portfolio analysis."
 sitemapPriority: 0.7
 
 # AEO

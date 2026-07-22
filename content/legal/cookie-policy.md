@@ -1,4 +1,4 @@
-# COOKIE POLICY 
+## COOKIE POLICY
 
 ## Last updated May 6, 2026
 
@@ -99,4 +99,3 @@ If you have any questions about our use of cookies or other technologies, please
 
 compliance@useiwantthat.com    
 I Want That!, Inc. 
-

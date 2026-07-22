@@ -10,7 +10,7 @@ status: published
 
 seo:
   meta_title: "Retail Pricing Strategy: The Five Allowances That Defend Margin"
-  meta_description: "Most DTC operators price for margin and lose it. The Five Allowances framework defends the floor (COGS + Profit Markup) and flexes price above it — without breaking margin."
+  meta_description: "Most DTC operators price for margin and lose it. The Five Allowances framework defends the floor (COGS + Profit Markup) and flexes price above it."
   sitemap_priority: 1.0
   sitemap_changefreq: monthly
   canonical_path: /blog/markup-performance

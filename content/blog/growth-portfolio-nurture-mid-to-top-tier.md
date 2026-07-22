@@ -21,7 +21,7 @@ seo:
   primaryKeyword: "The Growth Portfolio: Turning Mid-Tier Buyers Into Top-Tier Spenders."
   secondaryKeywords: []
   metaTitle: "The Growth Customer Portfolio: Tactics to Accelerate Your Best Buyers"
-  metaDescription: "Growth customers are increasing YOY, fully amortized, and profitable. Here's how to extend their brand duration, accelerate spend, and turn them into your acquisition engine."
+  metaDescription: "Growth customers are increasing YOY, fully amortized, and profitable. Here's how to extend brand duration, accelerate spend, and build your acquisition engine."
   robots: "index, follow"
   sitemapPriority: 0.7
   sitemapChangefreq: "monthly"

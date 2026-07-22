@@ -11,7 +11,7 @@ status: published
 
 # SEO
 meta_title: "What is Net Items? (Ecommerce Quantity Definition)"
-meta_description: "Net Items is gross items less returned and cancelled items — the distinct SKUs customers actually kept. The foundational quantity measure of the Key Measures framework."
+meta_description: "Net Items is gross items less returned and cancelled items — the distinct SKUs customers kept, and the foundational quantity measure in Key Measures."
 sitemapPriority: 0.7
 
 # AEO

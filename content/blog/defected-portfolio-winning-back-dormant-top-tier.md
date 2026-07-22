@@ -21,7 +21,7 @@ seo:
   primaryKeyword: "The Defected Portfolio: Knowing When to Win Back and When to Let Go."
   secondaryKeywords: []
   metaTitle: "The Defected Customer Portfolio: When to Win Back and When to Let Go"
-  metaDescription: "Defected customers voted with their absence. Most aren't coming back. Here's how to cherry-pick Q1, use direct mail CGOs, and release the rest with margin discipline."
+  metaDescription: "Defected customers voted with their absence. Most aren't coming back — here's how to cherry-pick Q1, use direct mail CGOs, and release the rest with discipline."
   robots: "index, follow"
   sitemapPriority: 0.7
   sitemapChangefreq: "monthly"

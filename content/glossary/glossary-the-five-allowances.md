@@ -5,7 +5,7 @@ content_type: glossary
 pillar: markup-performance
 ladder_stage: none
 meta_title: "What are The Five Allowances? (Retail Pricing Framework)"
-meta_description: "The Five Allowances — Shrink, Financing, Shipping, Discounts, and Market Adjustment — are the priced-in buffers that let retail price flex without breaking margin."
+meta_description: "The Five Allowances — Shrink, Financing, Shipping, Discounts, and Market Adjustment — are priced-in buffers that let retail price flex without breaking margin."
 tldr: "The Five Allowances are the priced-in buffers that sit above the defended price floor and absorb the operational volatility of running a retail business: Shrink, Financing, Shipping, Discounts, and Market Adjustment. They are the mechanism that lets retail price flex — through promotions, free shipping, competitive moves, and customer-generated offers — without eating Profit Markup."
 faq_schema: true
 schema_type: DefinedTerm

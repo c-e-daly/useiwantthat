@@ -5,7 +5,7 @@ content\_type: glossary
 pillar: customer-yield  
 ladder\_stage: 1  
 meta\_title: "What is Channel-Stage Fit? (Acquisition Channel Diagnostic)"  
-meta\_description: "Channel-Stage Fit is whether your acquisition channel is structurally capable of returning your target yield at your current store stage. A pre-Stage-1 question."  
+meta\_description: "Channel-Stage Fit is whether your acquisition channel can structurally return your target yield at your current store stage — a pre-Stage-1 question."
 tldr: "Channel-Stage Fit is whether an acquisition channel is structurally capable of returning a store's target yield at its current revenue stage. It is the diagnostic question that sits before Stage 1 (Spend) of the Yield Ladder. Most stores under $1M revenue are on the wrong channel mix for their stage, not the wrong budget."  
 faq\_schema: true  
 schema\_type: DefinedTerm  

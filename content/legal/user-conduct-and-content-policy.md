@@ -1,4 +1,4 @@
-# **I Want That! User Conduct and Content Policy**
+## **I Want That! User Conduct and Content Policy**
 
 Last Updated May 5, 2026
 
@@ -64,4 +64,3 @@ The Services may not be used to deceive individuals or impersonate other individ
 ## **Age Limit**
 
 The Services are not intended for use by those under the age of 16 and Customer is responsible for ensuring that all End Users are at least 16 years of age.
-

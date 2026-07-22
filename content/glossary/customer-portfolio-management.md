@@ -11,7 +11,7 @@ status: published
 
 # SEO
 meta_title: "What is Customer Portfolio Management? (CPM Definition for Retail)"
-meta_description: "Customer Portfolio Management classifies every buyer into one of six behavioral states using quintile-based migration. The framework engineered 25 years ago for retail."
+meta_description: "Customer Portfolio Management classifies every buyer into one of six behavioral states using quintile-based migration — engineered 25 years ago for retail."
 sitemapPriority: 0.7
 
 # AEO

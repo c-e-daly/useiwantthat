@@ -22,7 +22,7 @@ seo:
   primaryKeyword: "What Are Customer Generated Offers? The Negotiated Commerce Primer."
   secondaryKeywords: []
   metaTitle: "What Are Customer Generated Offers? The Negotiated Commerce Primer"
-  metaDescription: "Customer Generated Offers are offers a customer initiates to buy from your store. Here's how CGOs work, why they outperform blanket discounts, and how to automate them."
+  metaDescription: "Customer Generated Offers are offers a customer initiates to buy from your store. Here's how CGOs work, why they outperform discounts, and how to automate them."
   robots: "index, follow"
   sitemapPriority: 0.9
   sitemapChangefreq: "monthly"
@@ -174,4 +174,3 @@ The markdown alternative would have moved the same inventory at a lower margin t
 Start building your CGO infrastructure, see how the negotiation space in your current pricing maps to your customer portfolio →
 
 ---
-

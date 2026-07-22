@@ -22,7 +22,7 @@ seo:
   primaryKeyword: "Discounts vs Advertising CAC — The Real Profit Killer"
   secondaryKeywords: []
   metaTitle: "Discounts vs Advertising CAC — The Real Profit Killer | Prophet"
-  metaDescription: "Stop blaming discounts for thin margins. Learn why your advertising CAC is the real profit killer and how to use Customer Generated Offers to reclaim your profit."
+  metaDescription: "Stop blaming discounts for thin margins. Your advertising CAC is the real profit killer — here's how Customer Generated Offers reclaim your profit."
   robots: "index, follow"
   sitemapPriority: 0.6
   sitemapChangefreq: "monthly"
