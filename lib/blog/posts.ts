@@ -33,7 +33,14 @@ function buildCanonicalUrl(slug: string) {
 }
 
 function getFirstHeading(markdown: string) {
-  return markdown.match(/^#\s+(.+)$/m)?.[1]?.trim();
+  return markdown
+    .match(/^#\s+(.+)$/m)?.[1]
+    ?.replace(/\s+\{#[^}]+\}\s*$/, "")
+    .trim();
+}
+
+function removeFirstHeading(markdown: string) {
+  return markdown.replace(/^#\s+.+(?:\r?\n(?:\r?\n)?)?/m, "");
 }
 
 function normalizeSlug(value: string) {
@@ -66,7 +73,7 @@ function isPublishable(frontmatter: Partial<PostFrontmatter> | null) {
 }
 
 function getSummaryTitle(slug: string, markdown: string, frontmatter?: Partial<PostFrontmatter> | null) {
-  return frontmatter?.og?.title || frontmatter?.seo?.metaTitle || getFirstHeading(markdown) || slug;
+  return getFirstHeading(markdown) || frontmatter?.og?.title || frontmatter?.seo?.metaTitle || slug;
 }
 
 function getSummaryExcerpt(frontmatter?: Partial<PostFrontmatter> | null) {
@@ -153,7 +160,7 @@ export const getPublishedPostSummaries = cache(async (limit = 1000): Promise<Blo
 
 async function buildPostDetail(fileName: string, markdown: string, frontmatter: Partial<PostFrontmatter> | null): Promise<BlogPostDetail> {
   const summary = mapSummary(fileName, markdown, frontmatter);
-  const renderedMarkdown = renderMarkdown(markdown);
+  const renderedMarkdown = renderMarkdown(removeFirstHeading(markdown));
 
   return {
     ...summary,

@@ -38,10 +38,6 @@ sibling\_links:
 
 ## 
 
-# WORKER-FILLED — leave blank
-
-sourceDocUrl: scheduledFor: publishedAt:
-
 # What is IMU Pricing? The Markup Method Every Billion-Dollar Brand Uses
 
 ## The definition

@@ -14,7 +14,7 @@
     "googleapis": "^171.4.0",
     "lucide-react": "^1.12.0",
     "next": "16.2.4",
-    "posthog-js": "^1.372.3",
+    "posthog-js": "^1.406.2",
     "react": "19.2.4",
     "react-dom": "19.2.4",
     "react-hot-toast": "^2.6.0"

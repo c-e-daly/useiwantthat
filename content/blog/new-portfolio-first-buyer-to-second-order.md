@@ -1,5 +1,5 @@
 ---
-slug: "new-portfolio-first-buyer-to-second-order"
+slug: "new-customer-second-order-strategies"
 version: 1
 publishedAt: "2026-06-02T00:00:00Z"
 updatedAt: "2026-06-02T00:00:00Z"

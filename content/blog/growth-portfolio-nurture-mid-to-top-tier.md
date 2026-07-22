@@ -1,5 +1,5 @@
 ---
-slug: "growth-portfolio-nurture-mid-to-top-tier"
+slug: "growth-portfolio-profit-mining-strategies"
 version: 1
 publishedAt: "2026-06-02T00:00:00Z"
 updatedAt: "2026-06-02T00:00:00Z"

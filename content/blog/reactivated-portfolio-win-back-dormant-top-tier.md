@@ -1,5 +1,5 @@
 ---
-slug: "reactivated-portfolio-win-back-dormant-top-tier"
+slug: "reactivated-portfolio-ltv-strategies"
 version: 1
 publishedAt: "2026-06-02T00:00:00Z"
 updatedAt: "2026-06-02T00:00:00Z"

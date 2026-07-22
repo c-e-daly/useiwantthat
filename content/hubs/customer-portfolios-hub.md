@@ -74,37 +74,37 @@ Every customer on file occupies exactly one of six portfolios at any given time.
 
 First purchase in P1, no purchase history in P2 or earlier. The newest entrants to the brand. Quintiled within the New population by P1 net sales to identify high-value first-purchasers separately from low-value first-purchasers.
 
-[Read the New Portfolio drill-down →](/blog/new-portfolio-first-buyer-to-second-order)
+[Read the New Portfolio drill-down →](/blog/new-customer-second-order-strategies)
 
 ### Reactivated Portfolio
 
 Purchase in P1 and purchase in P3, 24-36 months ago, but no purchase in P2. Customers who went dark and came back. Quintiled within the Reactivated population by P1 net sales. Often the highest-margin recovery opportunity in the file.
 
-[Read the Reactivated Portfolio drill-down →](/blog/reactivated-portfolio-win-back-dormant-top-tier)
+[Read the Reactivated Portfolio drill-down →](/blog/reactivated-portfolio-ltv-strategies)
 
 ### Growth Portfolio
 
 Purchase in both P1 and P2, with quintile rank improving from P2 to P1, such as Q3 in P2 to Q2 in P1. The portfolio that fuels organic file expansion. These customers are increasing their commitment to the brand and should be invested in accordingly.
 
-[Read the Growth Portfolio drill-down →](/blog/growth-portfolio-nurture-mid-to-top-tier)
+[Read the Growth Portfolio drill-down →](/blog/growth-portfolio-profit-mining-strategies)
 
 ### Stable Portfolio
 
 Purchase in both P1 and P2, with quintile rank unchanged from P2 to P1. The base of the file. Usually the largest portfolio by customer count and the one most operators take for granted. Stability is not free. Stable customers need retention work to stay Stable.
 
-[Read the Stable Portfolio drill-down →](/blog/stable-portfolio-retaining-engaged-top-tier-buyers)
+[Read the Stable Portfolio drill-down →](/blog/stable-portfolio-engagement-strategies)
 
 ### Declining Portfolio
 
 Purchase in both P1 and P2, with quintile rank dropping from P2 to P1, such as Q2 in P2 to Q3 in P1. The warning portfolio. Declining customers are still buying but spending less than they were, and they will defect next year if the movement is not reversed. This is the portfolio negotiated commerce was built to address.
 
-[Read the Declining Portfolio drill-down →](/blog/declining-portfolio-demand-recapture)
+[Read the Declining Portfolio drill-down →](/blog/declining-portfolio-recapture-strategies)
 
 ### Defected Portfolio
 
 Purchase in P2, no purchase in P1. Customers who shopped last year and have not this year. The hardest portfolio to recover, but the one that reveals the most about why customers leave. Quintile rank from the prior period, P2 quintile, is preserved so operators can prioritize defection recovery by historical value.
 
-[Read the Defected Portfolio drill-down →](/blog/defected-portfolio-winning-back-dormant-top-tier)
+[Read the Defected Portfolio drill-down →](/blog/defected-portfolio-win-back-strategies)
 
 The rule of CPM: every customer is in exactly one portfolio at exactly one quintile. The movement between portfolios, and between quintiles within portfolios, is where retail growth lives or dies.
 

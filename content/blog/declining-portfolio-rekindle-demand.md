@@ -1,5 +1,5 @@
 ---
-slug: "declining-portfolio-demand-recapture"
+slug: "declining-portfolio-recapture-strategies"
 version: 1
 publishedAt: "2026-06-02T00:00:00Z"
 updatedAt: "2026-06-02T00:00:00Z"

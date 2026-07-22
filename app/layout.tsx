@@ -22,11 +22,6 @@ const GOOGLE_TAG_ID =
   rawGoogleTagId && /^(G|GT|AW|DC)-[A-Z0-9]+$/i.test(rawGoogleTagId)
     ? rawGoogleTagId
     : undefined;
-const POSTHOG_KEY =
-  process.env.NEXT_PUBLIC_POSTHOG_KEY ?? process.env.POSTHOG_KEY;
-const POSTHOG_HOST =
-  process.env.NEXT_PUBLIC_POSTHOG_HOST ?? process.env.POSTHOG_HOST;
-
 const kaushan = localFont({
   src: "../public/fonts/Kaushan_Script/KaushanScript-Regular.ttf",
   weight: "400",
@@ -63,7 +58,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         and text-neutral-dark (pure black) for maximum contrast.
       */}
       <body className="bg-surface-canvas text-neutral-dark min-h-screen flex flex-col">
-        <PostHogProvider apiKey={POSTHOG_KEY} apiHost={POSTHOG_HOST}>
+        <PostHogProvider>
           <SpeedInsights />
         <MainHeader />
   
