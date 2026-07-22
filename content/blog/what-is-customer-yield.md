@@ -143,4 +143,4 @@ The shift in 2026 isn't replacing CAC with Customer Yield. It's reporting them s
 
 ### Run the math on your own store
 
-The CAC Calculator lets you input your current yield by channel and see what adding CGOs and counter-offers would do to your blended CAC. [**Open the CAC Calculator →**](http:///tools/cac-calculator)
+The CAC Calculator lets you input your current yield by channel and see what adding CGOs and counter-offers would do to your blended CAC. [**Open the CAC Calculator →**](/tools/cac-calculator)

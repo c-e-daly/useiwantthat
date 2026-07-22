@@ -87,7 +87,7 @@ A poor exit intent pushes premium buyers away. With 70% of carts already abandon
 
 *The math is worse than most operators realize. If you want to see what a poor exit intent is actually costing your store, the CAC Calculator below runs the numbers on your traffic.*
 
-[**Run the CAC Calculator →**](https://useiwantthat.com/cac-calculator)
+[**Run the CAC Calculator →**](/tools/cac-calculator)
 
 ## **Five ways to fix your exit intent to generate sales, not emails**
 

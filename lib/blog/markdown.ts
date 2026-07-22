@@ -1,3 +1,5 @@
+import { resolveInternalLink } from "@/lib/blog/links";
+
 const ENTITY_MAP: Record<string, string> = {
   "&": "&amp;",
   "<": "&lt;",
@@ -23,7 +25,7 @@ function renderInlineMarkdown(line: string): string {
   html = html.replace(/\*\*([^*]+)\*\*/g, "<strong>$1</strong>");
   html = html.replace(/\*([^*]+)\*/g, "<em>$1</em>");
   html = html.replace(/\[([^\]]+)\]\(([^)\s]+)\)/g, (_match, text: string, href: string) => {
-    const safeHref = escapeHtml(href);
+    const safeHref = escapeHtml(resolveInternalLink(href));
     const target = /^https?:\/\//i.test(href) ? ' target="_blank" rel="noopener noreferrer"' : "";
     return `<a href="${safeHref}"${target}>${text}</a>`;
   });

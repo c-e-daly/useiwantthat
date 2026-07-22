@@ -27,16 +27,16 @@ export function Footer() {
             <Link href="/blog" className="hover:text-indigo-600 transition duration-150">
               Blog
             </Link>
-            <Link href="/privacy-policy" className="hover:text-indigo-600 transition duration-150">
+            <Link href="https://useiwantthat.com/privacy-policy" className="hover:text-indigo-600 transition duration-150">
               Privacy Policy
             </Link>
-            <Link href="/terms-of-service" className="hover:text-indigo-600 transition duration-150">
+            <Link href="https://useiwantthat.com/terms-of-service" className="hover:text-indigo-600 transition duration-150">
               Terms of Service
             </Link>
-            <Link href="/cookie-policy" className="hover:text-indigo-600 transition duration-150">
+            <Link href="https://useiwantthat.com/cookie-policy" className="hover:text-indigo-600 transition duration-150">
               Cookie Policy
             </Link>
-            <Link href="/legal" className="hover:text-indigo-600 transition duration-150">
+            <Link href="https://useiwantthat.com/legal" className="hover:text-indigo-600 transition duration-150">
               Legal Center
             </Link>
           </div>

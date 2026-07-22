@@ -3,6 +3,7 @@ import path from "node:path";
 import { cache } from "react";
 import { parseMarkdownWithFrontmatter } from "@/lib/blog/frontmatter";
 import { renderMarkdown } from "@/lib/blog/markdown";
+import { resolveInternalLink } from "@/lib/blog/links";
 import { getSiteUrl } from "@/lib/site/url";
 
 const GLOSSARY_DIR = path.join(process.cwd(), "content", "glossary");
@@ -210,7 +211,7 @@ function mapGlossaryTerm(fileName: string, rawMarkdown: string): GlossaryTerm | 
     metaTitle: fm.meta_title ?? title,
     metaDescription: fm.meta_description ?? fm.tldr ?? "",
     tldr: fm.tldr ?? "",
-    hubLink: fm.hub_link ?? null,
+    hubLink: fm.hub_link ? resolveInternalLink(fm.hub_link) : null,
     relatedGlossaryTerms: parseList(fm.related_glossary_terms),
     relatedTool: fm.related_tool && fm.related_tool !== "none" ? fm.related_tool : null,
     ogImage: fm.og_image ?? null,

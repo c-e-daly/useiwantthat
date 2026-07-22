@@ -9,6 +9,42 @@ export type ExternalLinkValidation = MarkdownLink & {
   error?: string;
 };
 
+export const LEGACY_INTERNAL_LINKS: Readonly<Record<string, string>> = {
+  "/blog/category/customer-portfolios": "/blog/customer-portfolios",
+  "/blog/category/markup-performance": "/blog/markup-performance",
+  "/blog/category/customer-yield": "/blog/customer-yield",
+  "/blog/sku-level-offer-data": "/blog/what-are-customer-generated-offers",
+  "/blog/playbooks/second-order-campaign": "/blog/new-customer-second-order-strategies",
+  "/blog/markup-vs-margin-reframe": "/blog/imu-pricing-fundamentals",
+  "/blog/free-shipping-markup-spent": "/blog/price-builder-framework-allowances",
+  "/blog/quintile-vs-rfm": "/blog/customer-portfolios",
+  "/blog/exit-intent-cost": "/blog/exit-intent-losing-money",
+  "/blog/category-indexing-by-portfolio": "/blog/customer-portfolios",
+  "/blog/defected-recapture-quintile": "/blog/defected-portfolio-win-back-strategies",
+  "/glossary/discount-allowance": "/glossary/the-five-allowances",
+  "/blog/shopify-metrics-deep-dive": "/blog/customer-portfolios",
+  "/blog/dtc-shrink-benchmark": "/blog/markup-performance",
+  "/blog/reactivated-no-discount": "/blog/reactivated-portfolio-ltv-strategies",
+  "/blog/inventory-carrying-cost": "/blog/selling-aged-inventory-customer-generated-offers",
+  "/blog/playbooks/cac-playbook": "/playbooks/cac-playbook",
+  "/blog/margin-targets-fail": "/blog/imu-pricing-fundamentals",
+  "/blog/cac-is-a-yield-problem": "/blog/what-is-customer-yield",
+  "/blog/declining-portfolio-cgo": "/blog/declining-portfolio-recapture-strategies",
+  "/blog/new-portfolio-second-order": "/blog/new-customer-second-order-strategies",
+  "/blog/decision-frameworks/channel-stage-fit": "/blog/customer-yield",
+  "/blog/what-captured-means": "/blog/exit-intent-losing-money",
+  "/blog/cohorts-vs-portfolios": "/blog/customer-portfolios",
+  "/blog/stable-erosion": "/blog/stable-portfolio-engagement-strategies",
+  "/blog/hold-price-vs-negotiate": "/blog/negotiation-is-the-norm-not-the-exception",
+  "/blog/growth-no-discount": "/blog/growth-portfolio-profit-mining-strategies",
+  "/blog/profit-markup-three-layers": "/blog/markup-performance",
+  "/blog/28-to-38-move": "/blog/what-is-customer-yield",
+};
+
+export function resolveInternalLink(href: string) {
+  return LEGACY_INTERNAL_LINKS[href] ?? href;
+}
+
 const MARKDOWN_LINK_PATTERN = /\[([^\]]+)\]\(([^)\s]+)\)/g;
 
 export function extractMarkdownLinks(markdown: string): MarkdownLink[] {

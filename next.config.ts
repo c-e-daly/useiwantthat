@@ -1,4 +1,5 @@
 import type { NextConfig } from "next";
+import { LEGACY_INTERNAL_LINKS } from "./lib/blog/links";
 
 const siteHost = process.env.NEXT_PUBLIC_SITE_URL
   ? new URL(process.env.NEXT_PUBLIC_SITE_URL).hostname
@@ -27,6 +28,24 @@ const nextConfig: NextConfig = {
   },
   async redirects() {
     return [
+      ...Object.entries(LEGACY_INTERNAL_LINKS).map(([source, destination]) => ({
+        source,
+        destination,
+        permanent: true,
+      })),
+      {
+        source: "/cac-calculator",
+        destination: "/tools/cac-calculator",
+        permanent: true,
+      },
+      ...["/cookie-policy", "/legal", "/privacy-policy", "/terms-of-service"].map(
+        (source) => ({
+          source,
+          has: [{ type: "host" as const, value: "app.useiwantthat.com" }],
+          destination: `https://useiwantthat.com${source}`,
+          permanent: true,
+        })
+      ),
       {
         source: "/blog/defected-portfolio-winning-back-dormant-top-tier",
         destination: "/blog/defected-portfolio-win-back-strategies",
