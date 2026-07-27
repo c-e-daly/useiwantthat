@@ -138,20 +138,16 @@ const features = [
   },
 ];
 
-export default function AbTestHomePage() {
+export default function HomePage() {
   return (
     <div className="min-h-screen bg-white">
       <section className="relative overflow-hidden border-b border-surface-border pt-20 pb-16 md:pt-32 md:pb-24">
         <div className="absolute inset-0 bg-cgo-fibonacci opacity-10 pointer-events-none" />
 
         <div className="container relative mx-auto px-4 text-center">
-          <div className="mb-6 inline-flex items-center gap-2 rounded-full bg-brand/10 px-3 py-1 text-xs font-bold uppercase tracking-widest text-brand">
-            <span className="relative flex h-2 w-2">
-              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-brand opacity-75" />
-              <span className="relative inline-flex h-2 w-2 rounded-full bg-brand" />
-            </span>
-            Customer Generated Offers - now on Shopify
-          </div>
+          <p className="mb-6 text-xs font-bold uppercase tracking-[0.22em] text-brand">
+            Negotiated commerce for Shopify
+          </p>
 
           <h1 className="mx-auto max-w-5xl text-5xl font-bold leading-[1.05] tracking-tighter text-black md:text-7xl">
             Stop guessing what they&apos;ll pay.
@@ -160,9 +156,10 @@ export default function AbTestHomePage() {
           </h1>
 
           <p className="mx-auto mt-8 max-w-3xl text-lg leading-relaxed text-neutral-muted md:text-xl">
-            Every visitor who leaves is a customer who almost bought. Customer
-            Generated Offers turn that exit into a conversation and that
-            conversation into cash.
+            Selling has never been a one-way street. I Want That! is the
+            negotiation layer your store has been missing — where customers
+            and AI agents make offers, your floors stay protected, and margin
+            doesn&apos;t have to die for cash to move.
           </p>
 
           <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
@@ -287,15 +284,57 @@ export default function AbTestHomePage() {
         </div>
       </section>
 
+      <section className="border-b border-surface-border bg-surface-subtle py-24">
+        <div className="container mx-auto grid gap-12 px-4 lg:grid-cols-[0.8fr_1.2fr] lg:gap-20">
+          <div>
+            <p className="text-xs font-bold uppercase tracking-widest text-brand">
+              Our point of view
+            </p>
+            <h2 className="mt-4 text-4xl font-bold tracking-tight text-black md:text-5xl">
+              A different way to think about commerce
+            </h2>
+          </div>
+
+          <div className="space-y-6 text-lg leading-relaxed text-neutral-muted">
+            <p>
+              Modern Shopify wisdom says you optimize: better ads, more
+              discounts, smarter funnels. We think modern Shopify wisdom is
+              wrong.
+            </p>
+            <p>
+              The list price is an opening position. Discounts are a tax you
+              pay because you don&apos;t know what each customer would have
+              paid. CAC is the symptom of a yield problem you can solve on your
+              own site.
+            </p>
+            <p>
+              Negotiated commerce is the alternative. Set your floor. Let
+              customers and agents make offers. Accept the ones that beat your
+              floor. Counter the ones that don&apos;t. Stop training your best
+              customers to wait for sales, and start having actual
+              conversations about price.
+            </p>
+            <p className="font-semibold text-black">
+              This is what 25 years of retail taught us, rebuilt for Shopify
+              and AI agents.
+            </p>
+          </div>
+        </div>
+      </section>
+
       <section className="bg-black py-24 text-white">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl">
             <p className="text-xs font-bold uppercase tracking-widest text-brand">
-              Why now
+              Why negotiation
             </p>
             <h2 className="mt-4 text-4xl font-bold tracking-tight md:text-5xl">
-              Three reasons shops like yours install I Want That! this week
+              Why negotiation works where discounting fails
             </h2>
+            <p className="mt-5 text-lg leading-relaxed text-white/70">
+              Three problems modern Shopify operators face. One root cause:
+              pricing is a monologue when it should be a dialogue.
+            </p>
           </div>
 
           <div className="mt-12 grid gap-6 md:grid-cols-3">
