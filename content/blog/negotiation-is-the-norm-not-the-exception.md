@@ -1,7 +1,7 @@
 ---
 slug: "negotiation-is-the-norm-not-the-exception"
 version: 1
-publishedAt: "2026-07-30T00:00:00Z"
+publishedAt: "2026-07-29T00:00:00Z"
 updatedAt: "2026-07-22T00:00:00Z"
 published: true
 template: "problem-fix"

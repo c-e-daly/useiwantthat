@@ -38,7 +38,7 @@ Google Analytics View Service Privacy Policy \< https://policies.google.com/priv
 
 Name:   
 \_gat   
-Used to monitor number of Google Analytics server requests when using Google Tag Manager [useiwantthat.com](http://useiwantthat.com)   
+Used to monitor number of Google Analytics server requests when using Google Tag Manager [useiwantthat.com](https://useiwantthat.com)
 Google Analytics View Service Privacy Policy \< https://policies.google.com/privacy\> United States 
 
 Name:   

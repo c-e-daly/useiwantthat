@@ -6,6 +6,9 @@ export const metadata: Metadata = {
   title: "Legal | I Want That!",
   description:
     "Legal center for I Want That!, including privacy, cookies, terms, subprocessors, and data handling policies.",
+  alternates: {
+    canonical: "/legal",
+  },
 };
 
 export default function LegalHubPage() {

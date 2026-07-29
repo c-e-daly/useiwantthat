@@ -80,7 +80,7 @@ A: Discounts are usually operator-initiated promotions. Market adjustments are r
 ## Read next
 
 - **The pillar:** [Markup Performance: The Five Allowances of Retail Pricing](/blog/category/markup-performance)
-- **The decision framework:** [When to Hold Price and When to Negotiate](/blog/hold-price-vs-negotiate)
+- **The decision framework:** [When to Hold Price and When to Negotiate](/blog/negotiation-is-the-norm-not-the-exception)
 - **Run your numbers:** [Price Builder](/tools/price-builder)
 
 ---

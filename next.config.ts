@@ -38,6 +38,11 @@ const nextConfig: NextConfig = {
         destination: "/tools/cac-calculator",
         permanent: true,
       },
+      {
+        source: "/policies/legal",
+        destination: "/legal",
+        permanent: true,
+      },
       ...["/cookie-policy", "/legal", "/privacy-policy", "/terms-of-service"].map(
         (source) => ({
           source,
