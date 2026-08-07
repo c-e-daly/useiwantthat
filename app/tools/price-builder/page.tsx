@@ -7,9 +7,9 @@ const SHOPIFY_APP_URL = "https://apps.shopify.com/iwtapp-shop";
 const DEMO_URL = "https://meetings.hubspot.com/chris-e-daly/customer-demo";
 
 export const metadata = buildPageMetadata({
-  title: "Price Builder | Protect SKU Profitability",
+  title: "Price Builder | IMU Price Calculator",
   description:
-    "Model COGS, profit markup, and dollar-based unit allowances so Shopify merchants can unlock price elasticity while protecting gross profit.",
+    "Model COGS, profit markup, and dollar-based unit allowances in IMU Pricing so Shopify merchants can unlock price elasticity while protecting gross profit.",
   path: "/tools/price-builder",
   image: "/images/og/price-builder-og.png",
   twitterTitle: "Price Builder - Protect Profit at the SKU Level",
