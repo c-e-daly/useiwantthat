@@ -54,6 +54,43 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <link rel="icon" href="/favicon.ico" sizes="any" />
       </head>
 
+      {GOOGLE_TAG_ID && (
+        <Script id="google-consent-mode" strategy="beforeInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+
+            gtag('consent', 'default', {
+              ad_storage: 'denied',
+              ad_user_data: 'denied',
+              ad_personalization: 'denied',
+              analytics_storage: 'denied'
+            });
+
+            window._hsp = window._hsp || [];
+            window._hsp.push([
+              'addPrivacyConsentListener',
+              function (consent) {
+                var categories = consent && consent.categories;
+                var analyticsGranted = categories
+                  ? categories.analytics === true
+                  : consent && consent.allowed === true;
+                var advertisingGranted = categories
+                  ? categories.advertisement === true
+                  : consent && consent.allowed === true;
+
+                gtag('consent', 'update', {
+                  analytics_storage: analyticsGranted ? 'granted' : 'denied',
+                  ad_storage: advertisingGranted ? 'granted' : 'denied',
+                  ad_user_data: advertisingGranted ? 'granted' : 'denied',
+                  ad_personalization: advertisingGranted ? 'granted' : 'denied'
+                });
+              }
+            ]);
+          `}
+        </Script>
+      )}
+
       {/* Use bg-surface-canvas (pure white) 
         and text-neutral-dark (pure black) for maximum contrast.
       */}
@@ -91,8 +128,6 @@ export default function RootLayout({ children }: { children: ReactNode }) {
             />
             <Script id="ga-init" strategy="afterInteractive">
               {`
-                window.dataLayer = window.dataLayer || [];
-                function gtag(){dataLayer.push(arguments);}
                 gtag('js', new Date());
                 gtag('config', '${GOOGLE_TAG_ID}', { page_path: window.location.pathname });
               `}
