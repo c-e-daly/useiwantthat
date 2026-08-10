@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { CookieSettingsButton } from './CookieSettingsButton';
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
@@ -36,6 +37,7 @@ export function Footer() {
             <Link href="https://useiwantthat.com/cookie-policy" className="hover:text-indigo-600 transition duration-150">
               Cookie Policy
             </Link>
+            <CookieSettingsButton />
             <Link href="https://useiwantthat.com/legal" className="hover:text-indigo-600 transition duration-150">
               Legal Center
             </Link>
