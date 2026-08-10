@@ -238,6 +238,42 @@
     @apply mt-2;
   }
 
+  .blog-article-body .vector-card-rich {
+    @apply overflow-hidden p-0;
+  }
+
+  .blog-article-body .vector-card-image {
+    @apply block overflow-hidden border-b border-slate-200 bg-slate-50;
+  }
+
+  .blog-article-body .vector-card-image img {
+    @apply m-0 aspect-[1200/630] w-full rounded-none border-0 object-cover transition duration-200;
+  }
+
+  .blog-article-body a.vector-card-image:hover img {
+    @apply scale-[1.015];
+  }
+
+  .blog-article-body .vector-card-content {
+    @apply p-5;
+  }
+
+  .blog-article-body .vector-card-content h3 a {
+    @apply text-slate-900 hover:text-[#0442bf];
+  }
+
+  .blog-article-body .vector-card-links {
+    @apply mt-5 flex flex-col items-start gap-2 border-t border-slate-100 pt-4;
+  }
+
+  .blog-article-body .vector-card-primary-link {
+    @apply font-semibold text-[#0442bf] hover:text-[#032f89];
+  }
+
+  .blog-article-body .vector-card-reference-link {
+    @apply text-sm font-medium text-slate-600 hover:text-[#0442bf];
+  }
+
   .blog-article-body .vector-faq {
     @apply mt-8 divide-y divide-slate-200 rounded-lg border border-slate-200 bg-white;
   }

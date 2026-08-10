@@ -25,7 +25,6 @@ aeo:
   faq_schema: true
 
 relationships:
-  related_tool: cac-calculator
   related_playbook: /playbooks/cac-playbook
   sibling_hubs:
     - /blog/markup-performance
@@ -73,75 +72,100 @@ The Yield Ladder is five stages. Read top to bottom. Diagnose the lowest stage t
 
 ---
 
-### **Run your numbers**
-
-**Before you read another article in this pillar, run your own ladder.** The CAC calculator takes four inputs — monthly spend, sessions, conversion rate, repeat rate — and tells you which stage is your bottleneck.
-
-`[EMBED: cac-calculator]`
-
-If the calculator says your bottleneck is at Capture, start with the cluster posts under "Capture." If it says Repeat, jump to that section. Don't read top-to-bottom — read to your stage.
-
----
-
 ### **Start here — by reader state**
 
-Three entry points. Pick the one that matches where you are.
+Choose the resource that matches where you are in your Customer Yield journey.
 
-**"I just heard the term 'customer yield' and want the argument."** → Start with *Your CAC Isn't a Marketing Problem. It's a Math Problem.* (the reframing essay)
-
-**"I'm mid-evaluation — CAC is climbing and I need to diagnose."** → Run the CAC calculator above, then read the cluster post for your lowest broken stage.
-
-**"I'm ready to install a fix."** → Jump to the CAC Playbook — tactical, 5 steps, screenshots.
-
----
-
-### **The Subtopics**
-
-*Manually curated. The authoritative links to cluster posts. Updated 1–2x per quarter.*
-
-**Vertical benchmarks — start here**
-
-* 📊 **Ecommerce CAC by Vertical: The 2026 Benchmark Report** — Find your vertical's CAC and conversion rate, with the Yield Ladder stage that maps to it. *(Data Story — your highest-leverage backlink asset)*
-
-**Stage 1 — Spend**
-
-* Channel-Stage Fit: When Meta Stops Working and What Replaces It *(Decision Framework)*  
-* The Real Cost of Adding a Third Acquisition Channel *(Problem-Cost-Fix)*
-
-**Stage 2 — Capture**
-
-* Exit Intent Is Costing You 3x Your Email List Value *(Problem-Cost-Fix)*  
-* What "Captured" Actually Means: A Definition for Ecommerce Operators *(Definitional Explainer)*
-
-**Stage 3 — Convert**
-
-* Convert Rate Without Discount Discipline Is a Vanity Metric *(Problem-Cost-Fix)*  
-* First-Order Discount vs. Counter-Offer vs. Hold: A Decision Tree *(Decision Framework)*
-
-**Stage 4 — Repeat**
-
-* The 28-to-38 Move: How a 10-Point Repeat Rate Gain Halves CAC *(Data Story)*  
-* How to Run a Second-Order Campaign in Prophet *(Tactical Playbook)*
-
-**Stage 5 — Portfolio** *(handoff to Customer Portfolios pillar)*
-
-* The Six Behaviors Your Discount Strategy Is Selecting For *(bridge post)*
+:::cards
+- title: Learn About Customer Yield
+  image: /blog-assets/og/customer-yield-hub-og.png
+  alt: Customer Yield, the metric hiding inside customer acquisition cost
+  href: /blog/what-is-customer-yield
+  label: Read the Customer Yield article
+  body: Understand the denominator inside CAC and why producing more customers from the traffic you already have is the durable path to acquisition efficiency.
+- title: Check Out Our Customer Yield Playbook
+  image: /images/og/cac-playbook-og.png
+  alt: Customer Yield playbook for reducing customer acquisition cost
+  href: /playbooks/cac-playbook
+  label: Open the Customer Yield Playbook
+  body: Move from diagnosis to action with a practical plan for improving acquisition economics and converting more of your existing traffic.
+:::
 
 ---
 
-### **Latest from this Pillar**
+### **Suggested content for your DTC journey**
 
-*Auto-populated from CMS, last 4–6 posts in category.*
+Explore the operating topics that connect acquisition spend to profitable, repeatable growth. Each resource includes a glossary frame of reference for the core idea.
+
+:::cards
+- title: Channel Assessment
+  image: /blog-assets/og/stop-paying-platform-tax-use-customer-generated-offers-og.png
+  alt: Stop paying platform taxes and convert the traffic you already have
+  href: /blog/stop-paying-platform-taxes-use-customer-generated-offers
+  label: Explore Channel Assessment
+  reference_href: /glossary/channel-stage-fit
+  reference_label: Frame of reference — Channel-Stage Fit
+  body: Assess whether your acquisition channels can produce the return your store needs before committing more budget.
+- title: Customer Capture
+  image: /blog-assets/og/why-your-exit-intent-loses-you-money-og.png
+  alt: Why conventional exit intent tactics lose potential customers
+  href: /blog/exit-intent-losing-money
+  label: Explore Customer Capture
+  reference_href: /glossary/capture-rate
+  reference_label: Frame of reference — Capture Rate
+  body: Replace low-intent list building with signals and experiences that retain the right visitors and create a path to purchase.
+- title: Customer Yield
+  image: /blog-assets/og/customer-yield-hub-og.png
+  alt: Customer Yield, the metric hiding inside customer acquisition cost
+  href: /blog/what-is-customer-yield
+  label: Explore Customer Yield
+  reference_href: /glossary/customer-yield
+  reference_label: Frame of reference — Customer Yield
+  body: Learn how to acquire more customers from the same spend by improving the productive side of the CAC equation.
+- title: Repeat Buyers
+  image: /blog-assets/og/new-portfolio-first-buyer-to-second-order-og.png
+  alt: Moving a first-time buyer toward a second order
+  href: /blog/new-customer-second-order-strategies
+  label: Explore Repeat Buyers
+  reference_href: /glossary/repeat-rate
+  reference_label: Frame of reference — Repeat Rate
+  body: Build the second-order path that turns first-time acquisition into a durable customer relationship and improves effective CAC.
+- title: Strategic Customer Portfolio Management
+  image: /blog-assets/og/six-customer-portfolios-of-every-shopify-shop.png
+  alt: The six strategic customer portfolios found in a Shopify store
+  href: /blog/customer-portfolios
+  label: Explore Customer Portfolio Management
+  reference_href: /glossary/the-six-portfolios
+  reference_label: Frame of reference — The Six Portfolios
+  body: Manage customers by behavior and value so acquisition, retention, and promotional investment support profitable growth.
+:::
 
 ---
 
-### **If your real problem is somewhere else**
+### **Looking at Scaling?**
 
-Cross-hub bridges.
+Check out additional content to help you drive profitable growth.
 
-* **If margin is the issue, not acquisition** → start at Markup Performance.  
-* **If you're trying to figure out which customers to invest in** → start at Customer Portfolios.  
-* **If you want the worldview behind all of this** → start at Negotiated Commerce.
+:::cards
+- title: Markup Performance
+  image: /blog-assets/og/markup-performance-og.png
+  alt: Markup Performance and the five key allowances of retail pricing
+  href: /blog/markup-performance
+  label: Explore Markup Performance
+  body: Build a defended price floor and fund the five allowances that let your retail price flex without silently giving away profit.
+- title: Customer Portfolio Management
+  image: /blog-assets/og/six-customer-portfolios-of-every-shopify-shop.png
+  alt: Strategic customer portfolio management for DTC growth
+  href: /blog/customer-portfolios
+  label: Explore Customer Portfolios
+  body: Identify which customers to acquire, retain, grow, reactivate, or win back based on observed purchase behavior and value.
+- title: Negotiated Commerce
+  image: /blog-assets/og/negotiation-is-the-norm-not-the-exception-og.png
+  alt: Negotiated Commerce as the foundation for modern retail pricing
+  href: /blog/negotiated-commerce
+  label: Explore Negotiated Commerce
+  body: Learn the operating model behind customer-generated offers, margin-safe price flexibility, and commerce built around mutual value.
+:::
 
 ---
 
@@ -162,9 +186,5 @@ Cross-hub bridges.
 **Do I need to fix all five stages?** No. Run the calculator, find your lowest broken stage, read those cluster posts. The point of the ladder is to give you one diagnosis, not five projects.
 
 **How often should I re-run my yield diagnosis?** Quarterly, and any time CAC moves more than 15% in a month. The ladder is a system, and systems drift.
-
----
-
-**Run your Yield Ladder in 90 seconds.** The CAC calculator gives you your bottleneck stage and a starting playbook. [Run the calculator →](/tools/cac-calculator)
 
 ---

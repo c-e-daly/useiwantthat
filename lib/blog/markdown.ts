@@ -338,7 +338,32 @@ function renderCards(content: string[], counts: HeadingIdCounts) {
   return `<div class="vector-card-grid">${items
     .map((item) => {
       const href = safeUrl(item.href);
+      const image = safeUrl(item.image || item.src);
+      const imageAlt = escapeHtml(item.alt || item.title || "");
       const body = item.body || item.text || item.description || "";
+      const label = item.label || "Explore this resource";
+      const referenceHref = safeUrl(item.reference_href || item.referenceHref);
+      const referenceLabel = item.reference_label || item.referenceLabel || "View the frame of reference";
+
+      if (image || referenceHref) {
+        return [
+          `<article class="vector-card vector-card-rich">`,
+          image
+            ? href
+              ? `<a class="vector-card-image" href="${href}" aria-label="${escapeHtml(label)}"><img src="${image}" alt="${imageAlt}" loading="lazy" decoding="async" /></a>`
+              : `<div class="vector-card-image"><img src="${image}" alt="${imageAlt}" loading="lazy" decoding="async" /></div>`
+            : "",
+          `<div class="vector-card-content">`,
+          item.title ? (href ? `<h3><a href="${href}">${renderInlineMarkdown(item.title)}</a></h3>` : `<h3>${renderInlineMarkdown(item.title)}</h3>`) : "",
+          body ? `<div>${renderMarkdown(body, counts).html}</div>` : "",
+          `<div class="vector-card-links">`,
+          href ? `<a class="vector-card-primary-link" href="${href}">${renderInlineMarkdown(label)} <span aria-hidden="true">→</span></a>` : "",
+          referenceHref ? `<a class="vector-card-reference-link" href="${referenceHref}">${renderInlineMarkdown(referenceLabel)} <span aria-hidden="true">→</span></a>` : "",
+          `</div>`,
+          `</div>`,
+          `</article>`,
+        ].join("\n");
+      }
 
       return [
         href ? `<a class="vector-card" href="${href}">` : `<article class="vector-card">`,
