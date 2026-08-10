@@ -72,9 +72,11 @@ The Yield Ladder is five stages. Read top to bottom. Diagnose the lowest stage t
 
 ---
 
-### **Start here — by reader state**
+### **Not Sure Where to Start? A Primer on Driving Customer Yield**
 
-Choose the resource that matches where you are in your Customer Yield journey.
+You've heard about conversion rate optimization forever. But the equation for CAC is Advertising Expense divided by New Customers. If you want to lower CAC, you can find a way to reduce your ad expense (good luck), or you can increase customer yield with customer generated offers — and not just for ad traffic.
+
+Customer generated offers are architected to deliver insights into your audience: price points for identified customers, inventory you could have sold but opted not to at the time and that is now sitting in clearance, and the opportunity cost of those decisions. It's a powerful tool suite built by retailers, for retailers. Get started here.
 
 :::cards
 - title: Learn About Customer Yield
