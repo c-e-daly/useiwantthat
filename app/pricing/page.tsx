@@ -34,6 +34,7 @@ const plans = [
     cta: "Start on Shopify",
     href: SHOPIFY_APP_URL,
     external: true,
+    disabled: false,
   },
   {
     name: "Pro",
@@ -44,6 +45,7 @@ const plans = [
     cta: "Start on Shopify",
     href: SHOPIFY_APP_URL,
     external: true,
+    disabled: false,
   },
   {
     name: "Scale",
@@ -55,9 +57,10 @@ const plans = [
     href: DEMO_URL,
     external: true,
     highlighted: true,
+    disabled: false,
   },
   {
-    name: "Agentic",
+    name: "Agentic Commerce",
     price: "$500",
     annual: "$5,000 annually",
     period: "For unlimited agentic offer intelligence.",
@@ -65,6 +68,7 @@ const plans = [
     cta: "Book a demo",
     href: DEMO_URL,
     external: true,
+    disabled: true,
   },
 ];
 
@@ -193,14 +197,23 @@ export default function PricingPage() {
             {plans.map((plan) => (
               <article
                 key={plan.name}
-                className={`rounded-askrami border bg-white p-6 shadow-sm ${
+                className={`relative overflow-hidden rounded-askrami border bg-white p-6 shadow-sm ${
                   plan.highlighted
                     ? "border-brand shadow-card"
                     : "border-surface-border"
                 }`}
               >
+                {plan.disabled ? (
+                  <div className="absolute inset-x-0 top-0 bg-[#0442bf] px-4 py-2 text-center text-xs font-bold uppercase tracking-widest text-[#f2f2f2]">
+                    Coming 2027
+                  </div>
+                ) : null}
                 <div className="flex items-center justify-between gap-3">
-                  <h2 className="text-2xl font-bold tracking-tight text-black">
+                  <h2
+                    className={`text-2xl font-bold tracking-tight text-black ${
+                      plan.disabled ? "mt-7" : ""
+                    }`}
+                  >
                     {plan.name}
                   </h2>
                   {plan.highlighted ? (
@@ -230,19 +243,29 @@ export default function PricingPage() {
                 <p className="mt-5 rounded-askrami bg-surface-subtle px-4 py-3 text-sm font-semibold text-slate-800">
                   {plan.offerLimit}
                 </p>
-                <Link
-                  href={plan.href}
-                  target={plan.external ? "_blank" : undefined}
-                  rel={plan.external ? "noopener noreferrer" : undefined}
-                  className={`mt-6 inline-flex w-full items-center justify-center gap-2 rounded-askrami px-5 py-3 text-sm font-semibold transition ${
-                    plan.highlighted
-                      ? "bg-brand text-white hover:bg-brand-deep"
-                      : "border border-surface-border bg-white text-black hover:bg-surface-subtle"
-                  }`}
-                >
-                  {plan.cta}
-                  <ArrowRight className="h-4 w-4" />
-                </Link>
+                {plan.disabled ? (
+                  <button
+                    type="button"
+                    disabled
+                    className="mt-6 inline-flex w-full cursor-not-allowed items-center justify-center rounded-askrami border border-surface-border bg-slate-100 px-5 py-3 text-sm font-semibold text-slate-400"
+                  >
+                    {plan.cta}
+                  </button>
+                ) : (
+                  <Link
+                    href={plan.href}
+                    target={plan.external ? "_blank" : undefined}
+                    rel={plan.external ? "noopener noreferrer" : undefined}
+                    className={`mt-6 inline-flex w-full items-center justify-center gap-2 rounded-askrami px-5 py-3 text-sm font-semibold transition ${
+                      plan.highlighted
+                        ? "bg-brand text-white hover:bg-brand-deep"
+                        : "border border-surface-border bg-white text-black hover:bg-surface-subtle"
+                    }`}
+                  >
+                    {plan.cta}
+                    <ArrowRight className="h-4 w-4" />
+                  </Link>
+                )}
               </article>
             ))}
           </div>
