@@ -16,7 +16,6 @@ import {
 import { playbooks } from "@/lib/playbooks";
 import { buildPageMetadata } from "@/lib/seo/metadata";
 
-const SHOPIFY_APP_URL = "https://apps.shopify.com/iwtapp-shop";
 const DEMO_URL = "https://meetings.hubspot.com/chris-e-daly/customer-demo";
 const CAC_CALCULATOR_URL = "/tools/cac-calculator";
 
@@ -134,9 +133,9 @@ const ctaLinks = [
     external: true,
   },
   {
-    href: SHOPIFY_APP_URL,
-    label: "Install on Shopify",
-    description: "Start a 30-day free trial from the Shopify App Store.",
+    href: "/get-started",
+    label: "Get Started",
+    description: "Choose WooCommerce or Shopify and start your setup.",
     external: true,
   },
   {
@@ -186,12 +185,10 @@ export default function VectorPage() {
                 <ArrowRight className="h-4 w-4" />
               </Link>
               <Link
-                href={SHOPIFY_APP_URL}
-                target="_blank"
-                rel="noopener noreferrer"
+                href="/get-started"
                 className="inline-flex items-center justify-center rounded-askrami border border-surface-border bg-white px-8 py-4 text-base font-semibold text-black transition hover:bg-surface-subtle"
               >
-                Install on Shopify
+                Get Started
               </Link>
               <Link
                 href={CAC_CALCULATOR_URL}

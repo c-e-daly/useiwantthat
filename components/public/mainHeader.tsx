@@ -8,7 +8,6 @@ import { ChevronDown, Menu, X } from 'lucide-react';
 const subscribe = () => () => {};
 const getServerSnapshot = () => false;
 const getHostnameSnapshot = () => window.location.hostname.startsWith('app.');
-const SHOPIFY_APP_URL = 'https://apps.shopify.com/iwtapp-shop';
 const MENU_CLOSE_DELAY_MS = 1500;
 
 const productsNavItems = [
@@ -222,10 +221,10 @@ export function MainHeader() {
           {renderDropdown('playbooks', 'PLAYBOOKS', playbookNavItems, playbooksMenuRef, 'w-80')}
           {renderDropdown('tools', 'TOOLS', toolsNavItems, toolsMenuRef)}
           <Link
-            href="/pricing"
+            href="/platforms"
             className="text-gray-900 transition duration-150 hover:text-indigo-600 focus:outline-none focus-visible:text-indigo-600"
           >
-            PRICING
+            PLATFORMS
           </Link>
           <Link
             href="/blog"
@@ -238,12 +237,10 @@ export function MainHeader() {
         {/* Far Right - CTA Button */}
         <div className="flex items-center space-x-4">
           <Link 
-            href={SHOPIFY_APP_URL}
-            target="_blank"
-            rel="noopener noreferrer"
+            href="/get-started"
             className="rounded-askrami bg-brand px-4 py-2 text-sm font-semibold text-white shadow-md transition duration-150 hover:bg-brand-deep"
           >
-            Start on Shopify
+            Get Started
           </Link>
           <button
             type="button"
@@ -273,11 +270,11 @@ export function MainHeader() {
           {renderMobileSection('Tools', toolsNavItems)}
           <div className="space-y-1 border-t border-gray-100 py-3">
             <Link
-              href="/pricing"
+              href="/platforms"
               onClick={() => setMobileMenuOpen(false)}
               className="block rounded-askrami px-3 py-2 text-sm font-semibold text-black transition hover:bg-surface-subtle focus:bg-surface-subtle focus:outline-none"
             >
-              Pricing
+              Platforms
             </Link>
             <Link
               href="/blog"

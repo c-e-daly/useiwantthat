@@ -45,10 +45,10 @@ export default function GoodnessOfFitPage() {
                 <ArrowRight className="h-4 w-4" />
               </Link>
               <Link
-                href="/pricing"
+                href="/platforms"
                 className="inline-flex items-center justify-center rounded-askrami border border-surface-border bg-white px-6 py-3 text-sm font-semibold text-black transition hover:bg-surface-subtle"
               >
-                View pricing
+                View platforms
               </Link>
             </div>
           </div>

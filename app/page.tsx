@@ -146,7 +146,7 @@ export default function HomePage() {
 
         <div className="container relative mx-auto px-4 text-center">
           <p className="mb-6 text-xs font-bold uppercase tracking-[0.22em] text-brand">
-            Negotiated commerce for Shopify
+            Negotiated commerce for modern commerce
           </p>
 
           <h1 className="mx-auto max-w-5xl text-5xl font-bold leading-[1.05] tracking-tighter text-black md:text-7xl">
@@ -164,10 +164,10 @@ export default function HomePage() {
 
           <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
             <Link
-              href="https://apps.shopify.com/iwtapp-shop"
+              href="/get-started"
               className="btn-primary w-full px-10 py-4 text-base text-center sm:w-auto"
             >
-              Start 30-day free trial
+              Get Started
             </Link>
             <Link
               href="https://meetings.hubspot.com/chris-e-daly/customer-demo"
@@ -178,8 +178,7 @@ export default function HomePage() {
           </div>
 
           <p className="mt-4 text-sm text-neutral-muted">
-            $99/yr after trial • No coding required • Works with your existing
-            Shopify store
+            Platform-specific plans • No coding required • Works with your existing store
           </p>
 
           <div className="mx-auto mt-20 max-w-5xl">
@@ -297,7 +296,7 @@ export default function HomePage() {
 
           <div className="space-y-6 text-lg leading-relaxed text-neutral-muted">
             <p>
-              Modern Shopify wisdom says you optimize: better ads, more
+              Modern commerce wisdom says you optimize: better ads, more
               discounts, smarter funnels. We think modern Shopify wisdom is
               wrong.
             </p>
@@ -315,8 +314,8 @@ export default function HomePage() {
               conversations about price.
             </p>
             <p className="font-semibold text-black">
-              This is what 25 years of retail taught us, rebuilt for Shopify
-              and AI agents.
+              This is what 25 years of retail taught us, rebuilt for every
+              commerce platform and AI agents.
             </p>
           </div>
         </div>
@@ -571,7 +570,7 @@ export default function HomePage() {
             <p className="mt-4 text-lg leading-relaxed text-neutral-muted">
               Most of those customers would have bought at 22% off. Or 15%.
               They just needed someone to ask. I built I Want That! to make
-              that conversation possible for Shopify merchants without forcing
+              that conversation possible for merchants without forcing
               them into permanent markdown behavior.
             </p>
 
@@ -597,10 +596,10 @@ export default function HomePage() {
 
           <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
             <Link
-              href="https://apps.shopify.com/iwtapp-shop"
+              href="/get-started"
               className="btn-primary bg-white px-12 py-4 text-lg text-black hover:bg-neutral-200"
             >
-              Start on Shopify
+              Get Started
             </Link>
             <Link
               href="https://meetings.hubspot.com/chris-e-daly/customer-demo"
@@ -611,8 +610,7 @@ export default function HomePage() {
           </div>
 
           <p className="mt-5 text-sm text-white/50">
-            $99/yr after trial • Works with any Shopify store • 400,000+
-            monthly active users
+            Platform-specific plans • 400,000+ monthly active users
           </p>
         </div>
       </section>

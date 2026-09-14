@@ -16,6 +16,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: `${BASE_URL}/`, lastModified: new Date() },
     { url: `${BASE_URL}/ask-rami`, lastModified: new Date() },
     { url: `${BASE_URL}/vector`, lastModified: new Date() },
+    { url: `${BASE_URL}/platforms`, lastModified: new Date() },
+    { url: `${BASE_URL}/get-started`, lastModified: new Date() },
     { url: `${BASE_URL}/blog`, lastModified: new Date() },
     { url: `${BASE_URL}/glossary`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.7 },
     { url: `${BASE_URL}/legal`, lastModified: new Date() },

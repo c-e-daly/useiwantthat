@@ -3,7 +3,6 @@ import { ArrowRight, BarChart3, CheckCircle2 } from "lucide-react";
 import { CacCalculatorClient } from "@/components/marketing/CacCalculatorClient";
 import { buildPageMetadata } from "@/lib/seo/metadata";
 
-const SHOPIFY_APP_URL = "https://apps.shopify.com/iwtapp-shop";
 const DEMO_URL = "https://meetings.hubspot.com/chris-e-daly/customer-demo";
 
 export const metadata = buildPageMetadata({
@@ -53,12 +52,10 @@ export default function CacCalculatorPage() {
                 <ArrowRight className="h-4 w-4" />
               </Link>
               <Link
-                href={SHOPIFY_APP_URL}
-                target="_blank"
-                rel="noopener noreferrer"
+                href="/get-started"
                 className="inline-flex items-center justify-center rounded-askrami border border-surface-border bg-white px-6 py-3 text-sm font-semibold text-black transition hover:bg-surface-subtle"
               >
-                Install on Shopify
+                Get Started
               </Link>
             </div>
 
