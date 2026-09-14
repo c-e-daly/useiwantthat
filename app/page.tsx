@@ -178,7 +178,7 @@ export default function HomePage() {
           </div>
 
           <p className="mt-4 text-sm text-neutral-muted">
-            Platform-specific plans • No coding required • Works with your existing store
+            Get Started with Customer Generated Offers for Free
           </p>
 
           <div className="mx-auto mt-20 max-w-5xl">
@@ -297,8 +297,8 @@ export default function HomePage() {
           <div className="space-y-6 text-lg leading-relaxed text-neutral-muted">
             <p>
               Modern commerce wisdom says you optimize: better ads, more
-              discounts, smarter funnels. We think modern Shopify wisdom is
-              wrong.
+              discounts, smarter funnels. We think the DTC Bros have got this
+              wrong. And it&apos;s hurting your business.
             </p>
             <p>
               The list price is an opening position. Discounts are a tax you
