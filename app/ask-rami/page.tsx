@@ -137,7 +137,7 @@ export default function AskRamiPage() {
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <Link
-                href="https://app.useiwantthat.com"
+                href="https://heyrami.com"
                 className="inline-flex items-center justify-center gap-2 rounded-askrami bg-brand px-6 py-3 text-sm font-semibold text-white transition hover:bg-brand-deep"
               >
                 Sign up
@@ -421,7 +421,7 @@ export default function AskRamiPage() {
             </h2>
           </div>
           <Link
-            href="https://app.useiwantthat.com"
+            href="https://heyrami.com"
             className="inline-flex items-center justify-center gap-2 rounded-askrami bg-brand px-6 py-3 text-sm font-semibold text-white transition hover:bg-brand-deep"
           >
             Sign up
