@@ -146,7 +146,7 @@ export default function HomePage() {
 
         <div className="container relative mx-auto px-4 text-center">
           <p className="mb-6 text-xs font-bold uppercase tracking-[0.22em] text-brand">
-            Negotiated commerce for modern commerce
+            Negotiated layer of digital commerce
           </p>
 
           <h1 className="mx-auto max-w-5xl text-5xl font-bold leading-[1.05] tracking-tighter text-black md:text-7xl">
