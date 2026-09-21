@@ -48,7 +48,7 @@ aeo:
 og:
   title: "Discounts vs Advertising CAC — The Real Profit Killer"
   description: "Stop blaming discounts for thin margins. Learn why your advertising CAC is the real profit killer and how to use Customer Generated Offers to reclaim your profit."
-  image: "/blog-assets/og/discounts-vs-advertising-cac-og.png"
+  image: "/content/images/og/discounts-vs-advertising-cac-og.png"
   imageAlt: "Discounts vs advertising CAC open graph image"
   imageWidth: 1200
   imageHeight: 630
@@ -57,7 +57,7 @@ twitter:
   card: "summary_large_image"
   title: "Discounts vs Advertising CAC — The Real Profit Killer"
   description: "Stop blaming discounts for thin margins. Learn why your advertising CAC is the real profit killer and how to use Customer Generated Offers to reclaim your profit."
-  image: "/blog-assets/og/discounts-vs-advertising-cac-og.png"
+  image: "/content/images/og/discounts-vs-advertising-cac-og.png"
 ---
 
 # Discounts Are Not Killing Your Business, Advertising Costs Are {#discounts-are-not-killing-your-business,-advertising-costs-are}

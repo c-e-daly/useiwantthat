@@ -51,7 +51,7 @@ aeo:
 og:
   title: "Price Builder: Allowances, Floors, and Real Margin"
   description: "Price Builder adds pricing allowances to set a real profit floor for every offer, human or AI."
-  image: "/blog-assets/og/price-builder-framework-allowances-og.png"
+  image: "/content/images/og/price-builder-framework-allowances-og.png"
   imageAlt: "Price Builder framework allowances open graph image"
   imageWidth: 1200
   imageHeight: 630
@@ -60,7 +60,7 @@ twitter:
   card: "summary_large_image"
   title: "Price Builder: Allowances, Floors, and Real Margin"
   description: "Price Builder adds pricing allowances to set a real profit floor for every offer, human or AI."
-  image: "/blog-assets/og/price-builder-framework-allowances-og.png"
+  image: "/content/images/og/price-builder-framework-allowances-og.png"
 ---
 
 # The Price Builder Framework: Allowances, Floors, and What Margin Actually Means

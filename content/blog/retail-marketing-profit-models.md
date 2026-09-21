@@ -51,7 +51,7 @@ aeo:
 og:
   title: "3 Retail Marketing Profit Models Explained"
   description: "Retail marketing profit models differ by campaign goal. Clearance, acquisition, and standard profit do not use the same success metric."
-  image: "/blog-assets/og/retail-marketing-profit-models-og.png"
+  image: "/content/images/og/retail-marketing-profit-models-og.png"
   imageAlt: "Retail marketing profit models open graph image"
   imageWidth: 1200
   imageHeight: 630
@@ -60,7 +60,7 @@ twitter:
   card: "summary_large_image"
   title: "3 Retail Marketing Profit Models Explained"
   description: "Retail marketing profit models differ by campaign goal. Clearance, acquisition, and standard profit do not use the same success metric."
-  image: "/blog-assets/og/retail-marketing-profit-models-og.png"
+  image: "/content/images/og/retail-marketing-profit-models-og.png"
 ---
 
 # The 3 Retail Marketing Profit Models (And Why "Profitable" Means Something Different in Each)

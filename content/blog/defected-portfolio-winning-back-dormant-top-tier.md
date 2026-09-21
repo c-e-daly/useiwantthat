@@ -47,7 +47,7 @@ aeo:
 og:
   title: "The Defected Portfolio: Knowing When to Win Back and When to Let Go."
   description: "Defected customers voted with their absence. Most aren't coming back. Here's how to cherry-pick Q1, use direct mail CGOs, and release the rest with margin discipline."
-  image: "/blog-assets/og/defected-portfolio-winning-back-dormant-top-tier-og.png"
+  image: "/content/images/og/defected-portfolio-winning-back-dormant-top-tier-og.png"
   imageAlt: "Defected portfolio winback open graph image"
   imageWidth: 1200
   imageHeight: 630
@@ -56,7 +56,7 @@ twitter:
   card: "summary_large_image"
   title: "The Defected Portfolio: Knowing When to Win Back and When to Let Go."
   description: "Defected customers voted with their absence. Most aren't coming back. Here's how to cherry-pick Q1, use direct mail CGOs, and release the rest with margin discipline."
-  image: "/blog-assets/og/defected-portfolio-winning-back-dormant-top-tier-og.png"
+  image: "/content/images/og/defected-portfolio-winning-back-dormant-top-tier-og.png"
 ---
 
 # The Defected Portfolio: How to Win Back the Customers Worth Keeping and Release the Rest

@@ -50,10 +50,10 @@ Do not put these in the Google Doc:
 - Hardcoded canonical URLs, schema JSON, or SEO metadata.
 
 For local source-controlled assets, store images under `content/images/` and
-reference them through `/blog-assets/...`. For example,
+reference them with `/content/images/...`. For example,
 `content/images/og/example-og.png` is referenced as
-`/blog-assets/og/example-og.png`. The route is implemented at
-`app/blog-assets/[...path]/route.ts`.
+`/content/images/og/example-og.png`; the renderer maps that source path to the
+runtime asset route implemented at `app/blog-assets/[...path]/route.ts`.
 
 Pipeline-ingested assets may still be stored beside the post bundle in Supabase
 Storage/S3. Generated hero and social images should be named `[slug]-hero.png`

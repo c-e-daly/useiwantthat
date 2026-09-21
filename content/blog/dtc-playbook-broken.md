@@ -48,7 +48,7 @@ aeo:
 og:
   title: "The DTC Playbook Is Broken. Here's What Replaces It."
   description: "The DTC playbook worked when traffic was cheap and customers had no alternative. Both reversed. What replaces it is negotiated commerce."
-  image: "/blog-assets/og/dtc-playbook-is-broken-og.png"
+  image: "/content/images/og/dtc-playbook-is-broken-og.png"
   imageAlt: "DTC playbook is broken open graph image"
   imageWidth: 1200
   imageHeight: 630
@@ -57,7 +57,7 @@ twitter:
   card: "summary_large_image"
   title: "The DTC Playbook Is Broken. Here's What Replaces It."
   description: "The DTC playbook worked when traffic was cheap and customers had no alternative. Both reversed. What replaces it is negotiated commerce."
-  image: "/blog-assets/og/dtc-playbook-is-broken-og.png"
+  image: "/content/images/og/dtc-playbook-is-broken-og.png"
 ---
 
 # The DTC Playbook Is Broken. Here's What Replaces It.

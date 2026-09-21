@@ -51,7 +51,7 @@ aeo:
 og:
   title: "Why Percent-Off Discounts Retrain Your Customers"
   description: "A percent-off sale doesn't just move product. It teaches customers a new baseline price."
-  image: "/blog-assets/og/goffman-percent-off-offer-og.png"
+  image: "/content/images/og/goffman-percent-off-offer-og.png"
   imageAlt: "Percent-off discount frame of reference open graph image"
   imageWidth: 1200
   imageHeight: 630
@@ -60,7 +60,7 @@ twitter:
   card: "summary_large_image"
   title: "Why Percent-Off Discounts Retrain Your Customers"
   description: "A percent-off sale doesn't just move product. It teaches customers a new baseline price."
-  image: "/blog-assets/og/goffman-percent-off-offer-og.png"
+  image: "/content/images/og/goffman-percent-off-offer-og.png"
 ---
 
 # You Should Listen to Erving Goffman Before Doing a Percent Off Offer on Shopify

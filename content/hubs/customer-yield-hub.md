@@ -35,7 +35,7 @@ relationships:
     - capture-rate
     - repeat-rate
     - channel-stage-fit
-  og_image: /blog-assets/og/customer-yield-hub-og.png
+  og_image: /content/images/og/customer-yield-hub-og.png
 ---
 
 
@@ -68,7 +68,7 @@ The Yield Ladder is five stages. Read top to bottom. Diagnose the lowest stage t
 
 **The rule:** fix the lowest broken stage first. A 1-point gain at Capture beats a 10-point gain at Spend, because Capture compounds through the three stages below it.
 
-*[og_image: /blog-assets/og/customer-yield-hub-og.png]*
+*[og_image: /content/images/og/customer-yield-hub-og.png]*
 
 ---
 
@@ -80,7 +80,7 @@ Customer generated offers are architected to deliver insights into your audience
 
 :::cards
 - title: Learn About Customer Yield
-  image: /blog-assets/og/customer-yield-hub-og.png
+  image: /content/images/og/customer-yield-hub-og.png
   alt: Customer Yield, the metric hiding inside customer acquisition cost
   href: /blog/what-is-customer-yield
   label: Read the Customer Yield article
@@ -101,7 +101,7 @@ Explore the operating topics that connect acquisition spend to profitable, repea
 
 :::cards
 - title: Channel Assessment
-  image: /blog-assets/og/stop-paying-platform-tax-use-customer-generated-offers-og.png
+  image: /content/images/og/stop-paying-platform-tax-use-customer-generated-offers-og.png
   alt: Stop paying platform taxes and convert the traffic you already have
   href: /blog/stop-paying-platform-taxes-use-customer-generated-offers
   label: Explore Channel Assessment
@@ -109,7 +109,7 @@ Explore the operating topics that connect acquisition spend to profitable, repea
   reference_label: Frame of reference — Channel-Stage Fit
   body: Assess whether your acquisition channels can produce the return your store needs before committing more budget.
 - title: Customer Capture
-  image: /blog-assets/og/why-your-exit-intent-loses-you-money-og.png
+  image: /content/images/og/why-your-exit-intent-loses-you-money-og.png
   alt: Why conventional exit intent tactics lose potential customers
   href: /blog/exit-intent-losing-money
   label: Explore Customer Capture
@@ -117,7 +117,7 @@ Explore the operating topics that connect acquisition spend to profitable, repea
   reference_label: Frame of reference — Capture Rate
   body: Replace low-intent list building with signals and experiences that retain the right visitors and create a path to purchase.
 - title: Customer Yield
-  image: /blog-assets/og/customer-yield-hub-og.png
+  image: /content/images/og/customer-yield-hub-og.png
   alt: Customer Yield, the metric hiding inside customer acquisition cost
   href: /blog/what-is-customer-yield
   label: Explore Customer Yield
@@ -125,7 +125,7 @@ Explore the operating topics that connect acquisition spend to profitable, repea
   reference_label: Frame of reference — Customer Yield
   body: Learn how to acquire more customers from the same spend by improving the productive side of the CAC equation.
 - title: Repeat Buyers
-  image: /blog-assets/og/new-portfolio-first-buyer-to-second-order-og.png
+  image: /content/images/og/new-portfolio-first-buyer-to-second-order-og.png
   alt: Moving a first-time buyer toward a second order
   href: /blog/new-customer-second-order-strategies
   label: Explore Repeat Buyers
@@ -133,7 +133,7 @@ Explore the operating topics that connect acquisition spend to profitable, repea
   reference_label: Frame of reference — Repeat Rate
   body: Build the second-order path that turns first-time acquisition into a durable customer relationship and improves effective CAC.
 - title: Strategic Customer Portfolio Management
-  image: /blog-assets/og/six-customer-portfolios-of-every-shopify-shop.png
+  image: /content/images/og/six-customer-portfolios-of-every-shopify-shop.png
   alt: The six strategic customer portfolios found in a Shopify store
   href: /blog/customer-portfolios
   label: Explore Customer Portfolio Management
@@ -150,19 +150,19 @@ Check out additional content to help you drive profitable growth.
 
 :::cards
 - title: Markup Performance
-  image: /blog-assets/og/markup-performance-og.png
+  image: /content/images/og/markup-performance-og.png
   alt: Markup Performance and the five key allowances of retail pricing
   href: /blog/markup-performance
   label: Explore Markup Performance
   body: Build a defended price floor and fund the five allowances that let your retail price flex without silently giving away profit.
 - title: Customer Portfolio Management
-  image: /blog-assets/og/six-customer-portfolios-of-every-shopify-shop.png
+  image: /content/images/og/six-customer-portfolios-of-every-shopify-shop.png
   alt: Strategic customer portfolio management for DTC growth
   href: /blog/customer-portfolios
   label: Explore Customer Portfolios
   body: Identify which customers to acquire, retain, grow, reactivate, or win back based on observed purchase behavior and value.
 - title: Negotiated Commerce
-  image: /blog-assets/og/negotiation-is-the-norm-not-the-exception-og.png
+  image: /content/images/og/negotiation-is-the-norm-not-the-exception-og.png
   alt: Negotiated Commerce as the foundation for modern retail pricing
   href: /blog/negotiated-commerce
   label: Explore Negotiated Commerce

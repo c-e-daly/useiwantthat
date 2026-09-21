@@ -47,7 +47,7 @@ aeo:
 og:
   title: "The New Customer Portfolio: Converting First Buyers Into Second Orders."
   description: "Not every first-time buyer is worth the same. Here's how to segment new customers into quintiles and use bounceback counter-offers to drive the second purchase."
-  image: "/blog-assets/og/new-portfolio-first-buyer-to-second-order-og.png"
+  image: "/content/images/og/new-portfolio-first-buyer-to-second-order-og.png"
   imageAlt: "New portfolio first buyer to second order open graph image"
   imageWidth: 1200
   imageHeight: 630
@@ -56,7 +56,7 @@ twitter:
   card: "summary_large_image"
   title: "The New Customer Portfolio: Converting First Buyers Into Second Orders."
   description: "Not every first-time buyer is worth the same. Here's how to segment new customers into quintiles and use bounceback counter-offers to drive the second purchase."
-  image: "/blog-assets/og/new-portfolio-first-buyer-to-second-order-og.png"
+  image: "/content/images/og/new-portfolio-first-buyer-to-second-order-og.png"
 ---
 
 # How to Convert First-Time Buyers Into Second Orders on Shopify: A Step-by-Step Guide

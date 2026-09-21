@@ -47,7 +47,7 @@ aeo:
 og:
   title: "The Declining Portfolio: Spotting Customers Before They Disappear."
   description: "Declining customers are still active — but many have already left in everything but the data. Here's how to triage by quintile, protect margin, and know when to stop countering."
-  image: "/blog-assets/og/declining-portfolio-rekindle-demand-og.png"
+  image: "/content/images/og/declining-portfolio-rekindle-demand-og.png"
   imageAlt: "Declining portfolio rekindle demand open graph image"
   imageWidth: 1200
   imageHeight: 630
@@ -56,7 +56,7 @@ twitter:
   card: "summary_large_image"
   title: "The Declining Portfolio: Spotting Customers Before They Disappear."
   description: "Declining customers are still active — but many have already left in everything but the data. Here's how to triage by quintile, protect margin, and know when to stop countering."
-  image: "/blog-assets/og/declining-portfolio-rekindle-demand-og.png"
+  image: "/content/images/og/declining-portfolio-rekindle-demand-og.png"
 ---
 
 # The Declining Portfolio: How to Spot Customers Before They Disappear — and Decide Which Ones Are Worth Keeping

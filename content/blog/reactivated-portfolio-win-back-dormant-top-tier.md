@@ -47,7 +47,7 @@ aeo:
 og:
   title: "The Reactivated Portfolio: Winning Back Customers Without Bottom-Tier Discounts."
   description: "Not every lapsed customer deserves the same winback offer. Here's how to triage reactivated customers by quintile and recover value without training them to wait for discounts."
-  image: "/blog-assets/og/reactivated-portfolio-winning-back-dormant-top-tier-og.png"
+  image: "/content/images/og/reactivated-portfolio-winning-back-dormant-top-tier-og.png"
   imageAlt: "Reactivated portfolio open graph image"
   imageWidth: 1200
   imageHeight: 630
@@ -56,7 +56,7 @@ twitter:
   card: "summary_large_image"
   title: "The Reactivated Portfolio: Winning Back Customers Without Bottom-Tier Discounts."
   description: "Not every lapsed customer deserves the same winback offer. Here's how to triage reactivated customers by quintile and recover value without training them to wait for discounts."
-  image: "/blog-assets/og/reactivated-portfolio-winning-back-dormant-top-tier-og.png"
+  image: "/content/images/og/reactivated-portfolio-winning-back-dormant-top-tier-og.png"
 ---
 
 # The Reactivated Portfolio: How to Win Back Lapsed Customers Without Destroying Your Margins

@@ -205,7 +205,7 @@ Glossary sources live in `content/glossary/`. Published and full entries appear 
 
 ### Images
 
-Source-controlled editorial images live under `content/images/` and are served through:
+Source-controlled editorial images live under `content/images/`. Content references use the source path, and the renderer serves them through:
 
 ```text
 /blog-assets/[path]
@@ -215,7 +215,7 @@ For example:
 
 ```text
 content/images/og/customer-yield-hub-og.png
-→ /blog-assets/og/customer-yield-hub-og.png
+→ /blog-assets/[path]
 ```
 
 General public assets live under `public/` and use normal root-relative paths such as `/images/og/cac-playbook-og.png`.

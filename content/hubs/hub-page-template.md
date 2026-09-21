@@ -40,7 +40,7 @@ relationships:
   glossary_terms:
     - customer-yield
     - yield-ladder
-  og_image: /blog-assets/og/customer-yield-hub-og.png
+  og_image: /content/images/og/customer-yield-hub-og.png
 ---
 
 # Customer Yield: The Acquisition Efficiency Playbook

@@ -43,7 +43,7 @@ relationships:
     - declining-portfolio
     - defected-portfolio
     - settle-price
-  og_image: /blog-assets/og/six-customer-portfolios-of-every-shopify-shop.png
+  og_image: /content/images/og/six-customer-portfolios-of-every-shopify-shop.png
 ---
 
 # Customer Portfolio Management to Power DTC Marketing

@@ -47,7 +47,7 @@ aeo:
 og:
   title: "What 25 Years in Retail Taught Me About Inventory You Can't Sell"
   description: "A kid sold 1,000 bags of Snowman Poop for $1 each. There is a market for everything. Here's how negotiated commerce moves aged inventory without the markdown spiral."
-  image: "/blog-assets/og/selling-aged-inventory-og.png"
+  image: "/content/images/og/selling-aged-inventory-og.png"
   imageAlt: "Selling aged inventory open graph image"
   imageWidth: 1200
   imageHeight: 630
@@ -56,7 +56,7 @@ twitter:
   card: "summary_large_image"
   title: "What 25 Years in Retail Taught Me About Inventory You Can't Sell"
   description: "A kid sold 1,000 bags of Snowman Poop for $1 each. There is a market for everything. Here's how negotiated commerce moves aged inventory without the markdown spiral."
-  image: "/blog-assets/og/selling-aged-inventory-og.png"
+  image: "/content/images/og/selling-aged-inventory-og.png"
 ---
 
 # What 25 Years in Retail Taught Me About Inventory You Can't Sell

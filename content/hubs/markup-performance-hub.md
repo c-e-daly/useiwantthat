@@ -42,7 +42,7 @@ relationships:
     - the-five-allowances
     - market-adjustment-allowance
     - settle-price
-  og_image: /blog-assets/og/markup-performance-og.png
+  og_image: /content/images/og/markup-performance-og.png
 
 ---
 

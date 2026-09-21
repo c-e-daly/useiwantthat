@@ -47,7 +47,7 @@ aeo:
 og:
   title: "The Stable Customer Portfolio: How to Keep Your Top 20% Buying."
   description: "Stable customers are your cash flow foundation, but stable isn't safe. Here's how to retain them, grow them, and stop them from going quietly Declining."
-  image: "/blog-assets/og/stable-portfolio-retaining-engaged-top-tier-buyers-og.png"
+  image: "/content/images/og/stable-portfolio-retaining-engaged-top-tier-buyers-og.png"
   imageAlt: "Stable portfolio open graph image"
   imageWidth: 1200
   imageHeight: 630
@@ -56,7 +56,7 @@ twitter:
   card: "summary_large_image"
   title: "The Stable Customer Portfolio: How to Keep Your Top 20% Buying."
   description: "Stable customers are your cash flow foundation, but stable isn't safe. Here's how to retain them, grow them, and stop them from going quietly Declining."
-  image: "/blog-assets/og/stable-portfolio-retaining-engaged-top-tier-buyers-og.png"
+  image: "/content/images/og/stable-portfolio-retaining-engaged-top-tier-buyers-og.png"
 ---
 
 # The Stable Customer Portfolio: How to Keep Your Top 20% Buying.

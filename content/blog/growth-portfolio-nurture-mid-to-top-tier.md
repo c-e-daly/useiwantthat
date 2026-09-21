@@ -47,7 +47,7 @@ aeo:
 og:
   title: "The Growth Portfolio: Turning Mid-Tier Buyers Into Top-Tier Spenders."
   description: "Growth customers are increasing YOY, fully amortized, and profitable. Here's how to extend their brand duration, accelerate spend, and turn them into your acquisition engine."
-  image: "/blog-assets/og/growth-potfolio-mid-tier-to-top-tier-og.png"
+  image: "/content/images/og/growth-potfolio-mid-tier-to-top-tier-og.png"
   imageAlt: "Growth portfolio open graph image"
   imageWidth: 1200
   imageHeight: 630
@@ -56,7 +56,7 @@ twitter:
   card: "summary_large_image"
   title: "The Growth Portfolio: Turning Mid-Tier Buyers Into Top-Tier Spenders."
   description: "Growth customers are increasing YOY, fully amortized, and profitable. Here's how to extend their brand duration, accelerate spend, and turn them into your acquisition engine."
-  image: "/blog-assets/og/growth-potfolio-mid-tier-to-top-tier-og.png"
+  image: "/content/images/og/growth-potfolio-mid-tier-to-top-tier-og.png"
 ---
 
 # The Growth Portfolio: How to Accelerate Your Best Buyers and Keep Them Longer

@@ -51,7 +51,7 @@ aeo:
 og:
   title: "Market Basket Composition: The Allowance Shield"
   description: "Market basket composition breaks AUR into named allowances per unit and shows why adding units strengthens your margin shield."
-  image: "/blog-assets/og/market-basket-composition-og.png"
+  image: "/content/images/og/market-basket-composition-og.png"
   imageAlt: "Market basket composition open graph image"
   imageWidth: 1200
   imageHeight: 630
@@ -60,7 +60,7 @@ twitter:
   card: "summary_large_image"
   title: "Market Basket Composition: The Allowance Shield"
   description: "Market basket composition breaks AUR into named allowances per unit and shows why adding units strengthens your margin shield."
-  image: "/blog-assets/og/market-basket-composition-og.png"
+  image: "/content/images/og/market-basket-composition-og.png"
 ---
 
 # Market Basket Composition: How Incremental Units Make Your Margin Shield Stronger

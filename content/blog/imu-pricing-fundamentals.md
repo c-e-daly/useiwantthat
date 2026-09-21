@@ -51,7 +51,7 @@ aeo:
 og:
   title: "IMU Pricing 101: How Retail Pricing Math Actually Works"
   description: "IMU pricing is where every retail price starts. Learn the difference between initial markup, maintained markup, and gross margin."
-  image: "/blog-assets/og/imu-pricing-fundamentals-og.png"
+  image: "/content/images/og/imu-pricing-fundamentals-og.png"
   imageAlt: "IMU pricing fundamentals open graph image"
   imageWidth: 1200
   imageHeight: 630
@@ -60,7 +60,7 @@ twitter:
   card: "summary_large_image"
   title: "IMU Pricing 101: How Retail Pricing Math Actually Works"
   description: "IMU pricing is where every retail price starts. Learn the difference between initial markup, maintained markup, and gross margin."
-  image: "/blog-assets/og/imu-pricing-fundamentals-og.png"
+  image: "/content/images/og/imu-pricing-fundamentals-og.png"
 ---
 
 # IMU Pricing 101: How Retail Pricing Math Actually Works

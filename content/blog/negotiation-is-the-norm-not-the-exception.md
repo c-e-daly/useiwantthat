@@ -53,7 +53,7 @@ aeo:
 og:
   title: "The Rialto Market: What 1000 Years of Selling Teaches Shopify Operators"
   description: "Fixed pricing is the anomaly. Negotiated commerce is over 900 years old. Here's what Shopify operators can learn from the Rialto Market."
-  image: "/blog-assets/og/negotiation-is-the-norm-not-the-exception-og.png"
+  image: "/content/images/og/negotiation-is-the-norm-not-the-exception-og.png"
   imageAlt: "The Rialto Market negotiated commerce open graph image"
   imageWidth: 1200
   imageHeight: 630
@@ -62,7 +62,7 @@ twitter:
   card: "summary_large_image"
   title: "The Rialto Market: What 1000 Years of Selling Teaches Shopify Operators"
   description: "Fixed pricing is the anomaly. Negotiated commerce is over 900 years old. Here's what Shopify operators can learn from the Rialto Market."
-  image: "/blog-assets/og/negotiation-is-the-norm-not-the-exception-og.png"
+  image: "/content/images/og/negotiation-is-the-norm-not-the-exception-og.png"
 ---
 
 # The Rialto Market: What 1000 Years of Selling Teaches Shopify Operators

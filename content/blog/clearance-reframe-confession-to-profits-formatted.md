@@ -47,7 +47,7 @@ aeo:
 og:
   title: "The Clearance Sale Is a Confession. Here's How to Profit From It."
   description: "Clearance trains customers to chase discount size, not product value. Here's how customer-generated offers move inventory at 28% off instead of 70% off."
-  image: "/blog-assets/og/clearance-is-a-confession-og.png"
+  image: "/content/images/og/clearance-is-a-confession-og.png"
   imageAlt: "Clearance is a confession open graph image"
   imageWidth: 1200
   imageHeight: 630
@@ -56,7 +56,5 @@ twitter:
   card: "summary_large_image"
   title: "The Clearance Sale Is a Confession. Here's How to Profit From It."
   description: "Clearance trains customers to chase discount size, not product value. Here's how customer-generated offers move inventory at 28% off instead of 70% off."
-  image: "/blog-assets/og/clearance-is-a-confession-og.png"
+  image: "/content/images/og/clearance-is-a-confession-og.png"
 ---
-
-

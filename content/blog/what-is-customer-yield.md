@@ -47,7 +47,7 @@ aeo:
 og:
   title: "What Is Customer Yield? The Metric Hiding Inside Your CAC."
   description: "Customer Yield is the denominator of the CAC formula — the new customers your spend produced. Operators optimize the numerator. The denominator is where the leverage is."
-  image: "/blog-assets/og/customer-yield-hub-og.png"
+  image: "/content/images/og/customer-yield-hub-og.png"
   imageAlt: "Customer yield open graph image"
   imageWidth: 1200
   imageHeight: 630
@@ -56,7 +56,7 @@ twitter:
   card: "summary_large_image"
   title: "What Is Customer Yield? The Metric Hiding Inside Your CAC."
   description: "Customer Yield is the denominator of the CAC formula — the new customers your spend produced. Operators optimize the numerator. The denominator is where the leverage is."
-  image: "/blog-assets/og/customer-yield-hub-og.png"
+  image: "/content/images/og/customer-yield-hub-og.png"
 ---
 
 # What Is Customer Yield? The Metric Hiding Inside Your CAC.

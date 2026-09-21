@@ -21,7 +21,8 @@ function resolveAbsoluteUrl(value: string | null | undefined): string | null {
     return value;
   }
 
-  return `${SITE_URL}/${value.replace(/^\/+/, "")}`;
+  const normalizedValue = value.replace(/^\/+/, "").replace(/^content\/images\//, "blog-assets/");
+  return `${SITE_URL}/${normalizedValue}`;
 }
 
 function readFirstNonEmpty(...values: Array<string | null | undefined>) {

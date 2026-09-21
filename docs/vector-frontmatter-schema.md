@@ -77,7 +77,7 @@ aeo:
 og:
   title: "Social title"
   description: "Social description"
-  image: "/blog-assets/og/example-og.png"
+  image: "/content/images/og/example-og.png"
   imageAlt: "Descriptive alt text"
   imageWidth: 1200
   imageHeight: 630
@@ -86,14 +86,14 @@ twitter:
   card: "summary_large_image"
   title: "Social title"
   description: "Social description"
-  image: "/blog-assets/og/example-og.png"
+  image: "/content/images/og/example-og.png"
 ```
 
 Use `[]` for empty arrays. Do not leave array keys blank.
 
 For source-controlled local images, store files under `content/images/og/` and
-reference them as `/blog-assets/og/[filename].png`. The app serves that path via
-`app/blog-assets/[...path]/route.ts`.
+reference them as `/content/images/og/[filename].png`. The renderer maps that
+source path to the runtime asset route at `app/blog-assets/[...path]/route.ts`.
 
 ---
 
@@ -257,7 +257,7 @@ aeo:
 og:
   title: ""         # defaults to seo.metaTitle if blank — agent can override for social tone
   description: ""   # defaults to seo.metaDescription if blank — can be more conversational
-  image: ""         # local path: /blog-assets/og/[filename].png; Supabase path may be resolved by publisher.
+  image: ""         # local path: /content/images/og/[filename].png; Supabase path may be resolved by publisher.
   imageAlt: ""      # descriptive alt text for OG image
   imageWidth: 1200
   imageHeight: 630
@@ -492,7 +492,7 @@ Final URL: `https://iwantthat.io/blog/[slug]`
 5. `canonical` field should be populated by NextJS at render time from
    `process.env.NEXT_PUBLIC_SITE_URL + "/blog/" + slug` — not hardcoded
    by the agent, so staging and production environments resolve correctly.
-6. For local source-controlled images, use `/blog-assets/og/[filename].png`,
+6. For local source-controlled images, use `/content/images/og/[filename].png`,
    backed by `content/images/og/[filename].png`. For Supabase-hosted images,
    the incoming publisher may resolve storage paths before writing final
    frontmatter. NextJS renders absolute Open Graph image URLs at runtime.

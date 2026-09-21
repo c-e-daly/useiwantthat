@@ -47,7 +47,7 @@ aeo:
 og:
   title: "Your Exit Intent Is Losing You Thousands. Here's Why."
   description: "Most exit intent popups capture low-quality emails and offer weak discounts that train customers to ignore you. Five fixes that turn exits into sales."
-  image: "/blog-assets/og/why-your-exit-intent-loses-you-money-og.png"
+  image: "/content/images/og/why-your-exit-intent-loses-you-money-og.png"
   imageAlt: "Exit intent losing money open graph image"
   imageWidth: 1200
   imageHeight: 630
@@ -56,7 +56,7 @@ twitter:
   card: "summary_large_image"
   title: "Your Exit Intent Is Losing You Thousands. Here's Why."
   description: "Most exit intent popups capture low-quality emails and offer weak discounts that train customers to ignore you. Five fixes that turn exits into sales."
-  image: "/blog-assets/og/why-your-exit-intent-loses-you-money-og.png"
+  image: "/content/images/og/why-your-exit-intent-loses-you-money-og.png"
 ---
 
 # Your Exit Intent Is Losing You Thousands. Here's Why.

@@ -48,7 +48,7 @@ aeo:
 og:
   title: "What Are Customer Generated Offers? The Negotiated Commerce Primer."
   description: "Customer Generated Offers are offers a customer initiates to buy from your store. Here's how CGOs work, why they outperform blanket discounts, and how to automate them."
-  image: "/blog-assets/og/what-are-customer-generated-offers-og.png"
+  image: "/content/images/og/what-are-customer-generated-offers-og.png"
   imageAlt: "What are customer generated offers open graph image"
   imageWidth: 1200
   imageHeight: 630
@@ -57,7 +57,7 @@ twitter:
   card: "summary_large_image"
   title: "What Are Customer Generated Offers? The Negotiated Commerce Primer."
   description: "Customer Generated Offers are offers a customer initiates to buy from your store. Here's how CGOs work, why they outperform blanket discounts, and how to automate them."
-  image: "/blog-assets/og/what-are-customer-generated-offers-og.png"
+  image: "/content/images/og/what-are-customer-generated-offers-og.png"
 ---
 
 # What Are Customer Generated Offers? The Negotiated Commerce Primer.

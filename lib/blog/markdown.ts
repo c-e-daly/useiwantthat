@@ -16,7 +16,7 @@ function renderInlineMarkdown(line: string): string {
   let html = escapeHtml(line);
 
   html = html.replace(/!\[([^\]]*)\]\(([^)\s]+)(?:\s+"([^"]+)")?\)/g, (_match, alt: string, src: string, title: string | undefined) => {
-    const safeSrc = escapeHtml(src);
+    const safeSrc = safeUrl(src);
     const safeAlt = escapeHtml(alt);
     const safeTitle = title ? ` title="${escapeHtml(title)}"` : "";
     return `<img src="${safeSrc}" alt="${safeAlt}" loading="lazy" decoding="async"${safeTitle} />`;
@@ -242,7 +242,8 @@ function parseDirectiveItems(content: string[]) {
 }
 
 function safeUrl(value: string | undefined) {
-  const url = value?.trim();
+  const rawUrl = value?.trim();
+  const url = rawUrl?.replace(/^\/?content\/images\//, "/blog-assets/");
 
   if (!url) {
     return "";

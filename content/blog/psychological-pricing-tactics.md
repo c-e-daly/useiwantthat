@@ -51,7 +51,7 @@ aeo:
 og:
   title: "Psychological Pricing: 6 Tactics Explained"
   description: "Psychological pricing tactics shape how a price is read. Market adjustment turns the margin impact into tracked math."
-  image: "/blog-assets/og/psychological-pricing-tactics-og.png"
+  image: "/content/images/og/psychological-pricing-tactics-og.png"
   imageAlt: "Psychological pricing tactics open graph image"
   imageWidth: 1200
   imageHeight: 630
@@ -60,7 +60,7 @@ twitter:
   card: "summary_large_image"
   title: "Psychological Pricing: 6 Tactics Explained"
   description: "Psychological pricing tactics shape how a price is read. Market adjustment turns the margin impact into tracked math."
-  image: "/blog-assets/og/psychological-pricing-tactics-og.png"
+  image: "/content/images/og/psychological-pricing-tactics-og.png"
 ---
 
 # Psychological Pricing: The 6 Tactics Behind Every Price Tag

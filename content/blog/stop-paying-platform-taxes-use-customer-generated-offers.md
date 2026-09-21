@@ -47,7 +47,7 @@ aeo:
 og:
   title: "Stop Paying Platform Taxes. Use Customer Generated Offers to Clear Inventory"
   description: "eBay, Amazon, Etsy, Poshmark charge 5–17% on every sale. Your net margin is 5–15%. Here's how CGOs clear inventory and keep the fee."
-  image: "/blog-assets/og/stop-paying-platform-tax-use-customer-generated-offers-og.png"
+  image: "/content/images/og/stop-paying-platform-tax-use-customer-generated-offers-og.png"
   imageAlt: "Stop paying platform tax open graph image"
   imageWidth: 1200
   imageHeight: 630
@@ -56,7 +56,7 @@ twitter:
   card: "summary_large_image"
   title: "Stop Paying Platform Taxes. Use Customer Generated Offers to Clear Inventory"
   description: "eBay, Amazon, Etsy, Poshmark charge 5–17% on every sale. Your net margin is 5–15%. Here's how CGOs clear inventory and keep the fee."
-  image: "/blog-assets/og/stop-paying-platform-tax-use-customer-generated-offers-og.png"
+  image: "/content/images/og/stop-paying-platform-tax-use-customer-generated-offers-og.png"
 ---
 
 # Stop Paying Platform Taxes. Customer Generated Offers Clear Inventory for Free.
