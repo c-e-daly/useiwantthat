@@ -51,7 +51,7 @@ export function Footer() {
         <div className="grid gap-12 lg:grid-cols-[minmax(220px,1fr)_2fr] lg:gap-16">
           <div>
             <p className="text-xs font-bold uppercase tracking-[0.2em] text-brand">
-              Core Nav
+              Negotiated Layer of Digital Commerce
             </p>
             <h2 className="mt-4 max-w-xs text-3xl font-bold tracking-tight text-black">
               Make every customer interaction work harder.
